@@ -52,19 +52,31 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PeopleForm.cs">
+    <Compile Include="PeopleForm\AddPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PeopleForm.Designer.cs">
+    <Compile Include="PeopleForm\AddPerson.Designer.cs">
+      <DependentUpon>AddPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleForm\PeopleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeopleForm\PeopleForm.Designer.cs">
       <DependentUpon>PeopleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uctrlAddPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctrlAddPerson.Designer.cs">
+      <DependentUpon>uctrlAddPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilites.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PeopleForm.resx">
+    <EmbeddedResource Include="PeopleForm\PeopleForm.resx">
       <DependentUpon>PeopleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -77,6 +89,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="uctrlAddPerson.resx">
+      <DependentUpon>uctrlAddPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
