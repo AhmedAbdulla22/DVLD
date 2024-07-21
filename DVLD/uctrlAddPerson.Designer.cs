@@ -46,6 +46,7 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lnklblSetImage = new System.Windows.Forms.LinkLabel();
             this.pbProfilePic = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblNationalNumber = new System.Windows.Forms.Label();
-            this.lnklblSetImage = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.SuspendLayout();
@@ -221,9 +221,20 @@
             this.textBox2.TabIndex = 25;
             this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateBoxes);
             // 
+            // lnklblSetImage
+            // 
+            this.lnklblSetImage.AutoSize = true;
+            this.lnklblSetImage.Location = new System.Drawing.Point(534, 176);
+            this.lnklblSetImage.Name = "lnklblSetImage";
+            this.lnklblSetImage.Size = new System.Drawing.Size(55, 13);
+            this.lnklblSetImage.TabIndex = 27;
+            this.lnklblSetImage.TabStop = true;
+            this.lnklblSetImage.Text = "Set Image";
+            this.lnklblSetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblSetImage_LinkClicked);
+            // 
             // pbProfilePic
             // 
-            this.pbProfilePic.Image = global::DVLD.Properties.Resources.user_image_with_black_background;
+            this.pbProfilePic.Image = global::DVLD.Properties.Resources.User_Male;
             this.pbProfilePic.Location = new System.Drawing.Point(507, 64);
             this.pbProfilePic.Name = "pbProfilePic";
             this.pbProfilePic.Size = new System.Drawing.Size(110, 109);
@@ -296,6 +307,7 @@
             this.radbtnFemale.Text = "Female";
             this.radbtnFemale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radbtnFemale.UseVisualStyleBackColor = true;
+            this.radbtnFemale.CheckedChanged += new System.EventHandler(this.radbtnFemale_CheckedChanged);
             // 
             // radbtnMale
             // 
@@ -312,6 +324,7 @@
             this.radbtnMale.Text = "Male";
             this.radbtnMale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radbtnMale.UseVisualStyleBackColor = true;
+            this.radbtnMale.CheckedChanged += new System.EventHandler(this.radbtnMale_CheckedChanged);
             // 
             // label1
             // 
@@ -351,17 +364,6 @@
             this.lblNationalNumber.TabIndex = 10;
             this.lblNationalNumber.Text = "National .No:";
             this.lblNationalNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lnklblSetImage
-            // 
-            this.lnklblSetImage.AutoSize = true;
-            this.lnklblSetImage.Location = new System.Drawing.Point(534, 176);
-            this.lnklblSetImage.Name = "lnklblSetImage";
-            this.lnklblSetImage.Size = new System.Drawing.Size(55, 13);
-            this.lnklblSetImage.TabIndex = 27;
-            this.lnklblSetImage.TabStop = true;
-            this.lnklblSetImage.Text = "Set Image";
-            this.lnklblSetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblSetImage_LinkClicked);
             // 
             // uctrlAddPerson
             // 

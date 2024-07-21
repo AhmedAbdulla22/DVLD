@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -151,6 +152,20 @@ namespace DVLD
             }
         }
 
-  
+        private void radbtnMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radbtnMale.Checked)
+            {
+                pbProfilePic.Image = Resources.User_Male;
+            }
+        }
+
+        private void radbtnFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radbtnFemale.Checked)
+            {
+                pbProfilePic.Image = Resources.Female_User;
+            }
+        }
     }
 }
