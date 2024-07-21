@@ -162,7 +162,7 @@
             // uctrlAddPerson1
             // 
             this.uctrlAddPerson1.BackColor = System.Drawing.Color.White;
-            this.uctrlAddPerson1.Location = new System.Drawing.Point(201, 155);
+            this.uctrlAddPerson1.Location = new System.Drawing.Point(215, 124);
             this.uctrlAddPerson1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrlAddPerson1.Name = "uctrlAddPerson1";
             this.uctrlAddPerson1.Size = new System.Drawing.Size(640, 296);
