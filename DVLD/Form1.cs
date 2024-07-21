@@ -17,11 +17,11 @@ namespace DVLD
             InitializeComponent();
 
             //resize button icons
-            btnAccSettings.Image = Utilites.ResizeImage(Properties.Resources.Password_Window,40,40);
-            btnUsers.Image = Utilites.ResizeImage(Properties.Resources.Admin_Settings_Male, 40, 40);
-            btnApplication.Image = Utilites.ResizeImage(Properties.Resources.Document, 40, 40);
-            btnDrivers.Image = Utilites.ResizeImage(Properties.Resources.Driver_License, 40, 40);
-            btnPeople.Image = Utilites.ResizeImage(Properties.Resources.People100x, 40, 40);
+            btnAccSettings.Image = Utilites.ResizeImage(Properties.Resources.Password_Window,30,30);
+            btnUsers.Image = Utilites.ResizeImage(Properties.Resources.Admin_Settings_Male, 30, 30);
+            btnApplication.Image = Utilites.ResizeImage(Properties.Resources.Document, 30, 30);
+            btnDrivers.Image = Utilites.ResizeImage(Properties.Resources.Driver_License, 30, 30);
+            btnPeople.Image = Utilites.ResizeImage(Properties.Resources.People100x, 30, 30);
             //Resize Background
             this.BackgroundImage = Utilites.ResizeImage(Properties.Resources._87f519db_8efe_46d1_8881_9e7d58b3e705, 300, 300);
 

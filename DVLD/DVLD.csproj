@@ -141,5 +141,38 @@
   <ItemGroup>
     <None Include="Resources\Close.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Display1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tear-Off Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-call%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arroba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-image-with-black-background.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

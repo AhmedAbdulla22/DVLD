@@ -15,5 +15,18 @@ namespace BusinessLayer
 
             return DataAccessPeopleLayer.getAllPeople();
         }
+
+        public static bool isNationalNumberExist(string nationalNumber) 
+        {
+            return DataAccessPeopleLayer.isNationalNumberExist(nationalNumber);
+        }
+    }
+
+    public static class CountryBusinessLayer
+    {
+        public static List<string> GetAllCountries()
+        {
+            return CountryDataAccessLayer.GetCountryList();
+        }
     }
 }
