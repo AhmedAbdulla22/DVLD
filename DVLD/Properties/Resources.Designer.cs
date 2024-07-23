@@ -73,16 +73,6 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _87f519db_8efe_46d1_8881_9e7d58b3e705_1_ {
-            get {
-                object obj = ResourceManager.GetObject("_87f519db-8efe-46d1-8881-9e7d58b3e705(1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Add_Male_User_Group {
             get {
                 object obj = ResourceManager.GetObject("Add Male User Group", resourceCulture);
@@ -116,6 +106,26 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap diskette {
+            get {
+                object obj = ResourceManager.GetObject("diskette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap diskette_1_ {
+            get {
+                object obj = ResourceManager.GetObject("diskette(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

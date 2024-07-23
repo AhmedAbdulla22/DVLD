@@ -34,8 +34,9 @@ namespace DVLD
 
         private void ValidatingIsEmailValid(object sender, CancelEventArgs e)
         {
+            
             string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            if (!Regex.IsMatch(tbEmail.Text,emailPattern))
+            if (!string.IsNullOrEmpty(tbEmail.Text) && !Regex.IsMatch(tbEmail.Text,emailPattern))
             {
                 //prevent losing focus
                 e.Cancel = true;
@@ -116,12 +117,25 @@ namespace DVLD
         {
             ValidateDateTimePicker();
 
-            //Get Countries from DB
+            //Get Countries from DB then set it to Iraq
             cbCountry.DataSource = CountryBusinessLayer.GetAllCountries();
+
+            var indexOfIraq = cbCountry.Items.IndexOf("Iraq");
+            if (indexOfIraq != -1)
+            {
+            cbCountry.SelectedItem = cbCountry.Items[cbCountry.Items.IndexOf("Iraq")];
+            }
+            
+  
 
             //resize icons
             radbtnMale.Image = Utilites.ResizeImage(radbtnMale.Image, 15, 15);
             radbtnFemale.Image = Utilites.ResizeImage(radbtnFemale.Image, 15, 15);
+            btnClose.Image = Utilites.ResizeImage(btnClose.Image, 20, 20);
+            btnSave.Image = Utilites.ResizeImage(btnSave.Image, 20, 20);
+
+
+
 
             //Invoke Events Handler
             tbNationalNo.Validating += ValidatingIsNationalNoExist;

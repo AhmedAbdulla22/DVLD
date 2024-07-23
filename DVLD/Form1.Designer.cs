@@ -162,10 +162,10 @@
             // uctrlAddPerson1
             // 
             this.uctrlAddPerson1.BackColor = System.Drawing.Color.White;
-            this.uctrlAddPerson1.Location = new System.Drawing.Point(215, 124);
+            this.uctrlAddPerson1.Location = new System.Drawing.Point(129, 63);
             this.uctrlAddPerson1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrlAddPerson1.Name = "uctrlAddPerson1";
-            this.uctrlAddPerson1.Size = new System.Drawing.Size(640, 296);
+            this.uctrlAddPerson1.Size = new System.Drawing.Size(666, 340);
             this.uctrlAddPerson1.TabIndex = 1;
             // 
             // frmMain
@@ -173,7 +173,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.BackgroundImage = global::DVLD.Properties.Resources._87f519db_8efe_46d1_8881_9e7d58b3e705_1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1047, 503);
             this.Controls.Add(this.uctrlAddPerson1);
