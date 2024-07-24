@@ -1,16 +1,10 @@
 ﻿using BusinessLayer;
 using DVLD.Properties;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DVLD
 {
@@ -160,10 +154,24 @@ namespace DVLD
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.DefaultExt = "img";
             fileDialog.Filter = "Image File|*.png;*.jpg;*.jpeg;*.bmp;";
+
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 pbProfilePic.ImageLocation =  fileDialog.FileName;
+
+                //make remove label visible
                 lblRemove.Visible = true;
+
+                //copy the image for DVLV FOLDER
+                if (Directory.Exists(@"C:\DVLD IMAGES\"))
+                {
+                File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\"+Guid.NewGuid()+".jpg",overwrite:true);
+                }
+                else
+                {
+                    Directory.CreateDirectory(@"C:\DVLD IMAGES\");
+                    File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\" + Guid.NewGuid() + ".jpg", overwrite: true);
+                }
             }
         }
 
