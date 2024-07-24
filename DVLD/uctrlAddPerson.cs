@@ -163,6 +163,7 @@ namespace DVLD
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 pbProfilePic.ImageLocation =  fileDialog.FileName;
+                lblRemove.Visible = true;
             }
         }
 
@@ -180,6 +181,16 @@ namespace DVLD
             {
                 pbProfilePic.Image = Resources.Female_User;
             }
+        }
+
+
+        private void lblRemove_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lblRemove.Visible = false;
+            pbProfilePic.ImageLocation = null;
+
+            pbProfilePic.Image = (radbtnMale.Checked) ? Resources.User_Male: Resources.Female_User;
+            
         }
     }
 }

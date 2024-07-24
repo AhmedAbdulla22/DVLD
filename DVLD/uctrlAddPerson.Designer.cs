@@ -49,6 +49,7 @@
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.lnklblSetImage = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblRemove = new System.Windows.Forms.LinkLabel();
             this.pbProfilePic = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -229,6 +230,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblRemove);
             this.groupBox1.Controls.Add(this.pbProfilePic);
             this.groupBox1.Controls.Add(this.lnklblSetImage);
             this.groupBox1.Controls.Add(this.label2);
@@ -262,6 +264,19 @@
             this.groupBox1.Size = new System.Drawing.Size(939, 409);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
+            // 
+            // lblRemove
+            // 
+            this.lblRemove.AutoSize = true;
+            this.lblRemove.Location = new System.Drawing.Point(806, 289);
+            this.lblRemove.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRemove.Name = "lblRemove";
+            this.lblRemove.Size = new System.Drawing.Size(68, 20);
+            this.lblRemove.TabIndex = 28;
+            this.lblRemove.TabStop = true;
+            this.lblRemove.Text = "Remove";
+            this.lblRemove.Visible = false;
+            this.lblRemove.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRemove_LinkClicked);
             // 
             // pbProfilePic
             // 
@@ -327,9 +342,9 @@
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Image = global::DVLD.Properties.Resources.phone_call_1_;
             this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPhone.Location = new System.Drawing.Point(434, 145);
+            this.lblPhone.Location = new System.Drawing.Point(436, 145);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(118, 40);
+            this.lblPhone.Size = new System.Drawing.Size(116, 40);
             this.lblPhone.TabIndex = 18;
             this.lblPhone.Text = "Phone:";
             this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -355,9 +370,9 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(381, 95);
+            this.label7.Location = new System.Drawing.Point(384, 95);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 40);
+            this.label7.Size = new System.Drawing.Size(168, 40);
             this.label7.TabIndex = 12;
             this.label7.Text = "Date Of Birth:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -500,5 +515,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblPersonID1;
         private System.Windows.Forms.Label lblPersonID2;
+        private System.Windows.Forms.LinkLabel lblRemove;
     }
 }
