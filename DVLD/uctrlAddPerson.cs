@@ -178,16 +178,16 @@ namespace DVLD
                 //copy the image for DVLV FOLDER
                 if (Directory.Exists(@"C:\DVLD IMAGES\"))
                 {
-                File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\"+ newGuid+".jpg",overwrite:true);
-                    
+                    File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\" + newGuid + ".png", overwrite: true);
+
                 }
                 else
                 {
                     Directory.CreateDirectory(@"C:\DVLD IMAGES\");
-                    File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\" + Guid.NewGuid() + ".jpg", overwrite: true);
+                    File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\" + Guid.NewGuid() + ".png", overwrite: true);
                 }
 
-                pbProfilePic.ImageLocation = @"C:\DVLD IMAGES\" + newGuid + ".jpg";
+                pbProfilePic.ImageLocation = fileDialog.FileName;
             }
 
         }
@@ -246,11 +246,35 @@ namespace DVLD
             short gender;
             gender = (radbtnMale.Checked) ? (short)0 : (short)1;
 
+
+            //Before Saving Person Save Update ImageLocation And Save IT in ImgDir
+            if (pbProfilePic.ImageLocation != null)
+            {
+                var newGuid = Guid.NewGuid().ToString();
+                var newLocation = @"C:\DVLD IMAGES\" + newGuid + ".png";
+                //copy the image for DVLV FOLDER
+                if (Directory.Exists(@"C:\DVLD IMAGES\"))
+                {
+                    File.Copy(pbProfilePic.ImageLocation,newLocation , overwrite: true);
+
+                }
+                else
+                {
+                    Directory.CreateDirectory(@"C:\DVLD IMAGES\");
+                    File.Copy(pbProfilePic.ImageLocation, newLocation, overwrite: true);
+                }
+
+                pbProfilePic.ImageLocation = newLocation;
+            }
+
+            //Save
             _PersonID = PeopleBusinessLayer.SavePerson(tbFirstName.Text, tbLastName.Text, tbThirdName.Text, tbLastName.Text, tbNationalNo.Text, dtpDateOfBirth.Value, gender, tbPhone.Text, tbEmail.Text, CountryDict[cbCountry.Text], tbAddress.Text, pbProfilePic.ImageLocation);
             
             if (_PersonID != -1)
             {
                 lblPersonID2.Text = _PersonID.ToString();
+                
+                
             }
         }
     }
