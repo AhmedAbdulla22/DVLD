@@ -5,17 +5,21 @@ using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections.Generic;
 
 namespace DVLD
 {
     public partial class uctrlAddPerson : UserControl
     {
+        int _PersonID = -1;
+
+        //Get Countries from DB 
+        Dictionary<string, int> CountryDict = CountryBusinessLayer.GetAllCountries();
 
         public uctrlAddPerson()
         {
             InitializeComponent();
-            
-            
+
         }
 
         private void ValidateDateTimePicker()
@@ -72,7 +76,7 @@ namespace DVLD
 
         private void ValidateName(object sender, KeyEventArgs e)
         {
-            if (char.IsLetter((char)e.KeyValue) || e.KeyCode == Keys.Back)
+            if (char.IsLetter((char)e.KeyValue) || e.KeyCode == Keys.Space || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
             {
                 e.Handled = false;
                 e.SuppressKeyPress = false;
@@ -111,8 +115,12 @@ namespace DVLD
         {
             ValidateDateTimePicker();
 
-            //Get Countries from DB then set it to Iraq
-            cbCountry.DataSource = CountryBusinessLayer.GetAllCountries();
+            
+            //fill COuntry combobox
+            foreach (var Country in CountryDict)
+            {
+                cbCountry.Items.Add(Country.Key);
+            }
 
             var indexOfIraq = cbCountry.Items.IndexOf("Iraq");
             if (indexOfIraq != -1)
@@ -137,7 +145,7 @@ namespace DVLD
 
         private void tbPhone_KeyDown(object sender, KeyEventArgs e)
         {
-            if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Back)
+            if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Space || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
             {
                 e.SuppressKeyPress = false;
                 e.Handled = false;
@@ -157,22 +165,31 @@ namespace DVLD
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                pbProfilePic.ImageLocation =  fileDialog.FileName;
+                //Delete the Current Pbox image if exist
+                if (!string.IsNullOrEmpty( pbProfilePic.ImageLocation))
+                {
+                File.Delete(pbProfilePic.ImageLocation);
+                }
 
                 //make remove label visible
                 lblRemove.Visible = true;
 
+                var newGuid = Guid.NewGuid().ToString();
                 //copy the image for DVLV FOLDER
                 if (Directory.Exists(@"C:\DVLD IMAGES\"))
                 {
-                File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\"+Guid.NewGuid()+".jpg",overwrite:true);
+                File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\"+ newGuid+".jpg",overwrite:true);
+                    
                 }
                 else
                 {
                     Directory.CreateDirectory(@"C:\DVLD IMAGES\");
                     File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\" + Guid.NewGuid() + ".jpg", overwrite: true);
                 }
+
+                pbProfilePic.ImageLocation = @"C:\DVLD IMAGES\" + newGuid + ".jpg";
             }
+
         }
 
         private void radbtnMale_CheckedChanged(object sender, EventArgs e)
@@ -195,10 +212,46 @@ namespace DVLD
         private void lblRemove_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             lblRemove.Visible = false;
-            pbProfilePic.ImageLocation = null;
 
             pbProfilePic.Image = (radbtnMale.Checked) ? Resources.User_Male: Resources.Female_User;
+
+            //delete it from file
+            File.Delete(pbProfilePic.ImageLocation);
+
+            pbProfilePic.ImageLocation = null;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Form ParentForm = this.FindForm();
+
+            if (ParentForm != null)
+            {
+                ParentForm.Close();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //save the Result
+            //check if required controls filled
+            //if ()
+            //{
+
+            //}
+            //else
+            //{
+            //    //save
+            //}
+            short gender;
+            gender = (radbtnMale.Checked) ? (short)0 : (short)1;
+
+            _PersonID = PeopleBusinessLayer.SavePerson(tbFirstName.Text, tbLastName.Text, tbThirdName.Text, tbLastName.Text, tbNationalNo.Text, dtpDateOfBirth.Value, gender, tbPhone.Text, tbEmail.Text, CountryDict[cbCountry.Text], tbAddress.Text, pbProfilePic.ImageLocation);
             
+            if (_PersonID != -1)
+            {
+                lblPersonID2.Text = _PersonID.ToString();
+            }
         }
     }
 }
