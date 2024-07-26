@@ -12,14 +12,19 @@ namespace DVLD
     public partial class uctrlAddPerson : UserControl
     {
         int _PersonID = -1;
+        enum ctrlMode { Add = 1, Update = 2};
+        ctrlMode _ctrlMode = ctrlMode.Add;
 
         //Get Countries from DB 
         Dictionary<string, int> CountryDict = CountryBusinessLayer.GetAllCountries();
 
-        public uctrlAddPerson()
+        public uctrlAddPerson(int PersonID = -1)
         {
-            InitializeComponent();
 
+            InitializeComponent();
+            _PersonID = PersonID;
+
+            _ctrlMode = (_PersonID ==  -1) ? ctrlMode.Add : ctrlMode.Update;
         }
 
         private void ValidateDateTimePicker()
@@ -231,20 +236,31 @@ namespace DVLD
             }
         }
 
+        private bool isEveryRequiredFieldFilled()
+        {
+            List<TextBox> list = new List<TextBox>
+            { tbFirstName,tbSecondName,tbThirdName,tbLastName,tbNationalNo,tbPhone,tbAddress};
+            bool Result = true;
+
+            foreach (TextBox txt in list)
+            {
+                if (string.IsNullOrEmpty(txt.Text))
+                {
+                    errorProvider1.SetError(txt, "this Field Can't Be Empty!");
+                    Result = false;
+                }
+
+            }
+            return Result;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //save the Result
-            //check if required controls filled
-            //if ()
-            //{
+            if (!isEveryRequiredFieldFilled())
+            {
+                return;
+            }
 
-            //}
-            //else
-            //{
-            //    //save
-            //}
-            short gender;
-            gender = (radbtnMale.Checked) ? (short)0 : (short)1;
 
 
             //Before Saving Person Save Update ImageLocation And Save IT in ImgDir
@@ -267,15 +283,22 @@ namespace DVLD
                 pbProfilePic.ImageLocation = newLocation;
             }
 
-            //Save
-            _PersonID = PeopleBusinessLayer.SavePerson(tbFirstName.Text, tbLastName.Text, tbThirdName.Text, tbLastName.Text, tbNationalNo.Text, dtpDateOfBirth.Value, gender, tbPhone.Text, tbEmail.Text, CountryDict[cbCountry.Text], tbAddress.Text, pbProfilePic.ImageLocation);
-            
-            if (_PersonID != -1)
+            short gender;
+            gender = (radbtnMale.Checked) ? (short)0 : (short)1;
+
+            if (_ctrlMode == ctrlMode.Add)
             {
+                //Save
+                if ((_PersonID = PeopleBusinessLayer.SavePerson(tbFirstName.Text, tbLastName.Text, tbThirdName.Text, tbLastName.Text, tbNationalNo.Text, dtpDateOfBirth.Value, gender, tbPhone.Text, tbEmail.Text, CountryDict[cbCountry.Text], tbAddress.Text, pbProfilePic.ImageLocation)) != -1)
+                {
                 lblPersonID2.Text = _PersonID.ToString();
+                _ctrlMode = ctrlMode.Update;    
+                }
+                
                 
                 
             }
+            
         }
     }
 }

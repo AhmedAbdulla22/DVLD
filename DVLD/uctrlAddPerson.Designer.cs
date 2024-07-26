@@ -169,6 +169,8 @@
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkRate = 100;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
             // label6
@@ -189,6 +191,7 @@
             this.tbPhone.Size = new System.Drawing.Size(182, 26);
             this.tbPhone.TabIndex = 19;
             this.tbPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPhone_KeyDown);
+            this.tbPhone.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateBoxes);
             // 
             // tbEmail
             // 
@@ -261,7 +264,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(939, 409);
+            this.groupBox1.Size = new System.Drawing.Size(968, 409);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             // 
@@ -472,7 +475,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "uctrlAddPerson";
-            this.Size = new System.Drawing.Size(999, 545);
+            this.Size = new System.Drawing.Size(1021, 545);
             this.Load += new System.EventHandler(this.uctrlAddPerson_Load);
             this.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateBoxes);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
