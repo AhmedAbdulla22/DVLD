@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using DVLD.PeopleForm;
 
 namespace DVLD
 {
@@ -37,6 +38,11 @@ namespace DVLD
             this.Close();
         }
 
-        
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+            frmAddPerson frm = new frmAddPerson();
+            frm.ShowDialog();
+            
+        }
     }
 }

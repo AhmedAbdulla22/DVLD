@@ -95,6 +95,7 @@
             this.btnAddPerson.Size = new System.Drawing.Size(60, 61);
             this.btnAddPerson.TabIndex = 5;
             this.btnAddPerson.UseVisualStyleBackColor = false;
+            this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
             // pictureBox1
             // 
@@ -119,6 +120,7 @@
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmPeople";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People";
             this.Load += new System.EventHandler(this.frmPeople_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();

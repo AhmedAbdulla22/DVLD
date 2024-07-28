@@ -58,6 +58,12 @@
     <Compile Include="PeopleForm\AddPerson.Designer.cs">
       <DependentUpon>AddPerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="PeopleForm\frmAddPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeopleForm\frmAddPerson.Designer.cs">
+      <DependentUpon>frmAddPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="PeopleForm\PeopleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Utilites.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleForm\frmAddPerson.resx">
+      <DependentUpon>frmAddPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PeopleForm\PeopleForm.resx">
       <DependentUpon>PeopleForm.cs</DependentUpon>

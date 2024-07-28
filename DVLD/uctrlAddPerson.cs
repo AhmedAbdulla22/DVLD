@@ -11,20 +11,36 @@ namespace DVLD
 {
     public partial class uctrlAddPerson : UserControl
     {
-        int _PersonID = -1;
-        enum ctrlMode { Add = 1, Update = 2};
-        ctrlMode _ctrlMode = ctrlMode.Add;
 
         //Get Countries from DB 
         Dictionary<string, int> CountryDict = CountryBusinessLayer.GetAllCountries();
+        //Properties
+        //public string FirstName { get { return tbFirstName.Text; } }
+        //public string SecondName { get { return tbSecondName.Text; }  }
 
-        public uctrlAddPerson(int PersonID = -1)
+        //public string ThirdName { get { return tbThirdName.Text; }  }
+        //public string LastName { get { return tbLastName.Text; }  }
+        //public string NationalNo { get { return tbNationalNo.Text; } }
+        //public DateTime DateOfBirth { get { return dtpDateOfBirth.Value; }  }
+        //public string Phone { get { return tbPhone.Text; } }
+        //public string Address { get { return tbAddress.Text; } }
+        //public string Email { get { return tbEmail.Text; } }
+        //public int CountryID { get { return CountryDict[cbCountry.Text]; } }
+        private int _PersonID = -1;
+        public int PersonID { get { return _PersonID; } }
+
+        //public short GenderID { get { return (radbtnMale.Checked) ? (short)0 : (short)1; } }
+        //public string pbPath { get { return pbProfilePic.ImageLocation; } }
+
+
+
+
+
+
+
+        public uctrlAddPerson()
         {
-
             InitializeComponent();
-            _PersonID = PersonID;
-
-            _ctrlMode = (_PersonID ==  -1) ? ctrlMode.Add : ctrlMode.Update;
         }
 
         private void ValidateDateTimePicker()
@@ -138,8 +154,6 @@ namespace DVLD
             //resize icons
             radbtnMale.Image = Utilites.ResizeImage(radbtnMale.Image, 15, 15);
             radbtnFemale.Image = Utilites.ResizeImage(radbtnFemale.Image, 15, 15);
-            btnClose.Image = Utilites.ResizeImage(btnClose.Image, 20, 20);
-            btnSave.Image = Utilites.ResizeImage(btnSave.Image, 20, 20);
 
 
 
@@ -226,17 +240,8 @@ namespace DVLD
             pbProfilePic.ImageLocation = null;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Form ParentForm = this.FindForm();
 
-            if (ParentForm != null)
-            {
-                ParentForm.Close();
-            }
-        }
-
-        private bool isEveryRequiredFieldFilled()
+        public bool isEveryRequiredFieldFilled()
         {
             List<TextBox> list = new List<TextBox>
             { tbFirstName,tbSecondName,tbThirdName,tbLastName,tbNationalNo,tbPhone,tbAddress};
@@ -254,7 +259,7 @@ namespace DVLD
             return Result;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void Save()
         {
             if (!isEveryRequiredFieldFilled())
             {
@@ -271,7 +276,7 @@ namespace DVLD
                 //copy the image for DVLV FOLDER
                 if (Directory.Exists(@"C:\DVLD IMAGES\"))
                 {
-                    File.Copy(pbProfilePic.ImageLocation,newLocation , overwrite: true);
+                    File.Copy(pbProfilePic.ImageLocation, newLocation, overwrite: true);
 
                 }
                 else
@@ -286,19 +291,18 @@ namespace DVLD
             short gender;
             gender = (radbtnMale.Checked) ? (short)0 : (short)1;
 
-            if (_ctrlMode == ctrlMode.Add)
-            {
-                //Save
-                if ((_PersonID = PeopleBusinessLayer.SavePerson(tbFirstName.Text, tbLastName.Text, tbThirdName.Text, tbLastName.Text, tbNationalNo.Text, dtpDateOfBirth.Value, gender, tbPhone.Text, tbEmail.Text, CountryDict[cbCountry.Text], tbAddress.Text, pbProfilePic.ImageLocation)) != -1)
-                {
-                lblPersonID2.Text = _PersonID.ToString();
-                _ctrlMode = ctrlMode.Update;    
-                }
-                
-                
-                
-            }
+            
+            
+                ////Save
+                //if ((_PersonID = PeopleBusinessLayer.SavePerson(tbFirstName.Text, tbLastName.Text, tbThirdName.Text, tbLastName.Text, tbNationalNo.Text, dtpDateOfBirth.Value, gender, tbPhone.Text, tbEmail.Text, CountryDict[cbCountry.Text], tbAddress.Text, pbProfilePic.ImageLocation)) != -1)
+                //{
+
+                //}
+             
+
             
         }
+
+        
     }
 }
