@@ -97,7 +97,7 @@ namespace DataAccessLayer
                 return isNationalNumberExist;
         }
 
-        public static int SavePerson(ref string fname, ref string Sname, ref string Tname, ref string Lname, ref string NationalNo, ref DateTime DateOfBirth, ref short gender, ref string Phone, ref string Email, ref int CountryID, ref string Address,ref string ImagePath)
+        public static int AddNewPerson( string fname,  string Sname,  string Tname,  string Lname,  string NationalNo,  DateTime DateOfBirth,  short gender,  string Phone,  string Email,  int CountryID,  string Address, string ImagePath)
         {
             int newPersonID = -1;
 

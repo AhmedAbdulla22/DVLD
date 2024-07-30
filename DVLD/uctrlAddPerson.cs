@@ -14,23 +14,24 @@ namespace DVLD
 
         //Get Countries from DB 
         Dictionary<string, int> CountryDict = CountryBusinessLayer.GetAllCountries();
-        //Properties
-        //public string FirstName { get { return tbFirstName.Text; } }
-        //public string SecondName { get { return tbSecondName.Text; }  }
+        
+        public string FirstName { get { return tbFirstName.Text; } set {tbFirstName.Text = value ; } }
+        public string SecondName { get { return tbSecondName.Text; } set { tbSecondName.Text = value; } }
 
-        //public string ThirdName { get { return tbThirdName.Text; }  }
-        //public string LastName { get { return tbLastName.Text; }  }
-        //public string NationalNo { get { return tbNationalNo.Text; } }
-        //public DateTime DateOfBirth { get { return dtpDateOfBirth.Value; }  }
-        //public string Phone { get { return tbPhone.Text; } }
-        //public string Address { get { return tbAddress.Text; } }
-        //public string Email { get { return tbEmail.Text; } }
-        //public int CountryID { get { return CountryDict[cbCountry.Text]; } }
-        private int _PersonID = -1;
-        public int PersonID { get { return _PersonID; } }
+        public string ThirdName { get { return tbThirdName.Text; } set { tbThirdName.Text = value; } }
+        public string LastName { get { return tbLastName.Text; } set { tbLastName.Text = value; } }
+        public string NationalNo { get { return tbNationalNo.Text; } set { tbNationalNo.Text = value; } }
+        public DateTime DateOfBirth { get { return dtpDateOfBirth.Value; } set { dtpDateOfBirth.Value = value; } }
+        public string Phone { get { return tbPhone.Text; } set { tbPhone.Text = value; } }
+        public string Address { get { return tbAddress.Text; } set { tbAddress.Text = value; } }
+        public string Email { get { return tbEmail.Text; } set { tbEmail.Text = value; } }
+        public int CountryID { get { return CountryDict[cbCountry.Text]; } set { CountryID = value; } }
+        
+        public int PersonID { get { return PersonID; } set { PersonID = value; } }
 
-        //public short GenderID { get { return (radbtnMale.Checked) ? (short)0 : (short)1; } }
-        //public string pbPath { get { return pbProfilePic.ImageLocation; } }
+        public short GenderID { get { return (radbtnMale.Checked) ? (short)0 : (short)1; } 
+            set { if (value == 0) { radbtnMale.Checked = true; } else {radbtnFemale.Checked = true;}} } 
+        public string pbPath { get { return pbProfilePic.ImageLocation; } set { pbProfilePic.ImageLocation = value; } }
 
 
 
@@ -78,7 +79,7 @@ namespace DVLD
                 return;
             }
 
-            if (PeopleBusinessLayer.isNationalNumberExist(tbNationalNo.Text))
+            if (clsPerson.isNationalNumberExist(tbNationalNo.Text))
             {
                 //prevent losing focus
                 e.Cancel = true;
@@ -136,12 +137,12 @@ namespace DVLD
         {
             ValidateDateTimePicker();
 
-            
+
             //fill COuntry combobox
             foreach (var Country in CountryDict)
             {
                 cbCountry.Items.Add(Country.Key);
-            }
+            }            
 
             var indexOfIraq = cbCountry.Items.IndexOf("Iraq");
             if (indexOfIraq != -1)
@@ -261,10 +262,10 @@ namespace DVLD
 
         private void Save()
         {
-            if (!isEveryRequiredFieldFilled())
-            {
-                return;
-            }
+            //if (!isEveryRequiredFieldFilled())
+            //{
+            //    return;
+            //}
 
 
 
