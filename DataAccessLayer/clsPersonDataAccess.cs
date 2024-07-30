@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,9 +7,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DataAccessLayer
 {
-    
-    
-    public static class DataAccessPeopleLayer
+
+
+    public static class ClsPersonDataAccess
     {
         private static void safeParameterAdding<T>(SqlCommand sqlCommand,string parameterName, T value)
         {
@@ -65,6 +64,71 @@ namespace DataAccessLayer
                 return dataTable;
         }
 
+        public static bool GetPersonInfoByID(int PersonID,ref string FirstName,ref string SecondName,ref string ThirdName,ref string LastName,ref string NationalNo,ref DateTime DateOfBirth,ref short gender,ref string Phone,ref string Email,ref int CountryID,ref string Address,ref string ImagePath)
+        {
+            bool isExist = false;
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM Person Where PersonID = @PersonID;";
+
+                using (var sqlCommand = new SqlCommand(query,sqlConnection))
+                {
+                    safeParameterAdding<int>(sqlCommand,"@PersonID",PersonID);
+
+                    try 
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if(reader.Read())
+                            {
+                                FirstName = (string)reader["FirstName"];
+                                SecondName = (string)reader["SecondName"];
+                                ThirdName = (string)reader["ThirdName"];
+                                LastName = (string)reader["LastName"];
+                                Phone = (string)reader["Phone"];
+                                Address = (string)reader["LastName"];
+                                NationalNo = (string)reader["NationalNo"];
+
+                                DateOfBirth = (DateTime)reader["DateOfBirth"];
+                                CountryID = (int)reader["NationalityCountryID"];
+                                gender = (short)reader["Gendor"];
+
+                                if (reader["Email"] != DBNull.Value)
+                                {
+                                    Email = (string)reader["Email"];
+                                }
+                                else
+                                {
+                                    Email = "";
+                                }
+
+                                if (reader["ImagePath"] != DBNull.Value)
+                                {
+                                    ImagePath = (string)reader["ImagePath"];
+                                }
+                                else
+                                {
+                                    ImagePath = "";
+                                }
+
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+            return isExist;
+        }
         public static bool isNationalNumberExist(string NationalNumber)
         {
             bool isNationalNumberExist = false;
@@ -170,7 +234,7 @@ SELECT Scope_Identity();";
             return newPersonID;
         }
         
-        public static bool UpdatePerson(int PersonID,string fname, string Sname, string Tname, string Lname, string NationalNo, DateTime DateOfBirth, short gender, string Phone, string Email, int CountryID, string Address, string ImagePath)
+        public static bool UpdatePerson(int PersonID,string FirstName, string SecondName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short gender, string Phone, string Email, int CountryID, string Address, string ImagePath)
         {
             bool isUpdated = false;
 
@@ -196,10 +260,10 @@ SELECT Scope_Identity();";
                     
                     //Safe Paremeter Adding
                     safeParameterAdding<string>(sqlCommand, "@NationalNo", NationalNo);
-                    safeParameterAdding<string>(sqlCommand,"@FirstName", fname);
-                    safeParameterAdding<string>(sqlCommand,"@SecondName", Sname);
-                    safeParameterAdding<string>(sqlCommand,"@ThirdName", Tname);
-                    safeParameterAdding<string>(sqlCommand,"@LastName", Lname);
+                    safeParameterAdding<string>(sqlCommand,"@FirstName", FirstName);
+                    safeParameterAdding<string>(sqlCommand,"@SecondName", SecondName);
+                    safeParameterAdding<string>(sqlCommand,"@ThirdName", ThirdName);
+                    safeParameterAdding<string>(sqlCommand,"@LastName", LastName);
                     safeParameterAdding<string>(sqlCommand,"@Phone", Phone);
                     safeParameterAdding<string>(sqlCommand,"@Address", Address);
                     safeParameterAdding<string>(sqlCommand,"@Email", Email);
@@ -229,47 +293,6 @@ SELECT Scope_Identity();";
             }
 
                 return isUpdated;
-        }
-    }
-
-    
-    public static class CountryDataAccessLayer
-    {
-        public static Dictionary<string,int> GetCountryList()
-        {
-            var DictMap = new Dictionary<string,int>();
-
-            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
-            {
-                 
-
-                var query = "Select CountryName,CountryID From Countries;";
-
-                using ( SqlCommand sqlCommand = new SqlCommand( query, sqlConnection))
-                {
-                    try
-                    {
-                        sqlConnection.Open();
-
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                DictMap.Add((string)reader["CountryName"], (int)reader["CountryID"]);
-                            }
-                        }
-
-                        
-                    }
-                    catch(Exception ex) 
-                    {
-                            MessageBox.Show(ex.Message);
-                    }
-                    
-                }
-
-                return DictMap;
-            }
         }
     }
 }

@@ -3,11 +3,11 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public static class CountryBusinessLayer
+    public static class clsCountry
     {
         public static Dictionary<string, int> GetAllCountries()
         {
-            return CountryDataAccessLayer.GetCountryList();
+            return ClsCountryDataAccess.GetCountryList();
         }
     }
 }

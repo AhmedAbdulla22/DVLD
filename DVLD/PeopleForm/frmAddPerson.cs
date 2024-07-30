@@ -17,6 +17,7 @@ namespace DVLD.PeopleForm
         int _PersonID = -1;
         enum ctrlMode { Add = 1, Update = 2 };
         ctrlMode _ctrlMode = ctrlMode.Add;
+        clsPerson _Person;
 
         public frmAddPerson(int PersonID = -1)
         {
@@ -24,10 +25,12 @@ namespace DVLD.PeopleForm
 
             if((_PersonID = PersonID) == -1)
             {
+                _Person = new clsPerson();
                 _ctrlMode = ctrlMode.Add;
             }
             else
             {
+                _Person = new clsPerson();
                 _ctrlMode = ctrlMode.Update;
             }
 

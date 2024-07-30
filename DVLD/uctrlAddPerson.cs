@@ -13,7 +13,7 @@ namespace DVLD
     {
 
         //Get Countries from DB 
-        Dictionary<string, int> CountryDict = CountryBusinessLayer.GetAllCountries();
+        Dictionary<string, int> CountryDict = clsCountry.GetAllCountries();
         
         public string FirstName { get { return tbFirstName.Text; } set {tbFirstName.Text = value ; } }
         public string SecondName { get { return tbSecondName.Text; } set { tbSecondName.Text = value; } }

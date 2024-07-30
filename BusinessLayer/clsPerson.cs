@@ -29,7 +29,7 @@ namespace BusinessLayer
         mode enMode;    
 
         //constructors
-        clsPerson()
+        public clsPerson()
         {
             PersonID = -1;
             FirstName = "";
@@ -46,7 +46,7 @@ namespace BusinessLayer
             enMode = mode.Add;
         }
 
-        clsPerson(int CountryID,string FirstName,string SecondName,string ThirdName,string LastName,short Gender,DateTime DateOfBirth,string Phone,string Email,string Address,string ImagePath)
+        public clsPerson(int CountryID,string FirstName,string SecondName,string ThirdName,string LastName,short Gender,DateTime DateOfBirth,string Phone,string Email,string Address,string ImagePath)
         {
             this.PersonID = PersonID;
             this.FirstName = FirstName;
@@ -65,7 +65,7 @@ namespace BusinessLayer
 
         private bool _AddNewPerson()
         {
-            this.PersonID = DataAccessPeopleLayer.AddNewPerson(this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Phone, this.Email, this.CountryID, this.Address, this.ImagePath);
+            this.PersonID = ClsPersonDataAccess.AddNewPerson(this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Phone, this.Email, this.CountryID, this.Address, this.ImagePath);
 
             return (this.PersonID != -1);
         }
@@ -74,7 +74,7 @@ namespace BusinessLayer
         {
             //Update Person
 
-            return DataAccessPeopleLayer.UpdatePerson(this.PersonID,this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Phone, this.Email, this.CountryID, this.Address, this.ImagePath);
+            return ClsPersonDataAccess.UpdatePerson(this.PersonID,this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Phone, this.Email, this.CountryID, this.Address, this.ImagePath);
         }
 
 
@@ -108,13 +108,33 @@ namespace BusinessLayer
         public static DataTable getAllPeople()
         {
 
-            return DataAccessPeopleLayer.getAllPeople();
+            return ClsPersonDataAccess.getAllPeople();
         }
 
         public static bool isNationalNumberExist(string nationalNumber) 
         {
-            return DataAccessPeopleLayer.isNationalNumberExist(nationalNumber);
+            return ClsPersonDataAccess.isNationalNumberExist(nationalNumber);
         }
 
+        public static clsPerson Find(int PersonID)
+        {
+            string firstName = "", secondName = "", thirdName= "", lastName= "", address= "", imagePath= "", email= "", nationalNo= "", Phone = "";
+            DateTime dateOfBirth = DateTime.UtcNow;
+            int countryID = -1;
+            short gender = -1;
+
+            //if 
+            //get person by id 
+            if (ClsPersonDataAccess.GetPersonInfoByID(PersonID,ref firstName,ref secondName,ref thirdName,ref lastName,ref nationalNo,ref dateOfBirth,ref gender,ref Phone,ref email,ref countryID,ref address,ref imagePath))
+            {
+                return new clsPerson(PersonID,firstName,secondName,thirdName,lastName,gender,dateOfBirth,Phone,email,address,imagePath);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        
     }
 }

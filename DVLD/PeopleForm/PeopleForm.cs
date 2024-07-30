@@ -23,7 +23,7 @@ namespace DVLD
 
             button2.Image = Utilites.ResizeImage(Properties.Resources.Close, 20, 20);
 
-            DataTable dt = PeopleBusinessLayer.getAllPeople();
+            DataTable dt = clsPerson.getAllPeople();
             dgvPeople.DataSource = dt;
         }
 
