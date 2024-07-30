@@ -76,7 +76,7 @@ namespace DVLD.PeopleForm
                 var newLocation = @"C:\DVLD IMAGES\" + newGuid + ".png";
                 uctrlAddPerson1.pbPath = newLocation;
 
-                if ((_PersonID = PeopleBusinessLayer.SavePerson(uctrlAddPerson1.FirstName, uctrlAddPerson1.SecondName, uctrlAddPerson1.ThirdName, uctrlAddPerson1.LastName, uctrlAddPerson1.NationalNo, uctrlAddPerson1.DateOfBirth, uctrlAddPerson1.GenderID, uctrlAddPerson1.Phone, uctrlAddPerson1.Email, uctrlAddPerson1.CountryID, uctrlAddPerson1.Address, uctrlAddPerson1.pbPath)) != -1)
+                if ((_PersonID = clsPerson.SavePerson(uctrlAddPerson1.FirstName, uctrlAddPerson1.SecondName, uctrlAddPerson1.ThirdName, uctrlAddPerson1.LastName, uctrlAddPerson1.NationalNo, uctrlAddPerson1.DateOfBirth, uctrlAddPerson1.GenderID, uctrlAddPerson1.Phone, uctrlAddPerson1.Email, uctrlAddPerson1.CountryID, uctrlAddPerson1.Address, uctrlAddPerson1.pbPath)) != -1)
                 {
                     if (uctrlAddPerson1.pbPath != null)
                     {

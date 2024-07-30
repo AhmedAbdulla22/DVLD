@@ -73,16 +73,14 @@ namespace BusinessLayer
         private bool _Update()
         {
             //Update Person
-            //this.PersonID = DataAccessPeopleLayer.AddNewPerson(this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Phone, this.Email, this.CountryID, this.Address, this.ImagePath);
 
-
-            return (this.PersonID != -1);
+            return DataAccessPeopleLayer.UpdatePerson(this.PersonID,this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Phone, this.Email, this.CountryID, this.Address, this.ImagePath);
         }
 
 
         public bool Save()
         {
-            switch(mode)
+            switch(enMode)
             {
                 case mode.Update:
                     {

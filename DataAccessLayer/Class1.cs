@@ -169,8 +169,70 @@ SELECT Scope_Identity();";
             }
             return newPersonID;
         }
+        
+        public static bool UpdatePerson(int PersonID,string fname, string Sname, string Tname, string Lname, string NationalNo, DateTime DateOfBirth, short gender, string Phone, string Email, int CountryID, string Address, string ImagePath)
+        {
+            bool isUpdated = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"Update People
+                              Set NationalNo = @NationalNo
+                               ,FirstName = @FirstName
+                               ,SecondName = @SecondName
+                               ,ThirdName = @ThirdName
+                               ,LastName = @LastName
+                               ,DateOfBirth = @DateOfBirth
+                               ,Gendor = @Gendor
+                               ,Address = @Address
+                               ,Phone = @Phone
+                               ,Email = @Email
+                               ,NationalityCountryID = @NationalityCountryID
+                               ,ImagePath = @ImagePath
+                                Where PersonID = @PersonID;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    
+                    //Safe Paremeter Adding
+                    safeParameterAdding<string>(sqlCommand, "@NationalNo", NationalNo);
+                    safeParameterAdding<string>(sqlCommand,"@FirstName", fname);
+                    safeParameterAdding<string>(sqlCommand,"@SecondName", Sname);
+                    safeParameterAdding<string>(sqlCommand,"@ThirdName", Tname);
+                    safeParameterAdding<string>(sqlCommand,"@LastName", Lname);
+                    safeParameterAdding<string>(sqlCommand,"@Phone", Phone);
+                    safeParameterAdding<string>(sqlCommand,"@Address", Address);
+                    safeParameterAdding<string>(sqlCommand,"@Email", Email);
+                    safeParameterAdding<string>(sqlCommand,"@ImagePath", ImagePath);
+                    safeParameterAdding<short>(sqlCommand,"@Gendor", gender);
+                    safeParameterAdding<int>(sqlCommand,"@PersonID", PersonID);
+                    safeParameterAdding<int>(sqlCommand, "@NationalityCountryID", CountryID);
+                    safeParameterAdding<DateTime>(sqlCommand, "@DateOfBirth", DateOfBirth);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isUpdated = true;
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+                return isUpdated;
+        }
     }
 
+    
     public static class CountryDataAccessLayer
     {
         public static Dictionary<string,int> GetCountryList()
