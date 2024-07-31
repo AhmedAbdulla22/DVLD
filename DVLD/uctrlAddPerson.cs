@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DVLD
 {
@@ -25,7 +26,20 @@ namespace DVLD
         public string Phone { get { return tbPhone.Text; } set { tbPhone.Text = value; } }
         public string Address { get { return tbAddress.Text; } set { tbAddress.Text = value; } }
         public string Email { get { return tbEmail.Text; } set { tbEmail.Text = value; } }
-        public int CountryID { get { return CountryDict[cbCountry.Text]; } set { CountryID = value; } }
+        public int CountryID { get { return CountryDict[cbCountry.Text]; } 
+            set {
+                var CountryName = CountryDict.FirstOrDefault(x => x.Value == value).Key;
+
+                if (!string.IsNullOrEmpty(CountryName))
+                {
+                    cbCountry.Text = CountryName; 
+                }
+                else
+                {
+                    throw new KeyNotFoundException("The Country Does not Exist in Dictionary!");
+                }
+            } 
+        }
         
         public int PersonID { get { return PersonID; } set { PersonID = value; } }
 

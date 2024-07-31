@@ -69,7 +69,7 @@ namespace DataAccessLayer
             bool isExist = false;
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"SELECT * FROM Person Where PersonID = @PersonID;";
+                var query = @"SELECT * FROM People Where PersonID = @PersonID;";
 
                 using (var sqlCommand = new SqlCommand(query,sqlConnection))
                 {
@@ -93,7 +93,8 @@ namespace DataAccessLayer
 
                                 DateOfBirth = (DateTime)reader["DateOfBirth"];
                                 CountryID = (int)reader["NationalityCountryID"];
-                                gender = (short)reader["Gendor"];
+                                byte bytegender = (byte)reader["Gendor"];
+                                gender = (short)bytegender;
 
                                 if (reader["Email"] != DBNull.Value)
                                 {
