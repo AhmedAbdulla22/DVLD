@@ -147,6 +147,8 @@ namespace DVLD.PeopleForm
 
                     //update old image path
                     OldImagePath = NewLocation;
+
+                MessageBox.Show("Person Saved Succesfully.");
                 }
                 else
                 {

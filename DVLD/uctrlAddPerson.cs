@@ -45,7 +45,8 @@ namespace DVLD
 
         public short GenderID { get { return (radbtnMale.Checked) ? (short)0 : (short)1; } 
             set { if (value == 0) { radbtnMale.Checked = true; } else {radbtnFemale.Checked = true;}} } 
-        public string pbPath { get { return pbProfilePic.ImageLocation; } set { pbProfilePic.ImageLocation = value; } }
+        public string pbPath { get { return pbProfilePic.ImageLocation; } 
+            set { pbProfilePic.ImageLocation = value; } }
 
 
 
@@ -175,6 +176,12 @@ namespace DVLD
 
             //Invoke Events Handler
             tbNationalNo.Validating += ValidatingIsNationalNoExist;
+
+            //in Update Mode Checking if picBox not empty then let remove be visable
+            if (!string.IsNullOrEmpty(pbProfilePic.ImageLocation))
+            {
+                lblRemove.Visible = true;
+            }
         }
 
         private void tbPhone_KeyDown(object sender, KeyEventArgs e)
