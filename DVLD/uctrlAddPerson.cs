@@ -12,6 +12,7 @@ namespace DVLD
 {
     public partial class uctrlAddPerson : UserControl
     {
+        string imageDirPath = @"C:\DVLD IMAGES\";
 
         //Get Countries from DB 
         Dictionary<string, int> CountryDict = clsCountry.GetAllCountries();
@@ -303,6 +304,58 @@ namespace DVLD
             
         }
 
-        
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!isEveryRequiredFieldFilled())
+            {
+                return;
+            }
+
+
+            //getting new Location for the imagePath
+            //string OldLocation = uctrlAddPerson1.pbPath;
+            var newGuid = string.Empty;
+            var NewLocation = string.Empty;
+            var OriginalLocation = string.Empty;
+
+            if (!string.IsNullOrEmpty(pbProfilePic.ImageLocation))
+            {
+                newGuid = Guid.NewGuid().ToString();
+                NewLocation = imageDirPath + newGuid + ".png";
+                OriginalLocation = pbProfilePic.ImageLocation;
+                pbProfilePic.ImageLocation = NewLocation;
+            }
+
+            //get Informations ToThe Person
+            GetOrFillBoxes(false);
+
+
+
+
+
+
+            if (_Person.Save())
+            {
+                CopyImage(OriginalLocation, NewLocation);
+
+                if (_ctrlMode == ctrlMode.Add)
+                {
+                    _ctrlMode = ctrlMode.Update;
+                }
+
+                //update old image path
+                OldImagePath = NewLocation;
+
+                MessageBox.Show("Person Saved Succesfully.");
+            }
+            else
+            {
+                MessageBox.Show("Failed To Save Person Information!");
+            }
+
+
+
+            UpdateForm();
+        }
     }
 }

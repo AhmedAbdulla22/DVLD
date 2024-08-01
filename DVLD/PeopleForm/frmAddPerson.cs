@@ -19,7 +19,6 @@ namespace DVLD.PeopleForm
         ctrlMode _ctrlMode = ctrlMode.Add;
         clsPerson _Person;
         string OldImagePath = string.Empty;
-        string imageDirPath = @"C:\DVLD IMAGES\";
         public frmAddPerson(int PersonID = -1)
         {
             InitializeComponent();
@@ -108,56 +107,56 @@ namespace DVLD.PeopleForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!uctrlAddPerson1.isEveryRequiredFieldFilled())
-            {
-                return;
-            }
+            //if (!uctrlAddPerson1.isEveryRequiredFieldFilled())
+            //{
+            //    return;
+            //}
 
 
-            //getting new Location for the imagePath
-            //string OldLocation = uctrlAddPerson1.pbPath;
-            var newGuid = string.Empty;
-            var NewLocation = string.Empty;
-            var OriginalLocation = string.Empty;
+            ////getting new Location for the imagePath
+            ////string OldLocation = uctrlAddPerson1.pbPath;
+            //var newGuid = string.Empty;
+            //var NewLocation = string.Empty;
+            //var OriginalLocation = string.Empty;
 
-            if (!string.IsNullOrEmpty(uctrlAddPerson1.pbPath))
-            {
-            newGuid = Guid.NewGuid().ToString();
-            NewLocation = imageDirPath + newGuid + ".png";
-            OriginalLocation = uctrlAddPerson1.pbPath;
-            uctrlAddPerson1.pbPath = NewLocation;    
-            }
+            //if (!string.IsNullOrEmpty(uctrlAddPerson1.pbPath))
+            //{
+            //newGuid = Guid.NewGuid().ToString();
+            //NewLocation = imageDirPath + newGuid + ".png";
+            //OriginalLocation = uctrlAddPerson1.pbPath;
+            //uctrlAddPerson1.pbPath = NewLocation;    
+            //}
                 
-            //get Informations ToThe Person
-                GetOrFillBoxes(false);
+            ////get Informations ToThe Person
+            //    GetOrFillBoxes(false);
 
 
             
                 
 
 
-                if (_Person.Save())
-                {
-                    CopyImage(OriginalLocation,NewLocation);
+            //    if (_Person.Save())
+            //    {
+            //        CopyImage(OriginalLocation,NewLocation);
 
-                    if (_ctrlMode == ctrlMode.Add)
-                    {
-                        _ctrlMode = ctrlMode.Update;
-                    }
+            //        if (_ctrlMode == ctrlMode.Add)
+            //        {
+            //            _ctrlMode = ctrlMode.Update;
+            //        }
 
-                    //update old image path
-                    OldImagePath = NewLocation;
+            //        //update old image path
+            //        OldImagePath = NewLocation;
 
-                MessageBox.Show("Person Saved Succesfully.");
-                }
-                else
-                {
-                MessageBox.Show("Failed To Save Person Information!");  
-                }
+            //    MessageBox.Show("Person Saved Succesfully.");
+            //    }
+            //    else
+            //    {
+            //    MessageBox.Show("Failed To Save Person Information!");  
+            //    }
             
 
 
-            UpdateForm();
+            //UpdateForm();
         }
 
         private void GetOrFillBoxes(bool fillBoxes)

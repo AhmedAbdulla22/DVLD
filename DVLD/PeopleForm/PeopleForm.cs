@@ -15,6 +15,7 @@ namespace DVLD
 {
     public partial class frmPeople : Form
     {
+
         public frmPeople()
         {
             InitializeComponent();
@@ -38,9 +39,14 @@ namespace DVLD
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            frmAddPerson frm = new frmAddPerson();
-            frm.ShowDialog();
-            LoadTheDataGridView();
+            using (frmAddPerson frm = new frmAddPerson())
+            {
+                frm.ShowDialog() ;
+                
+                LoadTheDataGridView();
+                
+
+            }
         }
 
         private void LoadTheDataGridView()
