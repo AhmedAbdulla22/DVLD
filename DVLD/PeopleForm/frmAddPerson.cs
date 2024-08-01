@@ -18,7 +18,6 @@ namespace DVLD.PeopleForm
         enum ctrlMode { Add = 1, Update = 2 };
         ctrlMode _ctrlMode = ctrlMode.Add;
         clsPerson _Person;
-        string OldImagePath = string.Empty;
         public frmAddPerson(int PersonID = -1)
         {
             InitializeComponent();
@@ -183,19 +182,7 @@ namespace DVLD.PeopleForm
             }
             else
             {
-                //getting boxValues to Person
-                _Person.FirstName = uctrlAddPerson1.FirstName;
-                _Person.SecondName = uctrlAddPerson1.SecondName;
-                _Person.ThirdName = uctrlAddPerson1.ThirdName;
-                _Person.LastName = uctrlAddPerson1.LastName;
-                _Person.Gender = uctrlAddPerson1.GenderID;
-                _Person.Phone = uctrlAddPerson1.Phone;
-                _Person.DateOfBirth = uctrlAddPerson1.DateOfBirth;
-                _Person.ImagePath = uctrlAddPerson1.pbPath;
-                _Person.NationalNo = uctrlAddPerson1.NationalNo;
-                _Person.Address = uctrlAddPerson1.Address;
-                _Person.Email = uctrlAddPerson1.Email;
-                _Person.CountryID = uctrlAddPerson1.CountryID;
+                
             }
         }
 

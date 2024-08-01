@@ -7,17 +7,26 @@ using System.Windows.Forms;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net;
 
 namespace DVLD
 {
     public partial class uctrlAddPerson : UserControl
     {
         string imageDirPath = @"C:\DVLD IMAGES\";
+        string OldImagePath = string.Empty;
+
 
         //Get Countries from DB 
         Dictionary<string, int> CountryDict = clsCountry.GetAllCountries();
-        
-        public string FirstName { get { return tbFirstName.Text; } set {tbFirstName.Text = value ; } }
+
+        clsPerson _Person;
+
+        enum ctrlMode { Add = 1, Update = 2 };
+        ctrlMode _ctrlMode;
+
+        public string FirstName { get { return tbFirstName.Text; } set { tbFirstName.Text = value; } }
         public string SecondName { get { return tbSecondName.Text; } set { tbSecondName.Text = value; } }
 
         public string ThirdName { get { return tbThirdName.Text; } set { tbThirdName.Text = value; } }
@@ -27,30 +36,36 @@ namespace DVLD
         public string Phone { get { return tbPhone.Text; } set { tbPhone.Text = value; } }
         public string Address { get { return tbAddress.Text; } set { tbAddress.Text = value; } }
         public string Email { get { return tbEmail.Text; } set { tbEmail.Text = value; } }
-        public int CountryID { get { return CountryDict[cbCountry.Text]; } 
-            set {
+        public int CountryID
+        {
+            get { return CountryDict[cbCountry.Text]; }
+            set
+            {
                 var CountryName = CountryDict.FirstOrDefault(x => x.Value == value).Key;
 
                 if (!string.IsNullOrEmpty(CountryName))
                 {
-                    cbCountry.Text = CountryName; 
+                    cbCountry.Text = CountryName;
                 }
                 else
                 {
                     throw new KeyNotFoundException("The Country Does not Exist in Dictionary!");
                 }
-            } 
+            }
         }
-        
+
         public int PersonID { get { return PersonID; } set { PersonID = value; } }
 
-        public short GenderID { get { return (radbtnMale.Checked) ? (short)0 : (short)1; } 
-            set { if (value == 0) { radbtnMale.Checked = true; } else {radbtnFemale.Checked = true;}} } 
-        public string pbPath { get { return pbProfilePic.ImageLocation; } 
-            set { pbProfilePic.ImageLocation = value; } }
-
-
-
+        public short GenderID
+        {
+            get { return (radbtnMale.Checked) ? (short)0 : (short)1; }
+            set { if (value == 0) { radbtnMale.Checked = true; } else { radbtnFemale.Checked = true; } }
+        }
+        public string pbPath
+        {
+            get { return pbProfilePic.ImageLocation; }
+            set { pbProfilePic.ImageLocation = value; }
+        }
 
 
 
@@ -58,6 +73,39 @@ namespace DVLD
         public uctrlAddPerson()
         {
             InitializeComponent();
+
+            ValidateDateTimePicker();
+
+
+            //fill COuntry combobox
+            foreach (var Country in CountryDict)
+            {
+                cbCountry.Items.Add(Country.Key);
+            }
+            
+            var indexOfIraq = cbCountry.Items.IndexOf("Iraq");
+            if (indexOfIraq != -1)
+            {
+                cbCountry.SelectedItem = cbCountry.Items[cbCountry.Items.IndexOf("Iraq")];
+            }
+
+
+
+            //resize icons
+            radbtnMale.Image = Utilites.ResizeImage(radbtnMale.Image, 15, 15);
+            radbtnFemale.Image = Utilites.ResizeImage(radbtnFemale.Image, 15, 15);
+
+
+
+
+            //Invoke Events Handler
+            tbNationalNo.Validating += ValidatingIsNationalNoExist;
+
+            //in Update Mode Checking if picBox not empty then let remove be visable
+            if (!string.IsNullOrEmpty(pbProfilePic.ImageLocation))
+            {
+                lblRemove.Visible = true;
+            }
         }
 
         private void ValidateDateTimePicker()
@@ -147,41 +195,48 @@ namespace DVLD
         }
 
 
-
-
+        private void GetValuesToPerson()
+        {
+            //getting boxValues to Person
+            _Person.FirstName = FirstName;
+            _Person.SecondName = SecondName;
+            _Person.ThirdName = ThirdName;
+            _Person.LastName = LastName;
+            _Person.Gender = GenderID;
+            _Person.Phone = Phone;
+            _Person.DateOfBirth = DateOfBirth;
+            _Person.ImagePath = pbPath;
+            _Person.NationalNo = NationalNo;
+            _Person.Address = Address;
+            _Person.Email = Email;
+            _Person.CountryID = CountryID;
+        }
+        private void GetValuesToBoxes()
+        {
+            FirstName = _Person.FirstName;
+            SecondName = _Person.SecondName;
+            ThirdName = _Person.ThirdName;
+            LastName = _Person.LastName;
+            GenderID = _Person.Gender;
+            Phone = _Person.Phone;
+            DateOfBirth = _Person.DateOfBirth;
+            NationalNo = _Person.NationalNo;
+            Address = _Person.Address;
+            Email = _Person.Email;
+            CountryID = _Person.CountryID;
+            //fill both pictureBox and oldImagePath
+            pbPath = OldImagePath = _Person.ImagePath;
+        }
         private void uctrlAddPerson_Load(object sender, EventArgs e)
         {
-            ValidateDateTimePicker();
 
-
-            //fill COuntry combobox
-            foreach (var Country in CountryDict)
+            if (PersonID == -1)
             {
-                cbCountry.Items.Add(Country.Key);
-            }            
-
-            var indexOfIraq = cbCountry.Items.IndexOf("Iraq");
-            if (indexOfIraq != -1)
-            {
-            cbCountry.SelectedItem = cbCountry.Items[cbCountry.Items.IndexOf("Iraq")];
+                _ctrlMode = ctrlMode.Add;
             }
-            
-  
-
-            //resize icons
-            radbtnMale.Image = Utilites.ResizeImage(radbtnMale.Image, 15, 15);
-            radbtnFemale.Image = Utilites.ResizeImage(radbtnFemale.Image, 15, 15);
-
-
-
-
-            //Invoke Events Handler
-            tbNationalNo.Validating += ValidatingIsNationalNoExist;
-
-            //in Update Mode Checking if picBox not empty then let remove be visable
-            if (!string.IsNullOrEmpty(pbProfilePic.ImageLocation))
+            else
             {
-                lblRemove.Visible = true;
+                _ctrlMode = ctrlMode.Update;
             }
         }
 
