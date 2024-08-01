@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,8 @@ namespace DVLD.PeopleForm
         enum ctrlMode { Add = 1, Update = 2 };
         ctrlMode _ctrlMode = ctrlMode.Add;
         clsPerson _Person;
-
+        string OldImagePath = string.Empty;
+        string imageDirPath = @"C:\DVLD IMAGES\";
         public frmAddPerson(int PersonID = -1)
         {
             InitializeComponent();
@@ -31,6 +33,10 @@ namespace DVLD.PeopleForm
             {
                 _Person = clsPerson.Find(PersonID);
                 _ctrlMode = ctrlMode.Update;
+                //Fill Boxes
+                GetOrFillBoxes(true);
+                
+
             }
 
             //resize btnClose icon 
@@ -42,11 +48,20 @@ namespace DVLD.PeopleForm
 
         private void frmAddPerson_Load(object sender, EventArgs e)
         {
+            UpdateForm();
+        }
 
-            LoadForm();
-
-            
-
+        private void UpdateForm()
+        {
+            if (_ctrlMode == ctrlMode.Add)
+            {
+                lblFormLabel.Text = "Add New Person";
+            }
+            else
+            {
+                lblFormLabel.Text = "Update Person";
+                lblPersonID2.Text = _Person.PersonID.ToString();
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -61,21 +76,25 @@ namespace DVLD.PeopleForm
 
         }
 
-        private void CopyImage(string OriginalLocation, string NewLocation)
+        private void CopyImage(string OriginalLocation, string SaveLocation)
         {
-            if (OriginalLocation != null)
+            if (!string.IsNullOrEmpty(OriginalLocation))
             {
 
                 //copy the image for DVLV FOLDER
-                if (Directory.Exists(@"C:\DVLD IMAGES\"))
+                if (!Directory.Exists(imageDirPath))
                 {
-                    File.Copy(OriginalLocation, NewLocation, overwrite: true);
-
+                    Directory.CreateDirectory(imageDirPath);
                 }
                 else
                 {
-                    Directory.CreateDirectory(@"C:\DVLD IMAGES\");
-                    File.Copy(OriginalLocation, NewLocation, overwrite: true);
+                    if (_ctrlMode == ctrlMode.Update && !string.IsNullOrEmpty(OldImagePath) && OldImagePath.Contains(imageDirPath))
+                    {
+                            File.Delete(OldImagePath);
+                    }
+
+                    File.Copy(OriginalLocation, SaveLocation, overwrite: true);
+
                 }
 
             }
@@ -90,12 +109,20 @@ namespace DVLD.PeopleForm
 
 
             //getting new Location for the imagePath
-            var newGuid = Guid.NewGuid().ToString();
-            var NewLocation = @"C:\DVLD IMAGES\" + newGuid + ".png";
-            var OriginalLocation = uctrlAddPerson1.pbPath;
-            uctrlAddPerson1.pbPath = NewLocation;
+            //string OldLocation = uctrlAddPerson1.pbPath;
+            var newGuid = string.Empty;
+            var NewLocation = string.Empty;
+            var OriginalLocation = string.Empty;
+
+            if (!string.IsNullOrEmpty(uctrlAddPerson1.pbPath))
+            {
+            newGuid = Guid.NewGuid().ToString();
+            NewLocation = imageDirPath + newGuid + ".png";
+            OriginalLocation = uctrlAddPerson1.pbPath;
+            uctrlAddPerson1.pbPath = NewLocation;    
+            }
                 
-            //getLocationsToThe Person
+            //get Informations ToThe Person
                 GetOrFillBoxes(false);
 
 
@@ -111,6 +138,9 @@ namespace DVLD.PeopleForm
                     {
                         _ctrlMode = ctrlMode.Update;
                     }
+
+                    //update old image path
+                    OldImagePath = NewLocation;
                 }
                 else
                 {
@@ -119,7 +149,7 @@ namespace DVLD.PeopleForm
             
 
 
-            LoadForm();
+            UpdateForm();
         }
 
         private void GetOrFillBoxes(bool fillBoxes)
@@ -135,11 +165,14 @@ namespace DVLD.PeopleForm
                 uctrlAddPerson1.GenderID = _Person.Gender;
                 uctrlAddPerson1.Phone =_Person.Phone;
                 uctrlAddPerson1.DateOfBirth =  _Person.DateOfBirth;
-                uctrlAddPerson1.pbPath = _Person.ImagePath;
                 uctrlAddPerson1.NationalNo = _Person.NationalNo;
                 uctrlAddPerson1.Address = _Person.Address;
                 uctrlAddPerson1.Email = _Person.Email;
                 uctrlAddPerson1.CountryID =_Person.CountryID;
+                //fill both pictureBox and oldImagePath
+                uctrlAddPerson1.pbPath = OldImagePath =  _Person.ImagePath;
+
+                
             }
             else
             {
@@ -159,20 +192,5 @@ namespace DVLD.PeopleForm
             }
         }
 
-        private void LoadForm()
-        {
-            if (_ctrlMode == ctrlMode.Add)
-            {
-                lblFormLabel.Text = "Add New Person";
-            }
-            else
-            {
-                lblFormLabel.Text = "Update Person";
-                lblPersonID2.Text = _Person.PersonID.ToString();
-
-                GetOrFillBoxes(true);
-
-            }
-        }
     }
 }

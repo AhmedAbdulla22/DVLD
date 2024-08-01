@@ -199,28 +199,9 @@ namespace DVLD
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                //Delete the Current Pbox image if exist
-                if (!string.IsNullOrEmpty( pbProfilePic.ImageLocation))
-                {
-                File.Delete(pbProfilePic.ImageLocation);
-                }
 
                 //make remove label visible
                 lblRemove.Visible = true;
-
-                var newGuid = Guid.NewGuid().ToString();
-                //copy the image for DVLV FOLDER
-                if (Directory.Exists(@"C:\DVLD IMAGES\"))
-                {
-                    File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\" + newGuid + ".png", overwrite: true);
-
-                }
-                else
-                {
-                    Directory.CreateDirectory(@"C:\DVLD IMAGES\");
-                    File.Copy(fileDialog.FileName, @"C:\DVLD IMAGES\" + Guid.NewGuid() + ".png", overwrite: true);
-                }
-
                 pbProfilePic.ImageLocation = fileDialog.FileName;
             }
 
@@ -248,9 +229,6 @@ namespace DVLD
             lblRemove.Visible = false;
 
             pbProfilePic.Image = (radbtnMale.Checked) ? Resources.User_Male: Resources.Female_User;
-
-            //delete it from file
-            File.Delete(pbProfilePic.ImageLocation);
 
             pbProfilePic.ImageLocation = null;
         }

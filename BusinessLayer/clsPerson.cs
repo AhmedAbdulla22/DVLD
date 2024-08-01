@@ -46,20 +46,21 @@ namespace BusinessLayer
             enMode = mode.Add;
         }
 
-        public clsPerson(int CountryID,string FirstName,string SecondName,string ThirdName,string LastName,short Gender,DateTime DateOfBirth,string Phone,string Email,string Address,string ImagePath)
+        public clsPerson(int PersonID,string FirstName,string SecondName,string ThirdName,string LastName,string NationalNo,short Gender,DateTime DateOfBirth, int CountryID, string Phone,string Email,string Address,string ImagePath)
         {
             this.PersonID = PersonID;
             this.FirstName = FirstName;
             this.SecondName = SecondName;
             this.ThirdName = ThirdName;
             this.LastName = LastName;
+            this.NationalNo = NationalNo;
             this.Gender = Gender;
             this.DateOfBirth = DateOfBirth;
             this.Phone = Phone;
             this.Email = Email;
             this.Address = Address;
             this.ImagePath = ImagePath; 
-
+            this.CountryID = CountryID;
             enMode = mode.Update;
         }
 
@@ -127,7 +128,7 @@ namespace BusinessLayer
             //get person by id 
             if (ClsPersonDataAccess.GetPersonInfoByID(PersonID,ref firstName,ref secondName,ref thirdName,ref lastName,ref nationalNo,ref dateOfBirth,ref gender,ref Phone,ref email,ref countryID,ref address,ref imagePath))
             {
-                return new clsPerson(PersonID,firstName,secondName,thirdName,lastName,gender,dateOfBirth,Phone,email,address,imagePath);
+                return new clsPerson(PersonID,firstName,secondName,thirdName,lastName,nationalNo,gender,dateOfBirth,countryID,Phone,email,address,imagePath);
             }
             else
             {

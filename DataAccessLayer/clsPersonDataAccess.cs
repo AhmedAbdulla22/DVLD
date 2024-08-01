@@ -64,7 +64,7 @@ namespace DataAccessLayer
                 return dataTable;
         }
 
-        public static bool GetPersonInfoByID(int PersonID,ref string FirstName,ref string SecondName,ref string ThirdName,ref string LastName,ref string NationalNo,ref DateTime DateOfBirth,ref short gender,ref string Phone,ref string Email,ref int CountryID,ref string Address,ref string ImagePath)
+        public static bool GetPersonInfoByID(int PersonID,ref string FirstName,ref string SecondName,ref string ThirdName,ref string LastName, ref string NationalNo, ref DateTime DateOfBirth,ref short gender,ref string Phone,ref string Email,ref int CountryID,ref string Address,ref string ImagePath)
         {
             bool isExist = false;
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
