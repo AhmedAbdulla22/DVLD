@@ -90,6 +90,7 @@ namespace DVLD.PeopleForm
                 {
                     if (_ctrlMode == ctrlMode.Update && !string.IsNullOrEmpty(OldImagePath) && OldImagePath.Contains(imageDirPath))
                     {
+                        //if updated picture remove old one that in that dir
                             File.Delete(OldImagePath);
                     }
 
@@ -97,6 +98,11 @@ namespace DVLD.PeopleForm
 
                 }
 
+            }
+            else if(!string.IsNullOrEmpty(OldImagePath))
+            {
+                //if removed the picture from pictureBox then delete it in the path too
+                File.Delete(OldImagePath);
             }
         }
 
