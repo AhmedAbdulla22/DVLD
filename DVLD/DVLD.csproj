@@ -195,5 +195,8 @@
   <ItemGroup>
     <None Include="Resources\diskette%281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compose.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

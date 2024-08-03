@@ -106,6 +106,8 @@ namespace DVLD
             {
                 lblRemove.Visible = true;
             }
+
+
         }
 
         private void ValidateDateTimePicker()
@@ -237,6 +239,8 @@ namespace DVLD
             else
             {
                 _ctrlMode = ctrlMode.Update;
+                _Person = clsPerson.Find(PersonID);
+                GetValuesToBoxes();
             }
         }
 
@@ -315,50 +319,7 @@ namespace DVLD
             return Result;
         }
 
-        private void Save()
-        {
-            //if (!isEveryRequiredFieldFilled())
-            //{
-            //    return;
-            //}
-
-
-
-            //Before Saving Person Save Update ImageLocation And Save IT in ImgDir
-            if (pbProfilePic.ImageLocation != null)
-            {
-                var newGuid = Guid.NewGuid().ToString();
-                var newLocation = @"C:\DVLD IMAGES\" + newGuid + ".png";
-                //copy the image for DVLV FOLDER
-                if (Directory.Exists(@"C:\DVLD IMAGES\"))
-                {
-                    File.Copy(pbProfilePic.ImageLocation, newLocation, overwrite: true);
-
-                }
-                else
-                {
-                    Directory.CreateDirectory(@"C:\DVLD IMAGES\");
-                    File.Copy(pbProfilePic.ImageLocation, newLocation, overwrite: true);
-                }
-
-                pbProfilePic.ImageLocation = newLocation;
-            }
-
-            short gender;
-            gender = (radbtnMale.Checked) ? (short)0 : (short)1;
-
-            
-            
-                ////Save
-                //if ((_PersonID = PeopleBusinessLayer.SavePerson(tbFirstName.Text, tbLastName.Text, tbThirdName.Text, tbLastName.Text, tbNationalNo.Text, dtpDateOfBirth.Value, gender, tbPhone.Text, tbEmail.Text, CountryDict[cbCountry.Text], tbAddress.Text, pbProfilePic.ImageLocation)) != -1)
-                //{
-
-                //}
-             
-
-            
-        }
-
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!isEveryRequiredFieldFilled())
@@ -382,7 +343,7 @@ namespace DVLD
             }
 
             //get Informations ToThe Person
-            GetOrFillBoxes(false);
+            GetValuesToPerson();
 
 
 
@@ -410,7 +371,33 @@ namespace DVLD
 
 
 
-            UpdateForm();
+            
+        }
+
+        private void CopyImage(string OriginalLocation, string SaveLocation)
+        {
+            if (!string.IsNullOrEmpty(OriginalLocation))
+            {
+                //copy the image for DVLV FOLDER
+                if (!Directory.Exists(imageDirPath))
+                {
+                    Directory.CreateDirectory(imageDirPath);
+                }
+                else
+                {
+                    if (_ctrlMode == ctrlMode.Update && !string.IsNullOrEmpty(OldImagePath) && OldImagePath.Contains(imageDirPath))
+                    {
+                        //if updated picture remove old one that in that dir
+                        File.Delete(OldImagePath);
+                    }
+                    File.Copy(OriginalLocation, SaveLocation, overwrite: true);
+                }
+            }
+            else if (!string.IsNullOrEmpty(OldImagePath))
+            {
+                //if removed the picture from pictureBox then delete it in the path too
+                File.Delete(OldImagePath);
+            }
         }
     }
 }

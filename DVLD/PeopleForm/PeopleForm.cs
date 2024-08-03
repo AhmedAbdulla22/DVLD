@@ -56,5 +56,7 @@ namespace DVLD
             //#Records Rows
             lblRecords.Text = "#Records" + ' ' + (dgvPeople.RowCount).ToString();
         }
+
+        
     }
 }
