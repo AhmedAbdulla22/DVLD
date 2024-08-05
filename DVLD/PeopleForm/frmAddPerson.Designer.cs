@@ -91,7 +91,6 @@
             this.uctrlAddPerson1.Size = new System.Drawing.Size(884, 406);
             this.uctrlAddPerson1.TabIndex = 0;
             this.uctrlAddPerson1.ThirdName = "";
-            this.uctrlAddPerson1.Load += new System.EventHandler(this.uctrlAddPerson1_Load);
             // 
             // frmAddPerson
             // 

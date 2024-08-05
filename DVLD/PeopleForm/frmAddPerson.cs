@@ -21,6 +21,7 @@ namespace DVLD.PeopleForm
         public frmAddPerson(int PersonID = -1)
         {
             InitializeComponent();
+            uctrlAddPerson1.OnSaveSucceded += UpdateFormAfterSave;
 
             uctrlAddPerson1.PersonID = PersonID;
 
@@ -52,18 +53,19 @@ namespace DVLD.PeopleForm
             else
             {
                 lblFormLabel.Text = "Update Person";
+                lblPersonID2.Text = uctrlAddPerson1.PersonID.ToString();
             }
         }
 
         
-        private void uctrlAddPerson1_Load(object sender, EventArgs e)
-        {
-           
-
-        }
-
         
 
+        
+        private void UpdateFormAfterSave()
+        {
+            _ctrlMode = ctrlMode.Update;
+            UpdateForm();
+        }
         
 
         

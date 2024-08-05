@@ -39,7 +39,7 @@ namespace DVLD
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            using (frmAddPerson frm = new frmAddPerson())
+            using (frmAddPerson frm = new frmAddPerson(1039))
             {
                 frm.ShowDialog() ;
                 

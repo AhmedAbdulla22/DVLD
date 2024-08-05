@@ -95,6 +95,8 @@ namespace DVLD
             //resize icons
             radbtnMale.Image = Utilites.ResizeImage(radbtnMale.Image, 15, 15);
             radbtnFemale.Image = Utilites.ResizeImage(radbtnFemale.Image, 15, 15);
+            btnClose.Image = Utilites.ResizeImage(btnClose.Image, 15, 15);
+            btnSave.Image = Utilites.ResizeImage(btnSave.Image, 15, 15);
 
 
 
@@ -107,6 +109,7 @@ namespace DVLD
             {
                 lblRemove.Visible = true;
             }
+
 
 
         }
@@ -233,16 +236,25 @@ namespace DVLD
         private void uctrlAddPerson_Load(object sender, EventArgs e)
         {
 
+            
             if (PersonID == -1)
             {
                 _ctrlMode = ctrlMode.Add;
+                _Person = new clsPerson();
             }
             else
             {
                 _ctrlMode = ctrlMode.Update;
                 _Person = clsPerson.Find(PersonID);
                 GetValuesToBoxes();
+
+                if (!string.IsNullOrEmpty(pbPath))
+                {
+                    lblRemove.Visible = true;
+                }
             }
+
+            
         }
 
         private void tbPhone_KeyDown(object sender, KeyEventArgs e)
@@ -320,7 +332,17 @@ namespace DVLD
             return Result;
         }
 
-        
+        public event Action OnSaveSucceded;
+
+        protected virtual void SaveSucceded()
+        {
+            Action handler = OnSaveSucceded;
+            //Update PersonID
+            PersonID = _Person.PersonID;
+
+            handler?.Invoke();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!isEveryRequiredFieldFilled())
@@ -362,7 +384,8 @@ namespace DVLD
 
                 //update old image path
                 OldImagePath = NewLocation;
-
+                //sending personId to the form
+                SaveSucceded();
                 MessageBox.Show("Person Saved Succesfully.");
             }
             else
@@ -400,5 +423,12 @@ namespace DVLD
                 File.Delete(OldImagePath);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+        }
+
+       
     }
 }
