@@ -54,7 +54,8 @@ namespace DVLD
             }
         }
 
-        public int PersonID { get { return PersonID; } set { PersonID = value; } }
+        private int _PersonID = -1;
+        public int PersonID { get { return _PersonID; } set { _PersonID = value; } }
 
         public short GenderID
         {

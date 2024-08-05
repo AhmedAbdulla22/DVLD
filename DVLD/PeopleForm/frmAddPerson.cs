@@ -58,8 +58,7 @@ namespace DVLD.PeopleForm
         
         private void uctrlAddPerson1_Load(object sender, EventArgs e)
         {
-            //set focus to btn
-            btnClose.Focus();
+           
 
         }
 
