@@ -110,6 +110,8 @@ namespace DVLD
                 lblRemove.Visible = true;
             }
 
+            
+
 
 
         }
@@ -252,6 +254,22 @@ namespace DVLD
                 {
                     lblRemove.Visible = true;
                 }
+
+                //validating if image missing
+                if (!string.IsNullOrEmpty(pbProfilePic.ImageLocation) && !File.Exists(pbProfilePic.ImageLocation))
+                {
+                    pbProfilePic.ImageLocation = null;
+
+                    if (radbtnMale.Checked)
+                    {
+                        pbProfilePic.Image = Resources.User_Male;
+                    }
+                    else
+                    {
+                        pbProfilePic.Image = Resources.Female_User;
+                    }
+                }
+
             }
 
             

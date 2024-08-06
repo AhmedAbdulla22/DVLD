@@ -74,19 +74,35 @@ namespace DVLD
             }
         }
 
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            int personID = -1;
             if (dgvPeople.SelectedRows.Count == 1)
             {
-                personID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells[0].Value);
-                if (personID >= 0)
+                switch(e.ClickedItem.Text)
                 {
-                    frmAddPerson frmAddPerson = new frmAddPerson(personID);
-                    frmAddPerson.ShowDialog();
-                }
-            }
+                    case "Edit":
+                        {
+                            int personID = -1;
+                            personID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells[0].Value);
+                            if (personID >= 0)
+                            {
+                                frmAddPerson frmAddPerson = new frmAddPerson(personID);
+                                frmAddPerson.ShowDialog();
+                            }
+                            break;
+                        }
+                    case "Show Details":
+                        {
+                            Person_Details frmPersonDetails = new Person_Details();
+                            break;
+                        }
 
+                }
+
+                
+            }
         }
     }
 }
