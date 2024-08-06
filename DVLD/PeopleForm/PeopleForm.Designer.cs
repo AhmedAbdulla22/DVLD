@@ -60,7 +60,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPeople.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvPeople.Location = new System.Drawing.Point(52, 338);
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
@@ -68,6 +67,7 @@
             this.dgvPeople.RowTemplate.Height = 28;
             this.dgvPeople.Size = new System.Drawing.Size(1094, 239);
             this.dgvPeople.TabIndex = 1;
+            this.dgvPeople.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvPeople_MouseDown);
             // 
             // contextMenuStrip1
             // 
@@ -82,7 +82,7 @@
             this.callToolStripMenuItem,
             this.sendEmailToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 208);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(249, 241);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -107,8 +107,9 @@
             // 
             this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.compose;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -204,7 +205,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 308);
+            this.comboBox1.Location = new System.Drawing.Point(143, 307);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 28);
             this.comboBox1.TabIndex = 8;
@@ -212,7 +213,7 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(318, 310);
+            this.textBox1.Location = new System.Drawing.Point(324, 309);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(221, 26);
             this.textBox1.TabIndex = 9;

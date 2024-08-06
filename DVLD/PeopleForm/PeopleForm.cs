@@ -57,6 +57,36 @@ namespace DVLD
             lblRecords.Text = "#Records" + ' ' + (dgvPeople.RowCount).ToString();
         }
 
-        
+        private void dgvPeople_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //row that you clicked on location
+                var hitTestInfo = dgvPeople.HitTest(e.X, e.Y);
+
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dgvPeople.ClearSelection();
+                    dgvPeople.Rows[hitTestInfo.RowIndex].Selected = true;
+
+                    contextMenuStrip1.Show(dgvPeople,new Point(e.X,e.Y));
+                }
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int personID = -1;
+            if (dgvPeople.SelectedRows.Count == 1)
+            {
+                personID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells[0].Value);
+                if (personID >= 0)
+                {
+                    frmAddPerson frmAddPerson = new frmAddPerson(personID);
+                    frmAddPerson.ShowDialog();
+                }
+            }
+
+        }
     }
 }

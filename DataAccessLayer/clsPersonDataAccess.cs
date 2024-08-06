@@ -29,7 +29,7 @@ namespace DataAccessLayer
             
             using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"SELECT NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
                             CASE
                              When People.Gendor = 0 then 'Male'
                              Else 'Female'
