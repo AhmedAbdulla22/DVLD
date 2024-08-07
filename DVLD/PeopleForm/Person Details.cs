@@ -15,6 +15,8 @@ namespace DVLD.PeopleForm
         public Person_Details(int PersonID = -1)
         {
             InitializeComponent();
+
+            uctrPersonDetails1.PersonID = PersonID;
         }
     }
 }

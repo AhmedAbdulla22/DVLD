@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lblPersonDetails = new System.Windows.Forms.Label();
+            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
             this.SuspendLayout();
             // 
             // lblPersonDetails
@@ -42,12 +43,21 @@
             this.lblPersonDetails.TabIndex = 0;
             this.lblPersonDetails.Text = "Person Details";
             // 
+            // uctrPersonDetails1
+            // 
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(12, 50);
+            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(887, 334);
+            this.uctrPersonDetails1.TabIndex = 1;
+            // 
             // Person_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 501);
+            this.ClientSize = new System.Drawing.Size(907, 394);
+            this.Controls.Add(this.uctrPersonDetails1);
             this.Controls.Add(this.lblPersonDetails);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Person_Details";
             this.Text = "Person_Details";
             this.ResumeLayout(false);
@@ -58,5 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblPersonDetails;
+        private uctrPersonDetails uctrPersonDetails1;
     }
 }

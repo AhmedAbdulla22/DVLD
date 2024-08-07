@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer;
@@ -78,6 +79,15 @@ namespace BusinessLayer
             return ClsPersonDataAccess.UpdatePerson(this.PersonID,this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Phone, this.Email, this.CountryID, this.Address, this.ImagePath);
         }
 
+        public bool Delete()
+        {
+            return ClsPersonDataAccess.DeletePerson(this.PersonID);
+        }
+
+        public static bool Delete(int PersonID)
+        {
+            return ClsPersonDataAccess.DeletePerson(PersonID);
+        }
 
         public bool Save()
         {

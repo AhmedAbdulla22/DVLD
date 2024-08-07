@@ -1,0 +1,2 @@
+DVLD:
+- there is a bug in add person uctrl when there is a picture missing the remove lbl visible

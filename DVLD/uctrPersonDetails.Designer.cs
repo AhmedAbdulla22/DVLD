@@ -30,138 +30,317 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctrPersonDetails));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lnklblEdit = new System.Windows.Forms.LinkLabel();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblNationalNo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblName2 = new System.Windows.Forms.Label();
+            this.lblNationalNo2 = new System.Windows.Forms.Label();
+            this.lblEmail2 = new System.Windows.Forms.Label();
+            this.lblGender2 = new System.Windows.Forms.Label();
+            this.lblAddress2 = new System.Windows.Forms.Label();
+            this.lblDateOfBirth2 = new System.Windows.Forms.Label();
+            this.lblPhone2 = new System.Windows.Forms.Label();
+            this.lblCountry2 = new System.Windows.Forms.Label();
+            this.lblPersonID2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblPersonID2);
+            this.groupBox1.Controls.Add(this.lblCountry2);
+            this.groupBox1.Controls.Add(this.lblPhone2);
+            this.groupBox1.Controls.Add(this.lblDateOfBirth2);
+            this.groupBox1.Controls.Add(this.lblAddress2);
+            this.groupBox1.Controls.Add(this.lblEmail2);
+            this.groupBox1.Controls.Add(this.lblGender2);
+            this.groupBox1.Controls.Add(this.lblNationalNo2);
+            this.groupBox1.Controls.Add(this.lblName2);
+            this.groupBox1.Controls.Add(this.lnklblEdit);
+            this.groupBox1.Controls.Add(this.lblPhone);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.lblCountry);
+            this.groupBox1.Controls.Add(this.lblDateOfBirth);
+            this.groupBox1.Controls.Add(this.lblAddress);
+            this.groupBox1.Controls.Add(this.lblEmail);
+            this.groupBox1.Controls.Add(this.lblGender);
+            this.groupBox1.Controls.Add(this.lblNationalNo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(881, 405);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(587, 212);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Person Information";
+            // 
+            // lnklblEdit
+            // 
+            this.lnklblEdit.AutoSize = true;
+            this.lnklblEdit.Location = new System.Drawing.Point(489, 31);
+            this.lnklblEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnklblEdit.Name = "lnklblEdit";
+            this.lnklblEdit.Size = new System.Drawing.Size(87, 13);
+            this.lnklblEdit.TabIndex = 11;
+            this.lnklblEdit.TabStop = true;
+            this.lnklblEdit.Text = "Edit Person Info";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Image = global::DVLD.Properties.Resources.phone_call_1_;
+            this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblPhone.Location = new System.Drawing.Point(293, 84);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(85, 18);
+            this.lblPhone.TabIndex = 10;
+            this.lblPhone.Text = "    Phone:";
+            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(477, 55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(106, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.Image = global::DVLD.Properties.Resources.maps;
+            this.lblCountry.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblCountry.Location = new System.Drawing.Point(299, 112);
+            this.lblCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(79, 18);
+            this.lblCountry.TabIndex = 8;
+            this.lblCountry.Text = "Country:";
+            this.lblCountry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar;
+            this.lblDateOfBirth.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(275, 55);
+            this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(103, 18);
+            this.lblDateOfBirth.TabIndex = 7;
+            this.lblDateOfBirth.Text = "DateOfBirth:";
+            this.lblDateOfBirth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Image = global::DVLD.Properties.Resources.home;
+            this.lblAddress.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblAddress.Location = new System.Drawing.Point(4, 170);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(108, 18);
+            this.lblAddress.TabIndex = 6;
+            this.lblAddress.Text = "Address:";
+            this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Image = global::DVLD.Properties.Resources.arroba;
+            this.lblEmail.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblEmail.Location = new System.Drawing.Point(4, 141);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(108, 18);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "Email:";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblGender
+            // 
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Image = global::DVLD.Properties.Resources.gender;
+            this.lblGender.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblGender.Location = new System.Drawing.Point(4, 112);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(108, 18);
+            this.lblGender.TabIndex = 3;
+            this.lblGender.Text = "Gender:";
+            this.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblNationalNo
+            // 
+            this.lblNationalNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationalNo.Image = global::DVLD.Properties.Resources.Display1;
+            this.lblNationalNo.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblNationalNo.Location = new System.Drawing.Point(4, 84);
+            this.lblNationalNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNationalNo.Name = "lblNationalNo";
+            this.lblNationalNo.Size = new System.Drawing.Size(108, 18);
+            this.lblNationalNo.TabIndex = 2;
+            this.lblNationalNo.Text = "National No:";
+            this.lblNationalNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 41);
+            this.label2.Location = new System.Drawing.Point(4, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 28);
+            this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Person ID:";
             // 
-            // label3
+            // lblName
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(6, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "National No:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Image = ((System.Drawing.Image)(resources.GetObject("lblName.Image")));
+            this.lblName.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblName.Location = new System.Drawing.Point(4, 55);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(108, 18);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name:";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // lblName2
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(6, 173);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 28);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Gender:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName2.AutoSize = true;
+            this.lblName2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblName2.Location = new System.Drawing.Point(116, 55);
+            this.lblName2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName2.Name = "lblName2";
+            this.lblName2.Size = new System.Drawing.Size(0, 19);
+            this.lblName2.TabIndex = 12;
+            this.lblName2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // lblNationalNo2
             // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(6, 217);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 28);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Email:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNationalNo2.AutoSize = true;
+            this.lblNationalNo2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationalNo2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblNationalNo2.Location = new System.Drawing.Point(116, 84);
+            this.lblNationalNo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNationalNo2.Name = "lblNationalNo2";
+            this.lblNationalNo2.Size = new System.Drawing.Size(0, 19);
+            this.lblNationalNo2.TabIndex = 13;
+            this.lblNationalNo2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // lblEmail2
             // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(6, 261);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 28);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Address:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEmail2.AutoSize = true;
+            this.lblEmail2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblEmail2.Location = new System.Drawing.Point(116, 141);
+            this.lblEmail2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail2.Name = "lblEmail2";
+            this.lblEmail2.Size = new System.Drawing.Size(0, 19);
+            this.lblEmail2.TabIndex = 15;
+            this.lblEmail2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // lblGender2
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(6, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGender2.AutoSize = true;
+            this.lblGender2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblGender2.Location = new System.Drawing.Point(116, 112);
+            this.lblGender2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGender2.Name = "lblGender2";
+            this.lblGender2.Size = new System.Drawing.Size(0, 19);
+            this.lblGender2.TabIndex = 14;
+            this.lblGender2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // lblAddress2
             // 
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(514, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 28);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "DateOfBirth:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAddress2.AutoSize = true;
+            this.lblAddress2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblAddress2.Location = new System.Drawing.Point(116, 170);
+            this.lblAddress2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddress2.Name = "lblAddress2";
+            this.lblAddress2.Size = new System.Drawing.Size(0, 19);
+            this.lblAddress2.TabIndex = 16;
+            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // lblDateOfBirth2
             // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(514, 129);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 28);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Country:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDateOfBirth2.AutoSize = true;
+            this.lblDateOfBirth2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDateOfBirth2.Location = new System.Drawing.Point(382, 55);
+            this.lblDateOfBirth2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDateOfBirth2.Name = "lblDateOfBirth2";
+            this.lblDateOfBirth2.Size = new System.Drawing.Size(0, 19);
+            this.lblDateOfBirth2.TabIndex = 17;
+            this.lblDateOfBirth2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPhone2
+            // 
+            this.lblPhone2.AutoSize = true;
+            this.lblPhone2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblPhone2.Location = new System.Drawing.Point(382, 84);
+            this.lblPhone2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPhone2.Name = "lblPhone2";
+            this.lblPhone2.Size = new System.Drawing.Size(0, 19);
+            this.lblPhone2.TabIndex = 18;
+            this.lblPhone2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCountry2
+            // 
+            this.lblCountry2.AutoSize = true;
+            this.lblCountry2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblCountry2.Location = new System.Drawing.Point(382, 112);
+            this.lblCountry2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCountry2.Name = "lblCountry2";
+            this.lblCountry2.Size = new System.Drawing.Size(0, 19);
+            this.lblCountry2.TabIndex = 19;
+            this.lblCountry2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPersonID2
+            // 
+            this.lblPersonID2.AutoSize = true;
+            this.lblPersonID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonID2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblPersonID2.Location = new System.Drawing.Point(77, 26);
+            this.lblPersonID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPersonID2.Name = "lblPersonID2";
+            this.lblPersonID2.Size = new System.Drawing.Size(35, 19);
+            this.lblPersonID2.TabIndex = 20;
+            this.lblPersonID2.Text = "N/A";
+            this.lblPersonID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uctrPersonDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "uctrPersonDetails";
-            this.Size = new System.Drawing.Size(887, 411);
+            this.Size = new System.Drawing.Size(591, 217);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,13 +348,25 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lblNationalNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.LinkLabel lnklblEdit;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblPersonID2;
+        private System.Windows.Forms.Label lblCountry2;
+        private System.Windows.Forms.Label lblPhone2;
+        private System.Windows.Forms.Label lblDateOfBirth2;
+        private System.Windows.Forms.Label lblAddress2;
+        private System.Windows.Forms.Label lblEmail2;
+        private System.Windows.Forms.Label lblGender2;
+        private System.Windows.Forms.Label lblNationalNo2;
+        private System.Windows.Forms.Label lblName2;
     }
 }

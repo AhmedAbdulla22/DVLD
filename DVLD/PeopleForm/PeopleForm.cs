@@ -28,7 +28,6 @@ namespace DVLD
         private void frmPeople_Load(object sender, EventArgs e)
         {
 
-            LoadTheDataGridView();
             
         }
 
@@ -39,13 +38,9 @@ namespace DVLD
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            using (frmAddPerson frm = new frmAddPerson(1039))
+            using (frmAddPerson frm = new frmAddPerson())
             {
-                frm.ShowDialog() ;
-                
-                LoadTheDataGridView();
-                
-
+                frm.ShowDialog();
             }
         }
 
@@ -78,14 +73,16 @@ namespace DVLD
 
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            int personID = -1;
+            personID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells[0].Value);
+
             if (dgvPeople.SelectedRows.Count == 1)
             {
                 switch(e.ClickedItem.Text)
                 {
                     case "Edit":
                         {
-                            int personID = -1;
-                            personID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells[0].Value);
+                            
                             if (personID >= 0)
                             {
                                 frmAddPerson frmAddPerson = new frmAddPerson(personID);
@@ -95,14 +92,39 @@ namespace DVLD
                         }
                     case "Show Details":
                         {
-                            Person_Details frmPersonDetails = new Person_Details();
+                            Person_Details frmPersonDetails = new Person_Details(personID);
+                            frmPersonDetails.ShowDialog();
                             break;
                         }
+                    case "Delete":
+                        {
+                            if (MessageBox.Show("Are You Sure You Want to Delete this Person?","",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                if (clsPerson.Delete(personID))
+                                {
+                                    MessageBox.Show("Person Deleted Succesfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Person Cannot Be Deleted", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
 
+                            }
+
+                            break;
+                        }
                 }
 
                 
             }
+        }
+
+
+        private void frmPeople_Activated(object sender, EventArgs e)
+        {
+
+            LoadTheDataGridView();
+
         }
     }
 }

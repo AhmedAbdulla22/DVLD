@@ -295,5 +295,36 @@ SELECT Scope_Identity();";
 
                 return isUpdated;
         }
+
+        public static bool DeletePerson(int PersonID)
+        {
+            bool isDeleted = false;
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"DELETE FROM People
+                              Where PersonID = @PersonID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isDeleted = true;
+                        }
+
+                    }
+                    catch(Exception ex) 
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            return isDeleted;
+        }
     }
 }
