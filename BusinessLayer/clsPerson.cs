@@ -89,6 +89,8 @@ namespace BusinessLayer
             return ClsPersonDataAccess.DeletePerson(PersonID);
         }
 
+
+
         public bool Save()
         {
             switch(enMode)
@@ -120,6 +122,16 @@ namespace BusinessLayer
         {
 
             return ClsPersonDataAccess.getAllPeople();
+        }
+
+        public static DataTable getPeopleByPersonID(int PersonID) 
+        {
+            return ClsPersonDataAccess.GetPersonByPersonID(PersonID);
+        }
+
+        public static DataTable getPeopleByNationalNo(string NationalNo)
+        {
+            return ClsPersonDataAccess.GetPersonByNationalNo(NationalNo);
         }
 
         public static bool isNationalNumberExist(string nationalNumber) 

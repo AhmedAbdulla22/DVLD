@@ -38,10 +38,7 @@ namespace DVLD
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            using (frmAddPerson frm = new frmAddPerson())
-            {
-                frm.ShowDialog();
-            }
+            AddNewPerson();
         }
 
         private void LoadTheDataGridView()
@@ -85,15 +82,16 @@ namespace DVLD
                             
                             if (personID >= 0)
                             {
-                                frmAddPerson frmAddPerson = new frmAddPerson(personID);
-                                frmAddPerson.ShowDialog();
+                                EditPerson(personID);
                             }
                             break;
                         }
                     case "Show Details":
                         {
-                            Person_Details frmPersonDetails = new Person_Details(personID);
-                            frmPersonDetails.ShowDialog();
+                            using (Person_Details frmDetails = new Person_Details(personID))
+                            {
+                                frmDetails.ShowDialog();
+                            }
                             break;
                         }
                     case "Delete":
@@ -113,18 +111,103 @@ namespace DVLD
 
                             break;
                         }
+                    case "Add New Person":
+                        {
+                            AddNewPerson();
+                            break;
+                        }
+                    default:
+                        MessageBox.Show("Still in Work", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
                 }
 
-                
+
             }
         }
 
+        private void AddNewPerson()
+        {
+            using (frmAddPerson frm = new frmAddPerson())
+            {
+                frm.ShowDialog();
+            }
+            
+        }
+
+        private void EditPerson(int PersonID)
+        {
+            using (frmAddPerson frmEdit = new frmAddPerson(PersonID))
+            {
+                frmEdit.ShowDialog();
+            }
+        }
 
         private void frmPeople_Activated(object sender, EventArgs e)
         {
 
             LoadTheDataGridView();
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //To Show Filter Box
+            tbFilter.Visible = (comboBox1.SelectedItem.ToString() != "None");
+
+            //switch (comboBox1.SelectedItem.ToString())
+            //{
+            //    case "PersonID":
+            //        {
+            //            dgvPeople.DataSource = clsPerson.getPeopleByPersonID(1);
+            //            break;
+            //        }
+            //    case "National No.":
+            //        {
+            //            dgvPeople.DataSource = clsPerson.getPeopleByNationalNo("n");
+
+            //            break;
+            //        }
+            //    case "FirstName":
+            //        {
+
+            //            break;
+            //        }
+            //    case "SecondName":
+            //        {
+
+            //            break;
+            //        }
+            //    case "ThirdName":
+            //        {
+
+            //            break;
+            //        }
+            //    case "LastName":
+            //        {
+
+            //            break;
+            //        }
+            //    case "Nationality":
+            //        {
+
+            //            break;
+            //        }
+            //    case "Gender":
+            //        {
+
+            //            break;
+            //        }
+            //    case "Phone":
+            //        {
+
+            //            break;
+            //        }
+            //    case "Email":
+            //        {
+
+            //            break;
+            //        }
+            //}
         }
     }
 }

@@ -37,29 +37,35 @@
             this.lblPersonDetails.AutoSize = true;
             this.lblPersonDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonDetails.ForeColor = System.Drawing.Color.Brown;
-            this.lblPersonDetails.Location = new System.Drawing.Point(318, 9);
+            this.lblPersonDetails.Location = new System.Drawing.Point(244, 6);
+            this.lblPersonDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersonDetails.Name = "lblPersonDetails";
-            this.lblPersonDetails.Size = new System.Drawing.Size(196, 38);
+            this.lblPersonDetails.Size = new System.Drawing.Size(133, 25);
             this.lblPersonDetails.TabIndex = 0;
             this.lblPersonDetails.Text = "Person Details";
             // 
             // uctrPersonDetails1
             // 
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(12, 50);
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(7, 33);
+            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrPersonDetails1.Name = "uctrPersonDetails1";
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(887, 334);
+            this.uctrPersonDetails1.PersonID = -1;
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(606, 220);
             this.uctrPersonDetails1.TabIndex = 1;
             // 
             // Person_Details
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 394);
+            this.ClientSize = new System.Drawing.Size(621, 256);
             this.Controls.Add(this.uctrPersonDetails1);
             this.Controls.Add(this.lblPersonDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Person_Details";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Person_Details";
+            this.Activated += new System.EventHandler(this.Person_Details_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 

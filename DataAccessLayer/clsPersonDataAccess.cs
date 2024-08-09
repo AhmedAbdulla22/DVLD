@@ -326,5 +326,458 @@ SELECT Scope_Identity();";
             }
             return isDeleted;
         }
+
+        public static DataTable GetPersonByPersonID(int PersonID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where PersonID = @PersonID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonByNationalNo(string NationalNo)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where NationalNo LIKE @NationalNo + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonByFirstName(string FirstName)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where FirstName LIKE @FirstName + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@FirstName", FirstName);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonBySecondName(string SecondName)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where SecondName LIKE @SecondName + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@SecondName", SecondName);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonByThirdName(string ThirdName)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where ThirdName LIKE @ThirdName + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ThirdName", ThirdName);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonByLastName(string LastName)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where LastName LIKE @LastName + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LastName", LastName);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonByNationality(string Nationality)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where Nationality LIKE @Nationality + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@Nationality", Nationality);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonByPhone(string Phone)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where Phone LIKE @Phone + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@Phone", Phone);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetPersonByGender(string Gender)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath-
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where Gender LIKE @Gender + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@Gender", Gender);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+
+        public static DataTable GetPersonByEmail(string Email)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth,
+                            CASE
+                             When People.Gendor = 0 then 'Male'
+                             Else 'Female'
+                             END as Gender,
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
+                              FROM People INNER JOIN
+                            Countries ON People.NationalityCountryID = Countries.CountryID
+                            Where Email LIKE @Email + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@Email", Email);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+
     }
 }

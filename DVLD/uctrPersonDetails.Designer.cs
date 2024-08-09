@@ -77,31 +77,32 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(2, -1);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(587, 212);
+            this.groupBox1.Size = new System.Drawing.Size(602, 215);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // lnklblEdit
             // 
             this.lnklblEdit.AutoSize = true;
-            this.lnklblEdit.Location = new System.Drawing.Point(489, 31);
+            this.lnklblEdit.Location = new System.Drawing.Point(489, 28);
             this.lnklblEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnklblEdit.Name = "lnklblEdit";
             this.lnklblEdit.Size = new System.Drawing.Size(87, 13);
             this.lnklblEdit.TabIndex = 11;
             this.lnklblEdit.TabStop = true;
             this.lnklblEdit.Text = "Edit Person Info";
+            this.lnklblEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblEdit_LinkClicked);
             // 
             // lblPhone
             // 
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Image = global::DVLD.Properties.Resources.phone_call_1_;
             this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblPhone.Location = new System.Drawing.Point(293, 84);
+            this.lblPhone.Location = new System.Drawing.Point(293, 81);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(85, 18);
@@ -111,7 +112,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(477, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(477, 52);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(106, 113);
@@ -124,7 +125,7 @@
             this.lblCountry.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry.Image = global::DVLD.Properties.Resources.maps;
             this.lblCountry.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblCountry.Location = new System.Drawing.Point(299, 112);
+            this.lblCountry.Location = new System.Drawing.Point(299, 109);
             this.lblCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(79, 18);
@@ -137,7 +138,7 @@
             this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar;
             this.lblDateOfBirth.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(275, 55);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(275, 52);
             this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(103, 18);
@@ -150,7 +151,7 @@
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Image = global::DVLD.Properties.Resources.home;
             this.lblAddress.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblAddress.Location = new System.Drawing.Point(4, 170);
+            this.lblAddress.Location = new System.Drawing.Point(4, 167);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(108, 18);
@@ -163,7 +164,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Image = global::DVLD.Properties.Resources.arroba;
             this.lblEmail.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblEmail.Location = new System.Drawing.Point(4, 141);
+            this.lblEmail.Location = new System.Drawing.Point(4, 138);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(108, 18);
@@ -176,7 +177,7 @@
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Image = global::DVLD.Properties.Resources.gender;
             this.lblGender.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblGender.Location = new System.Drawing.Point(4, 112);
+            this.lblGender.Location = new System.Drawing.Point(4, 109);
             this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(108, 18);
@@ -189,7 +190,7 @@
             this.lblNationalNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNo.Image = global::DVLD.Properties.Resources.Display1;
             this.lblNationalNo.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblNationalNo.Location = new System.Drawing.Point(4, 84);
+            this.lblNationalNo.Location = new System.Drawing.Point(4, 81);
             this.lblNationalNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNationalNo.Name = "lblNationalNo";
             this.lblNationalNo.Size = new System.Drawing.Size(108, 18);
@@ -201,7 +202,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 27);
+            this.label2.Location = new System.Drawing.Point(4, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 19);
@@ -213,7 +214,7 @@
             this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Image = ((System.Drawing.Image)(resources.GetObject("lblName.Image")));
             this.lblName.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblName.Location = new System.Drawing.Point(4, 55);
+            this.lblName.Location = new System.Drawing.Point(4, 52);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(108, 18);
@@ -226,7 +227,7 @@
             this.lblName2.AutoSize = true;
             this.lblName2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblName2.Location = new System.Drawing.Point(116, 55);
+            this.lblName2.Location = new System.Drawing.Point(116, 52);
             this.lblName2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName2.Name = "lblName2";
             this.lblName2.Size = new System.Drawing.Size(0, 19);
@@ -238,7 +239,7 @@
             this.lblNationalNo2.AutoSize = true;
             this.lblNationalNo2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNo2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblNationalNo2.Location = new System.Drawing.Point(116, 84);
+            this.lblNationalNo2.Location = new System.Drawing.Point(116, 81);
             this.lblNationalNo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNationalNo2.Name = "lblNationalNo2";
             this.lblNationalNo2.Size = new System.Drawing.Size(0, 19);
@@ -250,7 +251,7 @@
             this.lblEmail2.AutoSize = true;
             this.lblEmail2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblEmail2.Location = new System.Drawing.Point(116, 141);
+            this.lblEmail2.Location = new System.Drawing.Point(116, 138);
             this.lblEmail2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail2.Name = "lblEmail2";
             this.lblEmail2.Size = new System.Drawing.Size(0, 19);
@@ -262,7 +263,7 @@
             this.lblGender2.AutoSize = true;
             this.lblGender2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblGender2.Location = new System.Drawing.Point(116, 112);
+            this.lblGender2.Location = new System.Drawing.Point(116, 109);
             this.lblGender2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender2.Name = "lblGender2";
             this.lblGender2.Size = new System.Drawing.Size(0, 19);
@@ -274,7 +275,7 @@
             this.lblAddress2.AutoSize = true;
             this.lblAddress2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblAddress2.Location = new System.Drawing.Point(116, 170);
+            this.lblAddress2.Location = new System.Drawing.Point(116, 167);
             this.lblAddress2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddress2.Name = "lblAddress2";
             this.lblAddress2.Size = new System.Drawing.Size(0, 19);
@@ -286,7 +287,7 @@
             this.lblDateOfBirth2.AutoSize = true;
             this.lblDateOfBirth2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDateOfBirth2.Location = new System.Drawing.Point(382, 55);
+            this.lblDateOfBirth2.Location = new System.Drawing.Point(382, 52);
             this.lblDateOfBirth2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateOfBirth2.Name = "lblDateOfBirth2";
             this.lblDateOfBirth2.Size = new System.Drawing.Size(0, 19);
@@ -298,7 +299,7 @@
             this.lblPhone2.AutoSize = true;
             this.lblPhone2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblPhone2.Location = new System.Drawing.Point(382, 84);
+            this.lblPhone2.Location = new System.Drawing.Point(382, 81);
             this.lblPhone2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhone2.Name = "lblPhone2";
             this.lblPhone2.Size = new System.Drawing.Size(0, 19);
@@ -310,7 +311,7 @@
             this.lblCountry2.AutoSize = true;
             this.lblCountry2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblCountry2.Location = new System.Drawing.Point(382, 112);
+            this.lblCountry2.Location = new System.Drawing.Point(382, 109);
             this.lblCountry2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCountry2.Name = "lblCountry2";
             this.lblCountry2.Size = new System.Drawing.Size(0, 19);
@@ -322,7 +323,7 @@
             this.lblPersonID2.AutoSize = true;
             this.lblPersonID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonID2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblPersonID2.Location = new System.Drawing.Point(77, 26);
+            this.lblPersonID2.Location = new System.Drawing.Point(77, 23);
             this.lblPersonID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersonID2.Name = "lblPersonID2";
             this.lblPersonID2.Size = new System.Drawing.Size(35, 19);
@@ -337,7 +338,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "uctrPersonDetails";
-            this.Size = new System.Drawing.Size(591, 217);
+            this.Size = new System.Drawing.Size(606, 220);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using DVLD.PeopleForm;
 
 namespace DVLD
 {
@@ -109,9 +110,20 @@ namespace DVLD
 
         }
 
+        public void UpdateControl()
+        {
+            _LoadPersonData();
+        }
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
             
+        }
+
+        private void lnklblEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAddPerson frmAdd = new frmAddPerson(PersonID);
+            frmAdd.ShowDialog();
         }
     }
 }

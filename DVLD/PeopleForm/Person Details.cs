@@ -18,5 +18,10 @@ namespace DVLD.PeopleForm
 
             uctrPersonDetails1.PersonID = PersonID;
         }
+
+        private void Person_Details_Activated(object sender, EventArgs e)
+        {
+            uctrPersonDetails1.UpdateControl();
+        }
     }
 }
