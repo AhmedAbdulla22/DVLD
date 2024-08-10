@@ -277,7 +277,7 @@ namespace DVLD
 
         private void tbPhone_KeyDown(object sender, KeyEventArgs e)
         {
-            if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Space || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
             {
                 e.SuppressKeyPress = false;
                 e.Handled = false;

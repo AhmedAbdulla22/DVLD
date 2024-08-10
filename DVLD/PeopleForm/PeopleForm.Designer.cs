@@ -41,7 +41,7 @@
             this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRecords = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.tbFilter = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
@@ -158,10 +158,11 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Filter By:";
             // 
-            // comboBox1
+            // cbFilter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
             "None",
             "PersonID",
             "National No.",
@@ -173,11 +174,11 @@
             "Gender",
             "Email",
             "Phone"});
-            this.comboBox1.Location = new System.Drawing.Point(143, 304);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 28);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbFilter.Location = new System.Drawing.Point(143, 304);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(175, 28);
+            this.cbFilter.TabIndex = 8;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tbFilter
             // 
@@ -187,6 +188,8 @@
             this.tbFilter.Size = new System.Drawing.Size(221, 26);
             this.tbFilter.TabIndex = 9;
             this.tbFilter.Visible = false;
+            this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
+            this.tbFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbFilter_KeyDown);
             // 
             // button2
             // 
@@ -238,7 +241,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 645);
             this.Controls.Add(this.tbFilter);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAddPerson);
@@ -248,7 +251,6 @@
             this.Name = "frmPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People";
-            this.Activated += new System.EventHandler(this.frmPeople_Activated);
             this.Load += new System.EventHandler(this.frmPeople_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -275,7 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem callToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.TextBox tbFilter;
     }
 }

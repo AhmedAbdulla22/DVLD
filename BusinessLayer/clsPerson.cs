@@ -124,7 +124,7 @@ namespace BusinessLayer
             return ClsPersonDataAccess.getAllPeople();
         }
 
-        public static DataTable getPeopleByPersonID(int PersonID) 
+        public static DataTable getPeopleByPersonID(int PersonID = -1) 
         {
             return ClsPersonDataAccess.GetPersonByPersonID(PersonID);
         }
@@ -132,6 +132,41 @@ namespace BusinessLayer
         public static DataTable getPeopleByNationalNo(string NationalNo)
         {
             return ClsPersonDataAccess.GetPersonByNationalNo(NationalNo);
+        }
+
+        public static DataTable getPeopleByFirstName(string FirstName)
+        {
+            return ClsPersonDataAccess.GetPersonByFirstName(FirstName);
+        }
+
+        public static DataTable getPeopleBySecondName(string SecondName)
+        {
+            return ClsPersonDataAccess.GetPersonBySecondName(SecondName);
+        }
+
+        public static DataTable getPeopleByThirdName(string ThirdName)
+        {
+            return ClsPersonDataAccess.GetPersonByThirdName(ThirdName);
+        }
+        public static DataTable getPeopleByLastName(string LastName)
+        {
+            return ClsPersonDataAccess.GetPersonByLastName(LastName);
+        }
+        public static DataTable getPeopleByPhone(string Phone)
+        {
+            return ClsPersonDataAccess.GetPersonByPhone(Phone);
+        }
+        public static DataTable getPeopleByNationality(string Nationality)
+        {
+            return ClsPersonDataAccess.GetPersonByNationality(Nationality);
+        }
+        public static DataTable getPeopleByEmail(string Email)
+        {
+            return ClsPersonDataAccess.GetPersonByEmail(Email);
+        }
+        public static DataTable getPeopleByGender(string Gender)
+        {
+            return ClsPersonDataAccess.GetPersonByGender(Gender);
         }
 
         public static bool isNationalNumberExist(string nationalNumber) 

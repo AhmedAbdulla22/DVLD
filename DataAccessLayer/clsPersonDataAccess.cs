@@ -611,7 +611,7 @@ SELECT Scope_Identity();";
                             Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
                               FROM People INNER JOIN
                             Countries ON People.NationalityCountryID = Countries.CountryID
-                            Where Nationality LIKE @Nationality + '%';";
+                            Where Countries.CountryName LIKE @Nationality + '%';";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     sqlCommand.Parameters.AddWithValue("@Nationality", Nationality);
@@ -698,10 +698,15 @@ SELECT Scope_Identity();";
                              When People.Gendor = 0 then 'Male'
                              Else 'Female'
                              END as Gender,
-                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath-
+                            Address,Phone,Email,Countries.CountryName as Nationality,ImagePath
                               FROM People INNER JOIN
                             Countries ON People.NationalityCountryID = Countries.CountryID
-                            Where Gender LIKE @Gender + '%';";
+                            Where 
+                                  CASE
+                                  WHEN People.Gendor = 0 then 'Male'
+                                  ELSE 'Female'
+                                  END
+                                  LIKE @Gender + '%';";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     sqlCommand.Parameters.AddWithValue("@Gender", Gender);
