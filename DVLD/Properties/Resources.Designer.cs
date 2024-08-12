@@ -63,6 +63,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3M {
+            get {
+                object obj = ResourceManager.GetObject("3M", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _87f519db_8efe_46d1_8881_9e7d58b3e705 {
             get {
                 object obj = ResourceManager.GetObject("_87f519db-8efe-46d1-8881-9e7d58b3e705", resourceCulture);
