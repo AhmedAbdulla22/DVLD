@@ -39,14 +39,14 @@ namespace DVLD
 
 
             //resize lbl images
-            lblName.Image = Utilites.ResizeImage(lblPhone.Image, 15, 15);
-            lblNationalNo.Image = Utilites.ResizeImage(lblNationalNo.Image, 15, 15);
-            lblGender.Image = Utilites.ResizeImage(lblGender.Image, 15, 15);
-            lblDateOfBirth.Image = Utilites.ResizeImage(lblDateOfBirth.Image, 15, 15);
-            lblCountry.Image = Utilites.ResizeImage(lblCountry.Image, 15, 15);
-            lblAddress.Image = Utilites.ResizeImage(lblAddress.Image, 15, 15);
-            lblPhone.Image = Utilites.ResizeImage(lblPhone.Image, 15, 15);
-            lblEmail.Image = Utilites.ResizeImage(lblEmail.Image, 15, 15);
+            lblName.Image = Utilites.ResizeImage(lblPhone.Image, 20, 20);
+            lblNationalNo.Image = Utilites.ResizeImage(lblNationalNo.Image, 20, 20);
+            lblGender.Image = Utilites.ResizeImage(lblGender.Image, 20, 20);
+            lblDateOfBirth.Image = Utilites.ResizeImage(lblDateOfBirth.Image, 20, 20);
+            lblCountry.Image = Utilites.ResizeImage(lblCountry.Image, 20, 20);
+            lblAddress.Image = Utilites.ResizeImage(lblAddress.Image, 20, 20);
+            lblPhone.Image = Utilites.ResizeImage(lblPhone.Image, 20, 20);
+            lblEmail.Image = Utilites.ResizeImage(lblEmail.Image, 20, 20);
 
             //modify lblName Color
             lblName2.ForeColor = Color.Red;

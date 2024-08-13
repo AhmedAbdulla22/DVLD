@@ -154,9 +154,6 @@
     <None Include="Resources\_87f519db-8efe-46d1-8881-9e7d58b3e705.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\_87f519db-8efe-46d1-8881-9e7d58b3e705%281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Driver License.png" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3M.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
