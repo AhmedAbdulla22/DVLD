@@ -76,7 +76,7 @@ namespace DVLD
         {
             if (!this.Visible)
             {
-            this.Close();
+            this.Cle();
             }
             else
             {

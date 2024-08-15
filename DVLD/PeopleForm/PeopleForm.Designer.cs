@@ -60,12 +60,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPeople.Location = new System.Drawing.Point(52, 338);
+            this.dgvPeople.Location = new System.Drawing.Point(46, 270);
+            this.dgvPeople.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
             this.dgvPeople.RowHeadersWidth = 62;
             this.dgvPeople.RowTemplate.Height = 28;
-            this.dgvPeople.Size = new System.Drawing.Size(1094, 239);
+            this.dgvPeople.Size = new System.Drawing.Size(979, 302);
             this.dgvPeople.TabIndex = 1;
             this.dgvPeople.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvPeople_MouseDown);
             // 
@@ -82,59 +83,59 @@
             this.callToolStripMenuItem,
             this.sendEmailToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 208);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 196);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.Add_Male_User_Group;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.compose;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.Close;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(192, 6);
             // 
             // callToolStripMenuItem
             // 
             this.callToolStripMenuItem.Image = global::DVLD.Properties.Resources.phone_call_1_;
             this.callToolStripMenuItem.Name = "callToolStripMenuItem";
-            this.callToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.callToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
             this.callToolStripMenuItem.Text = "Phone Call";
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.arroba;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // lblRecords
@@ -142,9 +143,9 @@
             this.lblRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(45, 583);
+            this.lblRecords.Location = new System.Drawing.Point(40, 577);
             this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(95, 28);
+            this.lblRecords.Size = new System.Drawing.Size(81, 23);
             this.lblRecords.TabIndex = 3;
             this.lblRecords.Text = "#Records";
             // 
@@ -152,9 +153,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 301);
+            this.label1.Location = new System.Drawing.Point(44, 241);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 28);
+            this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "Filter By:";
             // 
@@ -174,18 +175,20 @@
             "Gender",
             "Email",
             "Phone"});
-            this.cbFilter.Location = new System.Drawing.Point(143, 304);
+            this.cbFilter.Location = new System.Drawing.Point(127, 243);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(175, 28);
+            this.cbFilter.Size = new System.Drawing.Size(156, 24);
             this.cbFilter.TabIndex = 8;
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tbFilter
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFilter.Location = new System.Drawing.Point(324, 306);
+            this.tbFilter.Location = new System.Drawing.Point(288, 245);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Size = new System.Drawing.Size(221, 26);
+            this.tbFilter.Size = new System.Drawing.Size(197, 22);
             this.tbFilter.TabIndex = 9;
             this.tbFilter.Visible = false;
             this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
@@ -200,9 +203,10 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::DVLD.Properties.Resources.Close;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1024, 583);
+            this.button2.Location = new System.Drawing.Point(917, 577);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 40);
+            this.button2.Size = new System.Drawing.Size(108, 32);
             this.button2.TabIndex = 6;
             this.button2.Text = "Close";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -216,9 +220,10 @@
             this.btnAddPerson.BackgroundImage = global::DVLD.Properties.Resources.Add_Male_User_Group;
             this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPerson.Location = new System.Drawing.Point(1086, 271);
+            this.btnAddPerson.Location = new System.Drawing.Point(972, 217);
+            this.btnAddPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(60, 61);
+            this.btnAddPerson.Size = new System.Drawing.Size(53, 49);
             this.btnAddPerson.TabIndex = 5;
             this.btnAddPerson.UseVisualStyleBackColor = false;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
@@ -228,18 +233,19 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DVLD.Properties.Resources.People100x;
-            this.pictureBox1.Location = new System.Drawing.Point(521, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(463, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 204);
+            this.pictureBox1.Size = new System.Drawing.Size(148, 163);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // frmPeople
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 645);
+            this.ClientSize = new System.Drawing.Size(1070, 627);
             this.Controls.Add(this.tbFilter);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.label1);
@@ -248,6 +254,7 @@
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People";

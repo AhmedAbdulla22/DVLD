@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Windows.Forms;
 using System;
+using System.Data;
 
 namespace DataAccessLayer
 {
@@ -48,6 +49,42 @@ namespace DataAccessLayer
             }
 
             return isExist;
+        }
+
+        public static DataTable GetAllUsers()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT Users.UserID, Users.PersonID, People.FirstName +' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName as FullName,Users.UserName ,Users.IsActive
+                                FROM     People INNER JOIN
+                                Users ON People.PersonID = Users.PersonID;"; 
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dataTable;
         }
     }
 }

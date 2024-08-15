@@ -103,6 +103,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Admin_Settings_Male100x {
+            get {
+                object obj = ResourceManager.GetObject("Admin Settings Male100x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arroba {
             get {
                 object obj = ResourceManager.GetObject("arroba", resourceCulture);

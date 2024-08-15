@@ -55,7 +55,8 @@ namespace DVLD
                     }
                 case "Users":
                     {
-                        MessageBox.Show("Still in Work", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        frmUser frmUser = new frmUser();
+                        frmUser.ShowDialog();
                         break;
                     }
                 case "Account Settings":
