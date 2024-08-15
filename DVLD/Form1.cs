@@ -63,14 +63,20 @@ namespace DVLD
                         MessageBox.Show("Still in Work", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         break;
                     }
-                case "Sign Out":
-                    {
-                        this.Close();
-                        break;
-                    }
             }
         }
 
-       
+        private void accountSettingsToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Owner.Visible = true;
+            
+            this.Close();
+            
+        }
     }
 }

@@ -143,6 +143,7 @@
             this.accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
             this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
+            this.accountSettingsToolStripMenuItem.MouseEnter += new System.EventHandler(this.accountSettingsToolStripMenuItem_MouseEnter);
             // 
             // currentUserInfoToolStripMenuItem
             // 
@@ -164,6 +165,7 @@
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.signOutToolStripMenuItem.Text = "Sign Out";
+            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // uctrPersonDetails1
             // 

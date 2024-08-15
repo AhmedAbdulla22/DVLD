@@ -20,8 +20,7 @@ namespace DVLD
         {
             InitializeComponent();
 
-            //resize icon
-            btnClose.Image = Utilites.ResizeImage(btnClose.Image,20,20);
+
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -55,6 +54,9 @@ namespace DVLD
                     }
                     frmMain frmMain = new frmMain();
                     frmMain.FormClosing += formClosing;
+                    //make the the login form parent of the main form
+                    frmMain.Owner = this;
+
 
                     this.Visible = false;
                     frmMain.ShowDialog();
@@ -72,7 +74,14 @@ namespace DVLD
 
         private void formClosing(object sender, FormClosingEventArgs e)
         {
+            if (!this.Visible)
+            {
             this.Close();
+            }
+            else
+            {
+                FormLoad();
+            }
         }
 
         private bool isRememberChecked()
@@ -94,6 +103,10 @@ namespace DVLD
 
                     result = true;
                 }
+                else
+                {
+                    tbUserName.Text = tbPassword.Text = "";
+                }
             }
 
 
@@ -102,6 +115,11 @@ namespace DVLD
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
+        {
+            FormLoad();
+        }
+
+        private void FormLoad()
         {
             isRememberChecked();
         }
