@@ -16,6 +16,8 @@ namespace DVLD
     {
         string _RememberMePath = @"C:\\Users\\Ahmed\\Documents\\RememberMe.txt";
         string delim = "#//#";
+
+        bool formIsClosing = false;
         public frmLogin()
         {
             InitializeComponent();
@@ -74,9 +76,15 @@ namespace DVLD
 
         private void formClosing(object sender, FormClosingEventArgs e)
         {
+            if (formIsClosing)
+            {
+                return;
+            }
+
             if (!this.Visible)
             {
-            this.Cle();
+                formIsClosing = true;
+            this.Close();
             }
             else
             {
