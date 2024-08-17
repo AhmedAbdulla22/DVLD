@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.UserForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,22 @@ namespace DVLD
         private void frmUser_Load(object sender, EventArgs e)
         {
             LoadTheDataGridView();
+
+            //set cb to none
+            cbFilter.SelectedIndex = 0;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            using(frmAddUser AddUserForm = new frmAddUser())
+            {
+                AddUserForm.ShowDialog();
+            }
         }
     }
 }

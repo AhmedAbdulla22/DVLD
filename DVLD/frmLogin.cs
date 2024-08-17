@@ -78,11 +78,13 @@ namespace DVLD
         {
             if (formIsClosing)
             {
+                //so it not cause stackOverFlow
                 return;
             }
 
             if (!this.Visible)
             {
+                //flag
                 formIsClosing = true;
             this.Close();
             }

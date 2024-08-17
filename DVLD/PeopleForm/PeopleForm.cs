@@ -27,6 +27,8 @@ namespace DVLD
         private void frmPeople_Load(object sender, EventArgs e)
         {
             LoadTheDataGridView();
+
+            cbFilter.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)

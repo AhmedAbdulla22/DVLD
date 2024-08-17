@@ -56,16 +56,11 @@
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
             "None",
+            "UserID",
             "PersonID",
-            "National No.",
-            "FirstName",
-            "SecondName",
-            "ThirdName",
-            "LastName",
-            "Nationality",
-            "Gender",
-            "Email",
-            "Phone"});
+            "Full Name",
+            "User Name",
+            ""});
             this.cbFilter.Location = new System.Drawing.Point(109, 294);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilter.Name = "cbFilter";
@@ -128,6 +123,7 @@
             this.button2.Text = "Close";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAddUser
             // 
@@ -142,6 +138,7 @@
             this.btnAddUser.Size = new System.Drawing.Size(53, 49);
             this.btnAddUser.TabIndex = 13;
             this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // pictureBox1
             // 

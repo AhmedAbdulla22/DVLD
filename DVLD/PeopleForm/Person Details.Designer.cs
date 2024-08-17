@@ -50,14 +50,14 @@
             this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrPersonDetails1.Name = "uctrPersonDetails1";
             this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(606, 220);
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(674, 220);
             this.uctrPersonDetails1.TabIndex = 1;
             // 
             // Person_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 256);
+            this.ClientSize = new System.Drawing.Size(685, 261);
             this.Controls.Add(this.uctrPersonDetails1);
             this.Controls.Add(this.lblPersonDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

@@ -58,6 +58,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\frmUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,16 +95,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="uctrlAddPerson.cs">
+    <Compile Include="userControls\uctrlAddPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctrlAddPerson.Designer.cs">
+    <Compile Include="userControls\uctrlAddPerson.Designer.cs">
       <DependentUpon>uctrlAddPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctrPersonDetails.cs">
+    <Compile Include="userControls\uctrPersonDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctrPersonDetails.Designer.cs">
+    <Compile Include="userControls\uctrPersonDetails.Designer.cs">
       <DependentUpon>uctrPersonDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilites.cs" />
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
@@ -125,10 +134,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctrlAddPerson.resx">
+    <EmbeddedResource Include="userControls\uctrlAddPerson.resx">
       <DependentUpon>uctrlAddPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctrPersonDetails.resx">
+    <EmbeddedResource Include="userControls\uctrPersonDetails.resx">
       <DependentUpon>uctrPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

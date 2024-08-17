@@ -67,10 +67,6 @@ namespace DVLD
             }
         }
 
-        private void accountSettingsToolStripMenuItem_MouseEnter(object sender, EventArgs e)
-        {
-            
-        }
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -79,5 +75,12 @@ namespace DVLD
             this.Close();
             
         }
+
+        private void accountSettingsToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            accountSettingsToolStripMenuItem.ShowDropDown();
+        }
+
+        
     }
 }
