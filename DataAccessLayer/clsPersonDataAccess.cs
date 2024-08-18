@@ -130,6 +130,72 @@ namespace DataAccessLayer
             }
             return isExist;
         }
+
+        public static bool GetPersonInfoByNationalNo(ref int PersonID, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName, string NationalNo, ref DateTime DateOfBirth, ref short gender, ref string Phone, ref string Email, ref int CountryID, ref string Address, ref string ImagePath)
+        {
+            bool isExist = false;
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM People Where NationalNo = @NationalNo;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    safeParameterAdding<string>(sqlCommand, "@NationalNo", NationalNo);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                PersonID = (int)reader["PersonID"];
+                                FirstName = (string)reader["FirstName"];
+                                SecondName = (string)reader["SecondName"];
+                                ThirdName = (string)reader["ThirdName"];
+                                LastName = (string)reader["LastName"];
+                                Phone = (string)reader["Phone"];
+                                Address = (string)reader["LastName"];
+                                DateOfBirth = (DateTime)reader["DateOfBirth"];
+                                CountryID = (int)reader["NationalityCountryID"];
+                                byte bytegender = (byte)reader["Gendor"];
+                                gender = (short)bytegender;
+
+                                if (reader["Email"] != DBNull.Value)
+                                {
+                                    Email = (string)reader["Email"];
+                                }
+                                else
+                                {
+                                    Email = "";
+                                }
+
+                                if (reader["ImagePath"] != DBNull.Value)
+                                {
+                                    ImagePath = (string)reader["ImagePath"];
+                                }
+                                else
+                                {
+                                    ImagePath = "";
+                                }
+
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+            return isExist;
+        }
         public static bool isNationalNumberExist(string NationalNumber)
         {
             bool isNationalNumberExist = false;

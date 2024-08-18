@@ -58,6 +58,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControls\uctrlFilterBy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\uctrlFilterBy.Designer.cs">
+      <DependentUpon>uctrlFilterBy.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\uctrlFilterBy.resx">
+      <DependentUpon>uctrlFilterBy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
@@ -245,6 +254,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Admin Settings Male100x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find User Male.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

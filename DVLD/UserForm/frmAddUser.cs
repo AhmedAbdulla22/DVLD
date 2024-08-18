@@ -15,11 +15,20 @@ namespace DVLD.UserForm
         public frmAddUser()
         {
             InitializeComponent();
+
+            uctrlFilterBy1.OnFilterSucceded += GettingPersonIDWhenFilterSucceded;
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void GettingPersonIDWhenFilterSucceded(int PersonID)
+        {
+                uctrPersonDetails1.PersonID = PersonID;
+                uctrPersonDetails1.UpdateControl();
+            
         }
     }
 }

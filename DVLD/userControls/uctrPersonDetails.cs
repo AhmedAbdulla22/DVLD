@@ -49,37 +49,50 @@ namespace DVLD
 
         private void fillLabels()
         {
-            lblPersonID2.Text = _Person.PersonID.ToString();
-            lblName2.Text = _Person.FirstName + ' ' + _Person.SecondName + ' ' + _Person.ThirdName + ' ' + _Person.LastName;
-            lblNationalNo2.Text = _Person.NationalNo.ToString();
-            lblPhone2.Text = _Person.Phone.ToString();
-            lblEmail2.Text = _Person.Email.ToString();
-            lblDateOfBirth2.Text = _Person.DateOfBirth.ToShortDateString();
-            lblAddress2.Text = _Person.Address.ToString();
-            lblGender2.Text = (_Person.Gender == 0) ? "Male":"Female";
-            lblCountry2.Text = CountryDict.FirstOrDefault(x => x.Value == _Person.CountryID).Key;
-
-            //validating if image missing
-            if (!string.IsNullOrEmpty(_Person.ImagePath) && !File.Exists(_Person.ImagePath))
+            if (PersonID != -1)
             {
-                _Person.ImagePath = null;
-            }
+                lblPersonID2.Text = _Person.PersonID.ToString();
+                lblName2.Text = _Person.FirstName + ' ' + _Person.SecondName + ' ' + _Person.ThirdName + ' ' + _Person.LastName;
+                lblNationalNo2.Text = _Person.NationalNo.ToString();
+                lblPhone2.Text = _Person.Phone.ToString();
+                lblEmail2.Text = _Person.Email.ToString();
+                lblDateOfBirth2.Text = _Person.DateOfBirth.ToShortDateString();
+                lblAddress2.Text = _Person.Address.ToString();
+                lblGender2.Text = (_Person.Gender == 0) ? "Male" : "Female";
+                lblCountry2.Text = CountryDict.FirstOrDefault(x => x.Value == _Person.CountryID).Key;
 
-            if (string.IsNullOrEmpty(_Person.ImagePath))
-            {
-                if (_Person.Gender == 0)
+                //validating if image missing
+                if (!string.IsNullOrEmpty(_Person.ImagePath) && !File.Exists(_Person.ImagePath))
                 {
-                    pictureBox1.Image = Resources.User_Male;
+                    _Person.ImagePath = null;
+                }
+
+                if (string.IsNullOrEmpty(_Person.ImagePath))
+                {
+                    if (_Person.Gender == 0)
+                    {
+                        pictureBox1.Image = Resources.User_Male;
+                    }
+                    else
+                    {
+                        pictureBox1.Image = Resources.Female_User;
+                    }
                 }
                 else
                 {
-                    pictureBox1.Image = Resources.Female_User;
+                    pictureBox1.ImageLocation = _Person.ImagePath;
                 }
             }
             else
             {
-                pictureBox1.ImageLocation = _Person.ImagePath;
+                lblPersonID2.Text = lblName2.Text = lblNationalNo2.Text = lblPhone2.Text = lblEmail2.Text = lblDateOfBirth2.Text = lblAddress2.Text = lblGender2.Text = lblCountry2.Text = "[????]";
+                pictureBox1.Image = Resources.User_Male;
             }
+
+
+
+
+
         }
 
         private void _LoadPersonData()
@@ -97,8 +110,8 @@ namespace DVLD
 
                 }
 
-            fillLabels();
             }
+            fillLabels();
 
         }
 
@@ -107,10 +120,7 @@ namespace DVLD
             _LoadPersonData();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void lnklblEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

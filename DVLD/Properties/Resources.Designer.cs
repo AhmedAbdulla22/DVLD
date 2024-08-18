@@ -93,6 +93,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_User_Male {
+            get {
+                object obj = ResourceManager.GetObject("Add User Male", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Admin_Settings_Male {
             get {
                 object obj = ResourceManager.GetObject("Admin Settings Male", resourceCulture);
@@ -206,6 +216,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap Female_User {
             get {
                 object obj = ResourceManager.GetObject("Female User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Find_User_Male {
+            get {
+                object obj = ResourceManager.GetObject("Find User Male", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

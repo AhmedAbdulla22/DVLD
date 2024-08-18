@@ -41,8 +41,15 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserID2 = new System.Windows.Forms.Label();
             this.lblUserID1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
+            this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFormLabel
@@ -62,7 +69,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(19, 89);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(647, 473);
@@ -70,10 +77,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(639, 447);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Info";
@@ -91,9 +100,9 @@
             this.tabPage2.Controls.Add(this.lblUserID2);
             this.tabPage2.Controls.Add(this.lblUserID1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(639, 447);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Login Info";
@@ -105,7 +114,7 @@
             this.chkIsActive.AutoSize = true;
             this.chkIsActive.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIsActive.Location = new System.Drawing.Point(184, 186);
-            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Size = new System.Drawing.Size(81, 23);
             this.chkIsActive.TabIndex = 21;
@@ -115,7 +124,7 @@
             // tbCnfPassword
             // 
             this.tbCnfPassword.Location = new System.Drawing.Point(211, 154);
-            this.tbCnfPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCnfPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbCnfPassword.Name = "tbCnfPassword";
             this.tbCnfPassword.Size = new System.Drawing.Size(103, 20);
             this.tbCnfPassword.TabIndex = 20;
@@ -149,7 +158,7 @@
             // tbUserName
             // 
             this.tbUserName.Location = new System.Drawing.Point(211, 105);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(103, 20);
             this.tbUserName.TabIndex = 15;
@@ -157,7 +166,7 @@
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(211, 129);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(103, 20);
             this.tbPassword.TabIndex = 17;
@@ -200,6 +209,43 @@
             this.lblUserID1.Text = "User ID:";
             this.lblUserID1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.uctrlFilterBy1);
+            this.groupBox1.Location = new System.Drawing.Point(84, 43);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(472, 73);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filter";
+            // 
+            // uctrPersonDetails1
+            // 
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(4, 18);
+            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
+            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
+            this.uctrPersonDetails1.PersonID = -1;
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(592, 182);
+            this.uctrPersonDetails1.TabIndex = 1;
+            // 
+            // uctrlFilterBy1
+            // 
+            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlFilterBy1.Location = new System.Drawing.Point(32, 19);
+            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
+            this.uctrlFilterBy1.Size = new System.Drawing.Size(437, 43);
+            this.uctrlFilterBy1.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.uctrPersonDetails1);
+            this.groupBox2.Location = new System.Drawing.Point(20, 140);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(601, 204);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Personal Information";
+            // 
             // frmAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,12 +253,15 @@
             this.ClientSize = new System.Drawing.Size(675, 580);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblFormLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddUser";
             this.Text = "frmAddUser";
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -232,5 +281,9 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserID2;
         private System.Windows.Forms.Label lblUserID1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private userControls.uctrlFilterBy uctrlFilterBy1;
+        private uctrPersonDetails uctrPersonDetails1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

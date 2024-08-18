@@ -193,6 +193,25 @@ namespace BusinessLayer
             }
         }
 
-        
+        public static clsPerson Find(string NationalNo)
+        {
+            string firstName = "", secondName = "", thirdName = "", lastName = "", address = "", imagePath = "", email = "", nationalNo = "", Phone = "";
+            DateTime dateOfBirth = DateTime.UtcNow;
+            int countryID = -1,PersonID = -1;
+            short gender = -1;
+
+            //if 
+            //get person by id 
+            if (ClsPersonDataAccess.GetPersonInfoByNationalNo(ref PersonID, ref firstName, ref secondName, ref thirdName, ref lastName, NationalNo, ref dateOfBirth, ref gender, ref Phone, ref email, ref countryID, ref address, ref imagePath))
+            {
+                return new clsPerson(PersonID, firstName, secondName, thirdName, lastName, nationalNo, gender, dateOfBirth, countryID, Phone, email, address, imagePath);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
     }
 }
