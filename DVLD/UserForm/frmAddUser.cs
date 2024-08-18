@@ -20,23 +20,15 @@ namespace DVLD.UserForm
             uctrlFilterBy1.OnFilterSucceded += GettingPersonIDWhenFilterSucceded;
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void GettingPersonIDWhenFilterSucceded(int PersonID)
+        private bool GoingForNextTab()
         {
-                uctrPersonDetails1.PersonID = PersonID;
-                uctrPersonDetails1.UpdateControl();
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+            bool GoToNextTab = false;
             if (uctrPersonDetails1.PersonID == -1)
             {
-                return;
+                MessageBox.Show("First Find A Person That is Not User Already", "Find A Person", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return GoToNextTab;
             }
 
             if (clsUser.GetUser(uctrPersonDetails1.PersonID) != null)
@@ -46,6 +38,29 @@ namespace DVLD.UserForm
             else
             {
                 tabControl1.SelectTab(tabLogin);
+                GoToNextTab = true;
+            }
+
+            return GoToNextTab;
+        }
+        private void GettingPersonIDWhenFilterSucceded(int PersonID)
+        {
+                uctrPersonDetails1.PersonID = PersonID;
+                uctrPersonDetails1.UpdateControl();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GoingForNextTab();
+
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (!GoingForNextTab())
+            {
+                e.Cancel = true;
             }
         }
     }

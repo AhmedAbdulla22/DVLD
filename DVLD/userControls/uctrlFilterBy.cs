@@ -34,9 +34,20 @@ namespace DVLD.userControls
             }
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
+
+        public Action<int> OnFilterSucceded;
+
+        protected virtual void FilterSucceded(int PersonID)
         {
-            
+            Action<int> handler = OnFilterSucceded;
+
+            handler?.Invoke(PersonID);
+        }
+
+        
+
+        private void btnFind_Click_1(object sender, EventArgs e)
+        {
             var filterTxt = tbFilter.Text;
             if (string.IsNullOrEmpty(filterTxt))
             {
@@ -68,13 +79,13 @@ namespace DVLD.userControls
                     }
                 case "National No.":
                     {
-                            clsPerson Person;
-                            Person = clsPerson.Find(tbFilter.Text);
+                        clsPerson Person;
+                        Person = clsPerson.Find(tbFilter.Text);
 
-                            if (Person != null)
-                            {
-                                FilterSucceded(Person.PersonID);                               
-                            }
+                        if (Person != null)
+                        {
+                            FilterSucceded(Person.PersonID);
+                        }
                         else
                         {
                             FilterSucceded(-1);
@@ -84,18 +95,9 @@ namespace DVLD.userControls
             }
         }
 
-        public Action<int> OnFilterSucceded;
-
-        protected virtual void FilterSucceded(int PersonID)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            Action<int> handler = OnFilterSucceded;
-
-            handler?.Invoke(PersonID);
-        }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-            using(frmAddPerson frmAdd = new frmAddPerson() )
+            using (frmAddPerson frmAdd = new frmAddPerson())
             {
                 frmAdd.ShowDialog();
             }

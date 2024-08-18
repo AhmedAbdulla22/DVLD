@@ -33,6 +33,7 @@ namespace DVLD
 
             //set cb to none
             cbFilter.SelectedIndex = 0;
+            cbActiveFilter.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,5 +48,36 @@ namespace DVLD
                 AddUserForm.ShowDialog();
             }
         }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch(cbFilter.SelectedItem.ToString())
+            {
+                case "None":
+                    {
+                        tbFilter.Visible = false;
+                        cbActiveFilter.Visible = false;
+                        LoadTheDataGridView();
+                        break;
+                    }
+                case "IsActive":
+                    {
+                        tbFilter.Visible = false;
+                        cbActiveFilter.Visible = true;
+
+                        break;
+                    }
+                default:
+                    {
+                        tbFilter.Visible = true;
+                        cbActiveFilter.Visible = false;
+                        break;
+                    }
+            }
+            
+        }
+
+        
     }
 }

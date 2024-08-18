@@ -149,21 +149,21 @@
             // 
             this.currentUserInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
             this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.currentUserInfoToolStripMenuItem.Text = "Current User Info";
             // 
             // changeUserInfoToolStripMenuItem
             // 
             this.changeUserInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.Password_Window;
             this.changeUserInfoToolStripMenuItem.Name = "changeUserInfoToolStripMenuItem";
-            this.changeUserInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changeUserInfoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.changeUserInfoToolStripMenuItem.Text = "Change Password";
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Image = global::DVLD.Properties.Resources.Logout;
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
