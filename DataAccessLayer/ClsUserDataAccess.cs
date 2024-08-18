@@ -4,6 +4,7 @@ using System.Net;
 using System.Windows.Forms;
 using System;
 using System.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DataAccessLayer
 {
@@ -22,6 +23,86 @@ namespace DataAccessLayer
                     sqlCommand.Parameters.AddWithValue("@UserName", UserName);
                     sqlCommand.Parameters.AddWithValue("@Password", Password);
 
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                UserName = (string)reader["UserName"];
+                                Password = (string)reader["Password"];
+                                isActive = (bool)reader["isActive"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+
+        public static bool GetUserByPersonID(int PersonID,ref string UserName, ref string Password, ref bool isActive)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM Users Where PersonID = @PersonID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                UserName = (string)reader["UserName"];
+                                Password = (string)reader["Password"];
+                                isActive = (bool)reader["isActive"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+
+        public static bool GetUserByUserID(int UserID, ref string UserName, ref string Password, ref bool isActive)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM Users Where UserID = @UserID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@UserID", UserID);
                     try
                     {
                         sqlConnection.Open();

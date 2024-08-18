@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.PeopleForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,7 @@ namespace DVLD.userControls
             var filterTxt = tbFilter.Text;
             if (string.IsNullOrEmpty(filterTxt))
             {
+                FilterSucceded(-1);
                 return;
             }
 
@@ -89,6 +91,14 @@ namespace DVLD.userControls
             Action<int> handler = OnFilterSucceded;
 
             handler?.Invoke(PersonID);
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            using(frmAddPerson frmAdd = new frmAddPerson() )
+            {
+                frmAdd.ShowDialog();
+            }
         }
 
         //private void tbFilter_TextChanged(object sender, EventArgs e)

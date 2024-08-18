@@ -43,10 +43,10 @@
             // tbFilter
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFilter.Location = new System.Drawing.Point(270, 296);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbFilter.Location = new System.Drawing.Point(202, 240);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Size = new System.Drawing.Size(197, 22);
+            this.tbFilter.Size = new System.Drawing.Size(148, 20);
             this.tbFilter.TabIndex = 17;
             this.tbFilter.Visible = false;
             // 
@@ -60,20 +60,21 @@
             "PersonID",
             "Full Name",
             "User Name",
-            ""});
-            this.cbFilter.Location = new System.Drawing.Point(109, 294);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            "IsActive"});
+            this.cbFilter.Location = new System.Drawing.Point(82, 239);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(156, 24);
+            this.cbFilter.Size = new System.Drawing.Size(118, 21);
             this.cbFilter.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 292);
+            this.label1.Location = new System.Drawing.Point(20, 237);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 23);
+            this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.TabIndex = 15;
             this.label1.Text = "Filter By:";
             // 
@@ -82,9 +83,10 @@
             this.lblRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(22, 574);
+            this.lblRecords.Location = new System.Drawing.Point(16, 466);
+            this.lblRecords.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(81, 23);
+            this.lblRecords.Size = new System.Drawing.Size(67, 19);
             this.lblRecords.TabIndex = 12;
             this.lblRecords.Text = "#Records";
             // 
@@ -96,14 +98,15 @@
             this.dgvPeople.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPeople.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPeople.Location = new System.Drawing.Point(28, 321);
-            this.dgvPeople.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPeople.Location = new System.Drawing.Point(21, 261);
+            this.dgvPeople.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
             this.dgvPeople.RowHeadersWidth = 62;
             this.dgvPeople.RowTemplate.Height = 28;
-            this.dgvPeople.Size = new System.Drawing.Size(979, 248);
+            this.dgvPeople.Size = new System.Drawing.Size(734, 202);
             this.dgvPeople.TabIndex = 11;
             // 
             // button2
@@ -115,10 +118,10 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::DVLD.Properties.Resources.Close;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(899, 574);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(674, 466);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 32);
+            this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 14;
             this.button2.Text = "Close";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,10 +135,10 @@
             this.btnAddUser.BackgroundImage = global::DVLD.Properties.Resources.Admin_Settings_Male;
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Location = new System.Drawing.Point(954, 268);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddUser.Location = new System.Drawing.Point(716, 218);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(53, 49);
+            this.btnAddUser.Size = new System.Drawing.Size(40, 40);
             this.btnAddUser.TabIndex = 13;
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
@@ -145,19 +148,19 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DVLD.Properties.Resources.Admin_Settings_Male100x;
-            this.pictureBox1.Location = new System.Drawing.Point(445, 97);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(334, 79);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 163);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // frmUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 619);
+            this.ClientSize = new System.Drawing.Size(769, 503);
             this.Controls.Add(this.tbFilter);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.label1);
@@ -166,6 +169,7 @@
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUser";

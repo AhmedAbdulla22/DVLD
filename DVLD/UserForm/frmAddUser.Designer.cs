@@ -30,26 +30,27 @@
         {
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPersonalInfo = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabLogin = new System.Windows.Forms.TabPage();
             this.chkIsActive = new System.Windows.Forms.CheckBox();
             this.tbCnfPassword = new System.Windows.Forms.TextBox();
-            this.lblConfirmPassword = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserID2 = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblConfirmPassword = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserID1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
             this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tabPersonalInfo.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFormLabel
@@ -66,55 +67,76 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPersonalInfo);
+            this.tabControl1.Controls.Add(this.tabLogin);
             this.tabControl1.Location = new System.Drawing.Point(19, 89);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(647, 473);
+            this.tabControl1.Size = new System.Drawing.Size(647, 413);
             this.tabControl1.TabIndex = 4;
             // 
-            // tabPage1
+            // tabPersonalInfo
             // 
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(639, 447);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Personal Info";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPersonalInfo.Controls.Add(this.btnNext);
+            this.tabPersonalInfo.Controls.Add(this.groupBox2);
+            this.tabPersonalInfo.Controls.Add(this.groupBox1);
+            this.tabPersonalInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabPersonalInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPersonalInfo.Name = "tabPersonalInfo";
+            this.tabPersonalInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPersonalInfo.Size = new System.Drawing.Size(639, 387);
+            this.tabPersonalInfo.TabIndex = 0;
+            this.tabPersonalInfo.Text = "Personal Info";
+            this.tabPersonalInfo.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // groupBox2
             // 
-            this.tabPage2.Controls.Add(this.chkIsActive);
-            this.tabPage2.Controls.Add(this.tbCnfPassword);
-            this.tabPage2.Controls.Add(this.lblConfirmPassword);
-            this.tabPage2.Controls.Add(this.lblPassword);
-            this.tabPage2.Controls.Add(this.tbUserName);
-            this.tabPage2.Controls.Add(this.tbPassword);
-            this.tabPage2.Controls.Add(this.lblUserName);
-            this.tabPage2.Controls.Add(this.lblUserID2);
-            this.tabPage2.Controls.Add(this.lblUserID1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(639, 447);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Login Info";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            this.groupBox2.Controls.Add(this.uctrPersonDetails1);
+            this.groupBox2.Location = new System.Drawing.Point(20, 140);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(601, 204);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Personal Information";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.uctrlFilterBy1);
+            this.groupBox1.Location = new System.Drawing.Point(84, 43);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(472, 73);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filter";
+            // 
+            // tabLogin
+            // 
+            this.tabLogin.Controls.Add(this.chkIsActive);
+            this.tabLogin.Controls.Add(this.tbCnfPassword);
+            this.tabLogin.Controls.Add(this.tbUserName);
+            this.tabLogin.Controls.Add(this.tbPassword);
+            this.tabLogin.Controls.Add(this.lblUserID2);
+            this.tabLogin.Controls.Add(this.lblConfirmPassword);
+            this.tabLogin.Controls.Add(this.lblPassword);
+            this.tabLogin.Controls.Add(this.lblUserName);
+            this.tabLogin.Controls.Add(this.lblUserID1);
+            this.tabLogin.Location = new System.Drawing.Point(4, 22);
+            this.tabLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabLogin.Name = "tabLogin";
+            this.tabLogin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabLogin.Size = new System.Drawing.Size(639, 387);
+            this.tabLogin.TabIndex = 1;
+            this.tabLogin.Text = "Login Info";
+            this.tabLogin.UseVisualStyleBackColor = true;
+            this.tabLogin.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // chkIsActive
             // 
             this.chkIsActive.AutoSize = true;
             this.chkIsActive.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIsActive.Location = new System.Drawing.Point(184, 186);
-            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Size = new System.Drawing.Size(81, 23);
             this.chkIsActive.TabIndex = 21;
@@ -124,10 +146,57 @@
             // tbCnfPassword
             // 
             this.tbCnfPassword.Location = new System.Drawing.Point(211, 154);
-            this.tbCnfPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCnfPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCnfPassword.Name = "tbCnfPassword";
             this.tbCnfPassword.Size = new System.Drawing.Size(103, 20);
             this.tbCnfPassword.TabIndex = 20;
+            // 
+            // tbUserName
+            // 
+            this.tbUserName.Location = new System.Drawing.Point(211, 105);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUserName.Name = "tbUserName";
+            this.tbUserName.Size = new System.Drawing.Size(103, 20);
+            this.tbUserName.TabIndex = 15;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Location = new System.Drawing.Point(211, 129);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(103, 20);
+            this.tbPassword.TabIndex = 17;
+            // 
+            // lblUserID2
+            // 
+            this.lblUserID2.AutoSize = true;
+            this.lblUserID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserID2.Location = new System.Drawing.Point(210, 77);
+            this.lblUserID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserID2.Name = "lblUserID2";
+            this.lblUserID2.Size = new System.Drawing.Size(35, 19);
+            this.lblUserID2.TabIndex = 5;
+            this.lblUserID2.Text = "N/A";
+            this.lblUserID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::DVLD.Properties.Resources.Forward;
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNext.Location = new System.Drawing.Point(540, 347);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(81, 32);
+            this.btnNext.TabIndex = 15;
+            this.btnNext.Text = "Next";
+            this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblConfirmPassword
             // 
@@ -155,22 +224,6 @@
             this.lblPassword.Text = "Password:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tbUserName
-            // 
-            this.tbUserName.Location = new System.Drawing.Point(211, 105);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(2);
-            this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(103, 20);
-            this.tbUserName.TabIndex = 15;
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Location = new System.Drawing.Point(211, 129);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(103, 20);
-            this.tbPassword.TabIndex = 17;
-            // 
             // lblUserName
             // 
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,18 +236,6 @@
             this.lblUserName.TabIndex = 18;
             this.lblUserName.Text = "UserName:";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblUserID2
-            // 
-            this.lblUserID2.AutoSize = true;
-            this.lblUserID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID2.Location = new System.Drawing.Point(210, 77);
-            this.lblUserID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUserID2.Name = "lblUserID2";
-            this.lblUserID2.Size = new System.Drawing.Size(35, 19);
-            this.lblUserID2.TabIndex = 5;
-            this.lblUserID2.Text = "N/A";
-            this.lblUserID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblUserID1
             // 
@@ -209,16 +250,6 @@
             this.lblUserID1.Text = "User ID:";
             this.lblUserID1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.uctrlFilterBy1);
-            this.groupBox1.Location = new System.Drawing.Point(84, 43);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 73);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter";
-            // 
             // uctrPersonDetails1
             // 
             this.uctrPersonDetails1.Location = new System.Drawing.Point(4, 18);
@@ -231,20 +262,11 @@
             // uctrlFilterBy1
             // 
             this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uctrlFilterBy1.Location = new System.Drawing.Point(32, 19);
+            this.uctrlFilterBy1.Location = new System.Drawing.Point(7, 19);
+            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
             this.uctrlFilterBy1.Name = "uctrlFilterBy1";
-            this.uctrlFilterBy1.Size = new System.Drawing.Size(437, 43);
+            this.uctrlFilterBy1.Size = new System.Drawing.Size(458, 43);
             this.uctrlFilterBy1.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.uctrPersonDetails1);
-            this.groupBox2.Location = new System.Drawing.Point(20, 140);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(601, 204);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Personal Information";
             // 
             // frmAddUser
             // 
@@ -253,15 +275,15 @@
             this.ClientSize = new System.Drawing.Size(675, 580);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblFormLabel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAddUser";
             this.Text = "frmAddUser";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.tabPersonalInfo.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.tabLogin.ResumeLayout(false);
+            this.tabLogin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -270,8 +292,8 @@
 
         private System.Windows.Forms.Label lblFormLabel;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPersonalInfo;
+        private System.Windows.Forms.TabPage tabLogin;
         private System.Windows.Forms.CheckBox chkIsActive;
         private System.Windows.Forms.TextBox tbCnfPassword;
         private System.Windows.Forms.Label lblConfirmPassword;
@@ -282,8 +304,9 @@
         private System.Windows.Forms.Label lblUserID2;
         private System.Windows.Forms.Label lblUserID1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private userControls.uctrlFilterBy uctrlFilterBy1;
-        private uctrPersonDetails uctrPersonDetails1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private uctrPersonDetails uctrPersonDetails1;
+        private userControls.uctrlFilterBy uctrlFilterBy1;
+        private System.Windows.Forms.Button btnNext;
     }
 }

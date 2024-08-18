@@ -31,8 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.dgvPeople = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.addNewPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.callToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRecords = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -40,12 +46,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.callToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,9 +59,10 @@
             this.dgvPeople.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPeople.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPeople.Location = new System.Drawing.Point(34, 219);
-            this.dgvPeople.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPeople.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
             this.dgvPeople.RowHeadersWidth = 62;
@@ -86,15 +87,57 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(171, 196);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
+            // showDetailsToolStripMenuItem
+            // 
+            this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.showDetailsToolStripMenuItem.Text = "Show Details";
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 6);
             // 
+            // addNewPersonToolStripMenuItem
+            // 
+            this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.Add_Male_User_Group;
+            this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.addNewPersonToolStripMenuItem.Text = "Add New Person";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.compose;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.Close;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 6);
+            // 
+            // callToolStripMenuItem
+            // 
+            this.callToolStripMenuItem.Image = global::DVLD.Properties.Resources.phone_call_1_;
+            this.callToolStripMenuItem.Name = "callToolStripMenuItem";
+            this.callToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.callToolStripMenuItem.Text = "Phone Call";
+            // 
+            // sendEmailToolStripMenuItem
+            // 
+            this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.arroba;
+            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // lblRecords
             // 
@@ -136,7 +179,7 @@
             "Email",
             "Phone"});
             this.cbFilter.Location = new System.Drawing.Point(95, 192);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(118, 21);
             this.cbFilter.TabIndex = 8;
@@ -146,7 +189,7 @@
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFilter.Location = new System.Drawing.Point(216, 192);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(148, 20);
             this.tbFilter.TabIndex = 9;
@@ -201,48 +244,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // showDetailsToolStripMenuItem
-            // 
-            this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
-            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
-            this.showDetailsToolStripMenuItem.Text = "Show Details";
-            // 
-            // addNewPersonToolStripMenuItem
-            // 
-            this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.Add_Male_User_Group;
-            this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
-            this.addNewPersonToolStripMenuItem.Text = "Add New Person";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.compose;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.Close;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // callToolStripMenuItem
-            // 
-            this.callToolStripMenuItem.Image = global::DVLD.Properties.Resources.phone_call_1_;
-            this.callToolStripMenuItem.Name = "callToolStripMenuItem";
-            this.callToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
-            this.callToolStripMenuItem.Text = "Phone Call";
-            // 
-            // sendEmailToolStripMenuItem
-            // 
-            this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.arroba;
-            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
-            this.sendEmailToolStripMenuItem.Text = "Send Email";
-            // 
             // frmPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,7 +257,7 @@
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People";

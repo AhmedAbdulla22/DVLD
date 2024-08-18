@@ -40,7 +40,7 @@
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFilter.Enabled = false;
             this.tbFilter.Location = new System.Drawing.Point(200, 10);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(148, 20);
             this.tbFilter.TabIndex = 12;
@@ -54,7 +54,7 @@
             "PersonID",
             "National No."});
             this.cbFilter.Location = new System.Drawing.Point(79, 10);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(118, 21);
             this.cbFilter.TabIndex = 11;
@@ -79,7 +79,7 @@
             this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Location = new System.Drawing.Point(362, 5);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(30, 30);
             this.btnFind.TabIndex = 13;
@@ -94,11 +94,12 @@
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUser.Location = new System.Drawing.Point(396, 5);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(30, 30);
             this.btnAddUser.TabIndex = 14;
             this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // uctrlFilterBy
             // 
