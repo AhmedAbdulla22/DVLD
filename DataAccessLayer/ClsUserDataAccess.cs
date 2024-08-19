@@ -10,7 +10,7 @@ namespace DataAccessLayer
 {
     public static class ClsUserDataAccess
     {
-        public static bool GetUserByUserNameAndPassword(string UserName,string Password,ref bool isActive)
+        public static bool GetUserByUserNameAndPassword(string UserName,string Password,ref int UserID, ref int PersonID, ref bool isActive)
         {
             bool isExist = false;
 
@@ -32,6 +32,10 @@ namespace DataAccessLayer
                             if (reader.Read())
                             {
                                 isActive = (bool)reader["isActive"];
+                                UserID = (int)reader["UserID"];
+                                PersonID = (int)reader["PersonID"];
+                                
+
                                 isExist = true;
                             }
 
@@ -50,7 +54,7 @@ namespace DataAccessLayer
             return isExist;
         }
 
-        public static bool GetUserByUserName(string UserName,ref string Password, ref bool isActive)
+        public static bool GetUserByUserName(string UserName, ref int UserID, ref int PersonID,ref string Password, ref bool isActive)
         {
             bool isExist = false;
 
@@ -73,6 +77,9 @@ namespace DataAccessLayer
                             {
                                 Password = (string)reader["Password"];
                                 isActive = (bool)reader["isActive"];
+                                PersonID = (int)reader["PersonID"];
+                                UserID = (int)reader["UserID"];
+
                                 isExist = true;
                             }
 
@@ -91,7 +98,7 @@ namespace DataAccessLayer
             return isExist;
         }
 
-        public static bool GetUserByPersonID(int PersonID,ref string UserName, ref string Password, ref bool isActive)
+        public static bool GetUserByPersonID(int PersonID, ref int UserID, ref string UserName, ref string Password, ref bool isActive)
         {
             bool isExist = false;
 
@@ -113,6 +120,7 @@ namespace DataAccessLayer
                                 UserName = (string)reader["UserName"];
                                 Password = (string)reader["Password"];
                                 isActive = (bool)reader["isActive"];
+                                UserID = (int)reader["UserID"];
                                 isExist = true;
                             }
 
@@ -131,7 +139,7 @@ namespace DataAccessLayer
             return isExist;
         }
 
-        public static bool GetUserByUserID(int UserID, ref string UserName, ref string Password, ref bool isActive)
+        public static bool GetUserByUserID(int UserID, ref string UserName, ref string Password, ref int PersonID, ref bool isActive)
         {
             bool isExist = false;
 
@@ -153,6 +161,8 @@ namespace DataAccessLayer
                                 UserName = (string)reader["UserName"];
                                 Password = (string)reader["Password"];
                                 isActive = (bool)reader["isActive"];
+                                UserID = (int)reader["UserID"];
+                                PersonID = (int)reader["PersonID"];
                                 isExist = true;
                             }
 
@@ -205,6 +215,48 @@ namespace DataAccessLayer
 
 
             return dataTable;
+        }
+
+        public static int AddNewUser( int PersonID,string UserName,  string Password,  bool isActive)
+        {
+            int NewUserID = -1;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"INSERT INTO Users
+           (PersonID,UserName,Password,isActive)
+             VALUES
+           (@PersonID,@UserName,@Password,@isActive);
+
+SELECT Scope_Identity();";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+                    sqlCommand.Parameters.AddWithValue("@UserName", UserName);
+                    sqlCommand.Parameters.AddWithValue("@Password", Password);
+                    sqlCommand.Parameters.AddWithValue("@isActive", isActive);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            NewUserID = Convert.ToInt32(result);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+
+                }
+            }
+            return NewUserID;
         }
     }
 }

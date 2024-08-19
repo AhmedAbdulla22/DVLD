@@ -13,7 +13,6 @@ namespace BusinessLayer
         
         public int UserID { get; set; }
         public int PersonID { get; set; }
-        public string FullName { get; set; }
 
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -23,36 +22,66 @@ namespace BusinessLayer
         public enum mode { Add, Update };
         mode enMode;
 
-        clsUser()
+        public clsUser()
         {
             UserID = -1;
             PersonID = -1;
-            FullName = "";
             UserName = "";
             Password = "";
             isActive = false;
             enMode = mode.Add;
         }
 
-        clsUser(int UserID,int PersonID,string FullName, string UserName, string Password,bool isActive)
+        public clsUser(int UserID,int PersonID, string UserName, string Password,bool isActive)
         {
             this.UserID = -1;
             this.PersonID = PersonID;
-            this.FullName = FullName;
             this.UserName = UserName;
             this.Password = Password;
             this.isActive = isActive;
             enMode = mode.Update;
         }
 
+        private bool _AddNewUser()
+        {
+            this.UserID = ClsUserDataAccess.AddNewUser(PersonID,UserName,Password,isActive);
 
+            return (this.PersonID != -1);
+        }
+
+        public bool Save()
+        {
+            switch (enMode)
+            {
+                case mode.Update:
+                    {
+                        //return _Update();
+                        break;
+                    }
+                case mode.Add:
+                    {
+                        if (_AddNewUser())
+                        {
+                            enMode = mode.Update;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
+                    }
+            }
+            return false;
+        }
         public static clsUser GetUser(string UserName,string Password)
         {
             bool isActive = false;
+            int UserID = -1,PersonID = -1;
 
-            if(ClsUserDataAccess.GetUserByUserNameAndPassword(UserName, Password,ref isActive))
+            if(ClsUserDataAccess.GetUserByUserNameAndPassword(UserName, Password,ref UserID,ref PersonID,ref isActive))
             {
-                return new clsUser(UserName,Password,isActive);
+                return new clsUser(UserID,PersonID,UserName, Password, isActive);
             }
             else
             {
@@ -64,10 +93,12 @@ namespace BusinessLayer
         {
             bool isActive = false;
             string Password = string.Empty;
+            int UserID = -1, PersonID = -1;
 
-            if (ClsUserDataAccess.GetUserByUserName(UserName,ref Password, ref isActive))
+
+            if (ClsUserDataAccess.GetUserByUserName(UserName,ref UserID,ref PersonID,ref Password, ref isActive))
             {
-                return new clsUser(UserName, Password, isActive);
+                return new clsUser(UserID, PersonID, UserName, Password, isActive);
             }
             else
             {
@@ -79,10 +110,12 @@ namespace BusinessLayer
         {
             bool isActive = false;
             string UserName = string.Empty, Password= string.Empty;
+            int UserID = -1;
 
-            if (ClsUserDataAccess.GetUserByPersonID(PersonID,ref UserName,ref Password, ref isActive))
+
+            if (ClsUserDataAccess.GetUserByPersonID(PersonID,ref UserID,ref UserName,ref Password, ref isActive))
             {
-                return new clsUser(UserName, Password, isActive);
+                return new clsUser(UserID, PersonID, UserName, Password, isActive);
             }
             else
             {

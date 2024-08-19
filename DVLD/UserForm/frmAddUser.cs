@@ -110,7 +110,7 @@ namespace DVLD.UserForm
 
                 foreach(Control control in controls)
                 {
-                    if (!string.IsNullOrEmpty(control.Text))
+                    if (string.IsNullOrEmpty(control.Text))
                     {
                         MessageBox.Show("There is Boxes You Need To Fill Before!", "Fill Boxes", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -125,10 +125,32 @@ namespace DVLD.UserForm
                             return;
                         }
                     }
-                
-                    //Now Save him As User
-                    clsUser
+
+                //Now Save him As User
+                SaveUser();
             }
+        }
+
+        private void SaveUser()
+        {
+            clsUser user = new clsUser();
+
+            user.PersonID = uctrPersonDetails1.PersonID;
+            user.UserName = tbUserName.Text;
+            user.Password = tbPassword.Text;
+            user.isActive = chkIsActive.Checked;
+
+            if (user.Save())
+            {
+                            MessageBox.Show("User Saved Succesfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            lblUserID2.Text = user.UserID.ToString();
+            }
+            else
+            {
+                MessageBox.Show("User Not Saved.", "Not Saved", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }
