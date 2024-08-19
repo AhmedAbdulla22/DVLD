@@ -10,22 +10,39 @@ namespace BusinessLayer
 {
     public class clsUser
     {
+        
+        public int UserID { get; set; }
+        public int PersonID { get; set; }
+        public string FullName { get; set; }
+
         public string UserName { get; set; }
         public string Password { get; set; }
+
         public bool isActive { get; set; }
+
+        public enum mode { Add, Update };
+        mode enMode;
 
         clsUser()
         {
+            UserID = -1;
+            PersonID = -1;
+            FullName = "";
             UserName = "";
             Password = "";
             isActive = false;
+            enMode = mode.Add;
         }
 
-        clsUser(string _UserName, string _Password,bool _isActive)
+        clsUser(int UserID,int PersonID,string FullName, string UserName, string Password,bool isActive)
         {
-            UserName = _UserName;
-            Password = _Password;
-            isActive = _isActive;
+            this.UserID = -1;
+            this.PersonID = PersonID;
+            this.FullName = FullName;
+            this.UserName = UserName;
+            this.Password = Password;
+            this.isActive = isActive;
+            enMode = mode.Update;
         }
 
 

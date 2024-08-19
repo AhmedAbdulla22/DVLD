@@ -98,7 +98,37 @@ namespace DVLD.UserForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(tabControl1.SelectedTab == tabPersonalInfo)
+            {
+                MessageBox.Show("First Find A Person That is Not User Already", "Find A Person", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Control[] controls = { tbUserName, tbPassword,tbCnfPassword };
 
+                
+
+                foreach(Control control in controls)
+                {
+                    if (!string.IsNullOrEmpty(control.Text))
+                    {
+                        MessageBox.Show("There is Boxes You Need To Fill Before!", "Fill Boxes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+
+                    foreach (Control control in controls)
+                    {
+                        if (!string.IsNullOrEmpty(errorProvider1.GetError(control)))
+                        {
+                            MessageBox.Show("There is Mistakes You Need To Take Care of First!", "Fix Mistakes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                
+                    //Now Save him As User
+                    clsUser
+            }
         }
     }
 }
