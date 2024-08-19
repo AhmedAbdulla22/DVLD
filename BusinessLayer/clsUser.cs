@@ -43,6 +43,21 @@ namespace BusinessLayer
             }
         }
 
+        public static clsUser GetUser(string UserName)
+        {
+            bool isActive = false;
+            string Password = string.Empty;
+
+            if (ClsUserDataAccess.GetUserByUserName(UserName,ref Password, ref isActive))
+            {
+                return new clsUser(UserName, Password, isActive);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static clsUser GetUser(int PersonID)
         {
             bool isActive = false;

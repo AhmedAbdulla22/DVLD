@@ -63,5 +63,42 @@ namespace DVLD.UserForm
                 e.Cancel = true;
             }
         }
+
+        private void tbUserName_Leave(object sender, EventArgs e)
+        {
+            if (clsUser.GetUser(tbUserName.Text) != null)
+            {
+                errorProvider1.SetError(tbUserName, "This UserName is Already Exist!");
+                tbUserName.Focus();
+            }
+            else
+            {
+                errorProvider1.SetError(tbUserName, "");
+            }
+
+        }
+
+        private void tbCnfPassword_Leave(object sender, EventArgs e)
+        {
+            if (tbPassword.Text != tbCnfPassword.Text)
+            {
+                errorProvider1.SetError(tbCnfPassword, "Confirmation Password Must Be Same As The New Password!");
+                tbCnfPassword.Focus();
+            }
+            else
+            {
+                errorProvider1.SetError(tbCnfPassword, "");
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

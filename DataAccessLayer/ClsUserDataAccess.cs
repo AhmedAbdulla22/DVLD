@@ -31,7 +31,46 @@ namespace DataAccessLayer
                         {
                             if (reader.Read())
                             {
-                                UserName = (string)reader["UserName"];
+                                isActive = (bool)reader["isActive"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+
+        public static bool GetUserByUserName(string UserName,ref string Password, ref bool isActive)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM Users Where UserName = @UserName;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@UserName", UserName);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
                                 Password = (string)reader["Password"];
                                 isActive = (bool)reader["isActive"];
                                 isExist = true;
