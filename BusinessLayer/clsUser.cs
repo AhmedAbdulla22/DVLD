@@ -42,21 +42,36 @@ namespace BusinessLayer
             enMode = mode.Update;
         }
 
+        public bool Delete()
+        {
+            return ClsUserDataAccess.DeleteUser(this.PersonID);
+        }
+
+        public static bool Delete(int UserID)
+        {
+            return ClsUserDataAccess.DeleteUser(UserID);
+        }
+
         private bool _AddNewUser()
         {
             this.UserID = ClsUserDataAccess.AddNewUser(PersonID,UserName,Password,isActive);
 
             return (this.PersonID != -1);
         }
+        private bool _Update()
+        {
+            //Update User
+            return ClsUserDataAccess.UpdateUser(this.UserID,this.PersonID,this.UserName,this.Password,this.isActive);
 
+        }
         public bool Save()
         {
             switch (enMode)
             {
                 case mode.Update:
                     {
-                        //return _Update();
-                        break;
+                        return _Update();
+                        
                     }
                 case mode.Add:
                     {

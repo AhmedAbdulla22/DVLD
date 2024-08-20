@@ -258,5 +258,78 @@ SELECT Scope_Identity();";
             }
             return NewUserID;
         }
+
+        public static bool UpdateUser(int UserID,int PersonID,string UserName, string Password, bool isActive)
+        {
+            bool isUpdated = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"Update Users
+                              Set PersonID = @PersonID,UserName = @UserName, Password = @Password, isActive = @isActive
+                                Where UserID = @UserID;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+
+
+                    sqlCommand.Parameters.AddWithValue("@UserID", UserID);
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+                    sqlCommand.Parameters.AddWithValue("@UserName", UserName);
+                    sqlCommand.Parameters.AddWithValue("@Password", Password);
+                    sqlCommand.Parameters.AddWithValue("@isActive", isActive);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isUpdated = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isUpdated;
+        }
+
+        public static bool DeleteUser(int UserID)
+        {
+            bool isDeleted = false;
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"DELETE FROM Users
+                              Where UserID = @UserID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@UserID", UserID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isDeleted = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            return isDeleted;
+        }
     }
 }
