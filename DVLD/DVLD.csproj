@@ -64,6 +64,12 @@
     <Compile Include="userControls\uctrlFilterBy.Designer.cs">
       <DependentUpon>uctrlFilterBy.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControls\uctrlLoginInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\uctrlLoginInformation.Designer.cs">
+      <DependentUpon>uctrlLoginInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     <Compile Include="userControls\uctrPersonDetails.Designer.cs">
       <DependentUpon>uctrPersonDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm\frmUserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\frmUserDetails.Designer.cs">
+      <DependentUpon>frmUserDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilites.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -122,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControls\uctrlFilterBy.resx">
       <DependentUpon>uctrlFilterBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\uctrlLoginInformation.resx">
+      <DependentUpon>uctrlLoginInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
@@ -148,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControls\uctrPersonDetails.resx">
       <DependentUpon>uctrPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\frmUserDetails.resx">
+      <DependentUpon>frmUserDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

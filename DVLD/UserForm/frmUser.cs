@@ -103,8 +103,10 @@ namespace DVLD
 
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            int UserID = -1;
-            UserID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells[0].Value);
+            int UserID = -1,PersonID = -1;
+            UserID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells["UserID"].Value);
+            PersonID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells["PersonID"].Value);
+
 
             if (dgvPeople.SelectedRows.Count == 1)
             {
@@ -119,14 +121,14 @@ namespace DVLD
                     //        }
                     //        break;
                     //    }
-                    //case "Show Details":
-                    //    {
-                    //        using (Person_Details frmDetails = new Person_Details(UserID))
-                    //        {
-                    //            frmDetails.ShowDialog();
-                    //        }
-                    //        break;
-                    //    }
+                    case "Show Details":
+                        {
+                            using (frmUserDetails UserDetails = new frmUserDetails(PersonID))
+                            {
+                                UserDetails.ShowDialog();
+                            }
+                            break;
+                        }
                     case "Delete":
                         {
                             if (MessageBox.Show("Are You Sure You Want to Delete this User?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
