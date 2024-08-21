@@ -37,6 +37,7 @@ namespace DVLD.userControls
 
         public Action<int> OnFilterSucceded;
 
+
         protected virtual void FilterSucceded(int PersonID)
         {
             Action<int> handler = OnFilterSucceded;
@@ -45,6 +46,8 @@ namespace DVLD.userControls
         }
 
         
+
+
 
         private void btnFind_Click_1(object sender, EventArgs e)
         {
@@ -73,6 +76,7 @@ namespace DVLD.userControls
                             else
                             {
                                 FilterSucceded(-1);
+                                MessageBox.Show("This Person Does Not Exist!","Try Again",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             }
                         }
                         break;
@@ -89,6 +93,7 @@ namespace DVLD.userControls
                         else
                         {
                             FilterSucceded(-1);
+                            MessageBox.Show("This Person Does Not Exist!", "Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         break;
                     }
@@ -99,34 +104,32 @@ namespace DVLD.userControls
         {
             using (frmAddPerson frmAdd = new frmAddPerson())
             {
+                frmAdd.OnSaveSucceded += WhenAddPersonSucceded;
                 frmAdd.ShowDialog();
+                
             }
         }
 
-        //private void tbFilter_TextChanged(object sender, EventArgs e)
-        //{
-        //    var filterTxt = tbFilter.Text;
-        //    if (string.IsNullOrEmpty(filterTxt))
-        //    {
-        //        return;
-        //    }
+        private void WhenAddPersonSucceded(int personID)
+        {
+            FilterSucceded(personID);
+        }
 
-        //    switch (cbFilter.SelectedItem.ToString())
-        //    {
-        //        case "PersonID":
-        //            {
-        //                if (int.TryParse(tbFilter.Text, out int value))
-        //                {
-        //                    dgvPeople.DataSource = clsPerson.getPeopleByPersonID(value);
-        //                }
-        //                break;
-        //            }
-        //        case "National No.":
-        //            {
-        //                dgvPeople.DataSource = clsPerson.getPeopleByNationalNo(tbFilter.Text);
-        //                break;
-        //            }
-        //    }
-        //}
+        private void tbFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (cbFilter.SelectedItem.ToString() == "PersonID")
+            { 
+                if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+                {
+                    e.SuppressKeyPress = false;
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

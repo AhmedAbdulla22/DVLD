@@ -34,7 +34,7 @@ namespace BusinessLayer
 
         public clsUser(int UserID,int PersonID, string UserName, string Password,bool isActive)
         {
-            this.UserID = -1;
+            this.UserID = UserID;
             this.PersonID = PersonID;
             this.UserName = UserName;
             this.Password = Password;

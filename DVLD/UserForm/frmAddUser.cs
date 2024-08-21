@@ -13,11 +13,15 @@ namespace DVLD.UserForm
 {
     public partial class frmAddUser : Form
     {
+        private int _UserID = -1;
+        private string _SavedUserName = string.Empty;
         public frmAddUser()
         {
+
             InitializeComponent();
 
             uctrlFilterBy1.OnFilterSucceded += GettingPersonIDWhenFilterSucceded;
+
         }
 
         
@@ -31,13 +35,12 @@ namespace DVLD.UserForm
                 return GoToNextTab;
             }
 
-            if (clsUser.GetUser(uctrPersonDetails1.PersonID) != null)
+            if (clsUser.GetUser(uctrPersonDetails1.PersonID) != null && _UserID == -1)
             {
                 MessageBox.Show("This Person is Already User", "Select Another Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                tabControl1.SelectTab(tabLogin);
                 GoToNextTab = true;
             }
 
@@ -47,12 +50,22 @@ namespace DVLD.UserForm
         {
                 uctrPersonDetails1.PersonID = PersonID;
                 uctrPersonDetails1.UpdateControl();
-            
+            //update form in case that it is in update mode and you want to add new user
+            if (_UserID != -1)
+            {
+                _UserID = -1;
+                UpdateForm();
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            GoingForNextTab();
+            if (GoingForNextTab())
+            {
+                tabControl1.SelectTab(tabLogin);
+            }
+
 
         }
 
@@ -66,7 +79,7 @@ namespace DVLD.UserForm
 
         private void tbUserName_Leave(object sender, EventArgs e)
         {
-            if (clsUser.GetUser(tbUserName.Text) != null)
+            if (!string.IsNullOrEmpty(tbUserName.Text) && _SavedUserName != tbUserName.Text && clsUser.GetUser(tbUserName.Text) != null)
             {
                 errorProvider1.SetError(tbUserName, "This UserName is Already Exist!");
                 tbUserName.Focus();
@@ -134,22 +147,67 @@ namespace DVLD.UserForm
         private void SaveUser()
         {
             clsUser user = new clsUser();
+            if (_UserID == -1)
+            {
 
-            user.PersonID = uctrPersonDetails1.PersonID;
-            user.UserName = tbUserName.Text;
-            user.Password = tbPassword.Text;
-            user.isActive = chkIsActive.Checked;
+                user.PersonID = uctrPersonDetails1.PersonID;
+                user.UserName = tbUserName.Text;
+                user.Password = tbPassword.Text;
+                user.isActive = chkIsActive.Checked;
+            }
+            else
+            {
+                user = new clsUser(_UserID, uctrPersonDetails1.PersonID,tbUserName.Text,tbPassword.Text,chkIsActive.Checked);
+            }
+
 
             if (user.Save())
             {
-                            MessageBox.Show("User Saved Succesfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string ModeStr;
+                if (_UserID == -1)
+                {
+                    ModeStr = "Saved";
+                    _UserID = user.UserID;
+                    _SavedUserName = user.UserName;
+                }
+                else
+                {
+                    ModeStr = "Updated";
+                }
+                MessageBox.Show($"User {ModeStr} Succesfully.", ModeStr, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             lblUserID2.Text = user.UserID.ToString();
+                            UpdateForm();
             }
             else
             {
                 MessageBox.Show("User Not Saved.", "Not Saved", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+        }
+
+        private void UpdateForm()
+        {
+            if (_UserID != -1)
+            {
+                lblFormLabel.Text = "Update User";
+            }
+            else
+            {
+                lblFormLabel.Text = "Add New User";
+                tbCnfPassword.Text = string.Empty;
+                tbPassword.Text = string.Empty;
+                tbUserName.Text = string.Empty;
+                lblUserID2.Text = string.Empty;
+                _SavedUserName = string.Empty;
+                chkIsActive.Checked = false;
+            }
+        }
+
+     
+
+        private void frmAddUser_Load(object sender, EventArgs e)
+        {
 
         }
     }

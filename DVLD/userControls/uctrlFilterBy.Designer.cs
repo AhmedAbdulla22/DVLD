@@ -44,6 +44,7 @@
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(197, 22);
             this.tbFilter.TabIndex = 12;
+            this.tbFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbFilter_KeyDown);
             // 
             // cbFilter
             // 

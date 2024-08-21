@@ -54,9 +54,18 @@ namespace DVLD.PeopleForm
             {
                 lblFormLabel.Text = "Update Person";
                 lblPersonID2.Text = uctrlAddPerson1.PersonID.ToString();
+                SaveSucceded(uctrlAddPerson1.PersonID);
             }
         }
 
+        public Action<int> OnSaveSucceded;
+
+        protected virtual void SaveSucceded(int PersonID)
+        {
+            Action<int> handler = OnSaveSucceded;
+
+            handler?.Invoke(PersonID);
+        }
         
         
 
@@ -66,7 +75,8 @@ namespace DVLD.PeopleForm
             _ctrlMode = ctrlMode.Update;
             UpdateForm();
         }
-        
+
+       
 
         
 

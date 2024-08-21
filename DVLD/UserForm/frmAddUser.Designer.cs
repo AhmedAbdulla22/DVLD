@@ -34,7 +34,9 @@
             this.tabPersonalInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.tabLogin = new System.Windows.Forms.TabPage();
             this.chkIsActive = new System.Windows.Forms.CheckBox();
             this.tbCnfPassword = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserID1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
-            this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -62,10 +62,9 @@
             // 
             this.lblFormLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblFormLabel.Location = new System.Drawing.Point(256, 7);
-            this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFormLabel.Location = new System.Drawing.Point(341, 9);
             this.lblFormLabel.Name = "lblFormLabel";
-            this.lblFormLabel.Size = new System.Drawing.Size(170, 34);
+            this.lblFormLabel.Size = new System.Drawing.Size(227, 42);
             this.lblFormLabel.TabIndex = 3;
             this.lblFormLabel.Text = "Add New User";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,11 +73,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPersonalInfo);
             this.tabControl1.Controls.Add(this.tabLogin);
-            this.tabControl1.Location = new System.Drawing.Point(19, 89);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(25, 110);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(647, 413);
+            this.tabControl1.Size = new System.Drawing.Size(863, 508);
             this.tabControl1.TabIndex = 4;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
@@ -87,11 +86,11 @@
             this.tabPersonalInfo.Controls.Add(this.btnNext);
             this.tabPersonalInfo.Controls.Add(this.groupBox2);
             this.tabPersonalInfo.Controls.Add(this.groupBox1);
-            this.tabPersonalInfo.Location = new System.Drawing.Point(4, 22);
-            this.tabPersonalInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPersonalInfo.Location = new System.Drawing.Point(4, 25);
+            this.tabPersonalInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPersonalInfo.Name = "tabPersonalInfo";
-            this.tabPersonalInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPersonalInfo.Size = new System.Drawing.Size(639, 387);
+            this.tabPersonalInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPersonalInfo.Size = new System.Drawing.Size(855, 479);
             this.tabPersonalInfo.TabIndex = 0;
             this.tabPersonalInfo.Text = "Personal Info";
             this.tabPersonalInfo.UseVisualStyleBackColor = true;
@@ -105,10 +104,10 @@
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Image = global::DVLD.Properties.Resources.Forward;
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNext.Location = new System.Drawing.Point(540, 347);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNext.Location = new System.Drawing.Point(720, 427);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(81, 32);
+            this.btnNext.Size = new System.Drawing.Size(108, 39);
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Next";
             this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,22 +117,44 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.uctrPersonDetails1);
-            this.groupBox2.Location = new System.Drawing.Point(20, 140);
+            this.groupBox2.Location = new System.Drawing.Point(27, 172);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(601, 204);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(801, 251);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Personal Information";
             // 
+            // uctrPersonDetails1
+            // 
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(5, 22);
+            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
+            this.uctrPersonDetails1.PersonID = -1;
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(789, 224);
+            this.uctrPersonDetails1.TabIndex = 1;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.uctrlFilterBy1);
-            this.groupBox1.Location = new System.Drawing.Point(84, 43);
+            this.groupBox1.Location = new System.Drawing.Point(112, 53);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 73);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(629, 90);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
+            // 
+            // uctrlFilterBy1
+            // 
+            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlFilterBy1.Location = new System.Drawing.Point(9, 25);
+            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
+            this.uctrlFilterBy1.Size = new System.Drawing.Size(611, 53);
+            this.uctrlFilterBy1.TabIndex = 0;
             // 
             // tabLogin
             // 
@@ -146,11 +167,11 @@
             this.tabLogin.Controls.Add(this.lblPassword);
             this.tabLogin.Controls.Add(this.lblUserName);
             this.tabLogin.Controls.Add(this.lblUserID1);
-            this.tabLogin.Location = new System.Drawing.Point(4, 22);
-            this.tabLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabLogin.Location = new System.Drawing.Point(4, 25);
+            this.tabLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabLogin.Name = "tabLogin";
-            this.tabLogin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabLogin.Size = new System.Drawing.Size(639, 387);
+            this.tabLogin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabLogin.Size = new System.Drawing.Size(855, 479);
             this.tabLogin.TabIndex = 1;
             this.tabLogin.Text = "Login Info";
             this.tabLogin.UseVisualStyleBackColor = true;
@@ -159,51 +180,50 @@
             // 
             this.chkIsActive.AutoSize = true;
             this.chkIsActive.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkIsActive.Location = new System.Drawing.Point(184, 186);
-            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkIsActive.Location = new System.Drawing.Point(245, 229);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkIsActive.Name = "chkIsActive";
-            this.chkIsActive.Size = new System.Drawing.Size(81, 23);
+            this.chkIsActive.Size = new System.Drawing.Size(96, 27);
             this.chkIsActive.TabIndex = 21;
             this.chkIsActive.Text = "Is Active";
             this.chkIsActive.UseVisualStyleBackColor = true;
             // 
             // tbCnfPassword
             // 
-            this.tbCnfPassword.Location = new System.Drawing.Point(211, 154);
-            this.tbCnfPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCnfPassword.Location = new System.Drawing.Point(281, 190);
+            this.tbCnfPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCnfPassword.MaxLength = 32;
             this.tbCnfPassword.Name = "tbCnfPassword";
-            this.tbCnfPassword.Size = new System.Drawing.Size(103, 20);
+            this.tbCnfPassword.Size = new System.Drawing.Size(136, 22);
             this.tbCnfPassword.TabIndex = 20;
             this.tbCnfPassword.Leave += new System.EventHandler(this.tbCnfPassword_Leave);
             // 
             // tbUserName
             // 
-            this.tbUserName.Location = new System.Drawing.Point(211, 105);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUserName.Location = new System.Drawing.Point(281, 129);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUserName.MaxLength = 32;
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(103, 20);
+            this.tbUserName.Size = new System.Drawing.Size(136, 22);
             this.tbUserName.TabIndex = 15;
             this.tbUserName.Leave += new System.EventHandler(this.tbUserName_Leave);
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(211, 129);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPassword.Location = new System.Drawing.Point(281, 159);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.MaxLength = 32;
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(103, 20);
+            this.tbPassword.Size = new System.Drawing.Size(136, 22);
             this.tbPassword.TabIndex = 17;
             // 
             // lblUserID2
             // 
             this.lblUserID2.AutoSize = true;
             this.lblUserID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID2.Location = new System.Drawing.Point(210, 77);
-            this.lblUserID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserID2.Location = new System.Drawing.Point(280, 95);
             this.lblUserID2.Name = "lblUserID2";
-            this.lblUserID2.Size = new System.Drawing.Size(35, 19);
+            this.lblUserID2.Size = new System.Drawing.Size(41, 23);
             this.lblUserID2.TabIndex = 5;
             this.lblUserID2.Text = "N/A";
             this.lblUserID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,10 +233,9 @@
             this.lblConfirmPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.Image = global::DVLD.Properties.Resources.Display1;
             this.lblConfirmPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(31, 152);
-            this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(41, 187);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(175, 22);
+            this.lblConfirmPassword.Size = new System.Drawing.Size(233, 27);
             this.lblConfirmPassword.TabIndex = 19;
             this.lblConfirmPassword.Text = "Confirm Password:";
             this.lblConfirmPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,10 +245,9 @@
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Image = global::DVLD.Properties.Resources.Display1;
             this.lblPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPassword.Location = new System.Drawing.Point(86, 129);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassword.Location = new System.Drawing.Point(115, 159);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(120, 22);
+            this.lblPassword.Size = new System.Drawing.Size(160, 27);
             this.lblPassword.TabIndex = 16;
             this.lblPassword.Text = "Password:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,10 +257,9 @@
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Image = global::DVLD.Properties.Resources.user_1_;
             this.lblUserName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUserName.Location = new System.Drawing.Point(80, 100);
-            this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserName.Location = new System.Drawing.Point(107, 123);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(126, 30);
+            this.lblUserName.Size = new System.Drawing.Size(168, 37);
             this.lblUserName.TabIndex = 18;
             this.lblUserName.Text = "UserName:";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,10 +269,9 @@
             this.lblUserID1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserID1.Image = global::DVLD.Properties.Resources.Display1;
             this.lblUserID1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUserID1.Location = new System.Drawing.Point(99, 77);
-            this.lblUserID1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserID1.Location = new System.Drawing.Point(132, 95);
             this.lblUserID1.Name = "lblUserID1";
-            this.lblUserID1.Size = new System.Drawing.Size(107, 23);
+            this.lblUserID1.Size = new System.Drawing.Size(143, 28);
             this.lblUserID1.TabIndex = 4;
             this.lblUserID1.Text = "User ID:";
             this.lblUserID1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -263,24 +279,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // uctrPersonDetails1
-            // 
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(4, 18);
-            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
-            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
-            this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(592, 182);
-            this.uctrPersonDetails1.TabIndex = 1;
-            // 
-            // uctrlFilterBy1
-            // 
-            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uctrlFilterBy1.Location = new System.Drawing.Point(7, 20);
-            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
-            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
-            this.uctrlFilterBy1.Size = new System.Drawing.Size(458, 43);
-            this.uctrlFilterBy1.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -291,10 +289,10 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(478, 502);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(637, 618);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(81, 32);
+            this.btnClose.Size = new System.Drawing.Size(108, 39);
             this.btnClose.TabIndex = 16;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -310,10 +308,10 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(563, 502);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Location = new System.Drawing.Point(751, 618);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 32);
+            this.btnSave.Size = new System.Drawing.Size(108, 39);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -322,16 +320,17 @@
             // 
             // frmAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 580);
+            this.ClientSize = new System.Drawing.Size(900, 714);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblFormLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAddUser";
             this.Text = "frmAddUser";
+            this.Load += new System.EventHandler(this.frmAddUser_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPersonalInfo.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
