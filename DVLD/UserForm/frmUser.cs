@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.PeopleForm;
 using DVLD.UserForm;
 using System;
 using System.Collections.Generic;
@@ -41,12 +42,17 @@ namespace DVLD
             this.Close();
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e)
+        private void AddNewUser()
         {
-            using(frmAddUser AddUserForm = new frmAddUser())
+            using (frmAddUser AddUserForm = new frmAddUser())
             {
+                AddUserForm.FormClosed += frmUser_Load;
                 AddUserForm.ShowDialog();
             }
+        }
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            AddNewUser();
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,6 +84,80 @@ namespace DVLD
             
         }
 
-        
+        private void dgvPeople_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //row that you clicked on location
+                var hitTestInfo = dgvPeople.HitTest(e.X, e.Y);
+
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dgvPeople.ClearSelection();
+                    dgvPeople.Rows[hitTestInfo.RowIndex].Selected = true;
+
+                    contextMenuStrip1.Show(dgvPeople, new Point(e.X, e.Y));
+                }
+            }
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            int UserID = -1;
+            UserID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells[0].Value);
+
+            if (dgvPeople.SelectedRows.Count == 1)
+            {
+                switch (e.ClickedItem.Text)
+                {
+                    //case "Edit":
+                    //    {
+
+                    //        if (UserID >= 0)
+                    //        {
+                    //            EditPerson(UserID);
+                    //        }
+                    //        break;
+                    //    }
+                    //case "Show Details":
+                    //    {
+                    //        using (Person_Details frmDetails = new Person_Details(UserID))
+                    //        {
+                    //            frmDetails.ShowDialog();
+                    //        }
+                    //        break;
+                    //    }
+                    case "Delete":
+                        {
+                            if (MessageBox.Show("Are You Sure You Want to Delete this User?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                if (clsUser.Delete(UserID))
+                                {
+                                    MessageBox.Show("User Deleted Succesfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    //refresh dgvPeople
+                                    LoadTheDataGridView();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("User Cannot Be Deleted", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+                            }
+
+                            break;
+                        }
+                    case "Add New User":
+                        {
+                            AddNewUser();
+                            break;
+                        }
+                    default:
+                        MessageBox.Show("Still in Work", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                }
+
+
+            }
+        }
     }
 }

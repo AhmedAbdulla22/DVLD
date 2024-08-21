@@ -264,5 +264,8 @@
   <ItemGroup>
     <None Include="Resources\Forward.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
