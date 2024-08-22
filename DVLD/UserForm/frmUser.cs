@@ -50,6 +50,14 @@ namespace DVLD
                 AddUserForm.ShowDialog();
             }
         }
+        private void EditUser(int PersonID)
+        {
+            using (frmAddUser AddUserForm = new frmAddUser(PersonID))
+            {
+                AddUserForm.FormClosed += frmUser_Load;
+                AddUserForm.ShowDialog();
+            }
+        }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             AddNewUser();
@@ -112,15 +120,15 @@ namespace DVLD
             {
                 switch (e.ClickedItem.Text)
                 {
-                    //case "Edit":
-                    //    {
+                    case "Edit":
+                        {
 
-                    //        if (UserID >= 0)
-                    //        {
-                    //            EditPerson(UserID);
-                    //        }
-                    //        break;
-                    //    }
+                            if (PersonID >= 0)
+                            {
+                                EditUser(PersonID);
+                            }
+                            break;
+                        }
                     case "Show Details":
                         {
                             using (frmUserDetails UserDetails = new frmUserDetails(PersonID))

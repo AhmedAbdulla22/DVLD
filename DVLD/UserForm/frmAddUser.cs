@@ -13,15 +13,35 @@ namespace DVLD.UserForm
 {
     public partial class frmAddUser : Form
     {
-        private int _UserID = -1;
-        private string _SavedUserName = string.Empty;
-        public frmAddUser()
+        enum ctrlMode { Add = 1, Update = 2 };
+        ctrlMode _ctrlMode = ctrlMode.Add;
+        private clsUser user = new clsUser();
+
+        public frmAddUser(int PersonID = -1)
         {
 
             InitializeComponent();
 
             uctrlFilterBy1.OnFilterSucceded += GettingPersonIDWhenFilterSucceded;
 
+            //set uctrl PersonDetails
+            uctrPersonDetails1.PersonID = PersonID;
+
+            if (PersonID == -1)
+            {
+                _ctrlMode = ctrlMode.Add;
+            }
+            else
+            {
+                _ctrlMode = ctrlMode.Update;
+                user = clsUser.GetUser(PersonID);
+
+                tbUserName.Text = user.UserName;
+                tbPassword.Text = user.Password;
+                tbCnfPassword.Text = user.Password;
+                chkIsActive.Checked = user.isActive;
+                lblUserID2.Text = user.UserID.ToString();
+            }
         }
 
         
@@ -35,7 +55,7 @@ namespace DVLD.UserForm
                 return GoToNextTab;
             }
 
-            if (clsUser.GetUser(uctrPersonDetails1.PersonID) != null && _UserID == -1)
+            if (_ctrlMode == ctrlMode.Add && clsUser.GetUser(uctrPersonDetails1.PersonID) != null)
             {
                 MessageBox.Show("This Person is Already User", "Select Another Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -50,13 +70,6 @@ namespace DVLD.UserForm
         {
                 uctrPersonDetails1.PersonID = PersonID;
                 uctrPersonDetails1.UpdateControl();
-            //update form in case that it is in update mode and you want to add new user
-            if (_UserID != -1)
-            {
-                _UserID = -1;
-                UpdateForm();
-            }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,10 +92,9 @@ namespace DVLD.UserForm
 
         private void tbUserName_Leave(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tbUserName.Text) && _SavedUserName != tbUserName.Text && clsUser.GetUser(tbUserName.Text) != null)
+            if (!string.IsNullOrEmpty(tbUserName.Text) && user.UserName != tbUserName.Text && clsUser.GetUser(tbUserName.Text) != null)
             {
                 errorProvider1.SetError(tbUserName, "This UserName is Already Exist!");
-                tbUserName.Focus();
             }
             else
             {
@@ -96,7 +108,6 @@ namespace DVLD.UserForm
             if (tbPassword.Text != tbCnfPassword.Text)
             {
                 errorProvider1.SetError(tbCnfPassword, "Confirmation Password Must Be Same As The New Password!");
-                tbCnfPassword.Focus();
             }
             else
             {
@@ -146,8 +157,7 @@ namespace DVLD.UserForm
 
         private void SaveUser()
         {
-            clsUser user = new clsUser();
-            if (_UserID == -1)
+            if (_ctrlMode == ctrlMode.Add)
             {
 
                 user.PersonID = uctrPersonDetails1.PersonID;
@@ -157,23 +167,23 @@ namespace DVLD.UserForm
             }
             else
             {
-                user = new clsUser(_UserID, uctrPersonDetails1.PersonID,tbUserName.Text,tbPassword.Text,chkIsActive.Checked);
+                user = new clsUser(user.UserID, uctrPersonDetails1.PersonID,tbUserName.Text,tbPassword.Text,chkIsActive.Checked);
             }
 
 
             if (user.Save())
             {
                 string ModeStr;
-                if (_UserID == -1)
+                if (_ctrlMode == ctrlMode.Add)
                 {
                     ModeStr = "Saved";
-                    _UserID = user.UserID;
-                    _SavedUserName = user.UserName;
+                    _ctrlMode = ctrlMode.Update;
                 }
                 else
                 {
                     ModeStr = "Updated";
                 }
+
                 MessageBox.Show($"User {ModeStr} Succesfully.", ModeStr, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             lblUserID2.Text = user.UserID.ToString();
                             UpdateForm();
@@ -188,9 +198,12 @@ namespace DVLD.UserForm
 
         private void UpdateForm()
         {
-            if (_UserID != -1)
+            if (_ctrlMode == ctrlMode.Update)
             {
                 lblFormLabel.Text = "Update User";
+                //disable groupbox of filter
+                groupBox1.Enabled = false;
+
             }
             else
             {
@@ -199,7 +212,6 @@ namespace DVLD.UserForm
                 tbPassword.Text = string.Empty;
                 tbUserName.Text = string.Empty;
                 lblUserID2.Text = string.Empty;
-                _SavedUserName = string.Empty;
                 chkIsActive.Checked = false;
             }
         }
@@ -208,7 +220,8 @@ namespace DVLD.UserForm
 
         private void frmAddUser_Load(object sender, EventArgs e)
         {
-
+            UpdateForm();
         }
+
     }
 }
