@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.UserForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,6 @@ namespace DVLD
             
             //Resize Background
             this.BackgroundImage = Utilites.ResizeImage(Properties.Resources._87f519db_8efe_46d1_8881_9e7d58b3e705, 300, 300);
-
-
 
         }
 

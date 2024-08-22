@@ -149,7 +149,7 @@ namespace DVLD
                                 }
                                 else
                                 {
-                                    MessageBox.Show("User Cannot Be Deleted", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("User Cannot Be Deleted Due Data Connected To it", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
 
                             }
@@ -159,6 +159,15 @@ namespace DVLD
                     case "Add New User":
                         {
                             AddNewUser();
+                            break;
+                        }
+                    case "Change Password":
+                        {
+                            using (frmChangePassword frmPassword = new frmChangePassword(PersonID))
+                            {
+                                frmPassword.FormClosed += frmUser_Load;
+                                frmPassword.ShowDialog();
+                            }
                             break;
                         }
                     default:

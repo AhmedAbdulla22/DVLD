@@ -13,7 +13,7 @@ namespace DVLD.userControls
 {
     public partial class uctrlLoginInformation : UserControl
     {
-        private clsUser _User;
+        private clsUser _User = new clsUser();
         public int PersonID = -1;
 
         public uctrlLoginInformation()
@@ -23,7 +23,10 @@ namespace DVLD.userControls
 
         public void UpdateControl()
         {
+            if (PersonID != -1)
+            {
             _User = clsUser.GetUser(PersonID);
+            }
 
             if (_User != null)
             {
