@@ -23,9 +23,9 @@ namespace DVLD
         private void LoadTheDataGridView()
         {
             DataTable dt = clsUser.getAllUsers();
-            dgvPeople.DataSource = dt;
+            dgvUsers.DataSource = dt;
             //#Records Rows
-            lblRecords.Text = "#Records" + ' ' + (dgvPeople.RowCount).ToString();
+            lblRecords.Text = "#Records" + ' ' + (dgvUsers.RowCount).ToString();
         }
 
         private void frmUser_Load(object sender, EventArgs e)
@@ -97,14 +97,14 @@ namespace DVLD
             if (e.Button == MouseButtons.Right)
             {
                 //row that you clicked on location
-                var hitTestInfo = dgvPeople.HitTest(e.X, e.Y);
+                var hitTestInfo = dgvUsers.HitTest(e.X, e.Y);
 
                 if (hitTestInfo.RowIndex >= 0)
                 {
-                    dgvPeople.ClearSelection();
-                    dgvPeople.Rows[hitTestInfo.RowIndex].Selected = true;
+                    dgvUsers.ClearSelection();
+                    dgvUsers.Rows[hitTestInfo.RowIndex].Selected = true;
 
-                    contextMenuStrip1.Show(dgvPeople, new Point(e.X, e.Y));
+                    contextMenuStrip1.Show(dgvUsers, new Point(e.X, e.Y));
                 }
             }
         }
@@ -112,11 +112,11 @@ namespace DVLD
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             int UserID = -1,PersonID = -1;
-            UserID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells["UserID"].Value);
-            PersonID = Convert.ToInt32(dgvPeople.SelectedRows[0].Cells["PersonID"].Value);
+            UserID = Convert.ToInt32(dgvUsers.SelectedRows[0].Cells["UserID"].Value);
+            PersonID = Convert.ToInt32(dgvUsers.SelectedRows[0].Cells["PersonID"].Value);
 
 
-            if (dgvPeople.SelectedRows.Count == 1)
+            if (dgvUsers.SelectedRows.Count == 1)
             {
                 switch (e.ClickedItem.Text)
                 {
@@ -176,6 +176,110 @@ namespace DVLD
                 }
 
 
+            }
+        }
+
+        private void tbFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+                switch (cbFilter.SelectedItem.ToString())
+                {
+                    case "PersonID":
+                    case "UserID":
+                        {
+                            if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+                            {
+                                e.SuppressKeyPress = false;
+                                e.Handled = false;
+                            }
+                            else
+                            {
+                                e.SuppressKeyPress = true;
+                                e.Handled = true;
+                            }
+                            break;
+                        }
+                    case "Full Name":
+                    case "User Name":
+                        {
+                            if (char.IsLetter((char)e.KeyValue) || e.KeyCode == Keys.Space || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+                            {
+                                e.Handled = false;
+                                e.SuppressKeyPress = false;
+                            }
+                            else
+                            {
+                                e.Handled = true;
+                                e.SuppressKeyPress = true;
+                            }
+                            break;
+                        }
+                }
+
+
+
+            
+        }
+
+        private void cbActiveFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(cbActiveFilter.SelectedText)
+            {
+                case "All":
+                    {
+                        LoadTheDataGridView();
+                        break;
+                    }
+                case "Active":
+                    {
+
+                        break;
+                    }
+                case "InActive":
+                    {
+
+                        break;
+                    }
+            }
+        }
+
+        private void tbFilter_TextChanged(object sender, EventArgs e)
+        {
+            var filterTxt = tbFilter.Text;
+            if (string.IsNullOrEmpty(filterTxt))
+            {
+                LoadTheDataGridView();
+                return;
+            }
+
+            switch (cbFilter.SelectedItem.ToString())
+            {
+                case "PersonID":
+                    {
+                        if (int.TryParse(tbFilter.Text, out int value))
+                        {
+                            dgvUsers.DataSource = clsUser.getUsersByPersonID(value);
+                        }
+                        break;
+                    }
+                case "UserID":
+                    {
+                        if (int.TryParse(tbFilter.Text, out int value))
+                        {
+                            dgvUsers.DataSource = clsUser.getUsersByUserID(value);
+                        }
+                        break;
+                    }
+                case "Full Name":
+                    {
+                        dgvUsers.DataSource = clsUser.getUsersByFullName(filterTxt);
+                        break;
+                    }
+                case "User Name":
+                    {
+                        //dgvPeople.DataSource = clsPerson.getPeopleByFirstName(tbFilter.Text);
+                        break;
+                    }
             }
         }
     }
