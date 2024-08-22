@@ -1,4 +1,5 @@
-﻿using DVLD.UserForm;
+﻿using BusinessLayer;
+using DVLD.UserForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,8 +43,11 @@ namespace DVLD
                     }
                 case "People":
                     {
-                        frmPeople frmPeople = new frmPeople();
-                        frmPeople.ShowDialog();
+                        using (frmPeople frmPeople = new frmPeople())
+                        {
+                            frmPeople.ShowDialog();
+
+                        }
                         break;
 
                     }
@@ -54,13 +58,27 @@ namespace DVLD
                     }
                 case "Users":
                     {
-                        frmUser frmUser = new frmUser();
-                        frmUser.ShowDialog();
+                        using (frmUser frmUser = new frmUser())
+                        {
+
+                            frmUser.ShowDialog();
+                        }
                         break;
                     }
-                case "Account Settings":
+                case "Current User Info":
                     {
-                        MessageBox.Show("Still in Work", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        using(frmUserDetails frmUDetails = new frmUserDetails(clsLog.User.PersonID))
+                        {
+                            frmUDetails.ShowDialog();
+                        }
+                        break;
+                    }
+                case "Change Password":
+                    {
+                        using (frmChangePassword frmChgPass = new frmChangePassword(clsLog.User.PersonID))
+                        {
+                            frmChgPass.ShowDialog();
+                        }
                         break;
                     }
             }
@@ -80,6 +98,27 @@ namespace DVLD
             accountSettingsToolStripMenuItem.ShowDropDown();
         }
 
-        
+        private void accountSettingsToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Current User Info":
+                    {
+                        using (frmUserDetails frmUDetails = new frmUserDetails(clsLog.User.PersonID))
+                        {
+                            frmUDetails.ShowDialog();
+                        }
+                        break;
+                    }
+                case "Change Password":
+                    {
+                        using (frmChangePassword frmChgPass = new frmChangePassword(clsLog.User.PersonID))
+                        {
+                            frmChgPass.ShowDialog();
+                        }
+                        break;
+                    }
+            }
+        }
     }
 }

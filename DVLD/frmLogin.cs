@@ -27,15 +27,15 @@ namespace DVLD
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            clsUser User = clsUser.GetUser(tbUserName.Text,tbPassword.Text);
-
-            if (User == null)
+            clsLog.User = clsUser.GetUser(tbUserName.Text,tbPassword.Text);
+            
+            if (clsLog.User == null)
             {
                 MessageBox.Show("Wrong UserName/Password","Try Again",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
-                if (!User.isActive)
+                if (!clsLog.User.isActive)
                 {
                 MessageBox.Show("This User is InActive Please Contact the Admin","InActive User",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }

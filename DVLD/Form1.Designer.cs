@@ -94,7 +94,8 @@
             this.accountSettingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1472, 58);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1104, 58);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -105,7 +106,7 @@
             this.applicationToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
             this.applicationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
-            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(150, 54);
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(130, 54);
             this.applicationToolStripMenuItem.Text = "Application";
             // 
             // peopleeToolStripMenuItem
@@ -113,7 +114,7 @@
             this.peopleeToolStripMenuItem.Image = global::DVLD.Properties.Resources.People;
             this.peopleeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.peopleeToolStripMenuItem.Name = "peopleeToolStripMenuItem";
-            this.peopleeToolStripMenuItem.Size = new System.Drawing.Size(118, 54);
+            this.peopleeToolStripMenuItem.Size = new System.Drawing.Size(105, 54);
             this.peopleeToolStripMenuItem.Text = "People";
             // 
             // driversToolStripMenuItem
@@ -121,7 +122,7 @@
             this.driversToolStripMenuItem.Image = global::DVLD.Properties.Resources.Driver_License;
             this.driversToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
-            this.driversToolStripMenuItem.Size = new System.Drawing.Size(119, 54);
+            this.driversToolStripMenuItem.Size = new System.Drawing.Size(105, 54);
             this.driversToolStripMenuItem.Text = "Drivers";
             // 
             // usersToolStripMenuItem
@@ -129,7 +130,7 @@
             this.usersToolStripMenuItem.Image = global::DVLD.Properties.Resources.Admin_Settings_Male;
             this.usersToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(108, 54);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(97, 54);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // accountSettingsToolStripMenuItem
@@ -141,29 +142,30 @@
             this.accountSettingsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Password_Window;
             this.accountSettingsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
-            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(184, 54);
+            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(159, 54);
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
+            this.accountSettingsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.accountSettingsToolStripMenuItem_DropDownItemClicked);
             this.accountSettingsToolStripMenuItem.MouseHover += new System.EventHandler(this.accountSettingsToolStripMenuItem_MouseHover);
             // 
             // currentUserInfoToolStripMenuItem
             // 
             this.currentUserInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
             this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.currentUserInfoToolStripMenuItem.Text = "Current User Info";
             // 
             // changeUserInfoToolStripMenuItem
             // 
             this.changeUserInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.Password_Window;
             this.changeUserInfoToolStripMenuItem.Name = "changeUserInfoToolStripMenuItem";
-            this.changeUserInfoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.changeUserInfoToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.changeUserInfoToolStripMenuItem.Text = "Change Password";
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Image = global::DVLD.Properties.Resources.Logout;
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
@@ -179,15 +181,15 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.BackgroundImage = global::DVLD.Properties.Resources._87f519db_8efe_46d1_8881_9e7d58b3e705;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1472, 740);
+            this.ClientSize = new System.Drawing.Size(1104, 601);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
