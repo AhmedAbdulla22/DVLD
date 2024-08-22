@@ -18,6 +18,10 @@ namespace DVLD
         public frmUser()
         {
             InitializeComponent();
+
+            //set cb to none
+            cbFilter.SelectedIndex = 0;
+            cbActiveFilter.SelectedIndex = 0;
         }
 
         private void LoadTheDataGridView()
@@ -26,15 +30,15 @@ namespace DVLD
             dgvUsers.DataSource = dt;
             //#Records Rows
             lblRecords.Text = "#Records" + ' ' + (dgvUsers.RowCount).ToString();
+
+
         }
 
         private void frmUser_Load(object sender, EventArgs e)
         {
             LoadTheDataGridView();
 
-            //set cb to none
-            cbFilter.SelectedIndex = 0;
-            cbActiveFilter.SelectedIndex = 0;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace DVLD
                     {
                         tbFilter.Visible = false;
                         cbActiveFilter.Visible = true;
-
+                        cbActiveFilter.SelectedIndex = 0;
                         break;
                     }
                 default:
@@ -223,21 +227,22 @@ namespace DVLD
 
         private void cbActiveFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(cbActiveFilter.SelectedText)
+
+            switch (cbActiveFilter.SelectedItem.ToString())
             {
-                case "All":
+                case "InActive":
                     {
-                        LoadTheDataGridView();
+                        dgvUsers.DataSource = clsUser.getUsersByIsActive(false);
                         break;
                     }
                 case "Active":
                     {
-
+                        dgvUsers.DataSource = clsUser.getUsersByIsActive(true);
                         break;
                     }
-                case "InActive":
+                default:
                     {
-
+                        LoadTheDataGridView();
                         break;
                     }
             }
@@ -277,7 +282,7 @@ namespace DVLD
                     }
                 case "User Name":
                     {
-                        //dgvPeople.DataSource = clsPerson.getPeopleByFirstName(tbFilter.Text);
+                        dgvUsers.DataSource = clsUser.getUsersByUserName(filterTxt);
                         break;
                     }
             }

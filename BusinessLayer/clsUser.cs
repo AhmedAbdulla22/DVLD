@@ -157,5 +157,15 @@ namespace BusinessLayer
         {
             return ClsUserDataAccess.GetUsersByFullName(FullName);
         }
+
+        public static DataTable getUsersByUserName(string UserName)
+        {
+            return ClsUserDataAccess.GetUsersByUserName(UserName);
+        }
+
+        public static DataTable getUsersByIsActive(bool IsActive)
+        {
+            return ClsUserDataAccess.GetUsersByIsActive(IsActive);
+        }
     }
 }
