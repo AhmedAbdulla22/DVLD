@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
 using System.Data;
+using System.Xml.Linq;
 
 namespace BusinessLayer
 {
@@ -7,9 +8,7 @@ namespace BusinessLayer
     {
         public int ApplicationID { get; set; }
         public string Title { get; set; }
-        public int Fees { get; set; }
-        public enum mode { Add, Update };
-        mode enMode;
+        public double Fees { get; set; }
 
         public clsApplicationType()
         {
@@ -17,21 +16,39 @@ namespace BusinessLayer
             Title = "";
             Fees = 0;
 
-            enMode = mode.Add;
         }
 
-        public clsApplicationType(int ApplicationID, string Title, int Fees)
+        public clsApplicationType(int ApplicationID, string Title, double Fees)
         {
             this.ApplicationID = ApplicationID;
             this.Title = Title;
             this.Fees = Fees;
-
-            enMode = mode.Update;
         }
+        public static clsApplicationType GetApplicationType(int TypeID)
+        {
+            string Title = string.Empty;
+            double Fees = -1;
 
+
+            if (ClsApplicationTypeDataAccess.GetApplicationTypeByID(TypeID,ref Title, ref Fees))
+            {
+                return new clsApplicationType(TypeID,Title,Fees);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public static DataTable getAllApplicationTypes()
         {
             return ClsApplicationTypeDataAccess.GetAllApplicationTypes();
         }
+
+        public bool Update()
+        {
+           return ClsApplicationTypeDataAccess.UpdateApplicationType(this.ApplicationID, this.Title, this.Fees);
+        }
+
+
     }
 }
