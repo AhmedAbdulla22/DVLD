@@ -333,6 +333,26 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Project_Setup {
+            get {
+                object obj = ResourceManager.GetObject("Project Setup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Project_Setup_Mini {
+            get {
+                object obj = ResourceManager.GetObject("Project Setup Mini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tear_Off_Calendar {
             get {
                 object obj = ResourceManager.GetObject("Tear-Off Calendar", resourceCulture);
