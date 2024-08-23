@@ -48,6 +48,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.callToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblFormLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -57,7 +58,7 @@
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFilter.Location = new System.Drawing.Point(202, 240);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(148, 20);
             this.tbFilter.TabIndex = 17;
@@ -77,7 +78,7 @@
             "User Name",
             "IsActive"});
             this.cbFilter.Location = new System.Drawing.Point(82, 239);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(118, 21);
             this.cbFilter.TabIndex = 16;
@@ -114,10 +115,11 @@
             this.dgvUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsers.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(21, 261);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersWidth = 62;
@@ -136,7 +138,7 @@
             this.button2.Image = global::DVLD.Properties.Resources.Close;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(674, 466);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 14;
@@ -153,7 +155,7 @@
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUser.Location = new System.Drawing.Point(716, 218);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(40, 40);
             this.btnAddUser.TabIndex = 13;
@@ -165,8 +167,8 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DVLD.Properties.Resources.Admin_Settings_Male100x;
-            this.pictureBox1.Location = new System.Drawing.Point(334, 79);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(334, 41);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -181,7 +183,7 @@
             "Active",
             "InActive"});
             this.cbActiveFilter.Location = new System.Drawing.Point(202, 239);
-            this.cbActiveFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbActiveFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbActiveFilter.Name = "cbActiveFilter";
             this.cbActiveFilter.Size = new System.Drawing.Size(92, 21);
             this.cbActiveFilter.TabIndex = 18;
@@ -264,11 +266,26 @@
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
+            // lblFormLabel
+            // 
+            this.lblFormLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFormLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblFormLabel.Location = new System.Drawing.Point(304, 175);
+            this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFormLabel.Name = "lblFormLabel";
+            this.lblFormLabel.Size = new System.Drawing.Size(170, 34);
+            this.lblFormLabel.TabIndex = 19;
+            this.lblFormLabel.Text = "Manage Users";
+            this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 503);
+            this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.tbFilter);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.label1);
@@ -278,7 +295,7 @@
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbActiveFilter);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUser";
@@ -312,5 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem callToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.Label lblFormLabel;
     }
 }

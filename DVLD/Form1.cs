@@ -35,12 +35,6 @@ namespace DVLD
         {
             switch(e.ClickedItem.Text)
             {
-                case "Application":
-                    {
-                        MessageBox.Show("Still in Work", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        break;
-                    }
                 case "People":
                     {
                         using (frmPeople frmPeople = new frmPeople())
@@ -93,10 +87,6 @@ namespace DVLD
             
         }
 
-        private void accountSettingsToolStripMenuItem_MouseHover(object sender, EventArgs e)
-        {
-            accountSettingsToolStripMenuItem.ShowDropDown();
-        }
 
         private void accountSettingsToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -118,6 +108,23 @@ namespace DVLD
                         }
                         break;
                     }
+            }
+        }
+
+        private void applicationToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Manage Application Types":
+                    {
+                        using (ManageApplicationType frmManageApplicationType = new ManageApplicationType())
+                        {
+                            frmManageApplicationType.ShowDialog();
+                        }
+                        break;
+                    }
+
+                    
             }
         }
     }

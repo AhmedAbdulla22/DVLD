@@ -333,6 +333,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap project {
+            get {
+                object obj = ResourceManager.GetObject("project", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Project_Setup {
             get {
                 object obj = ResourceManager.GetObject("Project Setup", resourceCulture);
@@ -346,6 +356,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap Project_Setup_Mini {
             get {
                 object obj = ResourceManager.GetObject("Project Setup Mini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Project_Setup1 {
+            get {
+                object obj = ResourceManager.GetObject("Project Setup1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
