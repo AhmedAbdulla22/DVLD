@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.TestType;
 using DVLD.UserForm;
 using System;
 using System.Collections.Generic;
@@ -123,9 +124,19 @@ namespace DVLD
                         }
                         break;
                     }
+                case "Manage Test Types":
+                    {
+                        using (ManageTestTypes frmManageTestType = new ManageTestTypes())
+                        {
+                            frmManageTestType.ShowDialog();
+                        }
+                        break;
+                    }
 
-                    
+
             }
         }
+
+
     }
 }

@@ -92,7 +92,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(253, 62);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(253, 34);
             // 
             // toolStripMenuItem3
             // 
@@ -146,6 +146,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManageApplicationType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ManageApplicationType";
             this.Load += new System.EventHandler(this.ManageApplicationType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationType)).EndInit();
