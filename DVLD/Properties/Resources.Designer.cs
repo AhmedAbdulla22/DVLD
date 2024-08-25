@@ -273,6 +273,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LocalDLA {
+            get {
+                object obj = ResourceManager.GetObject("LocalDLA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logout {
             get {
                 object obj = ResourceManager.GetObject("Logout", resourceCulture);
@@ -286,6 +296,26 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap maps {
             get {
                 object obj = ResourceManager.GetObject("maps", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_project {
+            get {
+                object obj = ResourceManager.GetObject("new-project", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_project_1_ {
+            get {
+                object obj = ResourceManager.GetObject("new-project(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +486,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap User_Male {
             get {
                 object obj = ResourceManager.GetObject("User Male", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Versions {
+            get {
+                object obj = ResourceManager.GetObject("Versions", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

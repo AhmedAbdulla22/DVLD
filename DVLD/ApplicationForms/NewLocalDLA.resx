@@ -117,30 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblConfirmPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAARlJREFUOE+d071KA0EUhuEFwSIKYgQLRbwCKy/DMq2VjUXuwTaVkEq0U9TOQkgT
-        SKF3oNh4AakUwUZRxL/3y5yB4Bl3d/aDB07mnJ2dTEhRI0vYMItaaJo5HOIGpzjDHfqYRVbmMcQOZrRg
-        Ud3FCJqpHZ1Mm/2XXeyHsjq6s1tMn+xv1LtGa/KpIrp83VlVjrEcyvJs4iiUpdHMSijLs47tUJZGMwuh
-        TKcD/Rh6c44DbMHlDT8NvcAlNZjDJTWUwyU1lMMlNsa4svoVA3ziAxe2pp5mHqwWl9jYw5rVl2jjCffQ
-        /1cvUG8VPavFJTbe8Wy1TqbNvs2jramnGZ06PucSG025pIZyuOgrpQbr+ILLOZpsqs1OQIriFxmVvsN0
-        3MgNAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="lblPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAARlJREFUOE+d071KA0EUhuEFwSIKYgQLRbwCKy/DMq2VjUXuwTaVkEq0U9TOQkgT
-        SKF3oNh4AakUwUZRxL/3y5yB4Bl3d/aDB07mnJ2dTEhRI0vYMItaaJo5HOIGpzjDHfqYRVbmMcQOZrRg
-        Ud3FCJqpHZ1Mm/2XXeyHsjq6s1tMn+xv1LtGa/KpIrp83VlVjrEcyvJs4iiUpdHMSijLs47tUJZGMwuh
-        TKcD/Rh6c44DbMHlDT8NvcAlNZjDJTWUwyU1lMMlNsa4svoVA3ziAxe2pp5mHqwWl9jYw5rVl2jjCffQ
-        /1cvUG8VPavFJTbe8Wy1TqbNvs2jramnGZ06PucSG025pIZyuOgrpQbr+ILLOZpsqs1OQIriFxmVvsN0
-        3MgNAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
