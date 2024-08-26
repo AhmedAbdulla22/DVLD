@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    internal class clsLocalDLA
+    public class clsLocalDLA
     {
 
         public static DataTable getAllLocalDLA()
         {
 
-            return clsLocalDLA.getAllLocalDLA();
+            return clsLocalDLA_DataAccess.getAllLocalDLA();
         }
     }
 }

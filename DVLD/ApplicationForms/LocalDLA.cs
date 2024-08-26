@@ -25,7 +25,7 @@ namespace DVLD.ApplicationForms
 
         private void LoadTheDataGridView()
         {
-            DataTable dt = clsApplicationType.getAllApplicationTypes();
+            DataTable dt = clsLocalDLA.getAllLocalDLA();
             dgvLocalDLA.DataSource = dt;
             //#Records Rows
             lblRecords.Text = "#Records" + ' ' + (dgvLocalDLA.RowCount).ToString();

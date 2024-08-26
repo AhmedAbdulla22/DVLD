@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
-    internal class clsLocalDLA_DataAccess
+    public static class clsLocalDLA_DataAccess
     {
         public static DataTable getAllLocalDLA()
         {
@@ -17,7 +17,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"SELECT 
+                var query = @"SELECT
                             'L.D.L.AppID' = LDLApp.LocalDrivingLicenseApplicationID,
                             'Driving Class' = LicenseClasses.ClassName,
                             'Full Name' = People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName,
@@ -31,15 +31,13 @@ namespace DataAccessLayer
                                  WHERE TestAppointments.LocalDrivingLicenseApplicationID = LDLApp.LocalDrivingLicenseApplicationID 
                                  AND Tests.TestResult = 1)
                         FROM 
-                            Applications 
+                            LocalDrivingLicenseApplications LDLApp
                         INNER JOIN 
-                            LocalDrivingLicenseApplications LDLApp ON Applications.ApplicationID = LDLApp.ApplicationID 
+                            Applications  ON Applications.ApplicationID = LDLApp.ApplicationID 
                         INNER JOIN 
                             People ON Applications.ApplicantPersonID = People.PersonID 
                         INNER JOIN 
-                            LicenseClasses ON LDLApp.LicenseClassID = LicenseClasses.LicenseClassID 
-                        INNER JOIN 
-                            TestAppointments ON LDLApp.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID;";
+                            LicenseClasses ON LDLApp.LicenseClassID = LicenseClasses.LicenseClassID ;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
 
