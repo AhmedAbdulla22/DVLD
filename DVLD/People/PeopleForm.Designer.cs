@@ -86,59 +86,59 @@
             this.callToolStripMenuItem,
             this.sendEmailToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 196);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 224);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.Add_Male_User_Group;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.compose;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.Close;
+            this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.Remove;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(192, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 6);
             // 
             // callToolStripMenuItem
             // 
             this.callToolStripMenuItem.Image = global::DVLD.Properties.Resources.phone_call_1_;
             this.callToolStripMenuItem.Name = "callToolStripMenuItem";
-            this.callToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.callToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.callToolStripMenuItem.Text = "Phone Call";
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.arroba;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // lblRecords
