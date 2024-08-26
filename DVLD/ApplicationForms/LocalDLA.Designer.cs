@@ -199,6 +199,7 @@
             this.Name = "LocalDLA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LocalDLA";
+            this.Load += new System.EventHandler(this.LocalDLA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalDLA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -18,10 +18,15 @@ namespace DVLD
         string delim = "#//#";
 
         bool formIsClosing = false;
-        public frmLogin()
+        public frmLogin(clsUser User)
         {
             InitializeComponent();
 
+            if (User != null)
+            {
+                clsLog.User = User;
+                OpenTheMainScreen();
+            }
 
         }
 
@@ -54,14 +59,8 @@ namespace DVLD
                     {
                         File.WriteAllText(_RememberMePath, "");
                     }
-                    frmMain frmMain = new frmMain();
-                    frmMain.FormClosing += formClosing;
-                    //make the the login form parent of the main form
-                    frmMain.Owner = this;
 
-
-                    this.Visible = false;
-                    frmMain.ShowDialog();
+                    OpenTheMainScreen();
                 }
             }
 
@@ -69,6 +68,17 @@ namespace DVLD
             
         }
 
+        private void OpenTheMainScreen()
+        {
+            frmMain frmMain = new frmMain();
+            frmMain.FormClosing += formClosing;
+            //make the the login form parent of the main form
+            frmMain.Owner = this;
+
+
+            this.Visible = false;
+            frmMain.ShowDialog();
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

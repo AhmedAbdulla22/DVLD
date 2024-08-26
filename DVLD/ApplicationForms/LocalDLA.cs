@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,22 @@ namespace DVLD.ApplicationForms
             //set cb to none
             cbFilter.SelectedIndex = 0;
             cbActiveFilter.SelectedIndex = 0;
+        }
+
+        private void LoadTheDataGridView()
+        {
+            DataTable dt = clsApplicationType.getAllApplicationTypes();
+            dgvLocalDLA.DataSource = dt;
+            //#Records Rows
+            lblRecords.Text = "#Records" + ' ' + (dgvLocalDLA.RowCount).ToString();
+
+
+        }
+
+
+        private void LocalDLA_Load(object sender, EventArgs e)
+        {
+            LoadTheDataGridView();
         }
     }
 }

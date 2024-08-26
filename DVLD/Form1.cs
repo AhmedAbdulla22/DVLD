@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.ApplicationForms;
 using DVLD.TestType;
 using DVLD.UserForm;
 using System;
@@ -116,6 +117,14 @@ namespace DVLD
         {
             switch (e.ClickedItem.Text)
             {
+                //case "Local Driving License Application":
+                //    {
+                //        using (LocalDLA frmLocalDLA = new LocalDLA())
+                //        {
+                //            frmLocalDLA.ShowDialog();
+                //        }
+                //        break;
+                //    }
                 case "Manage Application Types":
                     {
                         using (ManageApplicationType frmManageApplicationType = new ManageApplicationType())
@@ -123,6 +132,7 @@ namespace DVLD
                             frmManageApplicationType.ShowDialog();
                         }
                         break;
+
                     }
                 case "Manage Test Types":
                     {
@@ -137,6 +147,20 @@ namespace DVLD
             }
         }
 
+        private void toolStripMenuItem3_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Local Driving License Application":
+                    {
+                        using (LocalDLA frmLocalDLA = new LocalDLA())
+                        {
+                            frmLocalDLA.ShowDialog();
+                        }
+                        break;
+                    }
 
+            }
+        }
     }
 }
