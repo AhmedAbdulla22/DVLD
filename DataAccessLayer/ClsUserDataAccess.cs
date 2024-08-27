@@ -421,7 +421,7 @@ SELECT Scope_Identity();";
                 var query = @"SELECT Users.UserID, Users.PersonID, People.FirstName +' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName as FullName,Users.UserName ,Users.IsActive
                                 FROM     People INNER JOIN
                                 Users ON People.PersonID = Users.PersonID
-                                Where (People.FirstName +' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName) Like @FullName + '%'";
+                                Where (People.FirstName +' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName) Like @FullName + '%';";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     sqlCommand.Parameters.AddWithValue("@FullName", FullName);

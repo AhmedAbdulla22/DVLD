@@ -88,7 +88,7 @@ namespace DVLD.ApplicationForms
 
         private void AddNewLocalDLA()
         {
-            using(AddLocalDLA frmNewLocaDLA = new AddLocalDLA())
+            using(AddLocalDLA frmNewLocaDLA = new AddLocalDLA(30))
             {
                 frmNewLocaDLA.ShowDialog();
 

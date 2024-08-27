@@ -16,5 +16,23 @@ namespace BusinessLayer
 
             return clsLocalDLA_DataAccess.getAllLocalDLA();
         }
+
+        public static DataTable getLocalDLA_ByStatus(byte ApplicationStatus)
+        {
+            return clsLocalDLA_DataAccess.GetLDLA_ByStatus(ApplicationStatus);
+        }
+
+        public static DataTable getLocalDLA_ByLDLAppID(int LDLAppID)
+        {
+            return clsLocalDLA_DataAccess.GetLDLA_ByLDLAppID(LDLAppID);
+        }
+        public static DataTable getLocalDLA_ByNationalNo(int NationalNo)
+        {
+            return clsLocalDLA_DataAccess.GetLDLA_ByNationalNo(NationalNo);
+        }
+        public static DataTable getLocalDLA_ByFullName(string FullName)
+        {
+            return clsLocalDLA_DataAccess.GetLDLA_ByFullName(FullName);
+        }
     }
 }

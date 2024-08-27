@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -162,6 +163,80 @@ SELECT Scope_Identity();";
 
             return isExist;
         }
+        public static bool GetApplicationByApplicationID(int ApplicationID, ref int ApplicantPersonID,ref DateTime ApplicationDate, ref int ApplicationTypeID, ref byte ApplicationStatus, ref DateTime LastStatusDate, ref double PaidFees, ref int CreatedByUserID)
+        {
+            bool isExist = false;
 
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM Applications Where ApplicationID = @ApplicationID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                ApplicantPersonID = (int)reader["ApplicantPersonID"];
+                                ApplicationDate = (DateTime)reader["ApplicationDate"];
+                                ApplicationTypeID = (int)reader["ApplicationTypeID"];
+                                ApplicationStatus = (byte)reader["ApplicationStatus"];
+                                LastStatusDate = (DateTime)reader["LastStatusDate"];
+                                PaidFees = Convert.ToDouble((decimal)reader["PaidFees"]);
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+        public static bool DeleteApplication(int ApplicationID)
+        {
+            bool isDeleted = false;
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"DELETE FROM Applications
+                              Where ApplicationID = @ApplicationID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isDeleted = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            return isDeleted;
+        }
+
+        
     }
 }

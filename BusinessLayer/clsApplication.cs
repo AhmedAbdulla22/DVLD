@@ -43,6 +43,15 @@ namespace BusinessLayer
             this.CreatedByUserID = createdByUserID;
             this.enMode = mode.Update;
         }
+        public bool Delete()
+        {
+            return clsApplicationDataAccess.DeleteApplication(this.ApplicationID);
+        }
+
+        public static bool Delete(int ApplicationID)
+        {
+            return clsApplicationDataAccess.DeleteApplication(ApplicationID);
+        }
 
         private bool _AddNewApplication()
         {
@@ -53,7 +62,7 @@ namespace BusinessLayer
         private bool _Update()
         {
             //Update User
-            return clsApplicationDataAccess.UpdateApplication(this.ApplicationID, this.ApplicantPersonID, this.ApplicationDate, ApplicationTypeID, ApplicationStatus, LastStatusDate, PaidFees, CreatedByUserID);
+            return clsApplicationDataAccess.UpdateApplication(this.ApplicationID, this.ApplicantPersonID, this.ApplicationDate, this.ApplicationTypeID, this.ApplicationStatus, this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
 
         }
         public bool Save()
@@ -82,7 +91,25 @@ namespace BusinessLayer
             return false;
         }
 
-        public static clsApplication GetApplication(int ApplicantPersonID)
+        public bool SetToCancel()
+        {
+            return _SetStatus(2);
+        }
+
+        public bool SetToComplete()
+        {
+            return _SetStatus(3);
+        }
+
+        private bool _SetStatus(byte Status = 1)
+        {
+            //1 for NEW
+            //2 For Cancel
+            //3 For Completed
+            return clsApplicationDataAccess.UpdateApplication(this.ApplicationID, this.ApplicantPersonID, this.ApplicationDate, this.ApplicationTypeID, Status, this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
+        }
+
+        public static clsApplication GetApplicationByApplicantPersonID(int ApplicantPersonID)
         {
             int ApplicationID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
             double PaidFees = 0;
@@ -93,6 +120,23 @@ namespace BusinessLayer
             if (clsApplicationDataAccess.GetApplicationByPersonID(ApplicantPersonID, ref  ApplicationID, ref ApplicationDate, ref  ApplicationTypeID, ref ApplicationStatus, ref LastStatusDate, ref PaidFees, ref  CreatedByUserID))
             {
                 return new clsApplication(ApplicationID,ApplicantPersonID,ApplicationDate,ApplicationTypeID,ApplicationStatus,LastStatusDate,PaidFees,CreatedByUserID);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static clsApplication GetApplicationByApplicationID(int ApplicationID)
+        {
+            int ApplicantPersonID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
+            double PaidFees = 0;
+            byte ApplicationStatus = 1;
+            DateTime LastStatusDate = DateTime.Now, ApplicationDate = DateTime.Now;
+
+
+            if (clsApplicationDataAccess.GetApplicationByApplicationID(ApplicationID,ref ApplicantPersonID, ref ApplicationDate, ref ApplicationTypeID, ref ApplicationStatus, ref LastStatusDate, ref PaidFees, ref CreatedByUserID))
+            {
+                return new clsApplication(ApplicationID, ApplicantPersonID, ApplicationDate, ApplicationTypeID, ApplicationStatus, LastStatusDate, PaidFees, CreatedByUserID);
             }
             else
             {
