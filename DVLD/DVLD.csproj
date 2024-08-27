@@ -68,11 +68,11 @@
     <Compile Include="ApplicationForms\LocalDLA.Designer.cs">
       <DependentUpon>LocalDLA.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForms\NewLocalDLA.cs">
+    <Compile Include="ApplicationForms\AddLocalDLA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForms\NewLocalDLA.Designer.cs">
-      <DependentUpon>NewLocalDLA.cs</DependentUpon>
+    <Compile Include="ApplicationForms\AddLocalDLA.Designer.cs">
+      <DependentUpon>AddLocalDLA.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\UpdatApplicationType.cs">
       <SubType>Form</SubType>
@@ -188,8 +188,8 @@
     <EmbeddedResource Include="ApplicationForms\LocalDLA.resx">
       <DependentUpon>LocalDLA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForms\NewLocalDLA.resx">
-      <DependentUpon>NewLocalDLA.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationForms\AddLocalDLA.resx">
+      <DependentUpon>AddLocalDLA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\UpdatApplicationType.resx">
       <DependentUpon>UpdatApplicationType.cs</DependentUpon>

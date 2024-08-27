@@ -11,13 +11,21 @@ using System.Windows.Forms;
 
 namespace DVLD.ApplicationForms
 {
-    public partial class NewLocalDLA : Form
+    public partial class AddLocalDLA : Form
     {
         //Get Classees from DB 
         Dictionary<string, int> ClassDict = clsClass.GetAllClasses();
-        public NewLocalDLA()
+
+        enum ctrlMode { Add = 1, Update = 2 };
+        ctrlMode _ctrlMode = ctrlMode.Add;
+        //private clsLocalDLA ;
+
+        public AddLocalDLA()
         {
             InitializeComponent();
+
+            uctrlFilterBy1.OnFilterSucceded += GettingPersonIDWhenFilterSucceded;
+
 
             //fill Classes combobox
             if (ClassDict.Count != 0)
@@ -32,14 +40,17 @@ namespace DVLD.ApplicationForms
             }
         }
 
-        private void tabApplication_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GettingPersonIDWhenFilterSucceded(int PersonID)
+        {
+            uctrPersonDetails1.PersonID = PersonID;
+            uctrPersonDetails1.UpdateControl();
         }
     }
 }

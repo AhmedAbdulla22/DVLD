@@ -14,6 +14,7 @@ namespace DVLD.ApplicationForms
 {
     public partial class LocalDLA : Form
     {
+        
         public LocalDLA()
         {
             InitializeComponent();    
@@ -87,12 +88,17 @@ namespace DVLD.ApplicationForms
 
         private void AddNewLocalDLA()
         {
-            using(NewLocalDLA frmNewLocaDLA = new NewLocalDLA())
+            using(AddLocalDLA frmNewLocaDLA = new AddLocalDLA())
             {
                 frmNewLocaDLA.ShowDialog();
 
                 LoadTheDataGridView();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

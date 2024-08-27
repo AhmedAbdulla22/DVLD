@@ -56,7 +56,7 @@ namespace BusinessLayer
         {
             this.UserID = ClsUserDataAccess.AddNewUser(PersonID,UserName,Password,isActive);
 
-            return (this.PersonID != -1);
+            return (this.UserID != -1);
         }
         private bool _Update()
         {

@@ -22,14 +22,19 @@ namespace DataAccessLayer
                             'Driving Class' = LicenseClasses.ClassName,
                             'Full Name' = People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName,
                             'Application Date' = Applications.ApplicationDate, 
-                            Applications.ApplicationStatus, 
                             People.NationalNo, 
                             'Passed Tests' = 
                                 (SELECT COUNT(*)
                                  FROM TestAppointments
                                  JOIN Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID 
                                  WHERE TestAppointments.LocalDrivingLicenseApplicationID = LDLApp.LocalDrivingLicenseApplicationID 
-                                 AND Tests.TestResult = 1)
+                                 AND Tests.TestResult = 1),
+                            'Status' = 
+							CASE 
+							WHEN Applications.ApplicationStatus = 1 THEN 'New'
+							WHEN Applications.ApplicationStatus = 2 THEN 'Canceled'
+							ELSE 'Completed'
+							END
                         FROM 
                             LocalDrivingLicenseApplications LDLApp
                         INNER JOIN 
@@ -37,7 +42,8 @@ namespace DataAccessLayer
                         INNER JOIN 
                             People ON Applications.ApplicantPersonID = People.PersonID 
                         INNER JOIN 
-                            LicenseClasses ON LDLApp.LicenseClassID = LicenseClasses.LicenseClassID ;";
+                            LicenseClasses ON LDLApp.LicenseClassID = LicenseClasses.LicenseClassID 
+;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
 

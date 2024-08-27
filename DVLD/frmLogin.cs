@@ -18,7 +18,7 @@ namespace DVLD
         string delim = "#//#";
 
         bool formIsClosing = false;
-        public frmLogin(clsUser User)
+        public frmLogin(clsUser User = null)
         {
             InitializeComponent();
 
