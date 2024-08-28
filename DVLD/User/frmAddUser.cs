@@ -178,6 +178,7 @@ namespace DVLD.UserForm
                 {
                     ModeStr = "Saved";
                     _ctrlMode = ctrlMode.Update;
+                    lblUserID2.Text = user.UserID.ToString();
                 }
                 else
                 {
@@ -185,7 +186,6 @@ namespace DVLD.UserForm
                 }
 
                 MessageBox.Show($"User {ModeStr} Succesfully.", ModeStr, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            lblUserID2.Text = user.UserID.ToString();
                             UpdateForm();
             }
             else

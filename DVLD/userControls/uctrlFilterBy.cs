@@ -47,9 +47,7 @@ namespace DVLD.userControls
 
         
 
-
-
-        private void btnFind_Click_1(object sender, EventArgs e)
+        private void FindPerson()
         {
             var filterTxt = tbFilter.Text;
             if (string.IsNullOrEmpty(filterTxt))
@@ -76,7 +74,7 @@ namespace DVLD.userControls
                             else
                             {
                                 FilterSucceded(-1);
-                                MessageBox.Show("This Person Does Not Exist!","Try Again",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                                MessageBox.Show("This Person Does Not Exist!", "Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         break;
@@ -98,6 +96,11 @@ namespace DVLD.userControls
                         break;
                     }
             }
+        }
+
+        private void btnFind_Click_1(object sender, EventArgs e)
+        {
+            FindPerson();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -130,6 +133,28 @@ namespace DVLD.userControls
                     e.Handled = true;
                 }
             }
+        }
+
+        public void FindPersonByNationalNo(string NationalNo)
+        {
+
+            cbFilter.SelectedIndex = 2;
+
+            tbFilter.Text = NationalNo;
+
+            FindPerson();
+
+        }
+
+        public void FindPersonByPersonID(int PersonID)
+        {
+
+            cbFilter.SelectedIndex = 1;
+
+            tbFilter.Text = PersonID.ToString();
+
+            FindPerson();
+
         }
     }
 }

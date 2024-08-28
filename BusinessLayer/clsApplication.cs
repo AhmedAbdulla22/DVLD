@@ -16,7 +16,7 @@ namespace BusinessLayer
         public int ApplicationTypeID { get; set; }
         public byte ApplicationStatus { get; set; }
         public DateTime LastStatusDate { get; set; }
-        public double PaidFees { get; set; }
+        public decimal PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
         public enum mode { Add, Update };
         mode enMode;
@@ -31,7 +31,7 @@ namespace BusinessLayer
             this.enMode = mode.Add;
         }
 
-        public clsApplication(int applicationID, int applicantPersonID, DateTime applicationDate, int applicationTypeID, byte applicationStatus, DateTime lastStatusDate, double paidFees, int createdByUserID)
+        public clsApplication(int applicationID, int applicantPersonID, DateTime applicationDate, int applicationTypeID, byte applicationStatus, DateTime lastStatusDate, decimal paidFees, int createdByUserID)
         {
             this.ApplicationID = applicationID;
             this.ApplicantPersonID = applicantPersonID;
@@ -112,7 +112,7 @@ namespace BusinessLayer
         public static clsApplication GetApplicationByApplicantPersonID(int ApplicantPersonID)
         {
             int ApplicationID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
-            double PaidFees = 0;
+            decimal PaidFees = 0;
             byte ApplicationStatus = 1;
             DateTime LastStatusDate = DateTime.Now, ApplicationDate = DateTime.Now;
 
@@ -129,7 +129,7 @@ namespace BusinessLayer
         public static clsApplication GetApplicationByApplicationID(int ApplicationID)
         {
             int ApplicantPersonID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
-            double PaidFees = 0;
+            decimal PaidFees = 0;
             byte ApplicationStatus = 1;
             DateTime LastStatusDate = DateTime.Now, ApplicationDate = DateTime.Now;
 

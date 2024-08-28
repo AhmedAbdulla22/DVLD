@@ -320,5 +320,123 @@ namespace DataAccessLayer
 
             return dt;
         }
+
+        public static int AddNewLDLApp(int ApplicationID, int LicenseClassID)
+        {
+            int NewLDLAppID = -1;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"INSERT INTO LocalDrivingLicenseApplications
+           (ApplicationID
+           ,LicenseClassID)
+     VALUES
+            (@ApplicationID,
+            @LicenseClassID)
+
+SELECT Scope_Identity();";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                    sqlCommand.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            NewLDLAppID = Convert.ToInt32(result);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+
+                }
+            }
+            return NewLDLAppID;
+        }
+        public static bool UpdateLDLApp(int LocalDrivingLicenseApplicationID,int ApplicationID,int LicenseClassID)
+        {
+            bool isUpdated = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"Update LocalDrivingLicenseApplications
+                              Set 
+                                ApplicationID = @ApplicationID 
+                               ,LicenseClassID   = @LicenseClassID
+                              Where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+
+
+                    sqlCommand.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                    sqlCommand.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                    sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+         
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isUpdated = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isUpdated;
+        }
+
+        public static bool DeleteLDLApp(int LocalDrivingLicenseApplicationID)
+        {
+            bool isDeleted = false;
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"DELETE FROM LocalDrivingLicenseApplications
+                              Where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isDeleted = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            return isDeleted;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace DataAccessLayer
 {
     public static class clsApplicationDataAccess
     {
-        public static int AddNewApplication(int ApplicantPersonID, DateTime ApplicationDate, int ApplicationTypeID, byte ApplicationStatus, DateTime LastStatusDate, double PaidFees, int CreatedByUserID)
+        public static int AddNewApplication(int ApplicantPersonID, DateTime ApplicationDate, int ApplicationTypeID, byte ApplicationStatus, DateTime LastStatusDate, decimal PaidFees, int CreatedByUserID)
         {
             int NewApplicationID = -1;
 
@@ -43,7 +43,7 @@ SELECT Scope_Identity();";
                     sqlCommand.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
                     sqlCommand.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
                     sqlCommand.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-                    sqlCommand.Parameters.AddWithValue("@PaidFees", (decimal)PaidFees);
+                    sqlCommand.Parameters.AddWithValue("@PaidFees", PaidFees);
                     sqlCommand.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
 
@@ -68,7 +68,7 @@ SELECT Scope_Identity();";
             }
             return NewApplicationID;
         }
-        public static bool UpdateApplication(int ApplicationID, int ApplicantPersonID, DateTime ApplicationDate, int ApplicationTypeID, byte ApplicationStatus, DateTime LastStatusDate, double PaidFees, int CreatedByUserID)
+        public static bool UpdateApplication(int ApplicationID, int ApplicantPersonID, DateTime ApplicationDate, int ApplicationTypeID, byte ApplicationStatus, DateTime LastStatusDate, decimal PaidFees, int CreatedByUserID)
         {
             bool isUpdated = false;
 
@@ -95,7 +95,7 @@ SELECT Scope_Identity();";
                     sqlCommand.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
                     sqlCommand.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
                     sqlCommand.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-                    sqlCommand.Parameters.AddWithValue("@PaidFees", (decimal)PaidFees);
+                    sqlCommand.Parameters.AddWithValue("@PaidFees", PaidFees);
                     sqlCommand.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
                     try
@@ -120,7 +120,7 @@ SELECT Scope_Identity();";
             return isUpdated;
         }
 
-        public static bool GetApplicationByPersonID(int ApplicantPersonID,ref int ApplicationID,ref DateTime ApplicationDate,ref int ApplicationTypeID,ref byte ApplicationStatus,ref DateTime LastStatusDate,ref double PaidFees,ref int CreatedByUserID)
+        public static bool GetApplicationByPersonID(int ApplicantPersonID,ref int ApplicationID,ref DateTime ApplicationDate,ref int ApplicationTypeID,ref byte ApplicationStatus,ref DateTime LastStatusDate,ref decimal PaidFees,ref int CreatedByUserID)
         {
             bool isExist = false;
 
@@ -144,7 +144,7 @@ SELECT Scope_Identity();";
                                 ApplicationTypeID = (int)reader["ApplicationTypeID"];
                                 ApplicationStatus = (byte)reader["ApplicationStatus"];
                                 LastStatusDate = (DateTime)reader["LastStatusDate"];
-                                PaidFees = Convert.ToDouble((decimal)reader["PaidFees"]);
+                                PaidFees = (decimal)reader["PaidFees"];
                                 CreatedByUserID = (int)reader["CreatedByUserID"];
                                 isExist = true;
                             }
@@ -163,7 +163,7 @@ SELECT Scope_Identity();";
 
             return isExist;
         }
-        public static bool GetApplicationByApplicationID(int ApplicationID, ref int ApplicantPersonID,ref DateTime ApplicationDate, ref int ApplicationTypeID, ref byte ApplicationStatus, ref DateTime LastStatusDate, ref double PaidFees, ref int CreatedByUserID)
+        public static bool GetApplicationByApplicationID(int ApplicationID, ref int ApplicantPersonID,ref DateTime ApplicationDate, ref int ApplicationTypeID, ref byte ApplicationStatus, ref DateTime LastStatusDate, ref decimal PaidFees, ref int CreatedByUserID)
         {
             bool isExist = false;
 
@@ -187,7 +187,7 @@ SELECT Scope_Identity();";
                                 ApplicationTypeID = (int)reader["ApplicationTypeID"];
                                 ApplicationStatus = (byte)reader["ApplicationStatus"];
                                 LastStatusDate = (DateTime)reader["LastStatusDate"];
-                                PaidFees = Convert.ToDouble((decimal)reader["PaidFees"]);
+                                PaidFees = (decimal)reader["PaidFees"];
                                 CreatedByUserID = (int)reader["CreatedByUserID"];
                                 isExist = true;
                             }

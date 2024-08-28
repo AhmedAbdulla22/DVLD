@@ -14,6 +14,8 @@ namespace DVLD.ApplicationForms
 {
     public partial class AddLocalDLA : Form
     {
+        clsApplication _App;
+        clsLocalDLA _LDLA_App;
         //Get Classees from DB 
         Dictionary<string, int> ClassesIndex = clsClass.GetAllClasses();
         Dictionary<int,decimal> ClassesFees = clsClass.GetAllClassFees();
@@ -44,15 +46,21 @@ namespace DVLD.ApplicationForms
             }
             else
             {
-                _ctrlMode = ctrlMode.Update;
-                FillInformationsForEdit(LDLAppID);                
+                FillInformationsForEdit(LDLAppID);
+                SetFormForUpdateMode();
             }
+        }
+
+        private void SetFormForUpdateMode()
+        {
+            _ctrlMode = ctrlMode.Update;
+            groupBox1.Enabled = false;
+            lblFormLabel.Text = "Update Local Driving License Application";
         }
 
         private void FillInformationsForEdit(int LDLAppID)
         {
             DataRow row = clsLocalDLA.getLocalDLA_ByLDLAppID(LDLAppID).Rows[0];
-
             lblDLApplicationID2.Text = row["L.D.L.AppID"].ToString();
             if (DateTime.TryParse(row["Application Date"].ToString(), out DateTime date))
             {
@@ -63,7 +71,8 @@ namespace DVLD.ApplicationForms
             UpdateTotalFees();
             lblCreatedBy2.Text = clsLog.User.UserName;
 
-            uctrPersonDetails1.UpdateControl();
+            uctrlFilterBy1.FindPersonByNationalNo(row["NationalNo"].ToString());
+            //uctrPersonDetails1.UpdateControl();
         }
         private void UpdateTotalFees()
         {
@@ -120,6 +129,85 @@ namespace DVLD.ApplicationForms
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (uctrPersonDetails1.PersonID != -1)
+            {
+                if (MessageBox.Show("Are You Sure You Want To Save This Application?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Save();
+                }
+            }
+            else
+            {
+                MessageBox.Show("First Find A Person Or Add A Person", "Find/Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Save()
+        {
+            if (_ctrlMode == ctrlMode.Add)
+            {
+                _App = new clsApplication();
+                _App.ApplicantPersonID = uctrPersonDetails1.PersonID;
+                _App.ApplicationDate = DateTime.Now;
+                _App.LastStatusDate = DateTime.Now;
+                _App.ApplicationStatus = 1;//new
+                _App.CreatedByUserID = clsLog.User.UserID;
+                _App.ApplicationTypeID = 1; //LocalDLA Type
+                _App.PaidFees = decimal.Parse(lblApplicationFees2.Text);
+            }
+            else
+            {
+                _App = new clsApplication(_App.ApplicationID,uctrPersonDetails1.PersonID,DateTime.Now,1,1,DateTime.Now, decimal.Parse(lblApplicationFees2.Text), clsLog.User.UserID);
+            }
+
+
+            if (_App.Save())
+            {
+                string ModeStr;
+
+                if (_ctrlMode == ctrlMode.Add)
+                {
+                    _LDLA_App = new clsLocalDLA();
+                    _LDLA_App.ApplicationID = _App.ApplicationID;
+                    _LDLA_App.LicenseClassID = cbLicenseClasses.SelectedIndex + 1;//fixing index
+                }
+                else
+                {
+                    _LDLA_App = new clsLocalDLA(_LDLA_App.LocalDrivingLicenseApplicationID, _LDLA_App.ApplicationID, _LDLA_App.LicenseClassID);
+                }
+
+                if (_LDLA_App.Save())
+                {
+                    if (_ctrlMode == ctrlMode.Add)
+                    {
+                        ModeStr = "Saved";
+                        _ctrlMode = ctrlMode.Update;
+                        lblDLApplicationID2.Text = _App.ApplicationID.ToString();
+                        SetFormForUpdateMode();
+                    }
+                    else
+                    {
+                        ModeStr = "Updated";
+                    }
+
+                    MessageBox.Show($"Application {ModeStr} Succesfully.", ModeStr, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Local Driving License Application Not Saved.", "Not Saved", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Application Not Saved.", "Not Saved", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

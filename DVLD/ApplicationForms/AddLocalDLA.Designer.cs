@@ -32,9 +32,7 @@
             this.tabPersonalInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.tabApplication = new System.Windows.Forms.TabPage();
             this.cbLicenseClasses = new System.Windows.Forms.ComboBox();
             this.lblCreatedBy2 = new System.Windows.Forms.Label();
@@ -49,6 +47,8 @@
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
+            this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.tabControl1.SuspendLayout();
             this.tabPersonalInfo.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,18 +116,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Personal Information";
             // 
-            // uctrPersonDetails1
-            // 
-            this.uctrPersonDetails1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(86, 21);
-            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
-            this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(795, 224);
-            this.uctrPersonDetails1.TabIndex = 1;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -141,15 +129,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
-            // 
-            // uctrlFilterBy1
-            // 
-            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uctrlFilterBy1.Location = new System.Drawing.Point(178, 25);
-            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(5);
-            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
-            this.uctrlFilterBy1.Size = new System.Drawing.Size(611, 53);
-            this.uctrlFilterBy1.TabIndex = 0;
             // 
             // tabApplication
             // 
@@ -348,6 +327,7 @@
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -367,6 +347,27 @@
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // uctrPersonDetails1
+            // 
+            this.uctrPersonDetails1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(86, 21);
+            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
+            this.uctrPersonDetails1.PersonID = -1;
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(795, 224);
+            this.uctrPersonDetails1.TabIndex = 1;
+            // 
+            // uctrlFilterBy1
+            // 
+            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlFilterBy1.Location = new System.Drawing.Point(178, 25);
+            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(5);
+            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
+            this.uctrlFilterBy1.Size = new System.Drawing.Size(611, 53);
+            this.uctrlFilterBy1.TabIndex = 0;
             // 
             // AddLocalDLA
             // 
