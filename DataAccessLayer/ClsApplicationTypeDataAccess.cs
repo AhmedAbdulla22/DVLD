@@ -53,7 +53,7 @@ namespace DataAccessLayer
             }
         }
 
-        public static bool UpdateApplicationType(int ApplicationID, string Title, double Fees)
+        public static bool UpdateApplicationType(int ApplicationID, string Title, decimal Fees)
         {
             bool isUpdated = false;
 
@@ -68,7 +68,7 @@ namespace DataAccessLayer
 
                     safeParameterAdding<int>(sqlCommand,"@ApplicationID",ApplicationID);
                     safeParameterAdding<string>(sqlCommand, "@Title", Title);
-                    safeParameterAdding<double>(sqlCommand, "@Fees", Fees);
+                    safeParameterAdding<decimal>(sqlCommand, "@Fees", Fees);
 
 
 
@@ -94,7 +94,7 @@ namespace DataAccessLayer
             return isUpdated;
         }
 
-        public static bool GetApplicationTypeByID(int TypeID, ref string Title, ref double Fees)
+        public static bool GetApplicationTypeByID(int TypeID, ref string Title, ref decimal Fees)
         {
             bool isExist = false;
 
@@ -114,7 +114,7 @@ namespace DataAccessLayer
                             if (reader.Read())
                             {
                                 Title = (string)reader["ApplicationTypeTitle"];
-                                Fees = Convert.ToDouble((decimal)reader["ApplicationFees"]);
+                                Fees = (decimal)reader["ApplicationFees"];
                                 isExist = true;
                             }
 

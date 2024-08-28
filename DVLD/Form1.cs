@@ -162,5 +162,21 @@ namespace DVLD
 
             }
         }
+
+        private void newDrivingLicenseToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Local License":
+                    {
+                        using (AddLocalDLA frmAddLocalDLA = new AddLocalDLA())
+                        {
+                            frmAddLocalDLA.ShowDialog();
+                        }
+                        break;
+                    }
+
+            }
+        }
     }
 }

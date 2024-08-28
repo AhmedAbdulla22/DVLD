@@ -8,7 +8,7 @@ namespace BusinessLayer
     {
         public int ApplicationID { get; set; }
         public string Title { get; set; }
-        public double Fees { get; set; }
+        public decimal Fees { get; set; }
 
         public clsApplicationType()
         {
@@ -18,7 +18,7 @@ namespace BusinessLayer
 
         }
 
-        public clsApplicationType(int ApplicationID, string Title, double Fees)
+        public clsApplicationType(int ApplicationID, string Title, decimal Fees)
         {
             this.ApplicationID = ApplicationID;
             this.Title = Title;
@@ -27,7 +27,7 @@ namespace BusinessLayer
         public static clsApplicationType GetApplicationType(int TypeID)
         {
             string Title = string.Empty;
-            double Fees = -1;
+            decimal Fees = -1;
 
 
             if (ClsApplicationTypeDataAccess.GetApplicationTypeByID(TypeID,ref Title, ref Fees))

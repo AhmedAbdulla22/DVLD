@@ -9,5 +9,9 @@ namespace BusinessLayer
         {
             return clsClassDataAccess.GetClassList();
         }
+        public static Dictionary<int, decimal> GetAllClassFees()
+        {
+            return clsClassDataAccess.GetClassFees();
+        }
     }
 }

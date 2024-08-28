@@ -88,7 +88,7 @@ namespace DVLD
             {
                 //Update Information of the object
                 _App.Title = tbTitle.Text;
-                _App.Fees = Convert.ToDouble(tbFees.Text);
+                _App.Fees = Convert.ToDecimal(tbFees.Text);
 
                 if (_App.Update())
                     {

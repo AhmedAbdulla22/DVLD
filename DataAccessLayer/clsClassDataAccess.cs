@@ -46,5 +46,42 @@ namespace DataAccessLayer
             }
             return DictMap;
         }
+
+        public static Dictionary<int, decimal> GetClassFees()
+        {
+            var DictMap = new Dictionary<int, decimal>();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+
+
+                var query = "Select LicenseClassID,ClassFees From LicenseClasses;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                DictMap.Add((int)reader["LicenseClassID"], (decimal)reader["ClassFees"]);
+                            }
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+            return DictMap;
+        }
     }
 }
