@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
             this.dgvLocalDLA = new System.Windows.Forms.DataGridView();
-            this.cbActiveFilter = new System.Windows.Forms.ComboBox();
+            this.cbStatusFilter = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,12 +75,14 @@
             // tbFilter
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFilter.Location = new System.Drawing.Point(254, 311);
+            this.tbFilter.Location = new System.Drawing.Point(254, 307);
             this.tbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(197, 22);
             this.tbFilter.TabIndex = 27;
             this.tbFilter.Visible = false;
+            this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
+            this.tbFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbFilter_KeyDown);
             // 
             // cbFilter
             // 
@@ -92,17 +94,18 @@
             "National No.",
             "Full Name",
             "Status"});
-            this.cbFilter.Location = new System.Drawing.Point(94, 310);
+            this.cbFilter.Location = new System.Drawing.Point(94, 306);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(156, 24);
             this.cbFilter.TabIndex = 26;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 308);
+            this.label1.Location = new System.Drawing.Point(12, 304);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 25;
@@ -138,20 +141,23 @@
             this.dgvLocalDLA.RowTemplate.Height = 28;
             this.dgvLocalDLA.Size = new System.Drawing.Size(1157, 303);
             this.dgvLocalDLA.TabIndex = 21;
+            this.dgvLocalDLA.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvApplicationType_MouseDown);
             // 
-            // cbActiveFilter
+            // cbStatusFilter
             // 
-            this.cbActiveFilter.FormattingEnabled = true;
-            this.cbActiveFilter.Items.AddRange(new object[] {
+            this.cbStatusFilter.FormattingEnabled = true;
+            this.cbStatusFilter.Items.AddRange(new object[] {
             "All",
-            "Active",
-            "InActive"});
-            this.cbActiveFilter.Location = new System.Drawing.Point(254, 310);
-            this.cbActiveFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbActiveFilter.Name = "cbActiveFilter";
-            this.cbActiveFilter.Size = new System.Drawing.Size(121, 24);
-            this.cbActiveFilter.TabIndex = 28;
-            this.cbActiveFilter.Visible = false;
+            "New",
+            "Canceled",
+            "Completed"});
+            this.cbStatusFilter.Location = new System.Drawing.Point(254, 306);
+            this.cbStatusFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbStatusFilter.Name = "cbStatusFilter";
+            this.cbStatusFilter.Size = new System.Drawing.Size(121, 24);
+            this.cbStatusFilter.TabIndex = 28;
+            this.cbStatusFilter.Visible = false;
+            this.cbStatusFilter.SelectedIndexChanged += new System.EventHandler(this.cbStatusFilter_SelectedIndexChanged);
             // 
             // contextMenuStrip1
             // 
@@ -173,6 +179,7 @@
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(301, 280);
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // toolStripMenuItem3
             // 
@@ -318,7 +325,7 @@
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvLocalDLA);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbActiveFilter);
+            this.Controls.Add(this.cbStatusFilter);
             this.Name = "LocalDLA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LocalDLA";
@@ -342,7 +349,7 @@
         private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.DataGridView dgvLocalDLA;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cbActiveFilter;
+        private System.Windows.Forms.ComboBox cbStatusFilter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;

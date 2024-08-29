@@ -163,7 +163,7 @@ SELECT Scope_Identity();";
 
             return isExist;
         }
-        public static bool GetApplicationByPersonIDWithSpecificClassNotCanceled(int ApplicantPersonID,int LicenseClassID, ref int ApplicationID, ref DateTime ApplicationDate, int ApplicationTypeID,ref byte ApplicationStatus, ref DateTime LastStatusDate, ref decimal PaidFees, ref int CreatedByUserID)
+        public static bool GetApplicationByPersonIDWithSpecificClass(int ApplicantPersonID,int LicenseClassID, ref int ApplicationID, ref DateTime ApplicationDate, int ApplicationTypeID,ref byte ApplicationStatus, ref DateTime LastStatusDate, ref decimal PaidFees, ref int CreatedByUserID)
         {
             bool isExist = false;
 
@@ -171,7 +171,7 @@ SELECT Scope_Identity();";
             {
                 var query = @"SELECT * FROM Applications 
                               INNER JOIN LocalDrivingLicenseApplications LDLA ON LDLA.ApplicationID = Applications.ApplicationID
-                            Where ApplicantPersonID = @ApplicantPersonID AND ApplicationTypeID = @ApplicationTypeID AND ApplicationStatus != 2 AND LDLA.LicenseClassID = @LicenseClassID;";
+                            Where ApplicantPersonID = @ApplicantPersonID AND ApplicationTypeID = @ApplicationTypeID AND ApplicationStatus = 1 AND LDLA.LicenseClassID = @LicenseClassID;";//just  new Applications
 
                 using (var sqlCommand = new SqlCommand(query, sqlConnection))
                 {

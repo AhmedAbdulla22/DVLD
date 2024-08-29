@@ -105,7 +105,7 @@ namespace BusinessLayer
         {
             return clsLocalDLA_DataAccess.GetLDLA_ByLDLAppID(LDLAppID);
         }
-        public static DataTable getLocalDLA_ByNationalNo(int NationalNo)
+        public static DataTable getLocalDLA_ByNationalNo(string NationalNo)
         {
             return clsLocalDLA_DataAccess.GetLDLA_ByNationalNo(NationalNo);
         }

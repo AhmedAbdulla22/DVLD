@@ -111,8 +111,8 @@ namespace DVLD.ApplicationForms
         private bool DuplicateApplicationExist()
         {
             bool res = false;
-
-            if (clsApplication.GetApplicationByPersonIDWithSpecificClassNotCanceled(uctrPersonDetails1.PersonID,1,cbLicenseClasses.SelectedIndex+1) != null)
+            //which is new
+            if (clsApplication.GetApplicationByPersonIDWithSpecificClass(uctrPersonDetails1.PersonID,1,cbLicenseClasses.SelectedIndex+1) != null)
             {
                 res = true;
             }
@@ -157,7 +157,7 @@ namespace DVLD.ApplicationForms
             {
                 if (!(_ctrlMode == ctrlMode.Update && cbLicenseClasses.SelectedIndex+1 == _LDLA_App.LicenseClassID) && DuplicateApplicationExist())
                 {
-                    MessageBox.Show("Duplicate Application With Same Class Exist For This Person,Can't Have Same Class Twice!", "This Application Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Duplicate Application With Same Class Exist For This Person With ID = {uctrPersonDetails1.PersonID}, Can't Have Same Class Twice!", "This Application Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 string ModeStr = (_ctrlMode == ctrlMode.Add)? "Save":"Update";
@@ -188,7 +188,7 @@ namespace DVLD.ApplicationForms
             }
             else
             {
-                _App = new clsApplication(_App.ApplicationID,uctrPersonDetails1.PersonID,DateTime.Now,1,1,DateTime.Now, decimal.Parse(lblApplicationFees2.Text), clsLog.User.UserID);
+                _App = new clsApplication(_App.ApplicationID,uctrPersonDetails1.PersonID,DateTime.Now,1,1,DateTime.Now, decimal.Parse(lblApplicationFees2.Text), _App.CreatedByUserID);//With Update CreatedByUser not Change!
             }
 
 

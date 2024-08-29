@@ -132,7 +132,7 @@ namespace DataAccessLayer
 
             return dt;
         }
-        public static DataTable GetLDLA_ByNationalNo(int NationalNo)
+        public static DataTable GetLDLA_ByNationalNo(string NationalNo)
         {
             DataTable dt = new DataTable();
 
