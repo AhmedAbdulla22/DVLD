@@ -126,6 +126,23 @@ namespace BusinessLayer
                 return null;
             }
         }
+        public static clsApplication GetApplicationByPersonIDWithSpecificClassNotCanceled(int ApplicantPersonID,int ApplicationTypeID, int LicenseClassID)
+        {
+            int ApplicationID = -1, CreatedByUserID = -1;
+            decimal PaidFees = 0;
+            byte ApplicationStatus = 1;
+            DateTime LastStatusDate = DateTime.Now, ApplicationDate = DateTime.Now;
+
+
+            if (clsApplicationDataAccess.GetApplicationByPersonIDWithSpecificClassNotCanceled(ApplicantPersonID,LicenseClassID, ref ApplicationID, ref ApplicationDate, ApplicationTypeID,ref ApplicationStatus, ref LastStatusDate, ref PaidFees, ref CreatedByUserID))
+            {
+                return new clsApplication(ApplicationID, ApplicantPersonID, ApplicationDate, ApplicationTypeID, ApplicationStatus, LastStatusDate, PaidFees, CreatedByUserID);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public static clsApplication GetApplicationByApplicationID(int ApplicationID)
         {
             int ApplicantPersonID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;

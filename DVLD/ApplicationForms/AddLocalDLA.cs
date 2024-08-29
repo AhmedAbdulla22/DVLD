@@ -36,9 +36,9 @@ namespace DVLD.ApplicationForms
                     cbLicenseClasses.Items.Add(Class.Key);
                 }
 
-                //set cb to zero index
-                cbLicenseClasses.SelectedIndex = 0;
+                
             }
+
 
             if (LDLAppID == -1)
             {
@@ -46,9 +46,10 @@ namespace DVLD.ApplicationForms
             }
             else
             {
-                FillInformationsForEdit(LDLAppID);
+                _ctrlMode = ctrlMode.Update;
                 SetFormForUpdateMode();
             }
+                FillInformations(LDLAppID);
         }
 
         private void SetFormForUpdateMode()
@@ -58,31 +59,43 @@ namespace DVLD.ApplicationForms
             lblFormLabel.Text = "Update Local Driving License Application";
         }
 
-        private void FillInformationsForEdit(int LDLAppID)
+        private void FillInformations(int LDLAppID = -1)
         {
-            DataRow row = clsLocalDLA.getLocalDLA_ByLDLAppID(LDLAppID).Rows[0];
-            lblDLApplicationID2.Text = row["L.D.L.AppID"].ToString();
-            if (DateTime.TryParse(row["Application Date"].ToString(), out DateTime date))
+            
+            if (_ctrlMode == ctrlMode.Add)
             {
-                lblApplicationDate2.Text = date.ToShortDateString();
-            }
-            ClassesIndex.TryGetValue(row["Driving Class"].ToString(), out int ClassIndex);
-            cbLicenseClasses.SelectedIndex = ClassIndex - 1;//Because Combobox index start from Zero so Class 1 would be 1-1 = 0 :)
-            UpdateTotalFees();
-            lblCreatedBy2.Text = clsLog.User.UserName;
+                //set cb to zero index
+                cbLicenseClasses.SelectedIndex = 0;
+                lblApplicationDate2.Text = DateTime.Now.ToShortDateString();
 
-            uctrlFilterBy1.FindPersonByNationalNo(row["NationalNo"].ToString());
-            //uctrPersonDetails1.UpdateControl();
-        }
-        private void UpdateTotalFees()
-        {
-            
-            if (ClassesFees.TryGetValue(cbLicenseClasses.SelectedIndex + 1, out decimal ClassFee))
-            {
-                lblApplicationFees2.Text = (clsApplicationType.GetApplicationType(1).Fees + ClassFee).ToString("0.00");
             }
-            
+            else
+            {
+                _LDLA_App = clsLocalDLA.GetLocalDLAppByLocalDLAppID(LDLAppID);
+                
+                if (_LDLA_App != null)
+                {
+                    _App = clsApplication.GetApplicationByApplicationID(_LDLA_App.ApplicationID);
+                }
+
+                DataRow row = clsLocalDLA.getLocalDLA_ByLDLAppID(LDLAppID).Rows[0];
+                lblDLApplicationID2.Text = row["L.D.L.AppID"].ToString();
+                if (DateTime.TryParse(row["Application Date"].ToString(), out DateTime date))
+                {
+                    lblApplicationDate2.Text = date.ToShortDateString();
+                }
+                ClassesIndex.TryGetValue(row["Driving Class"].ToString(), out int ClassIndex);
+                cbLicenseClasses.SelectedIndex = ClassIndex - 1;//Because Combobox index start from Zero so Class 1 would be 1-1 = 0 :)
+
+                uctrlFilterBy1.FindPersonByNationalNo(row["NationalNo"].ToString());
+
+            }
+
+            lblCreatedBy2.Text = clsLog.User.UserName;
+            lblApplicationFees2.Text = clsApplicationType.GetApplicationType(1).Fees.ToString("0.00");//LDLApplication Fee
+
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -95,9 +108,16 @@ namespace DVLD.ApplicationForms
             uctrPersonDetails1.UpdateControl();
         }
 
-        private void cbLicenseClasses_SelectedIndexChanged(object sender, EventArgs e)
+        private bool DuplicateApplicationExist()
         {
-            UpdateTotalFees();
+            bool res = false;
+
+            if (clsApplication.GetApplicationByPersonIDWithSpecificClassNotCanceled(uctrPersonDetails1.PersonID,1,cbLicenseClasses.SelectedIndex+1) != null)
+            {
+                res = true;
+            }
+
+            return res;
         }
 
         private bool GoingForApplicationTab()
@@ -135,7 +155,14 @@ namespace DVLD.ApplicationForms
         {
             if (uctrPersonDetails1.PersonID != -1)
             {
-                if (MessageBox.Show("Are You Sure You Want To Save This Application?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (DuplicateApplicationExist() && _ctrlMode == ctrlMode.Add)
+                {
+                    MessageBox.Show("Duplicate Application With Same Class Exist For This Person,Can't Have Same Class Twice!", "This Application Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string ModeStr = (_ctrlMode == ctrlMode.Add)? "Save":"Update";
+
+                if (MessageBox.Show($"Are You Sure You Want To {ModeStr} This Application?", "Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Save();
                 }

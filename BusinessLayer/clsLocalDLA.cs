@@ -29,7 +29,20 @@ namespace BusinessLayer
             this.LicenseClassID = LicenseClassID;
             enMode = mode.Update;
         }
+        public static clsLocalDLA GetLocalDLAppByLocalDLAppID(int LocalDrivingLicenseApplicationID)
+        {
+            int ApplicationID = -1, LicenseClassID = -1;
 
+
+            if (clsLocalDLA_DataAccess.GetApplicationByLDLAppID(LocalDrivingLicenseApplicationID, ref ApplicationID, ref LicenseClassID))
+            {
+                return new clsLocalDLA(LocalDrivingLicenseApplicationID, ApplicationID, LicenseClassID);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public bool Delete()
         {
             return clsLocalDLA_DataAccess.DeleteLDLApp(this.LocalDrivingLicenseApplicationID);

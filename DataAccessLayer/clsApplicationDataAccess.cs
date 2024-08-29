@@ -163,6 +163,54 @@ SELECT Scope_Identity();";
 
             return isExist;
         }
+        public static bool GetApplicationByPersonIDWithSpecificClassNotCanceled(int ApplicantPersonID,int LicenseClassID, ref int ApplicationID, ref DateTime ApplicationDate, int ApplicationTypeID,ref byte ApplicationStatus, ref DateTime LastStatusDate, ref decimal PaidFees, ref int CreatedByUserID)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM Applications 
+                              INNER JOIN LocalDrivingLicenseApplications LDLA ON LDLA.ApplicationID = Applications.ApplicationID
+                            Where ApplicantPersonID = @ApplicantPersonID AND ApplicationTypeID = @ApplicationTypeID AND ApplicationStatus != 2 AND LDLA.LicenseClassID = @LicenseClassID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+                    sqlCommand.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+                    sqlCommand.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                ApplicationID = (int)reader["ApplicationID"];
+                                ApplicationID = (byte)reader["ApplicationStatus"];
+                                ApplicationDate = (DateTime)reader["ApplicationDate"];
+                                LastStatusDate = (DateTime)reader["LastStatusDate"];
+                                PaidFees = (decimal)reader["PaidFees"];
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+
         public static bool GetApplicationByApplicationID(int ApplicationID, ref int ApplicantPersonID,ref DateTime ApplicationDate, ref int ApplicationTypeID, ref byte ApplicationStatus, ref DateTime LastStatusDate, ref decimal PaidFees, ref int CreatedByUserID)
         {
             bool isExist = false;

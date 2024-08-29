@@ -159,7 +159,6 @@
             this.cbLicenseClasses.Name = "cbLicenseClasses";
             this.cbLicenseClasses.Size = new System.Drawing.Size(275, 24);
             this.cbLicenseClasses.TabIndex = 15;
-            this.cbLicenseClasses.SelectedIndexChanged += new System.EventHandler(this.cbLicenseClasses_SelectedIndexChanged);
             // 
             // lblCreatedBy2
             // 
