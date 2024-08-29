@@ -155,7 +155,7 @@ namespace DVLD.ApplicationForms
         {
             if (uctrPersonDetails1.PersonID != -1)
             {
-                if (DuplicateApplicationExist() && _ctrlMode == ctrlMode.Add)
+                if (!(_ctrlMode == ctrlMode.Update && cbLicenseClasses.SelectedIndex+1 == _LDLA_App.LicenseClassID) && DuplicateApplicationExist())
                 {
                     MessageBox.Show("Duplicate Application With Same Class Exist For This Person,Can't Have Same Class Twice!", "This Application Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
