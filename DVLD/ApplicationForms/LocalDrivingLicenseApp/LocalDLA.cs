@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.ApplicationForms.LocalDrivingLicenseApp;
 using DVLD.UserForm;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,14 @@ namespace DVLD.ApplicationForms
             {
                 switch (e.ClickedItem.Text)
                 {
+                    case "Show Application Details":
+                        {
+                            using(ShowLocalDLAppInfo frmShowLDLAppInfo = new ShowLocalDLAppInfo(LDLAppID))
+                            {
+                                frmShowLDLAppInfo.ShowDialog();
+                            }
+                        }
+                        break;
                     case "Edit Application":
                         {
 

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.PeopleForm;
 using DVLD.Properties;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace DVLD.ApplicationForms
     {
         clsLocalDLA _DLApp;
         clsApplication _Application;
+        DataRow _AppRow;
         private int _ID = -1;
 
         public int DLAppID
@@ -54,6 +56,8 @@ namespace DVLD.ApplicationForms
                 }
 
                 _Application = clsApplication.GetApplicationByApplicationID(_DLApp.ApplicationID);
+                //enable person Info link
+                lnklblPersonInfo.Enabled = true;
 
             }
             fillLabels();
@@ -62,29 +66,28 @@ namespace DVLD.ApplicationForms
 
         private void fillLabels()
         {
-            //if (DLAppID != -1)
-            //{
-
-            //    //DLApp Info
-            //    lbl_DLA_ID2.Text = DLAppID.ToString();
-            //    lblAppliedForLicense2.Text = clsClass.ClassName(_DLApp.LicenseClassID);
-            //    lblPassedTests2.Text = 
-            //    //Application Info
-            //    lblPassedTests2.Text = clsLocalDLA.GetLocalDLAppByLocalDLAppID(DLAppID)
-
-
-
-            //    lblApplicant2.Text = clsPerson.Find(_App.ApplicantPersonID).FullName;
-            //    lblAppliedForLicense2.Text = clsClass.ClassName() ;
-
-
-
-            //}
-            //else
-            //{
-            //    lblPersonID2.Text = lblName2.Text = lblNationalNo2.Text = lblPhone2.Text = lblEmail2.Text = lblDateOfBirth2.Text = lblAddress2.Text = lblGender2.Text = lblCountry2.Text = "[????]";
-            //    pictureBox1.Image = Resources.User_Male;
-            //}
+            if (DLAppID != -1)
+            {
+                _AppRow = clsLocalDLA.getLocalDLA_ByLDLAppID(DLAppID).Rows[0];
+                //DLApp Info
+                lbl_DLA_ID2.Text = DLAppID.ToString();
+                lblAppliedForLicense2.Text = _AppRow["Driving Class"].ToString();
+                lblPassedTests2.Text = $"{_AppRow["Passed Tests"].ToString()}/3";
+                
+                //Application Info
+                lbl_ID2.Text = _Application.ApplicationID.ToString();
+                lbl_Status2.Text = _AppRow["Status"].ToString();
+                lbl_Fees2.Text = _Application.PaidFees.ToString();
+                lbl_Type2.Text = clsApplicationType.GetApplicationType(_Application.ApplicationTypeID).Title;
+                lblApplicant2.Text = clsPerson.Find(_Application.ApplicantPersonID).FullName;
+                lblDate2.Text = _Application.ApplicationDate.ToShortDateString();
+                lblStatusDate2.Text = _Application.LastStatusDate.ToShortDateString();
+                lblCreatedBy2.Text = clsUser.Find(_Application.CreatedByUserID).UserName;
+            }
+            else
+            {
+                lbl_DLA_ID2.Text =lblAppliedForLicense2.Text = lblPassedTests2.Text = lbl_ID2.Text = lbl_Status2.Text = lbl_Fees2.Text = lbl_Type2.Text = lblApplicant2.Text =lblDate2.Text = lblStatusDate2.Text = "[???]";
+            }
 
 
 
@@ -96,5 +99,13 @@ namespace DVLD.ApplicationForms
             _LoadApplicationData();
         }
 
+        private void lnklblPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            int PersonID = (_Application.ApplicantPersonID > 0) ? _Application.ApplicantPersonID : -1;
+            using (Person_Details frmPersonInfo = new Person_Details(PersonID))
+            {
+                frmPersonInfo.ShowDialog();
+            }
+        }
     }
 }

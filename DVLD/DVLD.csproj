@@ -62,17 +62,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationForms\LocalDLA.cs">
+    <Compile Include="ApplicationForms\LocalDrivingLicenseApp\LocalDLA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForms\LocalDLA.Designer.cs">
+    <Compile Include="ApplicationForms\LocalDrivingLicenseApp\LocalDLA.Designer.cs">
       <DependentUpon>LocalDLA.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForms\AddLocalDLA.cs">
+    <Compile Include="ApplicationForms\LocalDrivingLicenseApp\AddLocalDLA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForms\AddLocalDLA.Designer.cs">
+    <Compile Include="ApplicationForms\LocalDrivingLicenseApp\AddLocalDLA.Designer.cs">
       <DependentUpon>AddLocalDLA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.Designer.cs">
+      <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\uctrlDrivingLicenseApplicationInfo.cs">
       <SubType>UserControl</SubType>
@@ -191,11 +197,14 @@
       <DependentUpon>frmUserDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilites.cs" />
-    <EmbeddedResource Include="ApplicationForms\LocalDLA.resx">
+    <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\LocalDLA.resx">
       <DependentUpon>LocalDLA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForms\AddLocalDLA.resx">
+    <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\AddLocalDLA.resx">
       <DependentUpon>AddLocalDLA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.resx">
+      <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\uctrlDrivingLicenseApplicationInfo.resx">
       <DependentUpon>uctrlDrivingLicenseApplicationInfo.cs</DependentUpon>

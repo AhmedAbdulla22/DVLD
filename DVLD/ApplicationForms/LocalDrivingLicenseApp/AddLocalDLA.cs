@@ -76,6 +76,7 @@ namespace DVLD.ApplicationForms
                 if (_LDLA_App != null)
                 {
                     _App = clsApplication.GetApplicationByApplicationID(_LDLA_App.ApplicationID);
+                    
                 }
 
                 DataRow row = clsLocalDLA.getLocalDLA_ByLDLAppID(LDLAppID).Rows[0];
