@@ -189,18 +189,18 @@ namespace DVLD.ApplicationForms
             {
                 case "New":
                     {
-                        dgvLocalDLA.DataSource = clsLocalDLA.getLocalDLA_ByStatus(1);
+                        dgvLocalDLA.DataSource = clsLocalDLA.getLocalDLA_ByStatus((byte)clsApplication.Status.New);
                         break;
                     }
                 case "Canceled":
                     {
-                        dgvLocalDLA.DataSource = clsLocalDLA.getLocalDLA_ByStatus(2);
+                        dgvLocalDLA.DataSource = clsLocalDLA.getLocalDLA_ByStatus((byte)clsApplication.Status.Canceled);
 
                         break;
                     }
                 case "Completed":
                     {
-                        dgvLocalDLA.DataSource = clsLocalDLA.getLocalDLA_ByStatus(3);
+                        dgvLocalDLA.DataSource = clsLocalDLA.getLocalDLA_ByStatus((byte)clsApplication.Status.Compledted);
 
                         break;
                     }

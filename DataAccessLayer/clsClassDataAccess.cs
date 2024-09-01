@@ -10,6 +10,44 @@ namespace DataAccessLayer
 {
     public static class clsClassDataAccess
     {
+        public static string GetClassName(int LicenseClassID)
+        {
+            var name = "";
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+
+
+                var query = "Select ClassName From LicenseClasses Where LicenseClassID = @LicenseClassID;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+                        
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                name = (string)reader["ClassName"];
+                            }
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+            return name;
+        }
         public static Dictionary<string, int> GetClassList()
         {
             var DictMap = new Dictionary<string, int>();

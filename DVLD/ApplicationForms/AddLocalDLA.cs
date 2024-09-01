@@ -55,7 +55,7 @@ namespace DVLD.ApplicationForms
         private void SetFormForUpdateMode()
         {
             _ctrlMode = ctrlMode.Update;
-            groupBox1.Enabled = false;
+            uctrlFilterBy1.Enabled = false;
             lblFormLabel.Text = "Update Local Driving License Application";
         }
 
@@ -181,14 +181,14 @@ namespace DVLD.ApplicationForms
                 _App.ApplicantPersonID = uctrPersonDetails1.PersonID;
                 _App.ApplicationDate = DateTime.Now;
                 _App.LastStatusDate = DateTime.Now;
-                _App.ApplicationStatus = 1;//new
+                _App.ApplicationStatus = (byte)clsApplication.Status.New;//new
                 _App.CreatedByUserID = clsLog.User.UserID;
                 _App.ApplicationTypeID = 1; //LocalDLA Type
                 _App.PaidFees = decimal.Parse(lblApplicationFees2.Text);
             }
             else
             {
-                _App = new clsApplication(_App.ApplicationID,uctrPersonDetails1.PersonID,DateTime.Now,1,1,DateTime.Now, decimal.Parse(lblApplicationFees2.Text), _App.CreatedByUserID);//With Update CreatedByUser not Change!
+                _App = new clsApplication(_App.ApplicationID,uctrPersonDetails1.PersonID,DateTime.Now,1, (byte)clsApplication.Status.New, DateTime.Now, decimal.Parse(lblApplicationFees2.Text), _App.CreatedByUserID);//With Update CreatedByUser not Change!
             }
 
 

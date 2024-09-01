@@ -132,5 +132,7 @@ namespace DVLD.UserForm
                 errorProvider1.SetError(tbCnfPassword, "");
             }
         }
+
+    
     }
 }

@@ -145,7 +145,7 @@
             this.retakeTestToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::DVLD.Properties.Resources.Driver_License;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(218, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(214, 22);
             this.toolStripMenuItem2.Text = "Driving Licenses Services";
             // 
             // newDrivingLicenseToolStripMenuItem
@@ -211,7 +211,7 @@
             this.internationalDrivingLicenseApplicationToolStripMenuItem});
             this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.LocalDLA;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(218, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(214, 22);
             this.toolStripMenuItem3.Text = "Manage Applications";
             this.toolStripMenuItem3.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenuItem3_DropDownItemClicked);
             // 
@@ -230,21 +230,21 @@
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(218, 26);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(214, 22);
             this.toolStripMenuItem4.Text = "Detain Licenses";
             // 
             // manageApplicationTypesToolStripMenuItem
             // 
             this.manageApplicationTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.project;
             this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
-            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
             // 
             // manageTestTypesToolStripMenuItem
             // 
             this.manageTestTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.testing;
             this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
-            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
             // 
             // peopleeToolStripMenuItem
@@ -326,7 +326,7 @@
             this.ClientSize = new System.Drawing.Size(1104, 601);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

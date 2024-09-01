@@ -26,6 +26,8 @@ namespace BusinessLayer
             public string Address{ get; set; }
             public string ImagePath{ get; set; }
 
+            public string FullName { get { return FirstName +' ' + SecondName + ' ' + ThirdName + ' ' + LastName; } }
+
             public enum mode { Add , Update};
         mode enMode;    
 

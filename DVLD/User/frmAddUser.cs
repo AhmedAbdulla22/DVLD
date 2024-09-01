@@ -202,7 +202,8 @@ namespace DVLD.UserForm
             {
                 lblFormLabel.Text = "Update User";
                 //disable groupbox of filter
-                groupBox1.Enabled = false;
+                uctrlFilterBy1.Enabled = false;
+
 
             }
             else
@@ -223,5 +224,6 @@ namespace DVLD.UserForm
             UpdateForm();
         }
 
+        
     }
 }

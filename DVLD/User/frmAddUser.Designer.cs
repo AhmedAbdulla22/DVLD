@@ -33,11 +33,9 @@
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPersonalInfo = new System.Windows.Forms.TabPage();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
+            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
+            this.btnNext = new System.Windows.Forms.Button();
             this.tabLogin = new System.Windows.Forms.TabPage();
             this.chkIsActive = new System.Windows.Forms.CheckBox();
             this.tbCnfPassword = new System.Windows.Forms.TextBox();
@@ -53,8 +51,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPersonalInfo.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -86,9 +82,9 @@
             // 
             // tabPersonalInfo
             // 
+            this.tabPersonalInfo.Controls.Add(this.uctrlFilterBy1);
+            this.tabPersonalInfo.Controls.Add(this.uctrPersonDetails1);
             this.tabPersonalInfo.Controls.Add(this.btnNext);
-            this.tabPersonalInfo.Controls.Add(this.groupBox2);
-            this.tabPersonalInfo.Controls.Add(this.groupBox1);
             this.tabPersonalInfo.Location = new System.Drawing.Point(4, 22);
             this.tabPersonalInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tabPersonalInfo.Name = "tabPersonalInfo";
@@ -97,6 +93,24 @@
             this.tabPersonalInfo.TabIndex = 0;
             this.tabPersonalInfo.Text = "Personal Info";
             this.tabPersonalInfo.UseVisualStyleBackColor = true;
+            // 
+            // uctrlFilterBy1
+            // 
+            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlFilterBy1.Location = new System.Drawing.Point(17, 56);
+            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
+            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
+            this.uctrlFilterBy1.Size = new System.Drawing.Size(604, 67);
+            this.uctrlFilterBy1.TabIndex = 0;
+            // 
+            // uctrPersonDetails1
+            // 
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(17, 143);
+            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
+            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
+            this.uctrPersonDetails1.PersonID = -1;
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(604, 196);
+            this.uctrPersonDetails1.TabIndex = 1;
             // 
             // btnNext
             // 
@@ -116,44 +130,6 @@
             this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.uctrPersonDetails1);
-            this.groupBox2.Location = new System.Drawing.Point(20, 140);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(601, 204);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Personal Information";
-            // 
-            // uctrPersonDetails1
-            // 
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(4, 18);
-            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
-            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
-            this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(592, 182);
-            this.uctrPersonDetails1.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.uctrlFilterBy1);
-            this.groupBox1.Location = new System.Drawing.Point(84, 43);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 73);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter";
-            // 
-            // uctrlFilterBy1
-            // 
-            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uctrlFilterBy1.Location = new System.Drawing.Point(7, 20);
-            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
-            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
-            this.uctrlFilterBy1.Size = new System.Drawing.Size(458, 43);
-            this.uctrlFilterBy1.TabIndex = 0;
             // 
             // tabLogin
             // 
@@ -340,8 +316,6 @@
             this.Load += new System.EventHandler(this.frmAddUser_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPersonalInfo.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.tabLogin.ResumeLayout(false);
             this.tabLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -365,8 +339,6 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserID2;
         private System.Windows.Forms.Label lblUserID1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private uctrPersonDetails uctrPersonDetails1;
         private userControls.uctrlFilterBy uctrlFilterBy1;
         private System.Windows.Forms.Button btnNext;

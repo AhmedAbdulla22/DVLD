@@ -74,6 +74,12 @@
     <Compile Include="ApplicationForms\AddLocalDLA.Designer.cs">
       <DependentUpon>AddLocalDLA.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationForms\uctrlDrivingLicenseApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\uctrlDrivingLicenseApplicationInfo.Designer.cs">
+      <DependentUpon>uctrlDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForms\UpdatApplicationType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,16 +172,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="userControls\uctrlAddPerson.cs">
+    <Compile Include="People\uctrlAddPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControls\uctrlAddPerson.Designer.cs">
+    <Compile Include="People\uctrlAddPerson.Designer.cs">
       <DependentUpon>uctrlAddPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControls\uctrPersonDetails.cs">
+    <Compile Include="People\uctrPersonDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControls\uctrPersonDetails.Designer.cs">
+    <Compile Include="People\uctrPersonDetails.Designer.cs">
       <DependentUpon>uctrPersonDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="User\frmUserDetails.cs">
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\AddLocalDLA.resx">
       <DependentUpon>AddLocalDLA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\uctrlDrivingLicenseApplicationInfo.resx">
+      <DependentUpon>uctrlDrivingLicenseApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\UpdatApplicationType.resx">
       <DependentUpon>UpdatApplicationType.cs</DependentUpon>
@@ -238,10 +247,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControls\uctrlAddPerson.resx">
+    <EmbeddedResource Include="People\uctrlAddPerson.resx">
       <DependentUpon>uctrlAddPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControls\uctrPersonDetails.resx">
+    <EmbeddedResource Include="People\uctrPersonDetails.resx">
       <DependentUpon>uctrPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\frmUserDetails.resx">
@@ -412,6 +421,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cancel Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test Passed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tear-Off Calendar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fees1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

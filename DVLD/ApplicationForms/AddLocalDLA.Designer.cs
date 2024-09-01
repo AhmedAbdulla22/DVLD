@@ -30,9 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPersonalInfo = new System.Windows.Forms.TabPage();
+            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
+            this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.btnNext = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabApplication = new System.Windows.Forms.TabPage();
             this.cbLicenseClasses = new System.Windows.Forms.ComboBox();
             this.lblCreatedBy2 = new System.Windows.Forms.Label();
@@ -47,12 +47,8 @@
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
-            this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.tabControl1.SuspendLayout();
             this.tabPersonalInfo.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabApplication.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,27 +59,48 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPersonalInfo);
             this.tabControl1.Controls.Add(this.tabApplication);
-            this.tabControl1.Location = new System.Drawing.Point(11, 89);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(8, 72);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(980, 473);
+            this.tabControl1.Size = new System.Drawing.Size(735, 384);
             this.tabControl1.TabIndex = 5;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // tabPersonalInfo
             // 
+            this.tabPersonalInfo.Controls.Add(this.uctrPersonDetails1);
+            this.tabPersonalInfo.Controls.Add(this.uctrlFilterBy1);
             this.tabPersonalInfo.Controls.Add(this.btnNext);
-            this.tabPersonalInfo.Controls.Add(this.groupBox2);
-            this.tabPersonalInfo.Controls.Add(this.groupBox1);
-            this.tabPersonalInfo.Location = new System.Drawing.Point(4, 25);
-            this.tabPersonalInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPersonalInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabPersonalInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tabPersonalInfo.Name = "tabPersonalInfo";
-            this.tabPersonalInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPersonalInfo.Size = new System.Drawing.Size(972, 444);
+            this.tabPersonalInfo.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPersonalInfo.Size = new System.Drawing.Size(727, 358);
             this.tabPersonalInfo.TabIndex = 0;
             this.tabPersonalInfo.Text = "Personal Info";
             this.tabPersonalInfo.UseVisualStyleBackColor = true;
+            // 
+            // uctrPersonDetails1
+            // 
+            this.uctrPersonDetails1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(55, 114);
+            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
+            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
+            this.uctrPersonDetails1.PersonID = -1;
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(633, 196);
+            this.uctrPersonDetails1.TabIndex = 1;
+            // 
+            // uctrlFilterBy1
+            // 
+            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlFilterBy1.Location = new System.Drawing.Point(55, 21);
+            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
+            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
+            this.uctrlFilterBy1.Size = new System.Drawing.Size(633, 67);
+            this.uctrlFilterBy1.TabIndex = 0;
             // 
             // btnNext
             // 
@@ -94,41 +111,15 @@
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Image = global::DVLD.Properties.Resources.Forward;
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNext.Location = new System.Drawing.Point(843, 386);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Location = new System.Drawing.Point(632, 314);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(108, 39);
+            this.btnNext.Size = new System.Drawing.Size(81, 32);
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Next";
             this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.uctrPersonDetails1);
-            this.groupBox2.Location = new System.Drawing.Point(16, 123);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(935, 251);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Personal Information";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.uctrlFilterBy1);
-            this.groupBox1.Location = new System.Drawing.Point(15, 22);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(936, 90);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter";
             // 
             // tabApplication
             // 
@@ -142,11 +133,10 @@
             this.tabApplication.Controls.Add(this.lblApplicationDate);
             this.tabApplication.Controls.Add(this.lblDLApplicationID2);
             this.tabApplication.Controls.Add(this.lblDLApplicationID1);
-            this.tabApplication.Location = new System.Drawing.Point(4, 25);
-            this.tabApplication.Margin = new System.Windows.Forms.Padding(4);
+            this.tabApplication.Location = new System.Drawing.Point(4, 22);
             this.tabApplication.Name = "tabApplication";
-            this.tabApplication.Padding = new System.Windows.Forms.Padding(4);
-            this.tabApplication.Size = new System.Drawing.Size(972, 444);
+            this.tabApplication.Padding = new System.Windows.Forms.Padding(3);
+            this.tabApplication.Size = new System.Drawing.Size(727, 358);
             this.tabApplication.TabIndex = 1;
             this.tabApplication.Text = "Application Info";
             this.tabApplication.UseVisualStyleBackColor = true;
@@ -154,10 +144,9 @@
             // cbLicenseClasses
             // 
             this.cbLicenseClasses.FormattingEnabled = true;
-            this.cbLicenseClasses.Location = new System.Drawing.Point(435, 174);
-            this.cbLicenseClasses.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLicenseClasses.Location = new System.Drawing.Point(326, 141);
             this.cbLicenseClasses.Name = "cbLicenseClasses";
-            this.cbLicenseClasses.Size = new System.Drawing.Size(275, 24);
+            this.cbLicenseClasses.Size = new System.Drawing.Size(207, 21);
             this.cbLicenseClasses.TabIndex = 15;
             // 
             // lblCreatedBy2
@@ -167,9 +156,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCreatedBy2.AutoSize = true;
             this.lblCreatedBy2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedBy2.Location = new System.Drawing.Point(429, 246);
+            this.lblCreatedBy2.Location = new System.Drawing.Point(322, 200);
+            this.lblCreatedBy2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCreatedBy2.Name = "lblCreatedBy2";
-            this.lblCreatedBy2.Size = new System.Drawing.Size(41, 23);
+            this.lblCreatedBy2.Size = new System.Drawing.Size(35, 19);
             this.lblCreatedBy2.TabIndex = 14;
             this.lblCreatedBy2.Text = "N/A";
             this.lblCreatedBy2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,9 +171,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblApplicationFees2.AutoSize = true;
             this.lblApplicationFees2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationFees2.Location = new System.Drawing.Point(429, 210);
+            this.lblApplicationFees2.Location = new System.Drawing.Point(322, 171);
+            this.lblApplicationFees2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApplicationFees2.Name = "lblApplicationFees2";
-            this.lblApplicationFees2.Size = new System.Drawing.Size(41, 23);
+            this.lblApplicationFees2.Size = new System.Drawing.Size(35, 19);
             this.lblApplicationFees2.TabIndex = 13;
             this.lblApplicationFees2.Text = "N/A";
             this.lblApplicationFees2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,9 +186,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblApplicationDate2.AutoSize = true;
             this.lblApplicationDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationDate2.Location = new System.Drawing.Point(429, 139);
+            this.lblApplicationDate2.Location = new System.Drawing.Point(322, 113);
+            this.lblApplicationDate2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApplicationDate2.Name = "lblApplicationDate2";
-            this.lblApplicationDate2.Size = new System.Drawing.Size(41, 23);
+            this.lblApplicationDate2.Size = new System.Drawing.Size(35, 19);
             this.lblApplicationDate2.TabIndex = 12;
             this.lblApplicationDate2.Text = "N/A";
             this.lblApplicationDate2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -211,9 +203,10 @@
             this.lblCreatedBy.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreatedBy.Image = global::DVLD.Properties.Resources.user_3_;
             this.lblCreatedBy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCreatedBy.Location = new System.Drawing.Point(248, 246);
+            this.lblCreatedBy.Location = new System.Drawing.Point(186, 200);
+            this.lblCreatedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCreatedBy.Name = "lblCreatedBy";
-            this.lblCreatedBy.Size = new System.Drawing.Size(158, 23);
+            this.lblCreatedBy.Size = new System.Drawing.Size(127, 19);
             this.lblCreatedBy.TabIndex = 11;
             this.lblCreatedBy.Text = "Created By:            ";
             this.lblCreatedBy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,9 +220,10 @@
             this.lblApplicationFees.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicationFees.Image = global::DVLD.Properties.Resources.Fees;
             this.lblApplicationFees.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblApplicationFees.Location = new System.Drawing.Point(207, 210);
+            this.lblApplicationFees.Location = new System.Drawing.Point(155, 171);
+            this.lblApplicationFees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApplicationFees.Name = "lblApplicationFees";
-            this.lblApplicationFees.Size = new System.Drawing.Size(199, 23);
+            this.lblApplicationFees.Size = new System.Drawing.Size(163, 19);
             this.lblApplicationFees.TabIndex = 10;
             this.lblApplicationFees.Text = "Application Fees:            ";
             this.lblApplicationFees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,9 +237,10 @@
             this.lblLicenseClass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLicenseClass.Image = global::DVLD.Properties.Resources.Versions;
             this.lblLicenseClass.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblLicenseClass.Location = new System.Drawing.Point(234, 175);
+            this.lblLicenseClass.Location = new System.Drawing.Point(176, 142);
+            this.lblLicenseClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLicenseClass.Name = "lblLicenseClass";
-            this.lblLicenseClass.Size = new System.Drawing.Size(172, 23);
+            this.lblLicenseClass.Size = new System.Drawing.Size(142, 19);
             this.lblLicenseClass.TabIndex = 9;
             this.lblLicenseClass.Text = "License Class:            ";
             this.lblLicenseClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,9 +254,10 @@
             this.lblApplicationDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicationDate.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar;
             this.lblApplicationDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblApplicationDate.Location = new System.Drawing.Point(205, 139);
+            this.lblApplicationDate.Location = new System.Drawing.Point(154, 113);
+            this.lblApplicationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApplicationDate.Name = "lblApplicationDate";
-            this.lblApplicationDate.Size = new System.Drawing.Size(201, 23);
+            this.lblApplicationDate.Size = new System.Drawing.Size(165, 19);
             this.lblApplicationDate.TabIndex = 8;
             this.lblApplicationDate.Text = "Application Date:            ";
             this.lblApplicationDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -273,9 +269,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDLApplicationID2.AutoSize = true;
             this.lblDLApplicationID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDLApplicationID2.Location = new System.Drawing.Point(429, 103);
+            this.lblDLApplicationID2.Location = new System.Drawing.Point(322, 84);
+            this.lblDLApplicationID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDLApplicationID2.Name = "lblDLApplicationID2";
-            this.lblDLApplicationID2.Size = new System.Drawing.Size(41, 23);
+            this.lblDLApplicationID2.Size = new System.Drawing.Size(35, 19);
             this.lblDLApplicationID2.TabIndex = 7;
             this.lblDLApplicationID2.Text = "N/A";
             this.lblDLApplicationID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,9 +286,10 @@
             this.lblDLApplicationID1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDLApplicationID1.Image = global::DVLD.Properties.Resources.Display1;
             this.lblDLApplicationID1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDLApplicationID1.Location = new System.Drawing.Point(197, 103);
+            this.lblDLApplicationID1.Location = new System.Drawing.Point(148, 84);
+            this.lblDLApplicationID1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDLApplicationID1.Name = "lblDLApplicationID1";
-            this.lblDLApplicationID1.Size = new System.Drawing.Size(209, 23);
+            this.lblDLApplicationID1.Size = new System.Drawing.Size(172, 19);
             this.lblDLApplicationID1.TabIndex = 6;
             this.lblDLApplicationID1.Text = "D.L.Application ID:            ";
             this.lblDLApplicationID1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,9 +300,10 @@
             this.lblFormLabel.AutoSize = true;
             this.lblFormLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblFormLabel.Location = new System.Drawing.Point(169, 11);
+            this.lblFormLabel.Location = new System.Drawing.Point(127, 9);
+            this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFormLabel.Name = "lblFormLabel";
-            this.lblFormLabel.Size = new System.Drawing.Size(607, 46);
+            this.lblFormLabel.Size = new System.Drawing.Size(481, 37);
             this.lblFormLabel.TabIndex = 6;
             this.lblFormLabel.Text = "New Local Driving License Application";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,10 +317,10 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(875, 567);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Location = new System.Drawing.Point(656, 461);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 39);
+            this.btnSave.Size = new System.Drawing.Size(81, 32);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -337,54 +336,31 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(761, 567);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(571, 461);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 39);
+            this.btnClose.Size = new System.Drawing.Size(81, 32);
             this.btnClose.TabIndex = 18;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // uctrPersonDetails1
-            // 
-            this.uctrPersonDetails1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(86, 21);
-            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
-            this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(795, 224);
-            this.uctrPersonDetails1.TabIndex = 1;
-            // 
-            // uctrlFilterBy1
-            // 
-            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uctrlFilterBy1.Location = new System.Drawing.Point(178, 25);
-            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(5);
-            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
-            this.uctrlFilterBy1.Size = new System.Drawing.Size(611, 53);
-            this.uctrlFilterBy1.TabIndex = 0;
-            // 
             // AddLocalDLA
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 620);
+            this.ClientSize = new System.Drawing.Size(750, 504);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddLocalDLA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NewLocalDLA";
             this.tabControl1.ResumeLayout(false);
             this.tabPersonalInfo.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.tabApplication.ResumeLayout(false);
             this.tabApplication.PerformLayout();
             this.ResumeLayout(false);
@@ -397,9 +373,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPersonalInfo;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.GroupBox groupBox2;
         private uctrPersonDetails uctrPersonDetails1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private userControls.uctrlFilterBy uctrlFilterBy1;
         private System.Windows.Forms.Label lblFormLabel;
         private System.Windows.Forms.Button btnSave;

@@ -47,12 +47,13 @@ namespace DVLD
 
         }
 
+
         private void fillLabels()
         {
             if (PersonID != -1)
             {
                 lblPersonID2.Text = _Person.PersonID.ToString();
-                lblName2.Text = _Person.FirstName + ' ' + _Person.SecondName + ' ' + _Person.ThirdName + ' ' + _Person.LastName;
+                lblName2.Text =  _Person.FirstName + ' ' + _Person.SecondName + ' ' + _Person.ThirdName + ' ' + _Person.LastName;
                 lblNationalNo2.Text = _Person.NationalNo.ToString();
                 lblPhone2.Text = _Person.Phone.ToString();
                 lblEmail2.Text = _Person.Email.ToString();

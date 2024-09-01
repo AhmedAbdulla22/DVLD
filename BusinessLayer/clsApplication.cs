@@ -20,12 +20,15 @@ namespace BusinessLayer
         public int CreatedByUserID { get; set; }
         public enum mode { Add, Update };
         mode enMode;
+        public enum Status: byte { New = 1, Canceled =2 , Compledted = 3 };
+        Status enStatus;
 
 
         public clsApplication()
         {
             this.ApplicantPersonID = this.ApplicationID = this.CreatedByUserID = this.ApplicationTypeID = -1;
-            this.ApplicationDate = this.LastStatusDate = DateTime.Now;
+            this.ApplicationDate = DateTime.Now;
+            this.LastStatusDate = DateTime.Now;
             this.ApplicationStatus = 0; //new
             this.PaidFees = 0;
             this.enMode = mode.Add;
@@ -93,12 +96,12 @@ namespace BusinessLayer
 
         public bool SetToCancel()
         {
-            return _SetStatus(2);
+            return _SetStatus((byte)clsApplication.Status.Canceled);
         }
 
         public bool SetToComplete()
         {
-            return _SetStatus(3);
+            return _SetStatus((byte)clsApplication.Status.Compledted);
         }
 
         private bool _SetStatus(byte Status = 1)

@@ -13,5 +13,10 @@ namespace BusinessLayer
         {
             return clsClassDataAccess.GetClassFees();
         }
+
+        public static string ClassName(int classID)
+        {
+            return clsClassDataAccess.GetClassName(classID);           
+        }
     }
 }
