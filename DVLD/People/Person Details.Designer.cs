@@ -37,7 +37,7 @@
             this.lblPersonDetails.AutoSize = true;
             this.lblPersonDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonDetails.ForeColor = System.Drawing.Color.Brown;
-            this.lblPersonDetails.Location = new System.Drawing.Point(281, 6);
+            this.lblPersonDetails.Location = new System.Drawing.Point(243, 6);
             this.lblPersonDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersonDetails.Name = "lblPersonDetails";
             this.lblPersonDetails.Size = new System.Drawing.Size(133, 25);
@@ -49,18 +49,18 @@
             this.uctrPersonDetails1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(4, 6);
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(4, 33);
             this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrPersonDetails1.Name = "uctrPersonDetails1";
             this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(611, 195);
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(611, 218);
             this.uctrPersonDetails1.TabIndex = 1;
             // 
             // Person_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 212);
+            this.ClientSize = new System.Drawing.Size(616, 262);
             this.Controls.Add(this.uctrPersonDetails1);
             this.Controls.Add(this.lblPersonDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

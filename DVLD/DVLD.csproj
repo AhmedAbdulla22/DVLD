@@ -111,6 +111,24 @@
     <Compile Include="ApplicationForms\ManageApplicationType.Designer.cs">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Vison Test\ScheduleTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\Vison Test\ScheduleTest.Designer.cs">
+      <DependentUpon>ScheduleTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Vison Test\uctrVisonTestInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\Vison Test\uctrVisonTestInfo.Designer.cs">
+      <DependentUpon>uctrVisonTestInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Vison Test\VisionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\Vison Test\VisionTest.Designer.cs">
+      <DependentUpon>VisionTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestType\ManageTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +238,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\ManageApplicationType.resx">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\Vison Test\ScheduleTest.resx">
+      <DependentUpon>ScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\Vison Test\uctrVisonTestInfo.resx">
+      <DependentUpon>uctrVisonTestInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\Vison Test\VisionTest.resx">
+      <DependentUpon>VisionTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestType\ManageTestTypes.resx">
       <DependentUpon>ManageTestTypes.cs</DependentUpon>
@@ -442,6 +469,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Types.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
