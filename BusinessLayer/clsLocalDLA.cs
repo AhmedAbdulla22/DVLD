@@ -47,7 +47,15 @@ namespace BusinessLayer
         {
             return clsLocalDLA_DataAccess.DeleteLDLApp(this.LocalDrivingLicenseApplicationID);
         }
+        public int passedTest(int LocalDrivingLicenseApplicationID)
+        {
+            return clsLocalDLA_DataAccess.getPassedTests(LocalDrivingLicenseApplicationID);
+        }
 
+        public int passedTest()
+        {
+            return clsLocalDLA_DataAccess.getPassedTests(this.LocalDrivingLicenseApplicationID);
+        }
         public static bool Delete(int LocalDrivingLicenseApplicationID)
         {
             return clsLocalDLA_DataAccess.DeleteLDLApp(LocalDrivingLicenseApplicationID);
@@ -112,6 +120,11 @@ namespace BusinessLayer
         public static DataTable getLocalDLA_ByFullName(string FullName)
         {
             return clsLocalDLA_DataAccess.GetLDLA_ByFullName(FullName);
+        }
+
+        public string ClassName()
+        {
+            return clsLocalDLA_DataAccess.getClassName(this.LicenseClassID);
         }
     }
 }

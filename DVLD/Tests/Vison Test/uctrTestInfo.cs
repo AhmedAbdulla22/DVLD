@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DVLD.Tests.Vison_Test
 {
-    public partial class uctrVisonTestInfo : UserControl
+    public partial class uctrTestInfo : UserControl
     {
-        public uctrVisonTestInfo()
+        public uctrTestInfo()
         {
             InitializeComponent();
         }

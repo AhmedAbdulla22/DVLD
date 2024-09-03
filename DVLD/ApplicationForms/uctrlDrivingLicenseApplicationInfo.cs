@@ -17,7 +17,6 @@ namespace DVLD.ApplicationForms
     {
         clsLocalDLA _DLApp;
         clsApplication _Application;
-        DataRow _AppRow;
         private int _ID = -1;
 
         public int DLAppID
@@ -68,11 +67,11 @@ namespace DVLD.ApplicationForms
         {
             if (DLAppID != -1)
             {
-                _AppRow = clsLocalDLA.getLocalDLA_ByLDLAppID(DLAppID).Rows[0];
+                //_AppRow = clsLocalDLA.getLocalDLA_ByLDLAppID(DLAppID).Rows[0];
                 //DLApp Info
                 lbl_DLA_ID2.Text = DLAppID.ToString();
-                lblAppliedForLicense2.Text = _AppRow["Driving Class"].ToString();
-                lblPassedTests2.Text = $"{_AppRow["Passed Tests"].ToString()}/3";
+                lblAppliedForLicense2.Text = _DLApp.ClassName();
+                lblPassedTests2.Text = $"{_DLApp.passedTest().ToString()}/3";
                 
                 //Application Info
                 lbl_ID2.Text = _Application.ApplicationID.ToString();

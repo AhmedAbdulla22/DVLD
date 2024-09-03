@@ -11,6 +11,83 @@ namespace DataAccessLayer
 {
     public static class clsLocalDLA_DataAccess
     {
+        public static string getClassName(int LicenseClassID)
+        {
+            string passedTests = "";
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT LicenseClasses.ClassName
+                                 FROM LicenseClasses
+                                 Where
+                                 LicenseClassID = @LicenseClassID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            passedTests = Convert.ToString(result);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return passedTests;
+
+        }
+        public static int getPassedTests(int LocalDrivingLicenseApplicationID)
+        {
+            int passedTests = 0;
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT COUNT(*)
+                                 FROM TestAppointments
+                                 JOIN Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID 
+                                 WHERE TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                                 AND Tests.TestResult = 1;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if(result != null && result != DBNull.Value)
+                        {
+                            passedTests = Convert.ToInt32(result);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return passedTests;
+
+        }
         public static DataTable getAllLocalDLA()
         {
             DataTable dataTable = new DataTable();

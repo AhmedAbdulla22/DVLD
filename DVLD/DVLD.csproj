@@ -111,17 +111,23 @@
     <Compile Include="ApplicationForms\ManageApplicationType.Designer.cs">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\uctrlScheduleTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\uctrlScheduleTest.Designer.cs">
+      <DependentUpon>uctrlScheduleTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Vison Test\ScheduleTest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tests\Vison Test\ScheduleTest.Designer.cs">
       <DependentUpon>ScheduleTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Vison Test\uctrVisonTestInfo.cs">
+    <Compile Include="Tests\Vison Test\uctrTestInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tests\Vison Test\uctrVisonTestInfo.Designer.cs">
-      <DependentUpon>uctrVisonTestInfo.cs</DependentUpon>
+    <Compile Include="Tests\Vison Test\uctrTestInfo.Designer.cs">
+      <DependentUpon>uctrTestInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tests\Vison Test\VisionTest.cs">
       <SubType>Form</SubType>
@@ -239,11 +245,14 @@
     <EmbeddedResource Include="ApplicationForms\ManageApplicationType.resx">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tests\uctrlScheduleTest.resx">
+      <DependentUpon>uctrlScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tests\Vison Test\ScheduleTest.resx">
       <DependentUpon>ScheduleTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Vison Test\uctrVisonTestInfo.resx">
-      <DependentUpon>uctrVisonTestInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Tests\Vison Test\uctrTestInfo.resx">
+      <DependentUpon>uctrTestInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\Vison Test\VisionTest.resx">
       <DependentUpon>VisionTest.cs</DependentUpon>
