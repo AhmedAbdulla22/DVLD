@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DVLD.ApplicationForms.LocalDrivingLicenseApp;
+using DVLD.Tests.Vison_Test;
 using DVLD.UserForm;
 using System;
 using System.Collections.Generic;
@@ -255,6 +256,46 @@ namespace DVLD.ApplicationForms
 
             }
 
+        }
+
+        private void scheduleTestsToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            int LDLAppID = -1;
+            LDLAppID = Convert.ToInt32(dgvLocalDLA.SelectedRows[0].Cells["L.D.L.AppID"].Value);
+
+
+            if (dgvLocalDLA.SelectedRows.Count == 1)
+            {
+                switch (e.ClickedItem.Text)
+                {
+                    case "Schedule Vison Test":
+                        {
+                            using (TestAppointments frmVisionTestAppointments = new TestAppointments(LDLAppID,clsTestAppointments.TestType.VisionTest))
+                            {
+                                frmVisionTestAppointments.ShowDialog();
+                            }
+                        break;
+                        }
+                    case "Schedule Written Test":
+                        {
+                            using (TestAppointments frmWrittenTestAppointments = new TestAppointments(LDLAppID, clsTestAppointments.TestType.WrittenTest))
+                            {
+                                frmWrittenTestAppointments.ShowDialog();
+                            }
+                            break;
+                        }
+                    case "Schedule Practical Test":
+                        {
+                            using (TestAppointments frmPracticalTestAppointments = new TestAppointments(LDLAppID, clsTestAppointments.TestType.PracticalTest))
+                            {
+                                frmPracticalTestAppointments.ShowDialog();
+                            }
+                            break;
+                        }
+                }
+
+
+            }
         }
     }
 

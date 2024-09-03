@@ -129,11 +129,11 @@
     <Compile Include="Tests\Vison Test\uctrTestInfo.Designer.cs">
       <DependentUpon>uctrTestInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Vison Test\VisionTest.cs">
+    <Compile Include="Tests\Vison Test\TestAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tests\Vison Test\VisionTest.Designer.cs">
-      <DependentUpon>VisionTest.cs</DependentUpon>
+    <Compile Include="Tests\Vison Test\TestAppointments.Designer.cs">
+      <DependentUpon>TestAppointments.cs</DependentUpon>
     </Compile>
     <Compile Include="TestType\ManageTestTypes.cs">
       <SubType>Form</SubType>
@@ -254,8 +254,8 @@
     <EmbeddedResource Include="Tests\Vison Test\uctrTestInfo.resx">
       <DependentUpon>uctrTestInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Vison Test\VisionTest.resx">
-      <DependentUpon>VisionTest.cs</DependentUpon>
+    <EmbeddedResource Include="Tests\Vison Test\TestAppointments.resx">
+      <DependentUpon>TestAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestType\ManageTestTypes.resx">
       <DependentUpon>ManageTestTypes.cs</DependentUpon>
@@ -487,6 +487,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\street.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

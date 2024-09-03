@@ -48,6 +48,7 @@
     <Compile Include="ClsCountryDataAccess.cs" />
     <Compile Include="clsLocalDLA_DataAccess.cs" />
     <Compile Include="clsPersonDataAccess.cs" />
+    <Compile Include="clsTestAppointments_DataAccess.cs" />
     <Compile Include="ClsTestTypeDataAccess.cs" />
     <Compile Include="ClsUserDataAccess.cs" />
     <Compile Include="DataAccessLayerSetting.cs" />
