@@ -79,16 +79,15 @@ namespace DVLD.ApplicationForms
                     
                 }
 
-                DataRow row = clsLocalDLA.getLocalDLA_ByLDLAppID(LDLAppID).Rows[0];
-                lblDLApplicationID2.Text = row["L.D.L.AppID"].ToString();
-                if (DateTime.TryParse(row["Application Date"].ToString(), out DateTime date))
+                //DataRow row = clsLocalDLA.getLocalDLA_ByLDLAppID(LDLAppID).Rows[0];
+                lblDLApplicationID2.Text = LDLAppID.ToString();
+                if (DateTime.TryParse(_App.ApplicationDate.ToString(), out DateTime date))
                 {
                     lblApplicationDate2.Text = date.ToShortDateString();
                 }
-                ClassesIndex.TryGetValue(row["Driving Class"].ToString(), out int ClassIndex);
-                cbLicenseClasses.SelectedIndex = ClassIndex - 1;//Because Combobox index start from Zero so Class 1 would be 1-1 = 0 :)
+                cbLicenseClasses.SelectedIndex = _LDLA_App.LicenseClassID - 1;//Because Combobox index start from Zero so Class 1 would be 1-1 = 0 :)
 
-                uctrlFilterBy1.FindPersonByNationalNo(row["NationalNo"].ToString());
+                uctrlFilterBy1.FindPersonByPersonID(_App.ApplicantPersonID);
 
             }
 

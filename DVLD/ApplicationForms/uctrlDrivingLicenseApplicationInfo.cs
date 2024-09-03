@@ -75,7 +75,7 @@ namespace DVLD.ApplicationForms
                 
                 //Application Info
                 lbl_ID2.Text = _Application.ApplicationID.ToString();
-                lbl_Status2.Text = _AppRow["Status"].ToString();
+                lbl_Status2.Text = _Application.GetStatusName();
                 lbl_Fees2.Text = _Application.PaidFees.ToString();
                 lbl_Type2.Text = clsApplicationType.GetApplicationType(_Application.ApplicationTypeID).Title;
                 lblApplicant2.Text = clsPerson.Find(_Application.ApplicantPersonID).FullName;
@@ -106,5 +106,7 @@ namespace DVLD.ApplicationForms
                 frmPersonInfo.ShowDialog();
             }
         }
+
+        
     }
 }

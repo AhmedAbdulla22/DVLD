@@ -21,7 +21,6 @@ namespace BusinessLayer
         public enum mode { Add, Update };
         mode enMode;
         public enum Status: byte { New = 1, Canceled =2 , Compledted = 3 };
-        Status enStatus;
 
 
         public clsApplication()
@@ -29,7 +28,7 @@ namespace BusinessLayer
             this.ApplicantPersonID = this.ApplicationID = this.CreatedByUserID = this.ApplicationTypeID = -1;
             this.ApplicationDate = DateTime.Now;
             this.LastStatusDate = DateTime.Now;
-            this.ApplicationStatus = 0; //new
+            this.ApplicationStatus = 1; //new
             this.PaidFees = 0;
             this.enMode = mode.Add;
         }
@@ -111,7 +110,10 @@ namespace BusinessLayer
             //3 For Completed
             return clsApplicationDataAccess.UpdateApplication(this.ApplicationID, this.ApplicantPersonID, this.ApplicationDate, this.ApplicationTypeID, Status, this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
         }
-
+        public string GetStatusName()
+        {
+            return (ApplicationStatus == 1)?"New": (ApplicationStatus == 3)?"Completed":"Canceled";
+        }
         public static clsApplication GetApplicationByApplicantPersonID(int ApplicantPersonID)
         {
             int ApplicationID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
