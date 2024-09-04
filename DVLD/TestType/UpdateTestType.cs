@@ -90,7 +90,7 @@ namespace DVLD.TestType
                 //Update Information of the object
                 _Test.Title = tbTitle.Text;
                 _Test.Description = tbDescription.Text;
-                _Test.Fees = Convert.ToDouble(tbFees.Text);
+                _Test.Fees = Convert.ToDecimal(tbFees.Text);
 
                 if (_Test.Update())
                 {

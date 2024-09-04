@@ -82,5 +82,18 @@ namespace BusinessLayer
 
             return dt;
         }
+
+        public static int GetTrails(int LocalDLAppID, TestType enTestType)
+        {
+            int Trails = 0;
+
+            Trails = clsTestAppointments_DataAccess.GetTrails(LocalDLAppID,(int)enTestType);
+
+            return Trails;
+        }
+
+        
     }
+
+
 }

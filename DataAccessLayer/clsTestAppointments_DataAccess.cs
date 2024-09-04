@@ -11,6 +11,45 @@ namespace DataAccessLayer
 {
     public class clsTestAppointments_DataAccess
     {
+        public static int GetTrails(int LocalDrivingLicenseApplicationID,int TestTypeID)
+        {
+            int Trails = 0;
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT count(*)
+                             FROM TestAppointments
+                            Where TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = @TestTypeID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    sqlCommand.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            Trails = Convert.ToInt32(result);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return Trails;
+        }
         public static DataTable GetAllAppointments()
         {
             DataTable dataTable = new DataTable();

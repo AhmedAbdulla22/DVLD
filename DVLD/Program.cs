@@ -17,7 +17,7 @@ namespace DVLD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            clsUser user = clsUser.GetUser("zzzz");
+            clsUser user = clsUser.GetUser("user4");
             Application.Run(new frmLogin(user));
         }
     }

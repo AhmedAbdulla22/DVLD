@@ -18,6 +18,7 @@ namespace DVLD.ApplicationForms
         clsLocalDLA _DLApp;
         clsApplication _Application;
         private int _ID = -1;
+        bool _isRetake = false;
 
         public int DLAppID
         {

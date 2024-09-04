@@ -8,7 +8,7 @@ namespace BusinessLayer
         public int TestTypeID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public double Fees { get; set; }
+        public decimal Fees { get; set; }
 
         public clsTestType()
         {
@@ -19,7 +19,7 @@ namespace BusinessLayer
 
         }
 
-        public clsTestType(int TestTypeID, string Title,string Description, double Fees)
+        public clsTestType(int TestTypeID, string Title,string Description, decimal Fees)
         {
             this.TestTypeID = TestTypeID;
             this.Title = Title;
@@ -29,7 +29,7 @@ namespace BusinessLayer
         public static clsTestType GetTestType(int TypeID)
         {
             string Title = string.Empty,Description = string.Empty;
-            double Fees = -1;
+            decimal Fees = -1;
 
 
             if (ClsTestTypeDataAccess.GetTestTypeByID(TypeID, ref Title,ref Description, ref Fees))

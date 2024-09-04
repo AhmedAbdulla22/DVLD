@@ -241,20 +241,23 @@
             // 
             // scheduleVisonTestToolStripMenuItem
             // 
+            this.scheduleVisonTestToolStripMenuItem.Image = global::DVLD.Properties.Resources.eye;
             this.scheduleVisonTestToolStripMenuItem.Name = "scheduleVisonTestToolStripMenuItem";
-            this.scheduleVisonTestToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.scheduleVisonTestToolStripMenuItem.Size = new System.Drawing.Size(246, 30);
             this.scheduleVisonTestToolStripMenuItem.Text = "Schedule Vison Test";
             // 
             // scheduleWrittenTestToolStripMenuItem
             // 
+            this.scheduleWrittenTestToolStripMenuItem.Image = global::DVLD.Properties.Resources.writing;
             this.scheduleWrittenTestToolStripMenuItem.Name = "scheduleWrittenTestToolStripMenuItem";
-            this.scheduleWrittenTestToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.scheduleWrittenTestToolStripMenuItem.Size = new System.Drawing.Size(246, 30);
             this.scheduleWrittenTestToolStripMenuItem.Text = "Schedule Written Test";
             // 
             // scheduleStreetTestToolStripMenuItem
             // 
+            this.scheduleStreetTestToolStripMenuItem.Image = global::DVLD.Properties.Resources.street;
             this.scheduleStreetTestToolStripMenuItem.Name = "scheduleStreetTestToolStripMenuItem";
-            this.scheduleStreetTestToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.scheduleStreetTestToolStripMenuItem.Size = new System.Drawing.Size(246, 30);
             this.scheduleStreetTestToolStripMenuItem.Text = "Schedule Practical Test";
             // 
             // toolStripMenuItem5

@@ -68,5 +68,21 @@ namespace DVLD.Tests.Vison_Test
         {
             this.Close();
         }
+
+        private void btnAddTestAppointment_Click(object sender, EventArgs e)
+        {
+            if (dgvAppointments.RowCount == 0)
+            {
+                using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID,enTestType))
+                {
+                    frmScheduleTest.ShowDialog();
+                }
+            }
+            else if(Convert.ToBoolean(dgvAppointments.Rows[0].Cells["Is Locked"].Value) == true)
+            {
+                MessageBox.Show("this Person Already Have an Active Appointment for this Test, You Cannot Add New Appointment.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            ;
+        }
     }
 }

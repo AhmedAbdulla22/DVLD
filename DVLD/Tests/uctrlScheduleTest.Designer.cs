@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctrlScheduleTest));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Trial2 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Fees2 = new System.Windows.Forms.Label();
             this.lbl_Fees1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblApplicant2 = new System.Windows.Forms.Label();
+            this.lblName2 = new System.Windows.Forms.Label();
             this.lblApplicant1 = new System.Windows.Forms.Label();
-            this.lblAppliedForLicense2 = new System.Windows.Forms.Label();
+            this.lbl_DClass2 = new System.Windows.Forms.Label();
             this.lblAppliedForLicense1 = new System.Windows.Forms.Label();
             this.lbl_DLA_ID2 = new System.Windows.Forms.Label();
             this.lbl_DLA_ID1 = new System.Windows.Forms.Label();
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.gbTestInfo = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.gbRetakeTestInfo = new System.Windows.Forms.GroupBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_RTestAppID2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblTotalFees2 = new System.Windows.Forms.Label();
@@ -75,17 +75,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_Trial2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(189, 359);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 23);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "[???]";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Trial2.AutoSize = true;
+            this.lbl_Trial2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Trial2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Trial2.Location = new System.Drawing.Point(189, 359);
+            this.lbl_Trial2.Name = "lbl_Trial2";
+            this.lbl_Trial2.Size = new System.Drawing.Size(46, 23);
+            this.lbl_Trial2.TabIndex = 60;
+            this.lbl_Trial2.Text = "[???]";
+            this.lbl_Trial2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -135,17 +135,17 @@
             this.label6.Text = "Date:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblApplicant2
+            // lblName2
             // 
-            this.lblApplicant2.AutoSize = true;
-            this.lblApplicant2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicant2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblApplicant2.Location = new System.Drawing.Point(189, 321);
-            this.lblApplicant2.Name = "lblApplicant2";
-            this.lblApplicant2.Size = new System.Drawing.Size(46, 23);
-            this.lblApplicant2.TabIndex = 51;
-            this.lblApplicant2.Text = "[???]";
-            this.lblApplicant2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName2.AutoSize = true;
+            this.lblName2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblName2.Location = new System.Drawing.Point(189, 321);
+            this.lblName2.Name = "lblName2";
+            this.lblName2.Size = new System.Drawing.Size(46, 23);
+            this.lblName2.TabIndex = 51;
+            this.lblName2.Text = "[???]";
+            this.lblName2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblApplicant1
             // 
@@ -159,17 +159,17 @@
             this.lblApplicant1.Text = "Name:";
             this.lblApplicant1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblAppliedForLicense2
+            // lbl_DClass2
             // 
-            this.lblAppliedForLicense2.AutoSize = true;
-            this.lblAppliedForLicense2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppliedForLicense2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAppliedForLicense2.Location = new System.Drawing.Point(189, 283);
-            this.lblAppliedForLicense2.Name = "lblAppliedForLicense2";
-            this.lblAppliedForLicense2.Size = new System.Drawing.Size(46, 23);
-            this.lblAppliedForLicense2.TabIndex = 39;
-            this.lblAppliedForLicense2.Text = "[???]";
-            this.lblAppliedForLicense2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_DClass2.AutoSize = true;
+            this.lbl_DClass2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DClass2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_DClass2.Location = new System.Drawing.Point(189, 283);
+            this.lbl_DClass2.Name = "lbl_DClass2";
+            this.lbl_DClass2.Size = new System.Drawing.Size(46, 23);
+            this.lbl_DClass2.TabIndex = 39;
+            this.lbl_DClass2.Text = "[???]";
+            this.lbl_DClass2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAppliedForLicense1
             // 
@@ -222,11 +222,11 @@
             // 
             // gbTestInfo
             // 
-            this.gbTestInfo.Controls.Add(this.dateTimePicker1);
+            this.gbTestInfo.Controls.Add(this.dtpDate);
             this.gbTestInfo.Controls.Add(this.gbRetakeTestInfo);
             this.gbTestInfo.Controls.Add(this.btnSave);
             this.gbTestInfo.Controls.Add(this.pictureBox2);
-            this.gbTestInfo.Controls.Add(this.label1);
+            this.gbTestInfo.Controls.Add(this.lbl_Trial2);
             this.gbTestInfo.Controls.Add(this.label2);
             this.gbTestInfo.Controls.Add(this.pictureBox3);
             this.gbTestInfo.Controls.Add(this.lbl_Fees2);
@@ -234,10 +234,10 @@
             this.gbTestInfo.Controls.Add(this.pictureBox6);
             this.gbTestInfo.Controls.Add(this.label6);
             this.gbTestInfo.Controls.Add(this.pictureBox5);
-            this.gbTestInfo.Controls.Add(this.lblApplicant2);
+            this.gbTestInfo.Controls.Add(this.lblName2);
             this.gbTestInfo.Controls.Add(this.lblApplicant1);
             this.gbTestInfo.Controls.Add(this.pbAppliedForLicense);
-            this.gbTestInfo.Controls.Add(this.lblAppliedForLicense2);
+            this.gbTestInfo.Controls.Add(this.lbl_DClass2);
             this.gbTestInfo.Controls.Add(this.lblAppliedForLicense1);
             this.gbTestInfo.Controls.Add(this.pbID);
             this.gbTestInfo.Controls.Add(this.lbl_DLA_ID2);
@@ -253,20 +253,20 @@
             this.gbTestInfo.TabStop = false;
             this.gbTestInfo.Text = "Vision Test";
             // 
-            // dateTimePicker1
+            // dtpDate
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(193, 436);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 24);
-            this.dateTimePicker1.TabIndex = 67;
+            this.dtpDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(193, 436);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(162, 24);
+            this.dtpDate.TabIndex = 67;
             // 
             // gbRetakeTestInfo
             // 
             this.gbRetakeTestInfo.Controls.Add(this.pictureBox8);
-            this.gbRetakeTestInfo.Controls.Add(this.label3);
+            this.gbRetakeTestInfo.Controls.Add(this.lbl_RTestAppID2);
             this.gbRetakeTestInfo.Controls.Add(this.label7);
             this.gbRetakeTestInfo.Controls.Add(this.pictureBox7);
             this.gbRetakeTestInfo.Controls.Add(this.lblTotalFees2);
@@ -274,6 +274,7 @@
             this.gbRetakeTestInfo.Controls.Add(this.pictureBox4);
             this.gbRetakeTestInfo.Controls.Add(this.lblRAppFees2);
             this.gbRetakeTestInfo.Controls.Add(this.label4);
+            this.gbRetakeTestInfo.Enabled = false;
             this.gbRetakeTestInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbRetakeTestInfo.ForeColor = System.Drawing.Color.Brown;
             this.gbRetakeTestInfo.Location = new System.Drawing.Point(15, 481);
@@ -294,18 +295,18 @@
             this.pictureBox8.TabIndex = 67;
             this.pictureBox8.TabStop = false;
             // 
-            // label3
+            // lbl_RTestAppID2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(164, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 23);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "[???]";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_RTestAppID2.AutoSize = true;
+            this.lbl_RTestAppID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RTestAppID2.ForeColor = System.Drawing.Color.Black;
+            this.lbl_RTestAppID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_RTestAppID2.Location = new System.Drawing.Point(164, 76);
+            this.lbl_RTestAppID2.Name = "lbl_RTestAppID2";
+            this.lbl_RTestAppID2.Size = new System.Drawing.Size(41, 23);
+            this.lbl_RTestAppID2.TabIndex = 66;
+            this.lbl_RTestAppID2.Text = "N/A";
+            this.lbl_RTestAppID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -411,6 +412,7 @@
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pictureBox2
             // 
@@ -518,7 +520,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Trial2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lbl_Fees2;
@@ -526,10 +528,10 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label lblApplicant2;
+        private System.Windows.Forms.Label lblName2;
         private System.Windows.Forms.Label lblApplicant1;
         private System.Windows.Forms.PictureBox pbAppliedForLicense;
-        private System.Windows.Forms.Label lblAppliedForLicense2;
+        private System.Windows.Forms.Label lbl_DClass2;
         private System.Windows.Forms.Label lblAppliedForLicense1;
         private System.Windows.Forms.PictureBox pbID;
         private System.Windows.Forms.Label lbl_DLA_ID2;
@@ -539,7 +541,7 @@
         private System.Windows.Forms.GroupBox gbTestInfo;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox gbRetakeTestInfo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label lblTotalFees2;
         private System.Windows.Forms.Label label5;
@@ -547,7 +549,7 @@
         private System.Windows.Forms.Label lblRAppFees2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_RTestAppID2;
         private System.Windows.Forms.Label label7;
     }
 }

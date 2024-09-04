@@ -57,7 +57,7 @@ namespace DataAccessLayer
             }
         }
 
-        public static bool UpdateTestType(int TypeID, string Title,string Description, double Fees)
+        public static bool UpdateTestType(int TypeID, string Title,string Description, decimal Fees)
         {
             bool isUpdated = false;
 
@@ -73,7 +73,7 @@ namespace DataAccessLayer
                     safeParameterAdding<int>(sqlCommand, "@TypeID", TypeID);
                     safeParameterAdding<string>(sqlCommand, "@Title", Title);
                     safeParameterAdding<string>(sqlCommand, "@Description", Description);
-                    safeParameterAdding<double>(sqlCommand, "@Fees", Fees);
+                    safeParameterAdding<decimal>(sqlCommand, "@Fees", Fees);
 
 
 
@@ -99,7 +99,7 @@ namespace DataAccessLayer
             return isUpdated;
         }
 
-        public static bool GetTestTypeByID(int TypeID, ref string Title,ref string Description, ref double Fees)
+        public static bool GetTestTypeByID(int TypeID, ref string Title,ref string Description, ref decimal Fees)
         {
             bool isExist = false;
 
@@ -120,7 +120,7 @@ namespace DataAccessLayer
                             {
                                 Title = (string)reader["TestTypeTitle"];
                                 Description = (string)reader["TestTypeDescription"];
-                                Fees = Convert.ToDouble((decimal)reader["TestTypeFees"]);
+                                Fees = (decimal)reader["TestTypeFees"];
                                 isExist = true;
                             }
 
