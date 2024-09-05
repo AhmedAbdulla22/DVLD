@@ -12,6 +12,42 @@ namespace BusinessLayer
     {
         public enum TestType : int { VisionTest = 1, WrittenTest = 2, PracticalTest = 3, All = 4}
         public TestType enTestType;
+        public enum mode { Add, Update };
+        mode enMode;
+
+        public int TestAppointmentID {  get; set; }
+        public int TestTypeID { get { return (int)enTestType; } set {  enTestType = (TestType)value; } }
+        public int LocalDrivingLicenseApplicationID { get; set; }
+        public DateTime AppointmentDate { get; set; }
+        public decimal PaidFees { get; set; }
+        public int CreatedByUserID {  get; set; }
+        public bool IsLocked { get; set; }
+        public int RetakeTestApplicationID { get; set; }
+
+        public clsTestAppointments()
+        {
+            this.TestTypeID = this.TestAppointmentID = this.RetakeTestApplicationID = this.CreatedByUserID = this.LocalDrivingLicenseApplicationID = -1;
+            this.AppointmentDate = DateTime.Now;
+            this.IsLocked = false;
+            this.PaidFees = 0;
+            this.enMode = mode.Add;
+
+        }
+
+        public clsTestAppointments(int TestAppointmentID, int TestTypeID, DateTime AppointmentDate, int LocalDrivingLicenseApplicationID, decimal paidFees, int createdByUserID, int RetakeTestApplicationID = -1, bool IsLocked = false)
+        {
+            this.TestAppointmentID = TestAppointmentID;
+            this.TestTypeID = TestTypeID;
+            this.AppointmentDate = AppointmentDate;
+            this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
+            this.RetakeTestApplicationID = RetakeTestApplicationID;
+            this.PaidFees = paidFees;
+            this.IsLocked = IsLocked;
+            this.enMode = mode.Update;
+
+            this.CreatedByUserID = createdByUserID;
+        }
+
 
         public static DataTable GetTestAppointments(TestType enTestType = TestType.All)
         {
@@ -91,8 +127,53 @@ namespace BusinessLayer
 
             return Trails;
         }
+        public bool Delete()
+        {
+            return clsTestAppointments_DataAccess.DeleteTestAppointment(this.TestAppointmentID);
+        }
 
-        
+        public static bool Delete(int TestAppointmentID)
+        {
+            return clsTestAppointments_DataAccess.DeleteTestAppointment(TestAppointmentID);
+        }
+
+        private bool _AddNewTestAppointment()
+        {
+            this.TestAppointmentID = clsTestAppointments_DataAccess.AddTestAppointment(this.TestTypeID, this.LocalDrivingLicenseApplicationID, this.AppointmentDate, this.PaidFees,this.CreatedByUserID,this.IsLocked,this.RetakeTestApplicationID);
+
+            return (this.TestAppointmentID != -1);
+        }
+        private bool _Update()
+        {
+            //Update User
+            return clsTestAppointments_DataAccess.UpdateTestAppointment(this.TestAppointmentID, this.TestTypeID, this.LocalDrivingLicenseApplicationID, this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked, this.RetakeTestApplicationID);
+
+        }
+        public bool Save()
+        {
+            switch (enMode)
+            {
+                case mode.Update:
+                    {
+                        return _Update();
+
+                    }
+                case mode.Add:
+                    {
+                        if (_AddNewTestAppointment())
+                        {
+                            enMode = mode.Update;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
+                    }
+            }
+            return false;
+        }
     }
 
 

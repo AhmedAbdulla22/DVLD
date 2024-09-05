@@ -163,7 +163,14 @@ namespace DVLD.Tests
             }
             else
             {
-                
+                clsTestAppointments testAppointments = new clsTestAppointments();
+
+                testAppointments.enTestType = enTestType;
+                testAppointments.PaidFees = clsTestType.GetTestType((int)enTestType).Fees;
+                testAppointments.AppointmentDate = dtpDate.Value;
+                testAppointments.CreatedByUserID = clsLog.User.UserID;
+                testAppointments.LocalDrivingLicenseApplicationID = _DLApp.LocalDrivingLicenseApplicationID;
+                testAppointments.Save();
             }
         }
     }

@@ -96,7 +96,7 @@ namespace DVLD
             {
                 //flag
                 formIsClosing = true;
-            this.Close();
+                this.Close();
             }
             else
             {
