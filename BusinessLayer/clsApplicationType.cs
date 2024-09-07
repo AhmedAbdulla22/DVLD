@@ -9,6 +9,7 @@ namespace BusinessLayer
         public int ApplicationID { get; set; }
         public string Title { get; set; }
         public decimal Fees { get; set; }
+        public enum ApplicationType { New_Local_Driving_License_Service = 1, Renew_Driving_License_Service , Replacement_for_a_Lost_Driving_License , Replacement_for_a_Damaged_Driving_License, Release_Detained_Driving_Licsense, New_International_License,Retake_Test }
 
         public clsApplicationType()
         {

@@ -61,6 +61,7 @@
             this.pbAppliedForLicense = new System.Windows.Forms.PictureBox();
             this.pbID = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_AppointmentLocked = new System.Windows.Forms.Label();
             this.gbTestInfo.SuspendLayout();
             this.gbRetakeTestInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -222,6 +223,8 @@
             // 
             // gbTestInfo
             // 
+            this.gbTestInfo.Controls.Add(this.lblFormLabel);
+            this.gbTestInfo.Controls.Add(this.lbl_AppointmentLocked);
             this.gbTestInfo.Controls.Add(this.dtpDate);
             this.gbTestInfo.Controls.Add(this.gbRetakeTestInfo);
             this.gbTestInfo.Controls.Add(this.btnSave);
@@ -243,7 +246,6 @@
             this.gbTestInfo.Controls.Add(this.lbl_DLA_ID2);
             this.gbTestInfo.Controls.Add(this.lbl_DLA_ID1);
             this.gbTestInfo.Controls.Add(this.pictureBox1);
-            this.gbTestInfo.Controls.Add(this.lblFormLabel);
             this.gbTestInfo.Location = new System.Drawing.Point(4, 4);
             this.gbTestInfo.Margin = new System.Windows.Forms.Padding(4);
             this.gbTestInfo.Name = "gbTestInfo";
@@ -493,6 +495,21 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
+            // lbl_AppointmentLocked
+            // 
+            this.lbl_AppointmentLocked.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AppointmentLocked.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_AppointmentLocked.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AppointmentLocked.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_AppointmentLocked.Location = new System.Drawing.Point(-43, 215);
+            this.lbl_AppointmentLocked.Name = "lbl_AppointmentLocked";
+            this.lbl_AppointmentLocked.Size = new System.Drawing.Size(620, 24);
+            this.lbl_AppointmentLocked.TabIndex = 68;
+            this.lbl_AppointmentLocked.Text = " Person Already Sat For The Test, Appointment Locked";
+            this.lbl_AppointmentLocked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_AppointmentLocked.Visible = false;
+            // 
             // uctrlScheduleTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -551,5 +568,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lbl_RTestAppID2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_AppointmentLocked;
     }
 }

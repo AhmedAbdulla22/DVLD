@@ -13,7 +13,16 @@ namespace DVLD.Tests.Vison_Test
 {
     public partial class ScheduleTest : Form
     {
+        enum ctrlMode { Add = 1, Update = 2 };
+        ctrlMode _ctrlMode = ctrlMode.Add;
         public ScheduleTest(int DLAppID,clsTestAppointments.TestType enTestType, bool isRetake = false)
+        {
+            InitializeComponent();
+
+            uctrlScheduleTest1.SetControl(DLAppID, enTestType, isRetake);
+        }
+
+        public ScheduleTest(int TestAppointmentID)
         {
             InitializeComponent();
 
