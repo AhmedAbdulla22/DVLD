@@ -15,6 +15,8 @@ namespace DVLD.Tests.Vison_Test
     {
         enum ctrlMode { Add = 1, Update = 2 };
         ctrlMode _ctrlMode = ctrlMode.Add;
+
+        //To Add Appointment
         public ScheduleTest(int DLAppID,clsTestAppointments.TestType enTestType, bool isRetake = false)
         {
             InitializeComponent();
@@ -22,11 +24,17 @@ namespace DVLD.Tests.Vison_Test
             uctrlScheduleTest1.SetControl(DLAppID, enTestType, isRetake);
         }
 
-        public ScheduleTest(int TestAppointmentID)
+        //To Edit TestAppointment
+        public ScheduleTest(int TestAppointmentID, bool isRetake = false)
         {
             InitializeComponent();
-
-            uctrlScheduleTest1.SetControl(DLAppID, enTestType, isRetake);
+            clsTestAppointments TestAppointment = new clsTestAppointments();
+            if (TestAppointmentID != -1)
+            {
+                TestAppointment = clsTestAppointments.FindTestAppointment(TestAppointmentID);
+            }
+            //#warning 
+            uctrlScheduleTest1.SetControl(TestAppointment.LocalDrivingLicenseApplicationID, TestAppointment.enTestType,isRetake,TestAppointment);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

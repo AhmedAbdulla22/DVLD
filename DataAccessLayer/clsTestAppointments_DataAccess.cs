@@ -273,7 +273,7 @@ namespace DataAccessLayer
                                'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments
                               Where TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = 1;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -608,5 +608,6 @@ SELECT Scope_Identity();";
             }
             return isDeleted;
         }
+
     }
 }

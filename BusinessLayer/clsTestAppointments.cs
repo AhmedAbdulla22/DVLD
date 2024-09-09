@@ -118,7 +118,24 @@ namespace BusinessLayer
 
             return dt;
         }
+        public static clsTestAppointments FindTestAppointment(int TestAppointmentID)
+        {
+            int TestTypeID = -1, LocalDrivingLicenseApplicationID = -1, CreatedByUserID = -1, RetakeTestApplicationID = -1;
+            decimal PaidFees = 0;
+            bool IsLocked = false;
+            DateTime AppointmentDate = DateTime.Now;
 
+
+            
+            if (clsTestAppointments_DataAccess.GetTestAppointmentByTestAppointmentID(TestAppointmentID,ref TestTypeID,ref LocalDrivingLicenseApplicationID, ref AppointmentDate, ref PaidFees, ref CreatedByUserID, ref IsLocked, ref RetakeTestApplicationID))
+            {
+                return new clsTestAppointments(TestAppointmentID,TestTypeID,AppointmentDate,LocalDrivingLicenseApplicationID,PaidFees,CreatedByUserID,RetakeTestApplicationID,IsLocked);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public static int GetTrails(int LocalDLAppID, TestType enTestType)
         {
             int Trails = 0;
@@ -173,6 +190,11 @@ namespace BusinessLayer
                     }
             }
             return false;
+        }
+
+        public bool TestResult()
+        {
+            return clsTests_DataAccess.GetTestResult(this.TestAppointmentID);
         }
     }
 

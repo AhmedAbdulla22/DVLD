@@ -47,12 +47,16 @@ namespace DVLD.Tests
 
         public void SetControl(int DLAppID,clsTestAppointments.TestType enTestType,bool IsRetakeTest,clsTestAppointments testAppointment = null)
         {
+            //if Edit Mode
             if (testAppointment != null)
-            {
+            {   
+                //if Test is Locked 
                 if (testAppointment.IsLocked == true)
                 {
                     btnSave.Enabled = false;
+                    dtpDate.Enabled = false;
                     lbl_AppointmentLocked.Visible = true;
+                    return;
                 }
 
                 _ctrlMode = ctrlMode.Update;
@@ -67,19 +71,16 @@ namespace DVLD.Tests
                 case clsTestAppointments.TestType.VisionTest:
                     {
                         pictureBox1.Image = Resources.eye;
-                        lblFormLabel.Text = "Vision Test Appointments";
                         break;
                     }
                 case clsTestAppointments.TestType.WrittenTest:
                     {
                         pictureBox1.Image = Resources.writing;
-                        lblFormLabel.Text = "Written Test Appointments";
                         break;
                     }
                 default:
                     {
                         pictureBox1.Image = Resources.street;
-                        lblFormLabel.Text = "Street Test Appointments";
                         break;
                     }
             }
@@ -96,19 +97,16 @@ namespace DVLD.Tests
                 {
                     case clsTestAppointments.TestType.VisionTest:
                         {
-                            pictureBox1.Image = Resources.eye;
                             lblFormLabel.Text = "Vision Test Appointments";
                             break;
                         }
                     case clsTestAppointments.TestType.WrittenTest:
                         {
-                            pictureBox1.Image = Resources.writing;
                             lblFormLabel.Text = "Written Test Appointments";
                             break;
                         }
                     default:
                         {
-                            pictureBox1.Image = Resources.street;
                             lblFormLabel.Text = "Street Test Appointments";
                             break;
                         }
@@ -143,8 +141,6 @@ namespace DVLD.Tests
         {
             if (DLAppID != -1)
             {
-                if (_ctrlMode == ctrlMode.Add)
-                {
                     //Schedule Info
                     lbl_DLA_ID2.Text = DLAppID.ToString();
                     lbl_DClass2.Text = _DLApp.ClassName();
@@ -157,6 +153,7 @@ namespace DVLD.Tests
                     //retake test info
                     if (_IsRetakeTest)
                     {
+                        lbl_RTestAppID2.Text = (_ctrlMode == ctrlMode.Add) ? "N/A":testAppointment.RetakeTestApplicationID.ToString();
                         decimal RetakeFees = clsApplicationType.GetApplicationType(7).Fees;
                         lblTotalFees2.Text = (fees + RetakeFees).ToString("0.00");
                         lblRAppFees2.Text = RetakeFees.ToString("0.00");
@@ -166,7 +163,7 @@ namespace DVLD.Tests
                         lblTotalFees2.Text = fees.ToString();
                         lblRAppFees2.Text = "0";
                     }
-                }
+                
                 
 
 
@@ -186,6 +183,7 @@ namespace DVLD.Tests
 
             if (_IsRetakeTest)
             {
+#warning Check this logic
                 clsApplication newRetakeApplication = new clsApplication();
                 newRetakeApplication.ApplicationStatus = (byte)clsApplication.Status.New;
                 newRetakeApplication.ApplicantPersonID = _Application.ApplicantPersonID;
