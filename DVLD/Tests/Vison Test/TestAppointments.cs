@@ -62,6 +62,9 @@ namespace DVLD.Tests.Vison_Test
             DataTable dt = clsTestAppointments.GetTestAppointments(_LocalDLAppID,enTestType);
 
             dgvAppointments.DataSource = dt;
+
+            //#Records Rows
+            lblRecords.Text = "#Records" + ' ' + (dgvAppointments.RowCount).ToString();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -79,14 +82,14 @@ namespace DVLD.Tests.Vison_Test
                     frmScheduleTest.ShowDialog();
                 }
             }//if have appointments but not locked
-            else if (Convert.ToBoolean(dgvAppointments.Rows[0].Cells["Is Locked"].Value) == false)
+            else if (Convert.ToBoolean(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["IsLocked"].Value) == false)
             {
                 MessageBox.Show("this Person Already Have an Active Appointment for this Test, You Cannot Add New Appointment.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //if last Appointmnt failed the test
-            else if(clsTests.TestResult(Convert.ToInt32(dgvAppointments.Rows[0].Cells["Appointment ID"].Value)) == false)
+            //if last Appointment failed the test
+            else if(clsTests.TestResult(Convert.ToInt32(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["Appointment ID"].Value)) == false)
             {
-                using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID,true))
+                using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID,enTestType))
                 {
                     frmScheduleTest.ShowDialog();
                 }
@@ -94,7 +97,7 @@ namespace DVLD.Tests.Vison_Test
             //if passed the test
             else
             {
-                MessageBox.Show("this Person Already Passed This Test.", "Passed the Test", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("this Person Already Passed This Test.", "Passed the Test", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
