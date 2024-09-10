@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,35 @@ namespace DVLD.Tests
             InitializeComponent();
         }
 
-        private void uctrTestInfo1_Load(object sender, EventArgs e)
-        {
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (uctrTestInfo1.TestAppointmentID != -1)
+            {
+                if(MessageBox.Show("Are You Sure You Want To Save This Test? After Save You Can't Change Test Result!","Confirmation",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    clsTests Test = new clsTests();
+                    Test.Notes = tbNotes.Text;
+                    Test.CreatedByUserID = clsLog.User.UserID;
+                    Test.TestResult = rbPass.Checked;
+                    Test.TestAppointmentID = uctrTestInfo1.TestAppointmentID;
+
+                    if (Test.Save())
+                    {
+                        clsTestAppointments.LockTheTestAppointment(Test.TestAppointmentID);
+                        MessageBox.Show("Test Saved Succesfully", "Test Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+                
+
+                
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

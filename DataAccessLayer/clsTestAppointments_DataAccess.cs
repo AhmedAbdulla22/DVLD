@@ -608,6 +608,45 @@ SELECT Scope_Identity();";
             }
             return isDeleted;
         }
+        public static bool LockTestAppointment(int TestAppointmentID)
+        {
+            bool isUpdated = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"Update TestAppointments
+                              Set IsLocked = @IsLocked
+                              Where TestAppointmentID = @TestAppointmentID;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+
+
+                    sqlCommand.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isUpdated = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isUpdated;
+        }
 
     }
 }

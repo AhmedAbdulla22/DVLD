@@ -87,7 +87,7 @@ namespace DVLD.Tests.Vison_Test
                 MessageBox.Show("this Person Already Have an Active Appointment for this Test, You Cannot Add New Appointment.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //if last Appointment failed the test
-            else if(clsTests.TestResult(Convert.ToInt32(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["Appointment ID"].Value)) == false)
+            else if(clsTests.GetTestResult(Convert.ToInt32(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["Appointment ID"].Value)) == false)
             {
                 using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID,enTestType))
                 {

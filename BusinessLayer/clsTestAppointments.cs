@@ -197,6 +197,16 @@ namespace BusinessLayer
         {
             return clsTests_DataAccess.GetTestResult(this.TestAppointmentID);
         }
+
+        public static bool LockTheTestAppointment(int TestAppointmentID)
+        {
+            return clsTestAppointments_DataAccess.LockTestAppointment(TestAppointmentID);
+        }
+
+        public  bool LockTheTestAppointment()
+        {
+            return clsTestAppointments_DataAccess.LockTestAppointment(this.TestAppointmentID);
+        }
     }
 
 

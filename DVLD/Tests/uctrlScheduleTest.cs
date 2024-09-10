@@ -17,7 +17,7 @@ namespace DVLD.Tests
     {
         clsLocalDLA _DLApp;
         clsApplication _Application;
-        clsTestAppointments testAppointment;
+        clsTestAppointments testAppointment = new clsTestAppointments();
 
         private int _ID = -1;
         clsTestAppointments.TestType enTestType;

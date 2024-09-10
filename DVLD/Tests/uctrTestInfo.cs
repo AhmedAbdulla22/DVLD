@@ -38,7 +38,7 @@ namespace DVLD.Tests.Vison_Test
             InitializeComponent();
         }
 
-        public void SetControl(int TestAppointmentID)
+        public void SetControl(int TestAppointmentID,clsTestAppointments.TestType enTestType)
         {
             this.enTestType = enTestType;
 
