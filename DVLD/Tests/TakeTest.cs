@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Tests.Vison_Test
+namespace DVLD.Tests
 {
-    public partial class uctrTestInfo : UserControl
+    public partial class TakeTest : Form
     {
-        public uctrTestInfo()
+        public TakeTest()
         {
             InitializeComponent();
+        }
+
+        private void uctrTestInfo1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

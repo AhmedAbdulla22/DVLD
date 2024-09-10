@@ -144,6 +144,7 @@ namespace BusinessLayer
 
             return Trails;
         }
+
         public bool Delete()
         {
             return clsTestAppointments_DataAccess.DeleteTestAppointment(this.TestAppointmentID);

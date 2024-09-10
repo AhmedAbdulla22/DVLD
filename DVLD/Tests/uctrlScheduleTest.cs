@@ -183,20 +183,27 @@ namespace DVLD.Tests
 
             if (_IsRetakeTest)
             {
-#warning Check this logic
-                clsApplication newRetakeApplication = new clsApplication();
-                newRetakeApplication.ApplicationStatus = (byte)clsApplication.Status.New;
-                newRetakeApplication.ApplicantPersonID = _Application.ApplicantPersonID;
-                newRetakeApplication.ApplicationDate = dtpDate.Value;
-                newRetakeApplication.LastStatusDate = dtpDate.Value;
-                newRetakeApplication.ApplicationTypeID = (int)clsApplicationType.ApplicationType.Retake_Test;//RetakeType ID
-                newRetakeApplication.CreatedByUserID = clsLog.User.UserID;
-                newRetakeApplication.PaidFees = clsApplicationType.GetApplicationType((int)clsApplicationType.ApplicationType.Retake_Test).Fees;
 
-                if (newRetakeApplication.Save())
+                if (_ctrlMode == ctrlMode.Add)
                 {
-                    testAppointment.RetakeTestApplicationID = newRetakeApplication.ApplicationID;
+                clsApplication newRetakeApplication =  new clsApplication();
+                    newRetakeApplication.ApplicationStatus = (byte)clsApplication.Status.New;
+                    newRetakeApplication.ApplicantPersonID = _Application.ApplicantPersonID;
+                    newRetakeApplication.ApplicationDate = dtpDate.Value;
+                    newRetakeApplication.LastStatusDate = dtpDate.Value;
+                    newRetakeApplication.ApplicationTypeID = (int)clsApplicationType.ApplicationType.Retake_Test;//RetakeType ID
+                    newRetakeApplication.CreatedByUserID = clsLog.User.UserID;
+                    newRetakeApplication.PaidFees = clsApplicationType.GetApplicationType((int)clsApplicationType.ApplicationType.Retake_Test).Fees;
+
+                    if (newRetakeApplication.Save())
+                    {
+                        testAppointment.RetakeTestApplicationID = newRetakeApplication.ApplicationID;
+                        lbl_RTestAppID2.Text = testAppointment.RetakeTestApplicationID.ToString();
+                    }
                 }
+
+
+                
             }
 
             testAppointment.Save();

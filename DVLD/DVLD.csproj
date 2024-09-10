@@ -111,28 +111,34 @@
     <Compile Include="ApplicationForms\ManageApplicationType.Designer.cs">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\TakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TakeTest.Designer.cs">
+      <DependentUpon>TakeTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\uctrlScheduleTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Tests\uctrlScheduleTest.Designer.cs">
       <DependentUpon>uctrlScheduleTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Vison Test\ScheduleTest.cs">
+    <Compile Include="Tests\ScheduleTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tests\Vison Test\ScheduleTest.Designer.cs">
+    <Compile Include="Tests\ScheduleTest.Designer.cs">
       <DependentUpon>ScheduleTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Vison Test\uctrTestInfo.cs">
+    <Compile Include="Tests\uctrTestInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tests\Vison Test\uctrTestInfo.Designer.cs">
+    <Compile Include="Tests\uctrTestInfo.Designer.cs">
       <DependentUpon>uctrTestInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Vison Test\TestAppointments.cs">
+    <Compile Include="Tests\TestAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tests\Vison Test\TestAppointments.Designer.cs">
+    <Compile Include="Tests\TestAppointments.Designer.cs">
       <DependentUpon>TestAppointments.cs</DependentUpon>
     </Compile>
     <Compile Include="TestType\ManageTestTypes.cs">
@@ -245,16 +251,19 @@
     <EmbeddedResource Include="ApplicationForms\ManageApplicationType.resx">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TakeTest.resx">
+      <DependentUpon>TakeTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tests\uctrlScheduleTest.resx">
       <DependentUpon>uctrlScheduleTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Vison Test\ScheduleTest.resx">
+    <EmbeddedResource Include="Tests\ScheduleTest.resx">
       <DependentUpon>ScheduleTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Vison Test\uctrTestInfo.resx">
+    <EmbeddedResource Include="Tests\uctrTestInfo.resx">
       <DependentUpon>uctrTestInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Vison Test\TestAppointments.resx">
+    <EmbeddedResource Include="Tests\TestAppointments.resx">
       <DependentUpon>TestAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestType\ManageTestTypes.resx">
