@@ -117,6 +117,12 @@
     <Compile Include="Tests\TakeTest.Designer.cs">
       <DependentUpon>TakeTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\TestInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestInfo.Designer.cs">
+      <DependentUpon>TestInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\uctrlScheduleTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\TakeTest.resx">
       <DependentUpon>TakeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestInfo.resx">
+      <DependentUpon>TestInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\uctrlScheduleTest.resx">
       <DependentUpon>uctrlScheduleTest.cs</DependentUpon>

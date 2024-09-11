@@ -16,7 +16,7 @@ namespace DVLD.Tests.Vison_Test
     {
         clsTestAppointments.TestType enTestType;
         int _LocalDLAppID = -1;
-        public TestAppointments(int LocalDLAppID,clsTestAppointments.TestType enTestType = clsTestAppointments.TestType.VisionTest)
+        public TestAppointments(int LocalDLAppID, clsTestAppointments.TestType enTestType = clsTestAppointments.TestType.VisionTest)
         {
             InitializeComponent();
             this.enTestType = enTestType;
@@ -24,7 +24,22 @@ namespace DVLD.Tests.Vison_Test
 
             SetTheForm();
         }
+        private void dgvAppointments_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //row that you clicked on location
+                var hitTestInfo = dgvAppointments.HitTest(e.X, e.Y);
 
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dgvAppointments.ClearSelection();
+                    dgvAppointments.Rows[hitTestInfo.RowIndex].Selected = true;
+
+                    contextMenuStrip1.Show(dgvAppointments, new Point(e.X, e.Y));
+                }
+            }
+        }
         private void SetTheForm()
         {
             //label and picturebox
@@ -51,7 +66,7 @@ namespace DVLD.Tests.Vison_Test
             }
 
             //Application information uctrl
-            uctrlDrivingLicenseApplicationInfo1.DLAppID= _LocalDLAppID;
+            uctrlDrivingLicenseApplicationInfo1.DLAppID = _LocalDLAppID;
 
 
             _LoadDataGridView();
@@ -59,7 +74,7 @@ namespace DVLD.Tests.Vison_Test
 
         private void _LoadDataGridView()
         {
-            DataTable dt = clsTestAppointments.GetTestAppointments(_LocalDLAppID,enTestType);
+            DataTable dt = clsTestAppointments.GetTestAppointments(_LocalDLAppID, enTestType);
 
             dgvAppointments.DataSource = dt;
 
@@ -82,14 +97,14 @@ namespace DVLD.Tests.Vison_Test
                     frmScheduleTest.ShowDialog();
                 }
             }//if have appointments but not locked
-            else if (Convert.ToBoolean(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["IsLocked"].Value) == false)
+            else if (Convert.ToBoolean(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["Is Locked"].Value) == false)
             {
                 MessageBox.Show("this Person Already Have an Active Appointment for this Test, You Cannot Add New Appointment.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //if last Appointment failed the test
-            else if(clsTests.GetTestResult(Convert.ToInt32(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["Appointment ID"].Value)) == false)
+            else if (clsTests.GetTestResult(Convert.ToInt32(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["Appointment ID"].Value)) == false)
             {
-                using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID,enTestType))
+                using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID, enTestType,true))
                 {
                     frmScheduleTest.ShowDialog();
                 }
@@ -100,6 +115,41 @@ namespace DVLD.Tests.Vison_Test
                 MessageBox.Show("this Person Already Passed This Test.", "Passed the Test", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            int TestAppointmentID = Convert.ToInt32(dgvAppointments.SelectedRows[0].Cells["Appointment ID"].Value);
+
+            switch (e.ClickedItem.Text)
+            {
+                case "Test Info":
+                    {
+                        using (TestInfo frmTestInfo = new TestInfo(TestAppointmentID,enTestType))
+                        {
+                            frmTestInfo.ShowDialog();
+                        }
+                        break;
+                    }
+                case "Take Test":
+                    {
+                        if(Convert.ToBoolean(dgvAppointments.SelectedRows[0].Cells["Is Locked"].Value) == false)
+                        {
+                            using (TakeTest frmTakeTest = new TakeTest(TestAppointmentID, enTestType))
+                            {
+                                frmTakeTest.ShowDialog();
+                                _LoadDataGridView();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("this Person Already took this Test.", "Test Already Taken", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        break;
+                    }
+
+            }
         }
     }
 }

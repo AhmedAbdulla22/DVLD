@@ -48,6 +48,49 @@ namespace DataAccessLayer
                     sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
                     sqlCommand.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            Trails = Convert.ToInt32(result);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return Trails;
+        }
+
+        public static int GetTrailsBeforeAppointment(int TestAppointmentID, int LocalDrivingLicenseApplicationID, int TestTypeID)
+        {
+            int Trails = 0;
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT count(*)
+                             FROM TestAppointments
+                            Where TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = @TestTypeID AND TestAppointmentID < @TestAppointmentID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    sqlCommand.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+                    sqlCommand.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+
+
                     try
                     {
                         sqlConnection.Open();
@@ -407,7 +450,14 @@ namespace DataAccessLayer
                                 PaidFees = (decimal)reader["PaidFees"];
                                 CreatedByUserID = (int)reader["CreatedByUserID"];
                                 IsLocked = (bool)reader["IsLocked"];
+                                if (reader["RetakeTestApplicationID"] != DBNull.Value)
+                                {
                                 RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
+                                }
+                                else
+                                {
+                                    RetakeTestApplicationID = -1;
+                                }
                                 isExist = true;
                             }
 
@@ -615,7 +665,7 @@ SELECT Scope_Identity();";
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
                 var query = @"Update TestAppointments
-                              Set IsLocked = @IsLocked
+                              Set IsLocked = 1
                               Where TestAppointmentID = @TestAppointmentID;";
 
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -623,6 +673,7 @@ SELECT Scope_Identity();";
 
 
                     sqlCommand.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+
 
 
 

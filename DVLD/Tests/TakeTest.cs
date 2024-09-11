@@ -13,9 +13,10 @@ namespace DVLD.Tests
 {
     public partial class TakeTest : Form
     {
-        public TakeTest()
+        public TakeTest(int TestAppointmentID,clsTestAppointments.TestType enTestType)
         {
             InitializeComponent();
+            uctrTestInfo1.SetControl(TestAppointmentID, enTestType);
         }
 
 

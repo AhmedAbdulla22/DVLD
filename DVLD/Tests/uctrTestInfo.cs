@@ -16,7 +16,7 @@ namespace DVLD.Tests.Vison_Test
     {
         private int _ID = -1;
         clsTestAppointments.TestType enTestType;
-        clsTestAppointments _TestAppointment ;
+        clsTestAppointments _TestAppointment = new clsTestAppointments();
 
 
         public int TestAppointmentID
@@ -87,28 +87,32 @@ namespace DVLD.Tests.Vison_Test
                 }
 
 
-            }
             fillLabels();
+            }
 
         }
 
         private void fillLabels()
         {
-            if (TestAppointmentID != -1)
+            if (_TestAppointment != null)
             {
                 clsLocalDLA _DLApp = clsLocalDLA.GetLocalDLAppByLocalDLAppID(_TestAppointment.LocalDrivingLicenseApplicationID);
-                clsApplication _App = clsApplication.GetApplicationByApplicationID(_DLApp.ApplicationID);
+                if (_DLApp != null)
+                {
+                    clsApplication _App = clsApplication.GetApplicationByApplicationID(_DLApp.ApplicationID);
 
-                //Schedule Info
-                lbl_DLA_ID2.Text = TestAppointmentID.ToString();
-                lbl_DClass2.Text = _DLApp.ClassName();
-                lbl_Name2.Text = clsPerson.Find(_App.ApplicantPersonID).FullName;
-                lbl_Trail2.Text = clsTestAppointments.GetTrails(TestAppointmentID, enTestType).ToString();
-                decimal fees =  clsTestType.GetTestType((int)enTestType).Fees;
-                lbl_Fees2.Text = fees.ToString("0.00");
-                lblDate2.Text = _TestAppointment.AppointmentDate.ToString();
-                int TestID = clsTests.GetTestByTestAppointmentID(_TestAppointment.TestAppointmentID).TestID;
-                lblTestID2.Text = (TestID != -1) ? TestID.ToString() : "Not Taken Yet";
+                    //Schedule Info
+                    lbl_DLA_ID2.Text = TestAppointmentID.ToString();
+                    lbl_DClass2.Text = _DLApp.ClassName();
+                    lbl_Name2.Text = clsPerson.Find(_App.ApplicantPersonID).FullName;
+                    lbl_Trail2.Text = clsTestAppointments.GetTrailsBeforeAppointment(TestAppointmentID,_DLApp.LocalDrivingLicenseApplicationID, enTestType).ToString();
+                    decimal fees = clsTestType.GetTestType((int)enTestType).Fees;
+                    lbl_Fees2.Text = fees.ToString("0.00");
+                    lblDate2.Text = _TestAppointment.AppointmentDate.ToString();
+                    clsTests Test = clsTests.GetTestByTestAppointmentID(_TestAppointment.TestAppointmentID);
+                    lblTestID2.Text = (Test != null) ? Test.TestID.ToString() : "Not Taken Yet";
+                }
+                
             }
 
         }

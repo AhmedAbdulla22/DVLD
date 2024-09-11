@@ -136,11 +136,21 @@ namespace BusinessLayer
                 return null;
             }
         }
+
         public static int GetTrails(int LocalDLAppID, TestType enTestType)
         {
             int Trails = 0;
 
-            Trails = clsTestAppointments_DataAccess.GetTrails(LocalDLAppID,(int)enTestType);
+            Trails = clsTestAppointments_DataAccess.GetTrails(LocalDLAppID, (int)enTestType);
+
+            return Trails;
+        }
+
+        public static int GetTrailsBeforeAppointment(int TestAppointmentID, int LocalDLAppID, TestType enTestType)
+        {
+            int Trails = 0;
+
+            Trails = clsTestAppointments_DataAccess.GetTrailsBeforeAppointment(TestAppointmentID, LocalDLAppID, (int)enTestType);
 
             return Trails;
         }
