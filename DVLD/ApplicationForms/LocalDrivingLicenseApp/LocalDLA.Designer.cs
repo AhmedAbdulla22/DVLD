@@ -37,7 +37,7 @@
             this.dgvLocalDLA = new System.Windows.Forms.DataGridView();
             this.cbStatusFilter = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.editApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,7 +166,7 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
+            this.ShowApplicationToolStripMenuItem,
             this.toolStripMenuItem1,
             this.editApplicationToolStripMenuItem,
             this.deleteApplicationToolStripMenuItem,
@@ -184,12 +184,12 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(301, 308);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
-            // toolStripMenuItem3
+            // ShowApplicationToolStripMenuItem
             // 
-            this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.project;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(300, 30);
-            this.toolStripMenuItem3.Text = "Show Application Details";
+            this.ShowApplicationToolStripMenuItem.Image = global::DVLD.Properties.Resources.project;
+            this.ShowApplicationToolStripMenuItem.Name = "ShowApplicationToolStripMenuItem";
+            this.ShowApplicationToolStripMenuItem.Size = new System.Drawing.Size(300, 30);
+            this.ShowApplicationToolStripMenuItem.Text = "Show Application Details";
             // 
             // toolStripMenuItem1
             // 
@@ -233,6 +233,7 @@
             this.scheduleVisonTestToolStripMenuItem,
             this.scheduleWrittenTestToolStripMenuItem,
             this.scheduleStreetTestToolStripMenuItem});
+            this.scheduleTestsToolStripMenuItem.Enabled = false;
             this.scheduleTestsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar;
             this.scheduleTestsToolStripMenuItem.Name = "scheduleTestsToolStripMenuItem";
             this.scheduleTestsToolStripMenuItem.Size = new System.Drawing.Size(300, 30);
@@ -381,7 +382,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbStatusFilter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ShowApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteApplicationToolStripMenuItem;

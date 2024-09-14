@@ -60,15 +60,18 @@ namespace DVLD.ApplicationForms
 
         private void UpdateContextMenuStrip( )
         {
-            Dictionary<ToolStripItem, int> dict = new Dictionary<ToolStripItem, int>();
 
-            dict.Add(scheduleVisonTestToolStripMenuItem, 0); 
-            dict.Add(scheduleWrittenTestToolStripMenuItem, 1); 
-            dict.Add(scheduleStreetTestToolStripMenuItem , 2);
+            
 
             int passedTests = Convert.ToInt32(dgvLocalDLA.SelectedRows[0].Cells["Passed Tests"].Value);
             if (Convert.ToString(dgvLocalDLA.SelectedRows[0].Cells["Status"].Value) == "New")
             {
+                Dictionary<ToolStripItem, int> dict = new Dictionary<ToolStripItem, int>();
+
+                dict.Add(scheduleVisonTestToolStripMenuItem, 0);
+                dict.Add(scheduleWrittenTestToolStripMenuItem, 1);
+                dict.Add(scheduleStreetTestToolStripMenuItem, 2);
+
                 //showLicense
                 showLicenseToolStripMenuItem.Enabled = false;
 
@@ -79,6 +82,7 @@ namespace DVLD.ApplicationForms
                     case 2:
                         {
                             issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+
                             scheduleTestsToolStripMenuItem.Enabled = true;
                             //check schedule test permession
                             if (dgvLocalDLA.RowCount != 0)
@@ -111,13 +115,23 @@ namespace DVLD.ApplicationForms
                 }
 
             }
-            else if(Convert.ToString(dgvLocalDLA.SelectedRows[0].Cells["Status"].Value) == "Completed")
+            else
             {
-                showLicenseToolStripMenuItem.Enabled = true;
                 issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = scheduleTestsToolStripMenuItem.Enabled = false;
+                editApplicationToolStripMenuItem.Enabled = false;
+                deleteApplicationToolStripMenuItem.Enabled = false;
+                cancelApplicationToolStripMenuItem.Enabled = false;
+                scheduleTestsToolStripMenuItem.Enabled = false;
 
+                if (Convert.ToString(dgvLocalDLA.SelectedRows[0].Cells["Status"].Value) == "Completed")
+                {
+                    showLicenseToolStripMenuItem.Enabled = true;                   
+                }
+                else
+                {
+                    showLicenseToolStripMenuItem.Enabled = false;
+                }
             }
-
 
 
         }
