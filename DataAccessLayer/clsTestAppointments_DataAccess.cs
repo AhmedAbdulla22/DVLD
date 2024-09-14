@@ -125,7 +125,7 @@ namespace DataAccessLayer
                 var query = @"SELECT 'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
@@ -163,7 +163,7 @@ namespace DataAccessLayer
                 var query = @"SELECT 'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments
                              Where TestTypeID = 1;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -201,7 +201,7 @@ namespace DataAccessLayer
                 var query = @"SELECT 'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments
                              Where TestTypeID = 2;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -238,7 +238,7 @@ namespace DataAccessLayer
                 var query = @"SELECT 'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments
                              Where TestTypeID = 3;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -276,7 +276,7 @@ namespace DataAccessLayer
                                'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments
                               Where TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID ;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -356,7 +356,7 @@ namespace DataAccessLayer
                                'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments
                               Where TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = 2;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
@@ -395,7 +395,7 @@ namespace DataAccessLayer
                                'Appointment ID' = TestAppointmentID
                               ,'Appointment Date' = AppointmentDate
                               ,'Paid Fees' = PaidFees
-                              ,IsLocked
+                              ,'Is Locked' =IsLocked
                              FROM TestAppointments
                               Where TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = 3;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))

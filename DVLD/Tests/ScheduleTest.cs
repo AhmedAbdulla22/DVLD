@@ -32,9 +32,9 @@ namespace DVLD.Tests.Vison_Test
             if (TestAppointmentID != -1)
             {
                 TestAppointment = clsTestAppointments.FindTestAppointment(TestAppointmentID);
+                if(TestAppointment.RetakeTestApplicationID != -1) { isRetake = true; }
+                uctrlScheduleTest1.SetControl(TestAppointment.LocalDrivingLicenseApplicationID, TestAppointment.enTestType, isRetake, TestAppointment);
             }
-            //#warning 
-            uctrlScheduleTest1.SetControl(TestAppointment.LocalDrivingLicenseApplicationID, TestAppointment.enTestType,isRetake,TestAppointment);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

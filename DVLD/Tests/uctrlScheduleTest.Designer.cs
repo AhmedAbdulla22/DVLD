@@ -42,6 +42,7 @@
             this.lbl_DLA_ID1 = new System.Windows.Forms.Label();
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.gbTestInfo = new System.Windows.Forms.GroupBox();
+            this.lbl_AppointmentLocked = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.gbRetakeTestInfo = new System.Windows.Forms.GroupBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -61,7 +62,6 @@
             this.pbAppliedForLicense = new System.Windows.Forms.PictureBox();
             this.pbID = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_AppointmentLocked = new System.Windows.Forms.Label();
             this.gbTestInfo.SuspendLayout();
             this.gbRetakeTestInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -255,6 +255,21 @@
             this.gbTestInfo.TabStop = false;
             this.gbTestInfo.Text = "Vision Test";
             // 
+            // lbl_AppointmentLocked
+            // 
+            this.lbl_AppointmentLocked.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_AppointmentLocked.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_AppointmentLocked.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AppointmentLocked.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_AppointmentLocked.Location = new System.Drawing.Point(-43, 215);
+            this.lbl_AppointmentLocked.Name = "lbl_AppointmentLocked";
+            this.lbl_AppointmentLocked.Size = new System.Drawing.Size(620, 24);
+            this.lbl_AppointmentLocked.TabIndex = 68;
+            this.lbl_AppointmentLocked.Text = " Person Already Sat For The Test, Appointment Locked";
+            this.lbl_AppointmentLocked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_AppointmentLocked.Visible = false;
+            // 
             // dtpDate
             // 
             this.dtpDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,6 +279,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(162, 24);
             this.dtpDate.TabIndex = 67;
+            this.dtpDate.DropDown += new System.EventHandler(this.dtpDate_DropDown);
             // 
             // gbRetakeTestInfo
             // 
@@ -494,21 +510,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
-            // 
-            // lbl_AppointmentLocked
-            // 
-            this.lbl_AppointmentLocked.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_AppointmentLocked.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_AppointmentLocked.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AppointmentLocked.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbl_AppointmentLocked.Location = new System.Drawing.Point(-43, 215);
-            this.lbl_AppointmentLocked.Name = "lbl_AppointmentLocked";
-            this.lbl_AppointmentLocked.Size = new System.Drawing.Size(620, 24);
-            this.lbl_AppointmentLocked.TabIndex = 68;
-            this.lbl_AppointmentLocked.Text = " Person Already Sat For The Test, Appointment Locked";
-            this.lbl_AppointmentLocked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_AppointmentLocked.Visible = false;
             // 
             // uctrlScheduleTest
             // 

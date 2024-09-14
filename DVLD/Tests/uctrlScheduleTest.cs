@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace DVLD.Tests
@@ -34,36 +35,39 @@ namespace DVLD.Tests
             set
             {
                 _ID = value;
-                _LoadApplicationData();
             }
         }
+
         public uctrlScheduleTest()
         {
             InitializeComponent();
 
-            //Modify DateTimePicker
-            dtpDate.MinDate = DateTime.Now;
+            
         }
 
         public void SetControl(int DLAppID,clsTestAppointments.TestType enTestType,bool IsRetakeTest,clsTestAppointments testAppointment = null)
         {
+            
             //if Edit Mode
             if (testAppointment != null)
-            {   
+            {
+                this.testAppointment = testAppointment;
+                _ctrlMode = ctrlMode.Update;
+
                 //if Test is Locked 
                 if (testAppointment.IsLocked == true)
                 {
                     btnSave.Enabled = false;
                     dtpDate.Enabled = false;
                     lbl_AppointmentLocked.Visible = true;
-                    return;
                 }
 
-                _ctrlMode = ctrlMode.Update;
             }
             _IsRetakeTest = IsRetakeTest;
             this.enTestType = enTestType;
             this.DLAppID = DLAppID;
+            _LoadApplicationData();
+
 
             //picturebox
             switch (enTestType)
@@ -113,6 +117,9 @@ namespace DVLD.Tests
                 }
             }
 
+                //Modify DateTimePicker
+                dtpDate.MinDate = DateTime.Today;
+            
             
         }
 
@@ -126,7 +133,8 @@ namespace DVLD.Tests
                 {
                     if (MessageBox.Show("Can't Find this Application with ID of " + DLAppID + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
                     {
-                        this.ParentForm.Close();
+#warning close form 
+                        return;
                     }
 
                 }
@@ -148,10 +156,23 @@ namespace DVLD.Tests
                     lbl_Trial2.Text = clsTestAppointments.GetTrails(DLAppID, enTestType).ToString();    
                     decimal fees = (_ctrlMode == ctrlMode.Add) ? clsTestType.GetTestType((int)enTestType).Fees : testAppointment.PaidFees;
                     lbl_Fees2.Text = fees.ToString("0.00") ;
-                    dtpDate.Value =(_ctrlMode == ctrlMode.Add)? DateTime.Now:testAppointment.AppointmentDate;
 
-                    //retake test info
-                    if (_IsRetakeTest)
+                    //checking if the Olddate is Outdated
+                    if( _ctrlMode == ctrlMode.Add) { dtpDate.Value = DateTime.Today; }
+                    else
+                    {
+                        if (testAppointment.AppointmentDate > DateTime.Today)
+                        {
+                            dtpDate.Value = testAppointment.AppointmentDate;
+                        }
+                        else
+                        {
+                        dtpDate.Text = testAppointment.AppointmentDate.ToString();
+                        }
+                    }
+#warning this fill label work too soon
+                //retake test info
+                if (_IsRetakeTest)
                     {
                         lbl_RTestAppID2.Text = (_ctrlMode == ctrlMode.Add) ? "N/A":testAppointment.RetakeTestApplicationID.ToString();
                         decimal RetakeFees = clsApplicationType.GetApplicationType(7).Fees;
@@ -177,7 +198,7 @@ namespace DVLD.Tests
 
                 testAppointment.enTestType = enTestType;
                 testAppointment.PaidFees = clsTestType.GetTestType((int)enTestType).Fees;
-                testAppointment.AppointmentDate = dtpDate.Value;
+                testAppointment.AppointmentDate = Convert.ToDateTime(dtpDate.Text);
                 testAppointment.CreatedByUserID = clsLog.User.UserID;
                 testAppointment.LocalDrivingLicenseApplicationID = _DLApp.LocalDrivingLicenseApplicationID;
 
@@ -208,6 +229,11 @@ namespace DVLD.Tests
 
             testAppointment.Save();
             btnSave.Enabled = false;
+        }
+
+        private void dtpDate_DropDown(object sender, EventArgs e)
+        {
+
         }
     }
 }

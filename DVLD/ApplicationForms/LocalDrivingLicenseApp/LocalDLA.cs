@@ -50,10 +50,78 @@ namespace DVLD.ApplicationForms
                     dgvLocalDLA.ClearSelection();
                     dgvLocalDLA.Rows[hitTestInfo.RowIndex].Selected = true;
 
+                    //update
+                    UpdateContextMenuStrip();
+
                     contextMenuStrip1.Show(dgvLocalDLA, new Point(e.X, e.Y));
                 }
             }
         }
+
+        private void UpdateContextMenuStrip( )
+        {
+            Dictionary<ToolStripItem, int> dict = new Dictionary<ToolStripItem, int>();
+
+            dict.Add(scheduleVisonTestToolStripMenuItem, 0); 
+            dict.Add(scheduleWrittenTestToolStripMenuItem, 1); 
+            dict.Add(scheduleStreetTestToolStripMenuItem , 2);
+
+            int passedTests = Convert.ToInt32(dgvLocalDLA.SelectedRows[0].Cells["Passed Tests"].Value);
+            if (Convert.ToString(dgvLocalDLA.SelectedRows[0].Cells["Status"].Value) == "New")
+            {
+                //showLicense
+                showLicenseToolStripMenuItem.Enabled = false;
+
+                switch (passedTests)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                        {
+                            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                            scheduleTestsToolStripMenuItem.Enabled = true;
+                            //check schedule test permession
+                            if (dgvLocalDLA.RowCount != 0)
+                            {
+
+                                foreach (var item in dict)
+                                {
+                                    ToolStripItem tsItem = item.Key;
+
+                                    if (item.Value == passedTests)
+                                    {
+                                        tsItem.Enabled = true;
+                                    }
+                                    else
+                                    {
+                                        tsItem.Enabled = false;
+                                    }
+                                }
+
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
+                            scheduleTestsToolStripMenuItem.Enabled = false;
+
+                            break;
+                        }
+                }
+
+            }
+            else if(Convert.ToString(dgvLocalDLA.SelectedRows[0].Cells["Status"].Value) == "Completed")
+            {
+                showLicenseToolStripMenuItem.Enabled = true;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = scheduleTestsToolStripMenuItem.Enabled = false;
+
+            }
+
+
+
+        }
+
         private void LocalDLA_Load(object sender, EventArgs e)
         {
             LoadTheDataGridView();
@@ -293,6 +361,9 @@ namespace DVLD.ApplicationForms
                             break;
                         }
                 }
+
+                //update changes
+                LoadTheDataGridView();
 
 
             }

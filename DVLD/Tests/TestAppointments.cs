@@ -95,6 +95,7 @@ namespace DVLD.Tests.Vison_Test
                 using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID, enTestType))
                 {
                     frmScheduleTest.ShowDialog();
+                    _LoadDataGridView();
                 }
             }//if have appointments but not locked
             else if (Convert.ToBoolean(dgvAppointments.Rows[dgvAppointments.RowCount - 1].Cells["Is Locked"].Value) == false)
@@ -107,6 +108,7 @@ namespace DVLD.Tests.Vison_Test
                 using (ScheduleTest frmScheduleTest = new ScheduleTest(_LocalDLAppID, enTestType,true))
                 {
                     frmScheduleTest.ShowDialog();
+                    _LoadDataGridView();
                 }
             }
             //if passed the test
@@ -123,11 +125,11 @@ namespace DVLD.Tests.Vison_Test
 
             switch (e.ClickedItem.Text)
             {
-                case "Test Info":
+                case "Edit":
                     {
-                        using (TestInfo frmTestInfo = new TestInfo(TestAppointmentID,enTestType))
+                        using (ScheduleTest frmScheduleTest = new ScheduleTest(TestAppointmentID))
                         {
-                            frmTestInfo.ShowDialog();
+                            frmScheduleTest.ShowDialog();
                         }
                         break;
                     }
