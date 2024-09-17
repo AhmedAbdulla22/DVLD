@@ -141,6 +141,15 @@ namespace DVLD.ApplicationForms
             LoadTheDataGridView();
         }
 
+        private void issueDriverLicense(int LDLAppID)
+        {
+            using (IssueDrivingLicenseFirstTime frmIssueLicense = new IssueDrivingLicenseFirstTime(LDLAppID))
+            {
+                frmIssueLicense.ShowDialog();
+            }
+                LoadTheDataGridView();
+        }
+
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             int LDLAppID = -1;
@@ -170,11 +179,7 @@ namespace DVLD.ApplicationForms
                         }
                     case "Issue Driving License (First Time)":
                         {
-                            using (IssueDrivingLicenseFirstTime frmIssueLicense = new IssueDrivingLicenseFirstTime(LDLAppID))
-                            {
-                                frmIssueLicense.ShowDialog();
-                                LoadTheDataGridView();
-                            }
+                            issueDriverLicense(LDLAppID);   
                                 break;
                         }
                 }

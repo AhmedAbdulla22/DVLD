@@ -90,7 +90,7 @@ namespace BusinessLayer
             return false;
         }
 
-        public static clsLicense GetApplicationByLicenseID(int LicenseID)
+        public static clsLicense GetLicenseByLicenseID(int LicenseID)
         {
             int ApplicationID =-1;int DriverID =-1;int CreatedByUserID =-1;
             int LicenseClass = -1;

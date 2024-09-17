@@ -117,6 +117,18 @@
     <Compile Include="ApplicationForms\ManageApplicationType.Designer.cs">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\ShowLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\ShowLicenseInfo.Designer.cs">
+      <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\uctrlDriverLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\uctrlDriverLicenseInfo.Designer.cs">
+      <DependentUpon>uctrlDriverLicenseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\TakeTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\ManageApplicationType.resx">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ShowLicenseInfo.resx">
+      <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\uctrlDriverLicenseInfo.resx">
+      <DependentUpon>uctrlDriverLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\TakeTest.resx">
       <DependentUpon>TakeTest.cs</DependentUpon>
@@ -511,6 +529,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\street.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arroba1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home Address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gender1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuestionMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Driver License2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
