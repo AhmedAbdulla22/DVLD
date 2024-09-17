@@ -552,7 +552,7 @@ SELECT Scope_Identity();";
                     sqlCommand.Parameters.AddWithValue("@PaidFees", PaidFees);
                     sqlCommand.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
                     sqlCommand.Parameters.AddWithValue("@IsLocked", IsLocked);
-                    safeParameterAdding<int>(sqlCommand, "@RetakeTestApplicationID", RetakeTestApplicationID);
+                    DataAccessLayerSetting.safeParameterAdding<int>(sqlCommand, "@RetakeTestApplicationID", RetakeTestApplicationID);
 
 
                     try
@@ -604,7 +604,7 @@ SELECT Scope_Identity();";
                     sqlCommand.Parameters.AddWithValue("@PaidFees", PaidFees);
                     sqlCommand.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
                     sqlCommand.Parameters.AddWithValue("@IsLocked", IsLocked);
-                    safeParameterAdding<int>(sqlCommand, "@RetakeTestApplicationID", RetakeTestApplicationID);
+                    DataAccessLayerSetting.safeParameterAdding<int>(sqlCommand, "@RetakeTestApplicationID", RetakeTestApplicationID);
 
 
                     try

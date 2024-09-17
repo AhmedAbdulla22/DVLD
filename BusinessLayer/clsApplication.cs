@@ -131,7 +131,7 @@ namespace BusinessLayer
                 return null;
             }
         }
-        public static clsApplication GetApplicationByPersonIDWithSpecificClass(int ApplicantPersonID,int ApplicationTypeID, int LicenseClassID)//NewApplications!
+        public static clsApplication GetApplicationByPersonIDWithSpecificClass(int ApplicantPersonID,int ApplicationTypeID, int LicenseClassID)
         {
             int ApplicationID = -1, CreatedByUserID = -1;
             decimal PaidFees = 0;

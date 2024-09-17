@@ -168,6 +168,15 @@ namespace DVLD.ApplicationForms
                             }
                             break;
                         }
+                    case "Issue Driving License (First Time)":
+                        {
+                            using (IssueDrivingLicenseFirstTime frmIssueLicense = new IssueDrivingLicenseFirstTime(LDLAppID))
+                            {
+                                frmIssueLicense.ShowDialog();
+                                LoadTheDataGridView();
+                            }
+                                break;
+                        }
                 }
 
 

@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationForms\IssueDrivingLicenseFirstTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\IssueDrivingLicenseFirstTime.Designer.cs">
+      <DependentUpon>IssueDrivingLicenseFirstTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForms\LocalDrivingLicenseApp\LocalDLA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
       <DependentUpon>frmUserDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilites.cs" />
+    <EmbeddedResource Include="ApplicationForms\IssueDrivingLicenseFirstTime.resx">
+      <DependentUpon>IssueDrivingLicenseFirstTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\LocalDLA.resx">
       <DependentUpon>LocalDLA.cs</DependentUpon>
     </EmbeddedResource>
