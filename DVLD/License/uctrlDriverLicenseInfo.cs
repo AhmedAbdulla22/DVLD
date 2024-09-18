@@ -72,15 +72,39 @@ namespace DVLD.License
                 lblNationalNo2.Text = Person.NationalNo.ToString();
                 lblGender2.Text = (Person.Gender == 0) ? "Male" : "Female";
                 lbl_IssueDate2.Text = _License.IssueDate.ToShortDateString();
-                #warning fix issue reason
-                //lbl_IssueReason2.Text = clsApplicationType.GetApplicationType(_License.IssueReason).Title; 
+                switch(_License.IssueReason)
+                {
+                    case 1:
+                        {
+                            lbl_IssueReason2.Text = "First Time";
+                            break;
+                        }
+                    case 2:
+                        {
+                            lbl_IssueReason2.Text = "Renew";
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            lbl_IssueReason2.Text = "Replacement for Damaged";
+
+                            break;
+
+                        }
+                    case 4:
+                        {
+                            lbl_IssueReason2.Text = "Replacement for Lost";
+
+                            break;
+                        }
+                }
                 lbl_Notes2.Text = _License.Notes.ToString();
                 lbl_IsActive2.Text = (_License.IsActive) ? "Yes" : "No";
                 lbl_DateOfBirth2.Text = Person.DateOfBirth.ToShortDateString();
                 lbl_DriverID2.Text = _License.DriverID.ToString();
                 lbl_ExpDate2.Text = _License.ExpirationDate.ToShortDateString();
-#warning fix is detained too
-                //lbl_IsDetained22.Text = 
+                lbl_IsDetained2.Text = (_License.isDetained()) ? "Yes" : "No";
                 if (!string.IsNullOrEmpty(Person.ImagePath))
                 {
                 pbPersonPFP.ImageLocation = Person.ImagePath;
@@ -94,7 +118,7 @@ namespace DVLD.License
             }
             else
             {
-                lbl_Class2.Text=lbl_Name2.Text=lbl_LicenseID2.Text=lblNationalNo2.Text=lblGender2.Text=lbl_IssueDate2.Text=lbl_Notes2.Text=lbl_IsActive2.Text=lbl_DateOfBirth2.Text=lbl_DriverID2.Text=lbl_ExpDate2.Text = "[???]";
+                lbl_Class2.Text=lbl_Name2.Text=lbl_LicenseID2.Text=lblNationalNo2.Text=lblGender2.Text=lbl_IssueDate2.Text=lbl_Notes2.Text=lbl_IsActive2.Text=lbl_DateOfBirth2.Text=lbl_DriverID2.Text=lbl_ExpDate.Text = "[???]";
             }
 
 

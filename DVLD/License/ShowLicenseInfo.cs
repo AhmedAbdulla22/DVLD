@@ -12,9 +12,11 @@ namespace DVLD.License
 {
     public partial class ShowLicenseInfo : Form
     {
-        public ShowLicenseInfo()
+        public ShowLicenseInfo(int LicenseID = -1)
         {
             InitializeComponent();
+
+            uctrlDriverLicenseInfo1.LicenseID = LicenseID;
         }
     }
 }

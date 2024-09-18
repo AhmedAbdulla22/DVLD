@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.License;
 using DVLD.PeopleForm;
 using DVLD.Properties;
 using System;
@@ -18,6 +19,7 @@ namespace DVLD.ApplicationForms
         clsLocalDLA _DLApp;
         clsApplication _Application;
         private int _ID = -1;
+        private int _LicenseID = -1;
         bool _isRetake = false;
 
         public int DLAppID
@@ -58,6 +60,16 @@ namespace DVLD.ApplicationForms
                 _Application = clsApplication.GetApplicationByApplicationID(_DLApp.ApplicationID);
                 //enable person Info link
                 lnklblPersonInfo.Enabled = true;
+                clsLicense license;
+                if ((license = clsLicense.GetLicenseByClassIDandPersonID(_Application.ApplicantPersonID,_DLApp.LicenseClassID)) != null)
+                {
+                    _LicenseID = license.LicenseID;
+
+                    if (_LicenseID != -1)
+                    {
+                    lnklblShowLicenseInfo.Enabled = true;                   
+                    }
+                }
 
             }
             fillLabels();
@@ -108,6 +120,12 @@ namespace DVLD.ApplicationForms
             }
         }
 
-        
+        private void lnklblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using(ShowLicenseInfo frmLicenseInfo = new ShowLicenseInfo(_LicenseID))
+            {
+                frmLicenseInfo.ShowDialog();
+            }
+        }
     }
 }

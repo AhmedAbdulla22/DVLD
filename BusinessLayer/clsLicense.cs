@@ -111,6 +111,36 @@ namespace BusinessLayer
                 return null;
             }
         }
+
+        public static clsLicense GetLicenseByClassIDandPersonID(int PersonID,int LicenseClassID)
+        {
+            int LicenseID = -1,ApplicationID = -1; int DriverID = -1; int CreatedByUserID = -1;
+            byte IssueReason = 0;
+            DateTime IssueDate = DateTime.Now;
+            DateTime ExpirationDate = DateTime.Now;
+            string Notes = string.Empty;
+            decimal PaidFees = 0;
+            bool IsActive = false;
+
+
+            if (clsLicense_DataAccess.GetLicenseByClassIDandPersonID(PersonID,LicenseClassID,ref LicenseID, ref ApplicationID, ref DriverID, ref IssueDate,ref ExpirationDate, ref Notes, ref PaidFees, ref IsActive, ref IssueReason, ref CreatedByUserID))
+            {
+                return new clsLicense(LicenseID, ApplicationID, DriverID, LicenseClassID, IssueDate, ExpirationDate, Notes, PaidFees, IsActive, IssueReason, CreatedByUserID);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public bool isDetained()
+        {
+            return clsLicense_DataAccess.isDetained(this.LicenseID);
+        }
+        public static bool isDetained(int LicenseID)
+        {
+            return clsLicense_DataAccess.isDetained(LicenseID);
+        }
     }
 
 }

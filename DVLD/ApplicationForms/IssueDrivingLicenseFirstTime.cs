@@ -47,7 +47,7 @@ namespace DVLD.ApplicationForms
                     license.Notes = tbNotes.Text;
                     license.PaidFees = App.PaidFees;
                     license.IsActive = true;
-                    license.IssueReason = (byte)App.ApplicationTypeID;
+                    license.IssueReason = 1; //FirstTime
                     license.CreatedByUserID = clsLog.User.UserID;
 
                     clsDriver driver = clsDriver.GetDriverByPersonID(App.ApplicantPersonID);

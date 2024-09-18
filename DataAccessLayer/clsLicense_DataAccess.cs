@@ -1,16 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DataAccessLayer
 {
     public static class clsLicense_DataAccess
     {
-        
+        public static bool isDetained(int LicenseID)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 'A' FROM DetainedLicenses
+                              Where LicenseID = @LicenseID;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+
+
+                    sqlCommand.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        {
+                            isExist = true;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
         public static int AddNewLicense(int ApplicationID, int DriverID, int LicenseClass, DateTime IssueDate, DateTime ExpirationDate, string Notes, decimal PaidFees, bool IsActive, byte IssueReason, int CreatedByUserID)
         {
             int NewLicenseID = -1;
@@ -141,7 +179,7 @@ SELECT Scope_Identity();";
 
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"SELECT * FROM License Where LicenseID = @LicenseID;";
+                var query = @"SELECT * FROM Licenses Where LicenseID = @LicenseID;";
 
                 using (var sqlCommand = new SqlCommand(query, sqlConnection))
                 {
@@ -164,6 +202,72 @@ SELECT Scope_Identity();";
                                 
                                     Notes = (reader["Notes"] != DBNull.Value) ? (string)reader["Notes"]:"";
                                 
+                                IsActive = (bool)reader["IsActive"];
+                                IssueReason = (byte)reader["IssueReason"];
+                                PaidFees = (decimal)reader["PaidFees"];
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+        public static bool GetLicenseByClassIDandPersonID(int PersonID,int LicenseClassID,ref int LicenseID, ref int ApplicationID, ref int DriverID, ref DateTime IssueDate, ref DateTime ExpirationDate, ref string Notes, ref decimal PaidFees, ref bool IsActive, ref byte IssueReason, ref int CreatedByUserID)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT Licenses.LicenseID
+                              ,Licenses.ApplicationID
+                              ,Licenses.DriverID
+                              ,Licenses.LicenseClass
+                              ,Licenses.IssueDate
+                              ,Licenses.ExpirationDate
+                              ,Licenses.Notes
+                              ,Licenses.PaidFees
+                              ,Licenses.IsActive
+                              ,Licenses.IssueReason
+                              ,Licenses.CreatedByUserID
+                          FROM Licenses
+                          INNER JOIN Applications ON Applications.ApplicationID = Licenses.ApplicationID
+                          INNER JOIN People ON Applications.ApplicantPersonID = People.PersonID
+                          Where Licenses.LicenseClass = @LicenseClassID AND People.PersonID = @PersonID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                LicenseID = (int)reader["LicenseID"];
+                                ApplicationID = (int)reader["ApplicationID"];
+                                DriverID = (int)reader["DriverID"];
+                                ApplicationID = (int)reader["ApplicationID"];
+                                ApplicationID = (int)reader["ApplicationID"];
+                                IssueDate = (DateTime)reader["IssueDate"];
+                                ExpirationDate = (DateTime)reader["ExpirationDate"];
+
+                                Notes = (reader["Notes"] != DBNull.Value) ? (string)reader["Notes"] : "";
+
                                 IsActive = (bool)reader["IsActive"];
                                 IssueReason = (byte)reader["IssueReason"];
                                 PaidFees = (decimal)reader["PaidFees"];

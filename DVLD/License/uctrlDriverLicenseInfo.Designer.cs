@@ -47,11 +47,11 @@
             this.lbl_Notes2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.lbl_ExpDate2 = new System.Windows.Forms.Label();
+            this.lbl_ExpDate = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.lbl_IssueReason2 = new System.Windows.Forms.Label();
+            this.lbl_IssueReason = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lbl_IssueDate2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -106,11 +106,11 @@
             this.groupBox1.Controls.Add(this.lbl_Notes2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.pictureBox4);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lbl_ExpDate2);
+            this.groupBox1.Controls.Add(this.lbl_ExpDate);
             this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lbl_IssueReason2);
+            this.groupBox1.Controls.Add(this.lbl_IssueReason);
             this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.lbl_IssueDate2);
             this.groupBox1.Controls.Add(this.label6);
@@ -335,29 +335,29 @@
             this.pictureBox4.TabIndex = 76;
             this.pictureBox4.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(553, 242);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 23);
-            this.label4.TabIndex = 75;
-            this.label4.Text = "[???]";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lbl_ExpDate2
             // 
             this.lbl_ExpDate2.AutoSize = true;
             this.lbl_ExpDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ExpDate2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_ExpDate2.Location = new System.Drawing.Point(361, 242);
+            this.lbl_ExpDate2.Location = new System.Drawing.Point(553, 242);
             this.lbl_ExpDate2.Name = "lbl_ExpDate2";
-            this.lbl_ExpDate2.Size = new System.Drawing.Size(132, 23);
-            this.lbl_ExpDate2.TabIndex = 74;
-            this.lbl_ExpDate2.Text = "Expiration Date:";
-            this.lbl_ExpDate2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_ExpDate2.Size = new System.Drawing.Size(46, 23);
+            this.lbl_ExpDate2.TabIndex = 75;
+            this.lbl_ExpDate2.Text = "[???]";
+            this.lbl_ExpDate2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_ExpDate
+            // 
+            this.lbl_ExpDate.AutoSize = true;
+            this.lbl_ExpDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ExpDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_ExpDate.Location = new System.Drawing.Point(361, 242);
+            this.lbl_ExpDate.Name = "lbl_ExpDate";
+            this.lbl_ExpDate.Size = new System.Drawing.Size(132, 23);
+            this.lbl_ExpDate.TabIndex = 74;
+            this.lbl_ExpDate.Text = "Expiration Date:";
+            this.lbl_ExpDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox3
             // 
@@ -370,29 +370,29 @@
             this.pictureBox3.TabIndex = 73;
             this.pictureBox3.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(175, 267);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 23);
-            this.label3.TabIndex = 72;
-            this.label3.Text = "[???]";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lbl_IssueReason2
             // 
             this.lbl_IssueReason2.AutoSize = true;
             this.lbl_IssueReason2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IssueReason2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_IssueReason2.Location = new System.Drawing.Point(13, 265);
+            this.lbl_IssueReason2.Location = new System.Drawing.Point(175, 267);
             this.lbl_IssueReason2.Name = "lbl_IssueReason2";
-            this.lbl_IssueReason2.Size = new System.Drawing.Size(113, 23);
-            this.lbl_IssueReason2.TabIndex = 71;
-            this.lbl_IssueReason2.Text = "Issue Reason:";
-            this.lbl_IssueReason2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_IssueReason2.Size = new System.Drawing.Size(46, 23);
+            this.lbl_IssueReason2.TabIndex = 72;
+            this.lbl_IssueReason2.Text = "[???]";
+            this.lbl_IssueReason2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_IssueReason
+            // 
+            this.lbl_IssueReason.AutoSize = true;
+            this.lbl_IssueReason.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_IssueReason.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_IssueReason.Location = new System.Drawing.Point(13, 265);
+            this.lbl_IssueReason.Name = "lbl_IssueReason";
+            this.lbl_IssueReason.Size = new System.Drawing.Size(113, 23);
+            this.lbl_IssueReason.TabIndex = 71;
+            this.lbl_IssueReason.Text = "Issue Reason:";
+            this.lbl_IssueReason.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox6
             // 
@@ -651,14 +651,14 @@
         private System.Windows.Forms.Label lblGender2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_IssueReason2;
+        private System.Windows.Forms.Label lbl_IssueReason;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lbl_IssueDate2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_ExpDate2;
+        private System.Windows.Forms.Label lbl_ExpDate;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lbl_IsActive2;
         private System.Windows.Forms.Label label8;
