@@ -74,6 +74,9 @@ namespace DVLD.ApplicationForms
 
                 //showLicense
                 showLicenseToolStripMenuItem.Enabled = false;
+                editApplicationToolStripMenuItem.Enabled = true;
+                deleteApplicationToolStripMenuItem.Enabled = true;
+                cancelApplicationToolStripMenuItem.Enabled = true;
 
                 switch (passedTests)
                 {

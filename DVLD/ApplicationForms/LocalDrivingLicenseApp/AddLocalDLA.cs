@@ -151,10 +151,21 @@ namespace DVLD.ApplicationForms
             }
         }
 
+        private bool LicenseExist(int ClassID)
+        {
+            return (clsLicense.GetLicenseByClassIDandPersonID(uctrPersonDetails1.PersonID,ClassID) != null);
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (uctrPersonDetails1.PersonID != -1)
             {
+#warning think of this step carefully, with writting
+                if(LicenseExist(cbLicenseClasses.SelectedIndex + 1))
+                {
+                    MessageBox.Show("This Person Already have a License with the Applied Driving Class, Choose Different CLass!", "This Application Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (!(_ctrlMode == ctrlMode.Update && cbLicenseClasses.SelectedIndex+1 == _LDLA_App.LicenseClassID) && DuplicateApplicationExist())
                 {
                     MessageBox.Show($"Duplicate Application With Same Class Exist For This Person With ID = {uctrPersonDetails1.PersonID}, Can't Have Same Class Twice!", "This Application Exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
