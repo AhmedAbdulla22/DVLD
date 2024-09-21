@@ -47,6 +47,7 @@
     <Compile Include="clsClassDataAccess.cs" />
     <Compile Include="ClsCountryDataAccess.cs" />
     <Compile Include="clsDriver_DataAccess.cs" />
+    <Compile Include="clsInternationalLicense_DataAccess.cs" />
     <Compile Include="clsLicense_DataAccess.cs" />
     <Compile Include="clsLocalDLA_DataAccess.cs" />
     <Compile Include="clsPersonDataAccess.cs" />

@@ -44,10 +44,10 @@ namespace DVLD.License
 
                 if (_License == null)
                 {
-                    if (MessageBox.Show("Can't Find this License with ID of " + LicenseID + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
-                    {
-                        this.ParentForm.Close();
-                    }
+                    MessageBox.Show("Can't Find this License with ID of " + LicenseID + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
+                        return;
+                    
                 }
 
                 
@@ -118,7 +118,7 @@ namespace DVLD.License
             }
             else
             {
-                lbl_Class2.Text=lbl_Name2.Text=lbl_LicenseID2.Text=lblNationalNo2.Text=lblGender2.Text=lbl_IssueDate2.Text=lbl_Notes2.Text=lbl_IsActive2.Text=lbl_DateOfBirth2.Text=lbl_DriverID2.Text=lbl_ExpDate.Text = "[???]";
+                lbl_Class2.Text=lbl_Name2.Text=lbl_LicenseID2.Text=lblNationalNo2.Text=lblGender2.Text=lbl_IssueDate2.Text=lbl_Notes2.Text=lbl_IsActive2.Text=lbl_DateOfBirth2.Text=lbl_DriverID2.Text= lbl_ExpDate2.Text = "[???]";
             }
 
 

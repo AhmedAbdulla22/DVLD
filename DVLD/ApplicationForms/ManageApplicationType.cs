@@ -24,8 +24,6 @@ namespace DVLD
             dgvApplicationType.DataSource = dt;
             //#Records Rows
             lblRecords.Text = "#Records" + ' ' + (dgvApplicationType.RowCount).ToString();
-
-
         }
 
         private void ManageApplicationType_Load(object sender, EventArgs e)

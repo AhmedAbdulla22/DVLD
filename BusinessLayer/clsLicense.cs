@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,6 +112,27 @@ namespace BusinessLayer
                 return null;
             }
         }
+        public static clsLicense GetLicenseByApplicationID(int ApplicationID)
+        {
+            int LicenseID = -1; int DriverID = -1; int CreatedByUserID = -1;
+            int LicenseClass = -1;
+            byte IssueReason = 0;
+            DateTime IssueDate = DateTime.Now;
+            DateTime ExpirationDate = DateTime.Now;
+            string Notes = string.Empty;
+            decimal PaidFees = 0;
+            bool IsActive = false;
+
+            
+            if (clsLicense_DataAccess.GetLicenseByApplicationID(ApplicationID,ref LicenseID, ref DriverID, ref LicenseClass, ref IssueDate, ref ExpirationDate, ref Notes, ref PaidFees, ref IsActive, ref IssueReason, ref CreatedByUserID))
+            {
+                return new clsLicense(LicenseID, ApplicationID, DriverID, LicenseClass, IssueDate, ExpirationDate, Notes, PaidFees, IsActive, IssueReason, CreatedByUserID);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static clsLicense GetLicenseByClassIDandPersonID(int PersonID,int LicenseClassID)
         {
@@ -140,6 +162,11 @@ namespace BusinessLayer
         public static bool isDetained(int LicenseID)
         {
             return clsLicense_DataAccess.isDetained(LicenseID);
+        }
+
+        public static DataTable GetLocalLicenseHistoryByPersonID(int PersonID)
+        {
+            return clsLicense_DataAccess.GetLocalLicenseHistoryByPersonID(PersonID);
         }
     }
 

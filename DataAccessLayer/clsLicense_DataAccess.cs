@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -289,6 +290,99 @@ SELECT Scope_Identity();";
 
             return isExist;
         }
+        public static bool GetLicenseByApplicationID(int ApplicationID,ref int LicenseID, ref int DriverID, ref int LicenseClass, ref DateTime IssueDate, ref DateTime ExpirationDate, ref string Notes, ref decimal PaidFees, ref bool IsActive, ref byte IssueReason, ref int CreatedByUserID)
+        {
+            bool isExist = false;
 
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM Licenses 
+                            Where ApplicationID = @ApplicationID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                LicenseID = (int)reader["LicenseID"];
+                                DriverID = (int)reader["DriverID"];
+                                LicenseClass = (int)reader["LicenseClass"];
+                                ApplicationID = (int)reader["ApplicationID"];
+                                ApplicationID = (int)reader["ApplicationID"];
+                                IssueDate = (DateTime)reader["IssueDate"];
+                                ExpirationDate = (DateTime)reader["ExpirationDate"];
+
+                                Notes = (reader["Notes"] != DBNull.Value) ? (string)reader["Notes"] : "";
+
+                                IsActive = (bool)reader["IsActive"];
+                                IssueReason = (byte)reader["IssueReason"];
+                                PaidFees = (decimal)reader["PaidFees"];
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+        public static DataTable GetLocalLicenseHistoryByPersonID(int PersonID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 'Lic.ID' = LicenseID
+                              ,'App.ID' =ApplicationID
+                              ,'Class Name' = LicenseClasses.ClassName
+                              ,'Issue Date' =IssueDate
+                              ,'Expiration Date' =ExpirationDate
+                              ,'Is Active'=IsActive
+                          FROM Licenses
+                            INNER JOIN LicenseClasses On LicenseClasses.LicenseClassID = Licenses.LicenseClass
+                            Inner JOIN Drivers On Drivers.DriverID = Licenses.DriverID 
+                            Where Drivers.PersonID = @PersonID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
     }
 }

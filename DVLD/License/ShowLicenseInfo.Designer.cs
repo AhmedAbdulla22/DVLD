@@ -38,8 +38,9 @@
             // 
             this.uctrlDriverLicenseInfo1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.uctrlDriverLicenseInfo1.LicenseID = -1;
             this.uctrlDriverLicenseInfo1.Location = new System.Drawing.Point(1, 167);
-            this.uctrlDriverLicenseInfo1.Margin = new System.Windows.Forms.Padding(2);
+            this.uctrlDriverLicenseInfo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uctrlDriverLicenseInfo1.Name = "uctrlDriverLicenseInfo1";
             this.uctrlDriverLicenseInfo1.Size = new System.Drawing.Size(629, 318);
             this.uctrlDriverLicenseInfo1.TabIndex = 0;
@@ -80,10 +81,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.uctrlDriverLicenseInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ShowLicenseInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ShowLicenseInfo";
+            this.Load += new System.EventHandler(this.ShowLicenseInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

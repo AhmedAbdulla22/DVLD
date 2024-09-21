@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DVLD.ApplicationForms.LocalDrivingLicenseApp;
+using DVLD.License;
 using DVLD.Tests.Vison_Test;
 using DVLD.UserForm;
 using System;
@@ -157,6 +158,8 @@ namespace DVLD.ApplicationForms
         {
             int LDLAppID = -1;
             LDLAppID = Convert.ToInt32(dgvLocalDLA.SelectedRows[0].Cells["L.D.L.AppID"].Value);
+            string NationalNo = string.Empty;
+            NationalNo = Convert.ToString(dgvLocalDLA.SelectedRows[0].Cells["National No."].Value);
 
 
             if (dgvLocalDLA.SelectedRows.Count == 1)
@@ -180,10 +183,25 @@ namespace DVLD.ApplicationForms
                             }
                             break;
                         }
+                    case "":
+                        {
+
+                        }
                     case "Issue Driving License (First Time)":
                         {
                             issueDriverLicense(LDLAppID);   
                                 break;
+                        }
+                    case "Show Person License History":
+                        {
+                            ShowLicenseHistory(NationalNo);
+                            break;
+
+                        }
+                    case "Show License":
+                        {
+                            ShowLicenseInfo(LDLAppID);
+                            break;
                         }
                 }
 
@@ -191,6 +209,31 @@ namespace DVLD.ApplicationForms
             }
         }
 
+        private void ShowLicenseInfo(int LDLAppID = -1)
+        {
+            int LicenseID = -1, ApplicationID;
+            ApplicationID = clsLocalDLA.GetLocalDLAppByLocalDLAppID(LDLAppID)?.ApplicationID ?? -1;
+            LicenseID = clsLicense.GetLicenseByApplicationID(ApplicationID)?.LicenseID ?? -1;
+
+
+            using (ShowLicenseInfo frmLicenseInfo = new ShowLicenseInfo(LicenseID))
+            {
+                //it only show the form when the form exist and not disposed due to not finding license
+                if (!frmLicenseInfo.IsDisposed)
+                {
+                    frmLicenseInfo.ShowDialog();
+                }
+            }
+        }
+
+
+        private void ShowLicenseHistory(string NationalNo)
+        {
+            using(LicenseHistory frmLicenseHistory = new LicenseHistory(NationalNo))
+            {
+                frmLicenseHistory.ShowDialog();
+            }
+        }
         private void btnAddLocalDLA_Click(object sender, EventArgs e)
         {
             AddNewLocalDLA();
