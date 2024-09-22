@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -177,6 +179,228 @@ SELECT Scope_Identity();";
             }
 
             return isExist;
+        }
+
+        public static DataTable GetDrivers()
+        {
+            DataTable dt = new DataTable();
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 
+                                'Driver ID' = DriverID
+                                ,'Person ID' = People.PersonID
+                                ,'National No.' = People.NationalNo
+                                ,'Full Name' = People.FirstName + ' ' +People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName
+                                ,'Date' = Drivers.CreatedDate
+                                ,'Active Licenses' = (SELECT COUNT(*) FROM Licenses Where Licenses.DriverID = Drivers.DriverID AND Licenses.IsActive = 1)
+                                FROM Drivers
+                                INNER JOIN People ON People.PersonID = Drivers.PersonID;";
+                
+                using(var sqlCommand  = new SqlCommand(query,sqlConnection))
+                {
+                    sqlConnection.Open();
+
+                    try
+                    {
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch(Exception ex) 
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+        public static DataTable GetDriverByPersonID(int PersonID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 
+                                'Driver ID' = DriverID
+                                ,'Person ID' = People.PersonID
+                                ,'National No.' = People.NationalNo
+                                ,'Full Name' = People.FirstName + ' ' +People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName
+                                ,'Date' = Drivers.CreatedDate
+                                ,'Active Licenses' = (SELECT COUNT(*) FROM Licenses Where Licenses.DriverID = Drivers.DriverID AND Licenses.IsActive = 1)
+                                FROM Drivers
+                                INNER JOIN People ON People.PersonID = Drivers.PersonID
+                            Where People.PersonID = @PersonID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetDriverByDriverID(int DriverID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 
+                                'Driver ID' = DriverID
+                                ,'Person ID' = People.PersonID
+                                ,'National No.' = People.NationalNo
+                                ,'Full Name' = People.FirstName + ' ' +People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName
+                                ,'Date' = Drivers.CreatedDate
+                                ,'Active Licenses' = (SELECT COUNT(*) FROM Licenses Where Licenses.DriverID = Drivers.DriverID AND Licenses.IsActive = 1)
+                                FROM Drivers
+                                INNER JOIN People ON People.PersonID = Drivers.PersonID
+                            Where DriverID = @DriverID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@DriverID", DriverID);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetDriverByNationalNo(string NationalNo)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 
+                                'Driver ID' = DriverID
+                                ,'Person ID' = People.PersonID
+                                ,'National No.' = People.NationalNo
+                                ,'Full Name' = People.FirstName + ' ' +People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName
+                                ,'Date' = Drivers.CreatedDate
+                                ,'Active Licenses' = (SELECT COUNT(*) FROM Licenses Where Licenses.DriverID = Drivers.DriverID AND Licenses.IsActive = 1)
+                                FROM Drivers
+                                INNER JOIN People ON People.PersonID = Drivers.PersonID
+                            Where NationalNo LIKE @NationalNo + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
+        }
+
+        public static DataTable GetDriverByFullName(string FullName)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 
+                                'Driver ID' = DriverID
+                                ,'Person ID' = People.PersonID
+                                ,'National No.' = People.NationalNo
+                                ,'Full Name' = People.FirstName + ' ' +People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName
+                                ,'Date' = Drivers.CreatedDate
+                                ,'Active Licenses' = (SELECT COUNT(*) FROM Licenses Where Licenses.DriverID = Drivers.DriverID AND Licenses.IsActive = 1)
+                                FROM Drivers
+                                INNER JOIN People ON People.PersonID = Drivers.PersonID
+                            Where (People.FirstName + ' ' +People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName) LIKE @FullName + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@FullName", FullName);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+
+            return dt;
         }
     }
 }

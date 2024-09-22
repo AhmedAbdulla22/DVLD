@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,30 @@ namespace BusinessLayer
             {
                 return null;
             }
+        }
+
+        public static DataTable GetDrivers()
+        {
+            return clsDriver_DataAccess.GetDrivers();
+        }
+
+        public static DataTable getDriversByDriverID(int DriverID = -1)
+        {
+            return clsDriver_DataAccess.GetDriverByDriverID(DriverID);
+        }
+        public static DataTable getDriversByPersonID(int PersonID = -1)
+        {
+            return clsDriver_DataAccess.GetDriverByPersonID(PersonID);
+        }
+
+        public static DataTable getDriversByNationalNo(string NationalNo)
+        {
+            return clsDriver_DataAccess.GetDriverByNationalNo(NationalNo);
+        }
+
+        public static DataTable getDriversByFullName(string FullName)
+        {
+            return clsDriver_DataAccess.GetDriverByFullName(FullName);
         }
     }
 }
