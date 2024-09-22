@@ -161,6 +161,8 @@ namespace DVLD.ApplicationForms
             string NationalNo = string.Empty;
             NationalNo = Convert.ToString(dgvLocalDLA.SelectedRows[0].Cells["National No."].Value);
 
+            //hide menu
+            contextMenuStrip1.Close();//or just use .Hide()
 
             if (dgvLocalDLA.SelectedRows.Count == 1)
             {
@@ -183,9 +185,36 @@ namespace DVLD.ApplicationForms
                             }
                             break;
                         }
-                    case "":
+                    case "Delete Application":
                         {
+                            if (MessageBox.Show("Are You Sure You Want to Delete This Application?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                clsLocalDLA LocalDLA = clsLocalDLA.GetLocalDLAppByLocalDLAppID(LDLAppID);
+                                int AppID = LocalDLA?.ApplicationID ?? -1;
 
+                                if (LocalDLA?.Delete() ?? false)
+                                {
+                                    if (clsApplication.GetApplicationByApplicationID(AppID)?.Delete() ?? false)
+                                    {
+                                        LoadTheDataGridView();
+                                    }
+                                }
+                                
+                            }
+                            break;
+                        }
+                    case "Cancel Application":
+                        {
+                                if (MessageBox.Show("Are You Sure You Want to Cancel This Application?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                int AppID = clsLocalDLA.GetLocalDLAppByLocalDLAppID(LDLAppID)?.ApplicationID ?? -1;
+                                    if (clsApplication.GetApplicationByApplicationID(AppID)?.SetToCancel() ?? false)
+                                    {
+                                        LoadTheDataGridView();
+                                    }
+                                }
+                            
+                            break;
                         }
                     case "Issue Driving License (First Time)":
                         {

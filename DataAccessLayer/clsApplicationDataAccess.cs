@@ -276,9 +276,9 @@ SELECT Scope_Identity();";
                         }
 
                     }
-                    catch (Exception ex)
+                    catch 
                     {
-                        //MessageBox.Show(ex.Message);
+                        MessageBox.Show("Unable to delete this application due to data integrity constraints.");
                     }
                 }
             }
