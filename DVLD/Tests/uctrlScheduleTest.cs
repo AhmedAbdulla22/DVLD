@@ -117,8 +117,16 @@ namespace DVLD.Tests
                 }
             }
 
-                //Modify DateTimePicker
-                dtpDate.MinDate = DateTime.Today;
+            //Modify DateTimePicker
+            if (IsRetakeTest)
+            {
+                //so Retake Date Not Set Before Last Appointment
+                dtpDate.MinDate = clsTestAppointments.GetLastTestAppointment(DLAppID)?.AppointmentDate ?? DateTime.Today;
+            }
+            else
+            {
+            dtpDate.MinDate = DateTime.Today;
+            }
             
             
         }

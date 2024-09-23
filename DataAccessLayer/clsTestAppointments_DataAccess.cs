@@ -34,6 +34,52 @@ namespace DataAccessLayer
             }
             
         }
+        public static bool GetLastTestAppointment(int LocalDrivingLicenseApplicationID, ref int TestAppointmentID, ref int TestTypeID, ref DateTime AppointmentDate, ref decimal PaidFees, ref int CreatedByUserID, ref bool IsLocked, ref int RetakeTestApplicationID)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT TOP 1 * FROM TestAppointments
+                              Where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                              ORDER BY TestAppointmentID DESC;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                TestAppointmentID = (int)reader["TestAppointmentID"];
+                                TestTypeID = (int)reader["TestTypeID"];
+                                AppointmentDate = (DateTime)reader["AppointmentDate"];
+                                PaidFees = (decimal)reader["PaidFees"];
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                IsLocked = (bool)reader["IsLocked"];
+                                RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+
         public static int GetTrails(int LocalDrivingLicenseApplicationID,int TestTypeID)
         {
             int Trails = 0;
@@ -475,49 +521,49 @@ namespace DataAccessLayer
 
             return isExist;
         }
-        public static bool GetTestAppointmentByLocalDrivingLicenseApplicationID(int LocalDrivingLicenseApplicationID, ref int TestAppointmentID, ref int TestTypeID, ref DateTime AppointmentDate, ref decimal PaidFees, ref int CreatedByUserID, ref bool IsLocked, ref int RetakeTestApplicationID)
-        {
-            bool isExist = false;
+        //public static bool GetTestAppointmentByLocalDrivingLicenseApplicationID(int LocalDrivingLicenseApplicationID, ref int TestAppointmentID, ref int TestTypeID, ref DateTime AppointmentDate, ref decimal PaidFees, ref int CreatedByUserID, ref bool IsLocked, ref int RetakeTestApplicationID)
+        //{
+        //    bool isExist = false;
 
-            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
-            {
-                var query = @"SELECT * FROM TestAppointments Where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
+        //    using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+        //    {
+        //        var query = @"SELECT * FROM TestAppointments Where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
 
-                using (var sqlCommand = new SqlCommand(query, sqlConnection))
-                {
-                    sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
-                    try
-                    {
-                        sqlConnection.Open();
+        //        using (var sqlCommand = new SqlCommand(query, sqlConnection))
+        //        {
+        //            sqlCommand.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+        //            try
+        //            {
+        //                sqlConnection.Open();
 
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                TestAppointmentID = (int)reader["TestAppointmentID"];
-                                TestTypeID = (int)reader["TestTypeID"];
-                                AppointmentDate = (DateTime)reader["AppointmentDate"];
-                                PaidFees = (decimal)reader["PaidFees"];
-                                CreatedByUserID = (int)reader["CreatedByUserID"];
-                                IsLocked = (bool)reader["IsLocked"];
-                                RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
-                                isExist = true;
-                            }
+        //                using (SqlDataReader reader = sqlCommand.ExecuteReader())
+        //                {
+        //                    if (reader.Read())
+        //                    {
+        //                        TestAppointmentID = (int)reader["TestAppointmentID"];
+        //                        TestTypeID = (int)reader["TestTypeID"];
+        //                        AppointmentDate = (DateTime)reader["AppointmentDate"];
+        //                        PaidFees = (decimal)reader["PaidFees"];
+        //                        CreatedByUserID = (int)reader["CreatedByUserID"];
+        //                        IsLocked = (bool)reader["IsLocked"];
+        //                        RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
+        //                        isExist = true;
+        //                    }
 
-                        }
+        //                }
 
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show(ex.Message);
+        //            }
 
-                }
+        //        }
 
-            }
+        //    }
 
-            return isExist;
-        }
+        //    return isExist;
+        //}
 
         public static int AddTestAppointment( int TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate, decimal PaidFees, int CreatedByUserID, bool IsLocked, int RetakeTestApplicationID)
         {
