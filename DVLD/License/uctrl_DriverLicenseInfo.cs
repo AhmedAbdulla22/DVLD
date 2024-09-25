@@ -13,7 +13,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD.License
 {
-    public partial class uctrl_InternationalDriverLicenseInfo : UserControl
+    public partial class uctrl_DriverLicenseInfo : UserControl
     {
         private int _ID = -1;
         clsLicense _License = new clsLicense();
@@ -31,7 +31,7 @@ namespace DVLD.License
                 _LoadApplicationData();
             }
         }
-        public uctrl_InternationalDriverLicenseInfo()
+        public uctrl_DriverLicenseInfo()
         {
             InitializeComponent();
         }

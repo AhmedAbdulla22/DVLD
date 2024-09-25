@@ -86,11 +86,11 @@
     <Compile Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.Designer.cs">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForms\uctrlApplicationInfo.cs">
+    <Compile Include="ApplicationForms\uctrl_IApplicationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ApplicationForms\uctrlApplicationInfo.Designer.cs">
-      <DependentUpon>uctrlApplicationInfo.cs</DependentUpon>
+    <Compile Include="ApplicationForms\uctrl_IApplicationInfo.Designer.cs">
+      <DependentUpon>uctrl_IApplicationInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\uctrlDrivingLicenseApplicationInfo.cs">
       <SubType>UserControl</SubType>
@@ -147,11 +147,11 @@
     <Compile Include="License\ShowLicenseInfo.Designer.cs">
       <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\uctrl_InternationalDriverLicenseInfo.cs">
+    <Compile Include="License\uctrl_DriverLicenseInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="License\uctrl_InternationalDriverLicenseInfo.Designer.cs">
-      <DependentUpon>uctrl_InternationalDriverLicenseInfo.cs</DependentUpon>
+    <Compile Include="License\uctrl_DriverLicenseInfo.Designer.cs">
+      <DependentUpon>uctrl_DriverLicenseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tests\TakeTest.cs">
       <SubType>Form</SubType>
@@ -281,8 +281,8 @@
     <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.resx">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForms\uctrlApplicationInfo.resx">
-      <DependentUpon>uctrlApplicationInfo.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationForms\uctrl_IApplicationInfo.resx">
+      <DependentUpon>uctrl_IApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\uctrlDrivingLicenseApplicationInfo.resx">
       <DependentUpon>uctrlDrivingLicenseApplicationInfo.cs</DependentUpon>
@@ -311,8 +311,8 @@
     <EmbeddedResource Include="License\ShowLicenseInfo.resx">
       <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\uctrl_InternationalDriverLicenseInfo.resx">
-      <DependentUpon>uctrl_InternationalDriverLicenseInfo.cs</DependentUpon>
+    <EmbeddedResource Include="License\uctrl_DriverLicenseInfo.resx">
+      <DependentUpon>uctrl_DriverLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\TakeTest.resx">
       <DependentUpon>TakeTest.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace DVLD.ApplicationForms
 {
-    partial class uctrlApplicationInfo
+    partial class uctrl_IApplicationInfo
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctrlApplicationInfo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctrl_IApplicationInfo));
             this.gbApplicationInfo = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCreatedBy2 = new System.Windows.Forms.Label();

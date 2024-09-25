@@ -1,6 +1,6 @@
 ﻿namespace DVLD.License
 {
-    partial class uctrl_InternationalDriverLicenseInfo
+    partial class uctrl_DriverLicenseInfo
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctrl_InternationalDriverLicenseInfo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctrl_DriverLicenseInfo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pbPersonPFP = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
