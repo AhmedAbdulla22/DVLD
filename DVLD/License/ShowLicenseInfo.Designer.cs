@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uctrlDriverLicenseInfo1 = new DVLD.License.uctrlDriverLicenseInfo();
+            this.uctrlDriverLicenseInfo1 = new DVLD.License.uctrl_InternationalDriverLicenseInfo();
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +93,7 @@
 
         #endregion
 
-        private uctrlDriverLicenseInfo uctrlDriverLicenseInfo1;
+        private uctrl_InternationalDriverLicenseInfo uctrlDriverLicenseInfo1;
         private System.Windows.Forms.Label lblFormLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

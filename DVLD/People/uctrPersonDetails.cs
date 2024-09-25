@@ -43,7 +43,7 @@ namespace DVLD
             //modify lblName Color
             lblName2.ForeColor = Color.Red;
 
-            //Get Countries from DB 
+       
 
         }
 
@@ -83,11 +83,15 @@ namespace DVLD
                 {
                     pictureBox1.ImageLocation = _Person.ImagePath;
                 }
+
+                lnklblEdit.Visible = true;
+
             }
             else
             {
                 lblPersonID2.Text = lblName2.Text = lblNationalNo2.Text = lblPhone2.Text = lblEmail2.Text = lblDateOfBirth2.Text = lblAddress2.Text = lblGender2.Text = lblCountry2.Text = "[????]";
                 pictureBox1.Image = Resources.User_Male;
+                lnklblEdit.Visible = false;
             }
 
 
@@ -127,6 +131,8 @@ namespace DVLD
         {
             frmAddPerson frmAdd = new frmAddPerson(PersonID);
             frmAdd.ShowDialog();
+
+            UpdateControl();
         }
     }
 }
