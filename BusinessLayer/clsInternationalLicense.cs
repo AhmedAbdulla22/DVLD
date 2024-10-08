@@ -123,6 +123,25 @@ namespace BusinessLayer
             }
         }
 
+        public static clsInternationalLicense GetInternationalLicenseByLocalDrivingLicenseID(int IssuedUsingLocalLicenseID)
+        {
+            int InternationalLicenseID = -1; int DriverID = -1; int CreatedByUserID = -1;
+            int ApplicationID = -1;
+            DateTime IssueDate = DateTime.Now;
+            DateTime ExpirationDate = DateTime.Now;
+            bool IsActive = false;
+
+
+            if (clsInternationalLicense_DataAccess.GetInternationalLicenseByLDLicenseID(IssuedUsingLocalLicenseID, ref InternationalLicenseID, ref DriverID, ref ApplicationID, ref IssueDate, ref ExpirationDate, ref IsActive, ref CreatedByUserID))
+            {
+                return new clsInternationalLicense(InternationalLicenseID, ApplicationID, DriverID, IssuedUsingLocalLicenseID, IssueDate, ExpirationDate, IsActive, CreatedByUserID);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
 
         public bool isDetained()
         {

@@ -97,7 +97,7 @@ namespace DataAccessLayer
 
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"INSERT INTO InternationalLicense
+                var query = @"INSERT INTO InternationalLicenses
            (ApplicationID
             ,DriverID
             ,IssuedUsingLocalLicenseID
@@ -154,7 +154,7 @@ SELECT Scope_Identity();";
 
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"Update InternationalLicense
+                var query = @"Update InternationalLicenses
                               Set 
                                 ApplicationID = @ApplicationID 
                                ,DriverID   = @DriverID
@@ -253,7 +253,7 @@ SELECT Scope_Identity();";
 
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"SELECT * FROM InternationalLicense 
+                var query = @"SELECT * FROM InternationalLicenses 
                             Where ApplicationID = @ApplicationID;";
 
                 using (var sqlCommand = new SqlCommand(query, sqlConnection))
@@ -270,7 +270,51 @@ SELECT Scope_Identity();";
                                 InternationalLicenseID = (int)reader["InternationalLicenseID"];
                                 DriverID = (int)reader["DriverID"];
                                 IssuedUsingLocalLicenseID = (int)reader["IssuedUsingLocalLicenseID"];
-                                ApplicationID = (int)reader["ApplicationID"];
+                                IssueDate = (DateTime)reader["IssueDate"];
+                                ExpirationDate = (DateTime)reader["ExpirationDate"];
+
+
+                                IsActive = (bool)reader["IsActive"];
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+        public static bool GetInternationalLicenseByLDLicenseID(int IssuedUsingLocalLicenseID, ref int InternationalLicenseID, ref int DriverID, ref int ApplicationID, ref DateTime IssueDate, ref DateTime ExpirationDate, ref bool IsActive, ref int CreatedByUserID)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM InternationalLicenses 
+                            Where IssuedUsingLocalLicenseID = @IssuedUsingLocalLicenseID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@IssuedUsingLocalLicenseID", IssuedUsingLocalLicenseID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                InternationalLicenseID = (int)reader["InternationalLicenseID"];
+                                DriverID = (int)reader["DriverID"];
                                 ApplicationID = (int)reader["ApplicationID"];
                                 IssueDate = (DateTime)reader["IssueDate"];
                                 ExpirationDate = (DateTime)reader["ExpirationDate"];

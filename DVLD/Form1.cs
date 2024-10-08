@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DVLD.ApplicationForms;
 using DVLD.Drivers;
+using DVLD.License.InternationalDrivingLicense;
 using DVLD.TestType;
 using DVLD.UserForm;
 using System;
@@ -179,6 +180,15 @@ namespace DVLD
                         }
                         break;
                     }
+                case "International License":
+                    {
+                        using (NewInternationalLicense frmIssueILicense = new NewInternationalLicense())
+                        {
+                            frmIssueILicense.ShowDialog();
+                        }
+                        break;
+                    }
+
 
             }
         }

@@ -15,8 +15,12 @@ namespace DVLD.ApplicationForms
     public partial class uctrl_IApplicationInfo : UserControl
     {
         private int _LDLicenseID = -1;
+        private int _IApplicationID = -1;
+        private int _ILicenseID = -1;
         clsLicense license = null;
 
+        public int IApplicationID { get {return _IApplicationID; } set {_IApplicationID = value; } }
+        public int ILicenseID { get { return _ILicenseID; } set {_ILicenseID = value; } }
         public int LDLicenseID        {
             get { return _LDLicenseID; }
             set { _LDLicenseID = value; _LoadIApplicationData(); }
@@ -49,6 +53,11 @@ namespace DVLD.ApplicationForms
 
         private void fillLabels()
         {
+            lblCreatedBy2.Text = clsLog.User?.UserName ?? "[???]";
+            lbl_Fees2.Text = clsApplicationType.GetApplicationType(6)?.Fees.ToString() ?? "[???]";//6 for international AppType in appTypes
+            lbl_IssueDate2.Text = lbl_ApplicationDate2.Text = DateTime.Today.ToShortDateString();
+            lbl_ExpDate2.Text = DateTime.Today.AddYears((int)clsClass.GetClassByClassID(3).DefaultValidityLength).ToShortDateString();//3 is Ordinary License Class
+
             if (LDLicenseID != -1)
             {
                 clsPerson Person = clsPerson.Find(clsApplication.GetApplicationByApplicationID(license.ApplicationID)?.ApplicantPersonID ?? -1);
@@ -56,20 +65,16 @@ namespace DVLD.ApplicationForms
                 {
                     return;
                 }
-
-                lbl_IssueDate2.Text = lbl_ApplicationDate2.Text = DateTime.Today.ToShortDateString();
-                lbl_ExpDate2.Text = DateTime.Today.AddYears((int)clsClass.GetClassByClassID(3).DefaultValidityLength).ToShortDateString();//3 is Ordinary License Class
-                lblCreatedBy2.Text = clsLog.User.UserName;
-                lbl_Fees2.Text = clsApplicationType.GetApplicationType(6)?.Fees.ToString() ?? "[???]";//6 for international AppType in appTypes
+                
                 lbl_LocalLicenseID2.Text = license.LicenseID.ToString();
+                lbl_ILApplicationID2.Text =  (IApplicationID == -1)? @"N\A": IApplicationID.ToString();
+                lbl_ILLicenseID2.Text = (ILicenseID == -1)? @"N\A":ILicenseID.ToString();
                 
 
             }
             else
             {
 
-                lbl_IssueDate2.Text = lbl_ApplicationDate2.Text = DateTime.Today.ToShortDateString();
-                lbl_ExpDate2.Text = lblCreatedBy2.Text = lbl_Fees2.Text  = "[???]";
                 lbl_ILApplicationID2.Text = lbl_LocalLicenseID2.Text = lbl_ILLicenseID2.Text = @"N\A";
             }
         }
