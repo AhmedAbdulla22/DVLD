@@ -86,6 +86,12 @@
     <Compile Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.Designer.cs">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\InternationalDrivingLicense\InternationalLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\InternationalDrivingLicense\InternationalLicenseInfo.Designer.cs">
+      <DependentUpon>InternationalLicenseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\InternationalDrivingLicense\NewInternationalLicense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,11 +153,11 @@
     <Compile Include="ApplicationForms\ManageApplicationType.Designer.cs">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\InternationalDrivingLicense\InternationalLicenses.cs">
+    <Compile Include="License\InternationalDrivingLicense\InternationalDLA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="License\InternationalDrivingLicense\InternationalLicenses.Designer.cs">
-      <DependentUpon>InternationalLicenses.cs</DependentUpon>
+    <Compile Include="License\InternationalDrivingLicense\InternationalDLA.Designer.cs">
+      <DependentUpon>InternationalDLA.cs</DependentUpon>
     </Compile>
     <Compile Include="License\LicenseHistory.cs">
       <SubType>Form</SubType>
@@ -299,6 +305,9 @@
     <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.resx">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="License\InternationalDrivingLicense\InternationalLicenseInfo.resx">
+      <DependentUpon>InternationalLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="License\InternationalDrivingLicense\NewInternationalLicense.resx">
       <DependentUpon>NewInternationalLicense.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,8 +338,8 @@
     <EmbeddedResource Include="ApplicationForms\ManageApplicationType.resx">
       <DependentUpon>ManageApplicationType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\InternationalDrivingLicense\InternationalLicenses.resx">
-      <DependentUpon>InternationalLicenses.cs</DependentUpon>
+    <EmbeddedResource Include="License\InternationalDrivingLicense\InternationalDLA.resx">
+      <DependentUpon>InternationalDLA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\LicenseHistory.resx">
       <DependentUpon>LicenseHistory.cs</DependentUpon>

@@ -14,6 +14,30 @@ namespace BusinessLayer
         {
             return clsInternationalLicense_DataAccess.GetInternationalLicenseHistoryByPersonID(PersonID);
         }
+        public static DataTable GetInternationalLicenseApplicationsByIsActive(bool IsActive)
+        {
+            return clsInternationalLicense_DataAccess.GetInternationalLicenseAppByIsActive(IsActive);
+        }
+
+        public static DataTable GetInternationalLicenseApplicationsByIntLicenseID(int IntLicenseID)
+        {
+            return clsInternationalLicense_DataAccess.GetInternationalLicenseAppByILicenseID(IntLicenseID);
+        }
+
+        public static DataTable GetInternationalLicenseApplicationsByAppID(int AppID)
+        {
+            return clsInternationalLicense_DataAccess.GetInternationalLicenseAppByApplicationID(AppID);
+        }
+
+        public static DataTable GetInternationalLicenseApplicationsByDriverID(int DriverID)
+        {
+            return clsInternationalLicense_DataAccess.GetInternationalLicenseAppByDriverID(DriverID);
+        }
+
+        public static DataTable GetInternationalLicenseApplicationsByLocalLicenseID(int LocalLicenseID)
+        {
+            return clsInternationalLicense_DataAccess.GetInternationalLicenseAppByIssuedUsingLocalLicenseID(LocalLicenseID);
+        }
 
         public int InternationalLicenseID { get; set; }
         public int ApplicationID { get; set; }
@@ -157,5 +181,7 @@ namespace BusinessLayer
 
             return clsInternationalLicense_DataAccess.getAllInternationalLicense();
         }
+
+        
     }
 }

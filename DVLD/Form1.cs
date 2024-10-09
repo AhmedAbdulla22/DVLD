@@ -164,6 +164,14 @@ namespace DVLD
                         }
                         break;
                     }
+                case "International Driving License Application":
+                    {
+                        using(InternationalDLA frmInternationalLicenses = new InternationalDLA())
+                        {
+                            frmInternationalLicenses.ShowDialog();
+                        }
+                    break;
+                    }
 
             }
         }

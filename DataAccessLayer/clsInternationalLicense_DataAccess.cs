@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace DataAccessLayer
 {
@@ -19,6 +20,7 @@ namespace DataAccessLayer
             {
                 var query = @"SELECT 'Int.License ID' = InternationalLicenseID
                               ,'Application ID' =ApplicationID
+                              ,'Driver ID' = InternationalLicenses.DriverID
 	                          ,'L.License ID' = IssuedUsingLocalLicenseID
                               ,'Issue Date' =IssueDate
                               ,'Expiration Date' =ExpirationDate
@@ -26,6 +28,7 @@ namespace DataAccessLayer
                           FROM InternationalLicenses
                           Inner JOIN Drivers On Drivers.DriverID = InternationalLicenses.DriverID 
                           Where Drivers.PersonID = @PersonID;";
+
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     sqlCommand.Parameters.AddWithValue("@PersonID", PersonID);
@@ -54,6 +57,216 @@ namespace DataAccessLayer
             return dt;
         }
 
+        public static DataTable GetInternationalLicenseAppByILicenseID(int InternationalLicenseID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 'Int.License ID' = InternationalLicenseID
+                              ,'Application ID' =ApplicationID
+                               ,'Driver ID' = InternationalLicenses.DriverID
+	                          ,'L.License ID' = IssuedUsingLocalLicenseID
+                              ,'Issue Date' =IssueDate
+                              ,'Expiration Date' =ExpirationDate
+                              ,'Is Active'=IsActive
+                          FROM InternationalLicenses
+                          Where InternationalLicenseID = @InternationalLicenseID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@InternationalLicenseID", InternationalLicenseID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+        public static DataTable GetInternationalLicenseAppByApplicationID(int ApplicationID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 'Int.License ID' = InternationalLicenseID
+                              ,'Application ID' =ApplicationID
+                               ,'Driver ID' = InternationalLicenses.DriverID
+	                          ,'L.License ID' = IssuedUsingLocalLicenseID
+                              ,'Issue Date' =IssueDate
+                              ,'Expiration Date' =ExpirationDate
+                              ,'Is Active'=IsActive
+                          FROM InternationalLicenses
+                          Where ApplicationID = @ApplicationID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+        public static DataTable GetInternationalLicenseAppByDriverID(int DriverID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 'Int.License ID' = InternationalLicenseID
+                              ,'Application ID' =ApplicationID
+                               ,'Driver ID' = InternationalLicenses.DriverID
+	                          ,'L.License ID' = IssuedUsingLocalLicenseID
+                              ,'Issue Date' =IssueDate
+                              ,'Expiration Date' =ExpirationDate
+                              ,'Is Active'=IsActive
+                          FROM InternationalLicenses
+                          Where InternationalLicenses.DriverID = @DriverID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@DriverID", DriverID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+        public static DataTable GetInternationalLicenseAppByIssuedUsingLocalLicenseID(int IssuedUsingLocalLicenseID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 'Int.License ID' = InternationalLicenseID
+                              ,'Application ID' =ApplicationID
+                               ,'Driver ID' = InternationalLicenses.DriverID
+	                          ,'L.License ID' = IssuedUsingLocalLicenseID
+                              ,'Issue Date' =IssueDate
+                              ,'Expiration Date' =ExpirationDate
+                              ,'Is Active'=IsActive
+                          FROM InternationalLicenses
+                          Where IssuedUsingLocalLicenseID = @IssuedUsingLocalLicenseID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@IssuedUsingLocalLicenseID", IssuedUsingLocalLicenseID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+        public static DataTable GetInternationalLicenseAppByIsActive(bool IsActive)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT 'Int.License ID' = InternationalLicenseID
+                              ,'Application ID' =ApplicationID
+                               ,'Driver ID' = InternationalLicenses.DriverID
+	                          ,'L.License ID' = IssuedUsingLocalLicenseID
+                              ,'Issue Date' =IssueDate
+                              ,'Expiration Date' =ExpirationDate
+                              ,'Is Active'=IsActive
+                          FROM InternationalLicenses
+                          Where IsActive = @IsActive;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@IsActive", IsActive);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
         public static bool isDetained(int InternationalLicenseID)
         {
             bool isExist = false;
@@ -206,7 +419,7 @@ SELECT Scope_Identity();";
 
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"SELECT * FROM InternationalLicense Where LicenseID = @InternationalLicenseID;";
+                var query = @"SELECT * FROM InternationalLicenses Where InternationalLicenseID = @InternationalLicenseID;";
 
                 using (var sqlCommand = new SqlCommand(query, sqlConnection))
                 {
@@ -347,14 +560,14 @@ SELECT Scope_Identity();";
 
             using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
-                var query = @"SELECT 'Int.License ID' = InternationalLicenseID
-                              ,'Application ID' =ApplicationID
-                              ,'Driver ID' = InternationalLicenses.DriverID
-	                          ,'L.License ID' = IssuedUsingLocalLicenseID
-                              ,'Issue Date' =IssueDate
-                              ,'Expiration Date' =ExpirationDate
-                              ,'Is Active'=IsActive
-                          FROM InternationalLicenses;";
+                var query = @"SELECT   'Int.License ID' = InternationalLicenseID
+                                      ,'Application ID' =ApplicationID
+                                      ,'Driver ID' = InternationalLicenses.DriverID
+	                                  ,'L.License ID' = IssuedUsingLocalLicenseID
+                                      ,'Issue Date' =IssueDate
+                                      ,'Expiration Date' =ExpirationDate
+                                      ,'Is Active'=IsActive
+                                  FROM InternationalLicenses;";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
 
@@ -381,6 +594,8 @@ SELECT Scope_Identity();";
 
             return dt;
         }
+
+
 
     }
 }

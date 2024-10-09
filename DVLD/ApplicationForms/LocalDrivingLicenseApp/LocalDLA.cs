@@ -39,7 +39,7 @@ namespace DVLD.ApplicationForms
 
         }
 
-        private void dgvApplicationType_MouseDown(object sender, MouseEventArgs e)
+        private void dgvLocalDLA_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {

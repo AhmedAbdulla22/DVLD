@@ -163,7 +163,10 @@ namespace DVLD.License.InternationalDrivingLicense
 
         private void lnklblShowLicensesInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            using(InternationalLicenseInfo frmILicenseInfo = new InternationalLicenseInfo(uctrl_IApplicationInfo1.ILicenseID))
+            {
+                frmILicenseInfo.ShowDialog();
+            }
         }
     }
 }
