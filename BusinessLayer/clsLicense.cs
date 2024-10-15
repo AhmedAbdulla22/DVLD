@@ -168,6 +168,27 @@ namespace BusinessLayer
         {
             return clsLicense_DataAccess.GetLocalLicenseHistoryByPersonID(PersonID);
         }
+
+        public static bool DeactivateLicense(int LicenseID)
+        {
+            clsLicense license = clsLicense.GetLicenseByLicenseID(LicenseID);
+            if (license == null)
+            {
+                return false;
+            }
+
+            license.IsActive = false;
+
+            return license.Save();
+        }
+
+        public bool DeactivateLicense()
+        {
+            this.IsActive = false;
+
+            return this.Save();
+        }
+
     }
 
 }

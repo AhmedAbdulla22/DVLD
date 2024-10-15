@@ -2,6 +2,7 @@
 using DVLD.ApplicationForms;
 using DVLD.Drivers;
 using DVLD.License.InternationalDrivingLicense;
+using DVLD.License.Renew_License;
 using DVLD.TestType;
 using DVLD.UserForm;
 using System;
@@ -201,5 +202,22 @@ namespace DVLD
             }
         }
 
+        private void toolStripMenuItem2_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Renew Driving License":
+                    {
+                        using (RenewLicense frmRenewLicense = new RenewLicense())
+                        {
+                            frmRenewLicense.ShowDialog();
+                        }
+                        break;
+                    }
+                
+
+
+            }
+        }
     }
 }

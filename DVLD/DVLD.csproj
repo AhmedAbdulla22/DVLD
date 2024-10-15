@@ -104,10 +104,22 @@
     <Compile Include="License\InternationalDrivingLicense\uctrlD_I_LicenseInfo.Designer.cs">
       <DependentUpon>uctrlD_I_LicenseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\InternationalDrivingLicense\uctrlFindLDLicense.cs">
+    <Compile Include="License\Renew License\RenewLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\Renew License\RenewLicense.Designer.cs">
+      <DependentUpon>RenewLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\Renew License\uctrlRenewNewLicenseApplication.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="License\InternationalDrivingLicense\uctrlFindLDLicense.Designer.cs">
+    <Compile Include="License\Renew License\uctrlRenewNewLicenseApplication.Designer.cs">
+      <DependentUpon>uctrlRenewNewLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\uctrlFindLDLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\uctrlFindLDLicense.Designer.cs">
       <DependentUpon>uctrlFindLDLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="License\InternationalDrivingLicense\uctrl_IApplicationInfo.cs">
@@ -314,7 +326,13 @@
     <EmbeddedResource Include="License\InternationalDrivingLicense\uctrlD_I_LicenseInfo.resx">
       <DependentUpon>uctrlD_I_LicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\InternationalDrivingLicense\uctrlFindLDLicense.resx">
+    <EmbeddedResource Include="License\Renew License\RenewLicense.resx">
+      <DependentUpon>RenewLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\Renew License\uctrlRenewNewLicenseApplication.resx">
+      <DependentUpon>uctrlRenewNewLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\uctrlFindLDLicense.resx">
       <DependentUpon>uctrlFindLDLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\InternationalDrivingLicense\uctrl_IApplicationInfo.resx">
@@ -626,5 +644,6 @@
   <ItemGroup>
     <None Include="Resources\Drivers.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
