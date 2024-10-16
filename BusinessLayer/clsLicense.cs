@@ -20,8 +20,10 @@ namespace BusinessLayer
       public string Notes {get;set;}
       public decimal PaidFees {get;set;}
       public bool IsActive {get;set;}
-      public byte IssueReason {get;set;}
-      public int CreatedByUserID {get;set;}
+      public byte IssueReason {get;set; }
+        //1-FirstTime, 2-Renew, 3-Replacement for Damaged, 4- Replacement for Lost.
+        public enum enIssueReason :byte {FirstTime = 1, Renew = 2, Replacement_for_Damaged = 3, Replacement_for_Lost = 4 }
+        public int CreatedByUserID {get;set;}
         public enum mode { Add, Update };
         mode enMode;
 
@@ -29,7 +31,7 @@ namespace BusinessLayer
         {
             LicenseID = ApplicationID = DriverID = CreatedByUserID = -1;
             LicenseClass = -1;
-            IssueReason = 0;
+            IssueReason = 1;//default FirstTime
             IssueDate = ExpirationDate = DateTime.Now;
             Notes = string.Empty;
             PaidFees = 0;

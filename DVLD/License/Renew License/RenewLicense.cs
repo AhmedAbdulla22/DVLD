@@ -138,6 +138,7 @@ namespace DVLD.License.Renew_License
                 newRLicense.Notes = uctrlNewLicenseApplication1.Note;
                 newRLicense.ApplicationID = newRApplication.ApplicationID;
                 newRLicense.IssueDate = DateTime.Today;
+                newRLicense.IssueReason = (byte)clsLicense.enIssueReason.Renew;
                 newRLicense.ExpirationDate = DateTime.Today.AddYears((int)clsClass.GetClassByClassID(3).DefaultValidityLength);
                 newRLicense.CreatedByUserID = clsLog.User.UserID;
                 newRLicense.DriverID = License.DriverID;
