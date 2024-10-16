@@ -3,6 +3,7 @@ using DVLD.ApplicationForms;
 using DVLD.Drivers;
 using DVLD.License.InternationalDrivingLicense;
 using DVLD.License.Renew_License;
+using DVLD.License.ReplaceLicenseForDamagedOrLost;
 using DVLD.TestType;
 using DVLD.UserForm;
 using System;
@@ -214,8 +215,14 @@ namespace DVLD
                         }
                         break;
                     }
-                
-
+                case "Replacement for Lost or Damaged Licnese":
+                    {
+                        using (ReplaceLicense frmReplaceLicense = new ReplaceLicense())
+                        {
+                            frmReplaceLicense.ShowDialog();
+                        }
+                        break;
+                    }
 
             }
         }

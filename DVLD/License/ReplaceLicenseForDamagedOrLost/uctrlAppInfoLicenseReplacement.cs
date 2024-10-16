@@ -58,6 +58,7 @@ namespace DVLD.License.ReplaceLicenseForDamagedOrLost
         {
             lblCreatedBy2.Text = clsLog.User?.UserName ?? "[???]";
             UpdateApplicationFee();
+            lbl_ApplicationDate2.Text = DateTime.Today.ToShortDateString();
             if (LDLicenseID != -1)
             {
                 clsPerson Person = clsPerson.Find(clsApplication.GetApplicationByApplicationID(license.ApplicationID)?.ApplicantPersonID ?? -1);
@@ -67,6 +68,7 @@ namespace DVLD.License.ReplaceLicenseForDamagedOrLost
                 }
 
                 lbl_OldLicenseID2.Text = license.LicenseID.ToString();
+                lbl_LRApplicationID2.Text = (RApplicationID == -1) ? @"N\A" : RApplicationID.ToString();
                 lbl_RLicenseID2.Text = (RLicenseID == -1) ? @"N\A" : RLicenseID.ToString();
 
 
