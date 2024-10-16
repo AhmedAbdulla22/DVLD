@@ -9,13 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.License.Renew_License
+namespace DVLD.License.ReplaceLicenseForDamagedOrLost
 {
-    public partial class uctrlNewLicenseApplication : UserControl
+    public partial class uctrlAppInfoLicenseReplacement : UserControl
     {
         private int _LDLicenseID = -1;
         private int _RApplicationID = -1;
         private int _RLicenseID = -1;
+        public enum ReplacementFor { Damaged = 3, Lost = 4 }
+        private ReplacementFor enReplacementReason = ReplacementFor.Damaged;
+        public ReplacementFor ReplacementReason {set { enReplacementReason = value; UpdateApplicationFee(); } }
         clsLicense license = null;
 
         public int RApplicationID { get { return _RApplicationID; } set { _RApplicationID = value; } }
@@ -25,8 +28,7 @@ namespace DVLD.License.Renew_License
             get { return _LDLicenseID; }
             set { _LDLicenseID = value; _LoadIApplicationData(); }
         }
-        public string Note { get { return tbNotes.Text; } }
-        public uctrlNewLicenseApplication()
+        public uctrlAppInfoLicenseReplacement()
         {
             InitializeComponent();
         }
@@ -55,13 +57,7 @@ namespace DVLD.License.Renew_License
         private void fillLabels()
         {
             lblCreatedBy2.Text = clsLog.User?.UserName ?? "[???]";
-            decimal AppFee = clsApplicationType.GetApplicationType(2)?.Fees ?? 0, LicenseFees = clsClass.GetClassByClassID(license?.LicenseClass ?? -1)?.ClassFees ?? 0;//2 for Renew AppType in appTypes
-            lbl_ApplicationFees2.Text = AppFee.ToString() ?? "[???]";
-            lbl_LicenseFees2.Text = LicenseFees.ToString() ?? "[???]";
-            lbl_TotalFees2.Text = (AppFee + LicenseFees).ToString(); 
-            lbl_IssueDate2.Text = lbl_ApplicationDate2.Text = DateTime.Today.ToShortDateString();
-            lbl_ExpDate2.Text = DateTime.Today.AddYears((int)(clsClass.GetClassByClassID(license?.LicenseClass ?? -1)?.DefaultValidityLength ?? 0)).ToShortDateString();
-
+            UpdateApplicationFee();
             if (LDLicenseID != -1)
             {
                 clsPerson Person = clsPerson.Find(clsApplication.GetApplicationByApplicationID(license.ApplicationID)?.ApplicantPersonID ?? -1);
@@ -71,20 +67,26 @@ namespace DVLD.License.Renew_License
                 }
 
                 lbl_OldLicenseID2.Text = license.LicenseID.ToString();
-                lbl_RLApplicationID2.Text = (RApplicationID == -1) ? @"N\A" : RApplicationID.ToString();
-                lbl_RenewLicenseID2.Text = (RLicenseID == -1) ? @"N\A" : RLicenseID.ToString();
+                lbl_RLicenseID2.Text = (RLicenseID == -1) ? @"N\A" : RLicenseID.ToString();
 
 
             }
             else
             {
 
-                lbl_RLApplicationID2.Text = lbl_OldLicenseID2.Text = lbl_RenewLicenseID2.Text = @"N\A";
+                lbl_LRApplicationID2.Text = lbl_OldLicenseID2.Text = lbl_RLicenseID2.Text = @"N\A";
             }
         }
         public void UpdateControl()
         {
             _LoadIApplicationData();
         }
+
+        private void UpdateApplicationFee()
+        {
+            decimal AppFee = clsApplicationType.GetApplicationType((int)enReplacementReason)?.Fees ?? 0;
+            lbl_ApplicationFees2.Text = AppFee.ToString() ?? "[???]";
+        }
+
     }
 }

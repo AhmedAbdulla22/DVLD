@@ -130,9 +130,9 @@
             this.groupBox1.Controls.Add(this.lbl_Class2);
             this.groupBox1.Controls.Add(this.lblClass);
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(625, 316);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -142,7 +142,7 @@
             // 
             this.pbPersonPFP.Image = global::DVLD.Properties.Resources.User_Male;
             this.pbPersonPFP.Location = new System.Drawing.Point(503, 69);
-            this.pbPersonPFP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbPersonPFP.Margin = new System.Windows.Forms.Padding(2);
             this.pbPersonPFP.Name = "pbPersonPFP";
             this.pbPersonPFP.Size = new System.Drawing.Size(110, 134);
             this.pbPersonPFP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -296,7 +296,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::DVLD.Properties.Resources.writing;
-            this.pictureBox7.Location = new System.Drawing.Point(101, 246);
+            this.pictureBox7.Location = new System.Drawing.Point(101, 255);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(25, 21);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -308,7 +308,7 @@
             this.lbl_Notes2.AutoSize = true;
             this.lbl_Notes2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Notes2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_Notes2.Location = new System.Drawing.Point(131, 248);
+            this.lbl_Notes2.Location = new System.Drawing.Point(131, 257);
             this.lbl_Notes2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Notes2.Name = "lbl_Notes2";
             this.lbl_Notes2.Size = new System.Drawing.Size(37, 19);
@@ -321,7 +321,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(10, 246);
+            this.label7.Location = new System.Drawing.Point(10, 255);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 19);
@@ -368,7 +368,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::DVLD.Properties.Resources.Driver_License;
-            this.pictureBox3.Location = new System.Drawing.Point(101, 214);
+            this.pictureBox3.Location = new System.Drawing.Point(101, 223);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 21);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -380,7 +380,7 @@
             this.lbl_IssueReason2.AutoSize = true;
             this.lbl_IssueReason2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IssueReason2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_IssueReason2.Location = new System.Drawing.Point(131, 215);
+            this.lbl_IssueReason2.Location = new System.Drawing.Point(131, 224);
             this.lbl_IssueReason2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IssueReason2.Name = "lbl_IssueReason2";
             this.lbl_IssueReason2.Size = new System.Drawing.Size(37, 19);
@@ -393,7 +393,7 @@
             this.lbl_IssueReason.AutoSize = true;
             this.lbl_IssueReason.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IssueReason.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_IssueReason.Location = new System.Drawing.Point(10, 215);
+            this.lbl_IssueReason.Location = new System.Drawing.Point(10, 224);
             this.lbl_IssueReason.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IssueReason.Name = "lbl_IssueReason";
             this.lbl_IssueReason.Size = new System.Drawing.Size(92, 19);
@@ -404,7 +404,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(101, 184);
+            this.pictureBox6.Location = new System.Drawing.Point(101, 193);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(25, 21);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -416,7 +416,7 @@
             this.lbl_IssueDate2.AutoSize = true;
             this.lbl_IssueDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IssueDate2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_IssueDate2.Location = new System.Drawing.Point(131, 186);
+            this.lbl_IssueDate2.Location = new System.Drawing.Point(131, 195);
             this.lbl_IssueDate2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IssueDate2.Name = "lbl_IssueDate2";
             this.lbl_IssueDate2.Size = new System.Drawing.Size(37, 19);
@@ -429,7 +429,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(10, 184);
+            this.label6.Location = new System.Drawing.Point(10, 193);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 19);
@@ -440,7 +440,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DVLD.Properties.Resources.gender1;
-            this.pictureBox2.Location = new System.Drawing.Point(101, 153);
+            this.pictureBox2.Location = new System.Drawing.Point(101, 162);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -452,7 +452,7 @@
             this.lblGender2.AutoSize = true;
             this.lblGender2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblGender2.Location = new System.Drawing.Point(131, 155);
+            this.lblGender2.Location = new System.Drawing.Point(131, 164);
             this.lblGender2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender2.Name = "lblGender2";
             this.lblGender2.Size = new System.Drawing.Size(37, 19);
@@ -465,7 +465,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(10, 153);
+            this.label1.Location = new System.Drawing.Point(10, 162);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 19);
@@ -476,7 +476,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD.Properties.Resources.Display;
-            this.pictureBox1.Location = new System.Drawing.Point(101, 122);
+            this.pictureBox1.Location = new System.Drawing.Point(101, 131);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -488,7 +488,7 @@
             this.lblNationalNo2.AutoSize = true;
             this.lblNationalNo2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNo2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblNationalNo2.Location = new System.Drawing.Point(131, 124);
+            this.lblNationalNo2.Location = new System.Drawing.Point(131, 133);
             this.lblNationalNo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNationalNo2.Name = "lblNationalNo2";
             this.lblNationalNo2.Size = new System.Drawing.Size(37, 19);
@@ -501,7 +501,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(10, 122);
+            this.label2.Location = new System.Drawing.Point(10, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 19);
@@ -512,7 +512,7 @@
             // pb_ID
             // 
             this.pb_ID.Image = global::DVLD.Properties.Resources.Display;
-            this.pb_ID.Location = new System.Drawing.Point(101, 91);
+            this.pb_ID.Location = new System.Drawing.Point(101, 100);
             this.pb_ID.Name = "pb_ID";
             this.pb_ID.Size = new System.Drawing.Size(25, 21);
             this.pb_ID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -524,7 +524,7 @@
             this.lbl_LicenseID2.AutoSize = true;
             this.lbl_LicenseID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LicenseID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_LicenseID2.Location = new System.Drawing.Point(131, 93);
+            this.lbl_LicenseID2.Location = new System.Drawing.Point(131, 102);
             this.lbl_LicenseID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_LicenseID2.Name = "lbl_LicenseID2";
             this.lbl_LicenseID2.Size = new System.Drawing.Size(37, 19);
@@ -537,7 +537,7 @@
             this.lbl_ID1.AutoSize = true;
             this.lbl_ID1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ID1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_ID1.Location = new System.Drawing.Point(10, 91);
+            this.lbl_ID1.Location = new System.Drawing.Point(10, 100);
             this.lbl_ID1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ID1.Name = "lbl_ID1";
             this.lbl_ID1.Size = new System.Drawing.Size(76, 19);
@@ -548,7 +548,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::DVLD.Properties.Resources.user_image_with_black_background;
-            this.pictureBox5.Location = new System.Drawing.Point(101, 60);
+            this.pictureBox5.Location = new System.Drawing.Point(101, 69);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 21);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -560,7 +560,7 @@
             this.lbl_Name2.AutoSize = true;
             this.lbl_Name2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_Name2.Location = new System.Drawing.Point(131, 62);
+            this.lbl_Name2.Location = new System.Drawing.Point(131, 71);
             this.lbl_Name2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Name2.Name = "lbl_Name2";
             this.lbl_Name2.Size = new System.Drawing.Size(37, 19);
@@ -573,7 +573,7 @@
             this.lblApplicant1.AutoSize = true;
             this.lblApplicant1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicant1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblApplicant1.Location = new System.Drawing.Point(10, 60);
+            this.lblApplicant1.Location = new System.Drawing.Point(10, 69);
             this.lblApplicant1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApplicant1.Name = "lblApplicant1";
             this.lblApplicant1.Size = new System.Drawing.Size(49, 19);
@@ -584,7 +584,7 @@
             // pbAppliedForLicense
             // 
             this.pbAppliedForLicense.Image = global::DVLD.Properties.Resources.Driver_License;
-            this.pbAppliedForLicense.Location = new System.Drawing.Point(101, 29);
+            this.pbAppliedForLicense.Location = new System.Drawing.Point(101, 38);
             this.pbAppliedForLicense.Name = "pbAppliedForLicense";
             this.pbAppliedForLicense.Size = new System.Drawing.Size(25, 21);
             this.pbAppliedForLicense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -596,7 +596,7 @@
             this.lbl_Class2.AutoSize = true;
             this.lbl_Class2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Class2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_Class2.Location = new System.Drawing.Point(131, 31);
+            this.lbl_Class2.Location = new System.Drawing.Point(131, 40);
             this.lbl_Class2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Class2.Name = "lbl_Class2";
             this.lbl_Class2.Size = new System.Drawing.Size(37, 19);
@@ -609,7 +609,7 @@
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClass.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblClass.Location = new System.Drawing.Point(10, 29);
+            this.lblClass.Location = new System.Drawing.Point(10, 38);
             this.lblClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(44, 19);
@@ -622,7 +622,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "uctrl_DriverLicenseInfo";
             this.Size = new System.Drawing.Size(629, 321);
             this.groupBox1.ResumeLayout(false);

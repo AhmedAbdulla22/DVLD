@@ -116,6 +116,18 @@
     <Compile Include="License\Renew License\uctrlRenewNewLicenseApplication.Designer.cs">
       <DependentUpon>uctrlRenewNewLicenseApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\ReplaceLicenseForDamagedOrLost\ReplaceLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\ReplaceLicenseForDamagedOrLost\ReplaceLicense.Designer.cs">
+      <DependentUpon>ReplaceLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\ReplaceLicenseForDamagedOrLost\uctrlAppInfoLicenseReplacement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\ReplaceLicenseForDamagedOrLost\uctrlAppInfoLicenseReplacement.Designer.cs">
+      <DependentUpon>uctrlAppInfoLicenseReplacement.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\uctrlFindLDLicense.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -331,6 +343,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="License\Renew License\uctrlRenewNewLicenseApplication.resx">
       <DependentUpon>uctrlRenewNewLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ReplaceLicenseForDamagedOrLost\ReplaceLicense.resx">
+      <DependentUpon>ReplaceLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ReplaceLicenseForDamagedOrLost\uctrlAppInfoLicenseReplacement.resx">
+      <DependentUpon>uctrlAppInfoLicenseReplacement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\uctrlFindLDLicense.resx">
       <DependentUpon>uctrlFindLDLicense.cs</DependentUpon>

@@ -1,6 +1,5 @@
 ﻿using BusinessLayer;
-using DVLD.ApplicationForms;
-using DVLD.License.InternationalDrivingLicense;
+using DVLD.License.Renew_License;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,26 +10,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.License.Renew_License
+namespace DVLD.License.ReplaceLicenseForDamagedOrLost
 {
-    public partial class RenewLicense : Form
+    public partial class ReplaceLicense : Form
     {
         int _LicenseID = -1;
 
-        public RenewLicense()
+        public ReplaceLicense()
         {
             InitializeComponent();
-
             uctrlFindLDLicense1.OnFilterSucceded += FilterSucceded;
 
             btnIssue.Image = Utilites.ResizeImage(btnIssue.Image, 25, 25);
+        }
 
-
+        private void ReplacementReasonChanged(object sender , EventArgs e)
+        {
+            uctrlAppInfoLicenseReplacement1.ReplacementReason = (rbDamaged.Checked) ? uctrlAppInfoLicenseReplacement.ReplacementFor.Damaged: uctrlAppInfoLicenseReplacement.ReplacementFor.Lost;
         }
 
         private void FilterSucceded(int LicenseID)
         {
-            uctrl_DriverLicenseInfo1.LicenseID = uctrlNewLicenseApplication1.LDLicenseID = _LicenseID = LicenseID;
+            uctrl_DriverLicenseInfo1.LicenseID = uctrlAppInfoLicenseReplacement1.LDLicenseID = _LicenseID = LicenseID;
 
             clsLicense License = clsLicense.GetLicenseByLicenseID(LicenseID);
 
@@ -48,10 +49,7 @@ namespace DVLD.License.Renew_License
                 {
                     message = "This License Is Detaind";
                 }
-                else if (License.ExpirationDate > DateTime.Now)
-                {
-                    message = "This License Is Not Expired Yet";
-                }
+
 
 
                 if (!string.IsNullOrEmpty(message))
@@ -65,6 +63,11 @@ namespace DVLD.License.Renew_License
 
             //if those conditions don't meet then the issue button get enabled
             btnIssue.Enabled = true;
+
+            if (!gbReplacementReason.Enabled)
+            {
+                    gbReplacementReason.Enabled = true;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -77,7 +80,7 @@ namespace DVLD.License.Renew_License
         {
             clsLicense License = clsLicense.GetLicenseByLicenseID(_LicenseID);
 
-            if (MessageBox.Show($"Are You Sure You Want To Renew the License For This Person with ID = {License?.LicenseID ?? -1}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show($"Are You Sure You Want To Replace the License For This Person with ID = {License?.LicenseID ?? -1}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //issue License
                 if (IssueLicense(License))
@@ -86,17 +89,18 @@ namespace DVLD.License.Renew_License
                     License.DeactivateLicense();
 
 
-                    uctrlNewLicenseApplication1.LDLicenseID = _LicenseID;
+                    uctrlAppInfoLicenseReplacement1.LDLicenseID = _LicenseID;
                     uctrl_DriverLicenseInfo1.UpdateControl();
                     lnklblShowLicensesInfo.Enabled = true;
                     btnIssue.Enabled = false;
+                    gbReplacementReason.Enabled = false;
 
 
-                    MessageBox.Show($"This Renewed License Issued Successfully for this Person with ID of = {uctrlNewLicenseApplication1.RLicenseID}.", "Issued Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"This Replaced License Issued Successfully for this Person with ID of = {uctrlAppInfoLicenseReplacement1.RLicenseID}.", "Issued Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("This Renewed License Issue Failed for this Person", "License Issued Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("This Replaced License Issue Failed for this Person", "License Issued Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -115,30 +119,30 @@ namespace DVLD.License.Renew_License
             clsApplication newRApplication = new clsApplication();
             newRApplication.ApplicationStatus = 2;
             newRApplication.ApplicationDate = DateTime.Today;
-            newRApplication.ApplicationTypeID = 2;//Renew Application 2
+            newRApplication.ApplicationTypeID = (rbDamaged.Checked) ? 3:4;//Replace Application 
             newRApplication.LastStatusDate = DateTime.Today;
             newRApplication.ApplicantPersonID = clsDriver.GetDriverByDriverID(License.DriverID)?.PersonID ?? -1;
             newRApplication.CreatedByUserID = clsLog.User.UserID;
-            newRApplication.PaidFees = clsApplicationType.GetApplicationType(2).Fees;
+            newRApplication.PaidFees = clsApplicationType.GetApplicationType(newRApplication.ApplicationTypeID).Fees;
 
             if (newRApplication.Save())
             {
-                uctrlNewLicenseApplication1.RApplicationID = newRApplication.ApplicationID;
+                uctrlAppInfoLicenseReplacement1.RApplicationID = newRApplication.ApplicationID;
 
                 clsLicense newRLicense = new clsLicense();
                 newRLicense.IsActive = true;
-                newRLicense.Notes = uctrlNewLicenseApplication1.Note;
+                //newRLicense.Notes = uctrlAppInfoLicenseReplacement1.Note;
                 newRLicense.ApplicationID = newRApplication.ApplicationID;
                 newRLicense.IssueDate = DateTime.Today;
-                newRLicense.IssueReason = (byte)clsLicense.enIssueReason.Renew;
+                newRLicense.IssueReason = (byte)newRApplication.ApplicationTypeID;
+                newRLicense.LicenseClass = License.LicenseClass;
                 newRLicense.ExpirationDate = DateTime.Today.AddYears((int)clsClass.GetClassByClassID(License.LicenseClass).DefaultValidityLength);
                 newRLicense.CreatedByUserID = clsLog.User.UserID;
                 newRLicense.DriverID = License.DriverID;
-                newRLicense.LicenseClass = License.LicenseClass;
 
                 if (newRLicense.Save())
                 {
-                    uctrlNewLicenseApplication1.RLicenseID = newRLicense.LicenseID;
+                    uctrlAppInfoLicenseReplacement1.RLicenseID = newRLicense.LicenseID;
                     isIssued = true;
                 }
             }
@@ -149,10 +153,9 @@ namespace DVLD.License.Renew_License
 
             return isIssued;
         }
-
         private void lnklblShowLicensesInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            using (ShowLicenseInfo frmLicenseInfo = new ShowLicenseInfo(uctrlNewLicenseApplication1.RLicenseID))
+            using (ShowLicenseInfo frmLicenseInfo = new ShowLicenseInfo(uctrlAppInfoLicenseReplacement1.RLicenseID))
             {
                 frmLicenseInfo.ShowDialog();
             }
