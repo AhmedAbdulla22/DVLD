@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DVLD.ApplicationForms;
 using DVLD.Drivers;
+using DVLD.License.DetainLicense;
 using DVLD.License.InternationalDrivingLicense;
 using DVLD.License.Renew_License;
 using DVLD.License.ReplaceLicenseForDamagedOrLost;
@@ -220,6 +221,22 @@ namespace DVLD
                         using (ReplaceLicense frmReplaceLicense = new ReplaceLicense())
                         {
                             frmReplaceLicense.ShowDialog();
+                        }
+                        break;
+                    }
+
+            }
+        }
+
+        private void toolStripMenuItem4_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Detain License":
+                    {
+                        using (DetainLicenseApplication frmDetainLApp = new DetainLicenseApplication())
+                        {
+                            frmDetainLApp.ShowDialog();
                         }
                         break;
                     }

@@ -33,10 +33,11 @@ namespace DataAccessLayer
                     {
                         sqlConnection.Open();
 
-                        if (sqlCommand.ExecuteNonQuery() > 0)
+                        if(sqlCommand.ExecuteScalar() != null)
                         {
                             isExist = true;
                         }
+                        
 
                     }
                     catch (Exception ex)

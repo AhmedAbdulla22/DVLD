@@ -19,7 +19,7 @@ namespace DVLD.License.DetainLicense
         clsLicense license = null;
 
         public int DetainID { get { return _DetainID; } set { _DetainID = value; } }
-        public int LicenseID { get { return _LicenseID; } set { _LicenseID = value; } }
+        public int LicenseID { get { return _LicenseID; } set { _LicenseID = value; _LoadIApplicationData(); } }
         public decimal FineFees { get { return GetFineFees(); } }
         public uctrlDetainInfo()
         {

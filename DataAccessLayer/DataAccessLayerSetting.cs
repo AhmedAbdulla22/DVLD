@@ -28,6 +28,17 @@ namespace DataAccessLayer
             {
                 sqlCommand.Parameters.AddWithValue(parameterName, DBNull.Value);
             }
+            else if(value is DateTime date)
+            {
+                if (date == DateTime.MinValue)
+                {
+                    sqlCommand.Parameters.AddWithValue(parameterName, DBNull.Value);
+                }
+                else
+                {
+                    sqlCommand.Parameters.AddWithValue(parameterName, value);
+                }
+            }
             else
             {
                 sqlCommand.Parameters.AddWithValue(parameterName, value);
