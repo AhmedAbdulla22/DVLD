@@ -428,7 +428,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox6.Image = global::DVLD.Properties.Resources.Map;
+            this.pictureBox6.Image = global::DVLD.Properties.Resources.Driver_License1;
             this.pictureBox6.Location = new System.Drawing.Point(454, 19);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(25, 21);

@@ -86,6 +86,18 @@
     <Compile Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.Designer.cs">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\DetainLicense\DetainLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\DetainLicense\DetainLicenseApplication.Designer.cs">
+      <DependentUpon>DetainLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\DetainLicense\uctrlDetainInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\DetainLicense\uctrlDetainInfo.Designer.cs">
+      <DependentUpon>uctrlDetainInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\InternationalDrivingLicense\InternationalLicenseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +340,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.resx">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\DetainLicense\DetainLicenseApplication.resx">
+      <DependentUpon>DetainLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\DetainLicense\uctrlDetainInfo.resx">
+      <DependentUpon>uctrlDetainInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\InternationalDrivingLicense\InternationalLicenseInfo.resx">
       <DependentUpon>InternationalLicenseInfo.cs</DependentUpon>
