@@ -680,6 +680,8 @@
   <ItemGroup>
     <None Include="Resources\Drivers.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="License\ReleaseDetainedLicense\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
