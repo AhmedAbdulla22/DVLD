@@ -25,6 +25,17 @@ namespace DVLD.License.ReleaseDetainedLicense
             btnRelease.Image = Utilites.ResizeImage(btnRelease.Image, 25, 25);
         }
 
+        public ReleaseDLicenseApp(int LicenseID)
+        {
+            InitializeComponent();
+            uctrlFindLDLicense1.OnFilterSucceded += FilterSucceded;
+
+            btnRelease.Image = Utilites.ResizeImage(btnRelease.Image, 25, 25);
+
+            //Filter
+            uctrlFindLDLicense1.FindLicenseID(LicenseID);
+        }
+
         private void FilterSucceded(int LicenseID)
         {
             uctrl_DriverLicenseInfo1.LicenseID = uctrlReleaseDLInfo1.LicenseID = _LicenseID = LicenseID;

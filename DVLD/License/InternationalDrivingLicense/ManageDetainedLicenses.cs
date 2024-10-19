@@ -24,7 +24,7 @@ namespace DVLD.License.InternationalDrivingLicense
 
             //set cb to none
             cbFilter.SelectedIndex = 0;
-            cbActiveFilter.SelectedIndex = 0;
+            cbReleasedFilter.SelectedIndex = 0;
         }
 
         private void LoadTheDataGridView()
@@ -55,7 +55,7 @@ namespace DVLD.License.InternationalDrivingLicense
                     dgvDetainedLicenses.Rows[hitTestInfo.RowIndex].Selected = true;
 
 
-
+                    releaseToolStripMenuItem.Enabled = !(bool)dgvDetainedLicenses.SelectedRows[0].Cells["Is Released"].Value; // to disable release if it released
                     contextMenuStrip1.Show(dgvDetainedLicenses, new Point(e.X, e.Y));
                 }
             }
@@ -68,11 +68,11 @@ namespace DVLD.License.InternationalDrivingLicense
 
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            int IDLicenseID = -1;
-            IDLicenseID = Convert.ToInt32(dgvDetainedLicenses.SelectedRows[0].Cells["Int.License ID"].Value);
-            int DriverID = -1;
-            DriverID = Convert.ToInt32(dgvDetainedLicenses.SelectedRows[0].Cells["Driver ID"].Value);
-            nt PersonID = clsDriver.GetDriverByDriverID(DriverID)?.PersonID ?? -1;
+            int LicenseID = -1;
+            LicenseID = Convert.ToInt32(dgvDetainedLicenses.SelectedRows[0].Cells["L.ID"].Value);
+            string NationalNo = string.Empty;
+            NationalNo = Convert.ToString(dgvDetainedLicenses.SelectedRows[0].Cells["N.NO"].Value);
+            int PersonID = clsPerson.Find(NationalNo)?.PersonID ?? -1;
 
             //hide menu
             contextMenuStrip1.Close();//or just use .Hide()
@@ -92,7 +92,7 @@ namespace DVLD.License.InternationalDrivingLicense
                     case "Show License":
                         {
 
-                            using (InternationalLicenseInfo frmILicenseInfo = new InternationalLicenseInfo(IDLicenseID))
+                            using (ShowLicenseInfo frmILicenseInfo = new ShowLicenseInfo(LicenseID))
                             {
                                 frmILicenseInfo.ShowDialog();
                             }
@@ -106,7 +106,10 @@ namespace DVLD.License.InternationalDrivingLicense
                         }
                     case "Release":
                         {
-
+                            using (ReleaseDLicenseApp frmReleaseDLicenseApp = new ReleaseDLicenseApp(LicenseID))
+                            {
+                                frmReleaseDLicenseApp.ShowDialog();
+                            }
                             break;
                         }
                 }
@@ -134,20 +137,20 @@ namespace DVLD.License.InternationalDrivingLicense
                 case "None":
                     {
                         tbFilter.Visible = false;
-                        cbActiveFilter.Visible = false;
+                        cbReleasedFilter.Visible = false;
                         break;
                     }
-                case "Is Active":
+                case "Is Released":
                     {
                         tbFilter.Visible = false;
-                        cbActiveFilter.Visible = true;
-                        cbActiveFilter.SelectedIndex = 0;
+                        cbReleasedFilter.Visible = true;
+                        cbReleasedFilter.SelectedIndex = 0;
                         break;
                     }
                 default:
                     {
                         tbFilter.Visible = true;
-                        cbActiveFilter.Visible = false;
+                        cbReleasedFilter.Visible = false;
                         break;
                     }
             }
@@ -156,15 +159,37 @@ namespace DVLD.License.InternationalDrivingLicense
 
         private void tbFilter_KeyDown(object sender, KeyEventArgs e)
         {
-           if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+
+            switch (cbFilter.SelectedItem.ToString())
             {
-                e.SuppressKeyPress = false;
-                e.Handled = false;
-            }
-            else
-            {
-                e.SuppressKeyPress = true;
-                e.Handled = true;
+                case "License ID":
+                    {
+                        if (char.IsDigit((char)e.KeyValue) || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+                        {
+                            e.SuppressKeyPress = false;
+                            e.Handled = false;
+                        }
+                        else
+                        {
+                            e.SuppressKeyPress = true;
+                            e.Handled = true;
+                        }
+                        break;
+                    }
+                case "Full Name":
+                    {
+                        if (char.IsLetter((char)e.KeyValue) || e.KeyCode == Keys.Space || e.KeyCode == Keys.Back || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+                        {
+                            e.Handled = false;
+                            e.SuppressKeyPress = false;
+                        }
+                        else
+                        {
+                            e.Handled = true;
+                            e.SuppressKeyPress = true;
+                        }
+                        break;
+                    }
             }
 
         }
@@ -172,17 +197,17 @@ namespace DVLD.License.InternationalDrivingLicense
         private void cbActiveFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            switch (cbActiveFilter.SelectedItem.ToString())
+            switch (cbReleasedFilter.SelectedItem.ToString())
             {
-                case "Active":
+                case "Released":
                     {
-                        dgvDetainedLicenses.DataSource = clsInternationalLicense.GetInternationalLicenseApplicationsByIsActive(true);
+                        dgvDetainedLicenses.DataSource = clsDetainedLicenses.getAllDetainedLicenseByIsReleased(true);
 
                         break;
                     }
-                case "Not Active":
+                case "Not Released":
                     {
-                        dgvDetainedLicenses.DataSource = clsInternationalLicense.GetInternationalLicenseApplicationsByIsActive(false);
+                        dgvDetainedLicenses.DataSource = clsDetainedLicenses.getAllDetainedLicenseByIsReleased(false);
 
                         break;
                     }
@@ -205,36 +230,24 @@ namespace DVLD.License.InternationalDrivingLicense
 
             switch (cbFilter.SelectedItem.ToString())
             {
-                case "Int.License ID":
+                case "License ID":
                     {
                         if (int.TryParse(tbFilter.Text, out int value))
                         {
-                        dgvDetainedLicenses.DataSource = clsInternationalLicense.GetInternationalLicenseApplicationsByIntLicenseID(value);
+                        dgvDetainedLicenses.DataSource = clsDetainedLicenses.getAllDetainedLicenseByLicenseID(value);
                         }
                         break;
                     }
-                case "Application ID":
+                case "NationalNo":
                     {
-                        if (int.TryParse(tbFilter.Text, out int value))
-                        {
-                            dgvDetainedLicenses.DataSource = clsInternationalLicense.GetInternationalLicenseApplicationsByAppID(value);
-                        }
+                            dgvDetainedLicenses.DataSource = clsDetainedLicenses.getAllDetainedLicenseByNationalNo(tbFilter.Text);
+                        
                         break;
                     }
-                case "Driver ID":
+                case "Full Name":
                     {
-                        if (int.TryParse(tbFilter.Text, out int value))
-                        {
-                            dgvDetainedLicenses.DataSource = clsInternationalLicense.GetInternationalLicenseApplicationsByDriverID(value);
-                        }
-                        break;
-                    }
-                case "L.License ID":
-                    {
-                        if (int.TryParse(tbFilter.Text, out int value))
-                        {
-                            dgvDetainedLicenses.DataSource = clsInternationalLicense.GetInternationalLicenseApplicationsByLocalLicenseID(value);
-                        }
+                            dgvDetainedLicenses.DataSource = clsDetainedLicenses.getAllDetainedLicenseByFullName(tbFilter.Text);
+                        
                         break;
                     }
 

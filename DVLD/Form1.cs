@@ -225,6 +225,22 @@ namespace DVLD
                         }
                         break;
                     }
+                case "Release Detained Driving License":
+                    {
+                        using (ReleaseDLicenseApp frmReleaseDLicenseApp = new ReleaseDLicenseApp())
+                        {
+                            frmReleaseDLicenseApp.ShowDialog();
+                        }
+                        break;
+                    }
+                case "Retake Test":
+                    {
+                        using (LocalDLA frmLocalDLA = new LocalDLA())
+                        {
+                            frmLocalDLA.ShowDialog();
+                        }
+                        break;
+                    }
 
             }
         }
@@ -233,6 +249,14 @@ namespace DVLD
         {
             switch (e.ClickedItem.Text)
             {
+                case "Manage Detained Licenses":
+                    {
+                        using (ManageDetainedLicenses frmManageDetainLicense = new ManageDetainedLicenses())
+                        {
+                            frmManageDetainLicense.ShowDialog();
+                        }
+                        break;
+                    }
                 case "Detain License":
                     {
                         using (DetainLicenseApplication frmDetainLApp = new DetainLicenseApplication())

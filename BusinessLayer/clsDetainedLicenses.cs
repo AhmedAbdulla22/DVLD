@@ -121,5 +121,22 @@ namespace BusinessLayer
         {
             return clsDetainedLicensesDataAccess.getAllDetainedLicense();
         }
+        public static DataTable getAllDetainedLicenseByIsReleased(bool IsReleased)
+        {
+            return clsDetainedLicensesDataAccess.getAllDetainedLicenseByIsReleased(IsReleased);
+        }
+        public static DataTable getAllDetainedLicenseByFullName(string FullName)
+        {
+            return clsDetainedLicensesDataAccess.getAllDetainedLicenseByFullName(FullName);
+        }
+        public static DataTable getAllDetainedLicenseByNationalNo(string NationalNo)
+        {
+            return clsDetainedLicensesDataAccess.getAllDetainedLicenseByNationalNo(NationalNo);
+        }
+        public static DataTable getAllDetainedLicenseByLicenseID(int LicenseID)
+        {
+            return clsDetainedLicensesDataAccess.getAllDetainedLicenseByLicenseID(LicenseID);
+        }
+
     }
 }

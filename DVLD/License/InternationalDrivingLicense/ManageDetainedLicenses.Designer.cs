@@ -38,7 +38,7 @@
             this.lblRecords = new System.Windows.Forms.Label();
             this.dgvDetainedLicenses = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbActiveFilter = new System.Windows.Forms.ComboBox();
+            this.cbReleasedFilter = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ShowApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,11 +82,10 @@
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
             "None",
-            "Int.License ID",
-            "Application ID",
-            "Driver ID",
-            "L.License ID",
-            "Is Active"});
+            "License ID",
+            "NationalNo",
+            "Full Name",
+            "Is Released"});
             this.cbFilter.Location = new System.Drawing.Point(96, 315);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilter.Name = "cbFilter";
@@ -183,20 +182,20 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // cbActiveFilter
+            // cbReleasedFilter
             // 
-            this.cbActiveFilter.FormattingEnabled = true;
-            this.cbActiveFilter.Items.AddRange(new object[] {
+            this.cbReleasedFilter.FormattingEnabled = true;
+            this.cbReleasedFilter.Items.AddRange(new object[] {
             "All",
-            "Active",
-            "Not Active"});
-            this.cbActiveFilter.Location = new System.Drawing.Point(256, 315);
-            this.cbActiveFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbActiveFilter.Name = "cbActiveFilter";
-            this.cbActiveFilter.Size = new System.Drawing.Size(121, 24);
-            this.cbActiveFilter.TabIndex = 38;
-            this.cbActiveFilter.Visible = false;
-            this.cbActiveFilter.SelectedIndexChanged += new System.EventHandler(this.cbActiveFilter_SelectedIndexChanged);
+            "Released",
+            "Not Released"});
+            this.cbReleasedFilter.Location = new System.Drawing.Point(256, 315);
+            this.cbReleasedFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbReleasedFilter.Name = "cbReleasedFilter";
+            this.cbReleasedFilter.Size = new System.Drawing.Size(121, 24);
+            this.cbReleasedFilter.TabIndex = 38;
+            this.cbReleasedFilter.Visible = false;
+            this.cbReleasedFilter.SelectedIndexChanged += new System.EventHandler(this.cbActiveFilter_SelectedIndexChanged);
             // 
             // contextMenuStrip1
             // 
@@ -274,7 +273,7 @@
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvDetainedLicenses);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbActiveFilter);
+            this.Controls.Add(this.cbReleasedFilter);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageDetainedLicenses";
             this.Text = "InternationalLicenses";
@@ -298,7 +297,7 @@
         private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.DataGridView dgvDetainedLicenses;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cbActiveFilter;
+        private System.Windows.Forms.ComboBox cbReleasedFilter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ShowApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLicenseToolStripMenuItem;

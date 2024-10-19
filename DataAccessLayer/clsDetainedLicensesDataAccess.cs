@@ -310,5 +310,198 @@ SELECT Scope_Identity();";
 
             return dt;
         }
+        public static DataTable getAllDetainedLicenseByIsReleased(bool IsReleased)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT    
+                                'D.ID' = DL.DetainID           
+                               ,'L.ID' = DL.LicenseID    
+                               ,'D.Date' = DL.DetainDate
+                               ,'Is Released' = DL.IsReleased          
+                               ,'Fine Fees' = DL.FineFees            
+                               ,'Release Date' = DL.ReleaseDate  
+                               ,'N.No' = People.NationalNo
+                               ,'Full Name' = People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName    
+                               ,'Release App ID' = ReleaseApplicationID
+                                  FROM DetainedLicenses DL
+								  INNER JOIN Licenses ON Licenses.LicenseID = DL.LicenseID
+								  INNER JOIN Drivers ON Drivers.DriverID = Licenses.DriverID
+								  INNER JOIN People ON People.PersonID = Drivers.PersonID
+                          Where DL.IsReleased = @IsReleased;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@IsReleased", IsReleased);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+        public static DataTable getAllDetainedLicenseByFullName(string FullName)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT    
+                                'D.ID' = DL.DetainID           
+                               ,'L.ID' = DL.LicenseID    
+                               ,'D.Date' = DL.DetainDate
+                               ,'Is Released' = DL.IsReleased          
+                               ,'Fine Fees' = DL.FineFees            
+                               ,'Release Date' = DL.ReleaseDate  
+                               ,'N.No' = People.NationalNo
+                               ,'Full Name' = People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName    
+                               ,'Release App ID' = ReleaseApplicationID
+                                  FROM DetainedLicenses DL
+								  INNER JOIN Licenses ON Licenses.LicenseID = DL.LicenseID
+								  INNER JOIN Drivers ON Drivers.DriverID = Licenses.DriverID
+								  INNER JOIN People ON People.PersonID = Drivers.PersonID
+                           Where (People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName) LIKE @FullName + '%';";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@FullName", FullName);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+        public static DataTable getAllDetainedLicenseByNationalNo(string NationalNo)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT    
+                                'D.ID' = DL.DetainID           
+                               ,'L.ID' = DL.LicenseID    
+                               ,'D.Date' = DL.DetainDate
+                               ,'Is Released' = DL.IsReleased          
+                               ,'Fine Fees' = DL.FineFees            
+                               ,'Release Date' = DL.ReleaseDate  
+                               ,'N.No' = People.NationalNo
+                               ,'Full Name' = People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName    
+                               ,'Release App ID' = ReleaseApplicationID
+                                  FROM DetainedLicenses DL
+								  INNER JOIN Licenses ON Licenses.LicenseID = DL.LicenseID
+								  INNER JOIN Drivers ON Drivers.DriverID = Licenses.DriverID
+								  INNER JOIN People ON People.PersonID = Drivers.PersonID
+                          Where People.NationalNo = @NationalNo;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+        public static DataTable getAllDetainedLicenseByLicenseID(int LicenseID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT    
+                                'D.ID' = DL.DetainID           
+                               ,'L.ID' = DL.LicenseID    
+                               ,'D.Date' = DL.DetainDate
+                               ,'Is Released' = DL.IsReleased          
+                               ,'Fine Fees' = DL.FineFees            
+                               ,'Release Date' = DL.ReleaseDate  
+                               ,'N.No' = People.NationalNo
+                               ,'Full Name' = People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName    
+                               ,'Release App ID' = ReleaseApplicationID
+                                  FROM DetainedLicenses DL
+								  INNER JOIN Licenses ON Licenses.LicenseID = DL.LicenseID
+								  INNER JOIN Drivers ON Drivers.DriverID = Licenses.DriverID
+								  INNER JOIN People ON People.PersonID = Drivers.PersonID
+                          Where DL.LicenseID = @LicenseID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
+
     }
 }
