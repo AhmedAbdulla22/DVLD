@@ -116,6 +116,18 @@
     <Compile Include="License\InternationalDrivingLicense\uctrlD_I_LicenseInfo.Designer.cs">
       <DependentUpon>uctrlD_I_LicenseInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\ReleaseDetainedLicense\ReleaseDLicenseApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\ReleaseDetainedLicense\ReleaseDLicenseApp.Designer.cs">
+      <DependentUpon>ReleaseDLicenseApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\ReleaseDetainedLicense\uctrlReleaseDLInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\ReleaseDetainedLicense\uctrlReleaseDLInfo.Designer.cs">
+      <DependentUpon>uctrlReleaseDLInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\Renew License\RenewLicense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +367,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="License\InternationalDrivingLicense\uctrlD_I_LicenseInfo.resx">
       <DependentUpon>uctrlD_I_LicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ReleaseDetainedLicense\ReleaseDLicenseApp.resx">
+      <DependentUpon>ReleaseDLicenseApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ReleaseDetainedLicense\uctrlReleaseDLInfo.resx">
+      <DependentUpon>uctrlReleaseDLInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\Renew License\RenewLicense.resx">
       <DependentUpon>RenewLicense.cs</DependentUpon>
@@ -681,7 +699,10 @@
     <None Include="Resources\Drivers.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="License\ReleaseDetainedLicense\" />
+    <None Include="Resources\hand release.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand detain.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

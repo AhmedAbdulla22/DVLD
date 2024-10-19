@@ -183,10 +183,28 @@ namespace BusinessLayer
 
             return license.Save();
         }
+        public static bool ActivateLicense(int LicenseID)
+        {
+            clsLicense license = clsLicense.GetLicenseByLicenseID(LicenseID);
+            if (license == null)
+            {
+                return false;
+            }
+
+            license.IsActive = true;
+
+            return license.Save();
+        }
 
         public bool DeactivateLicense()
         {
             this.IsActive = false;
+
+            return this.Save();
+        }
+        public bool ActivateLicense()
+        {
+            this.IsActive = true;
 
             return this.Save();
         }

@@ -61,10 +61,10 @@
             this.lnklblShowLicensesInfo.Location = new System.Drawing.Point(135, 567);
             this.lnklblShowLicensesInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnklblShowLicensesInfo.Name = "lnklblShowLicensesInfo";
-            this.lnklblShowLicensesInfo.Size = new System.Drawing.Size(131, 15);
+            this.lnklblShowLicensesInfo.Size = new System.Drawing.Size(104, 15);
             this.lnklblShowLicensesInfo.TabIndex = 63;
             this.lnklblShowLicensesInfo.TabStop = true;
-            this.lnklblShowLicensesInfo.Text = "Show New License Info";
+            this.lnklblShowLicensesInfo.Text = "Show License Info";
             this.lnklblShowLicensesInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblShowLicensesInfo_LinkClicked);
             // 
             // lnklblShowLicensesHistory
@@ -90,7 +90,7 @@
             this.btnDetain.Enabled = false;
             this.btnDetain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetain.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetain.Image = global::DVLD.Properties.Resources.Map;
+            this.btnDetain.Image = global::DVLD.Properties.Resources.hand_detain;
             this.btnDetain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetain.Location = new System.Drawing.Point(550, 557);
             this.btnDetain.Margin = new System.Windows.Forms.Padding(2);
@@ -147,7 +147,7 @@
             this.uctrlDetainInfo1.Size = new System.Drawing.Size(629, 104);
             this.uctrlDetainInfo1.TabIndex = 64;
             // 
-            // DetainLicenseApplication
+            // ReleaseDetainedLApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,7 +161,7 @@
             this.Controls.Add(this.uctrlFindLDLicense1);
             this.Controls.Add(this.lblFormLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DetainLicenseApplication";
+            this.Name = "ReleaseDetainedLApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DetainLicenseApplication";
             this.ResumeLayout(false);

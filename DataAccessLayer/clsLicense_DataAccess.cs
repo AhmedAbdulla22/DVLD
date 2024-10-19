@@ -20,7 +20,7 @@ namespace DataAccessLayer
             using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
             {
                 var query = @"SELECT 'A' FROM DetainedLicenses
-                              Where LicenseID = @LicenseID;";
+                              Where LicenseID = @LicenseID AND IsReleased = 0;";
 
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {

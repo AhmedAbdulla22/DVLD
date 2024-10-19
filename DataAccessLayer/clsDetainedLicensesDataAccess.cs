@@ -174,6 +174,95 @@ SELECT Scope_Identity();";
 
         //    return isExist;
         //}
+        public static bool GetDetainedLicenseByLicenseID(int LicenseID,ref int DetainID, ref DateTime DetainDate,ref decimal FineFees,ref bool IsReleased,ref DateTime ReleaseDate,ref int ReleasedByUserID,ref int ReleaseApplicationID,ref int CreatedByUserID)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM DetainedLicenses 
+                              Where DetainedLicenses.LicenseID = @LicenseID AND DetainedLicenses.IsReleased = 0;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@LicenseID", LicenseID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                DetainID = (int)reader["DetainID"];
+                                DetainDate = (DateTime)reader["DetainDate"];
+                                FineFees = (decimal)reader["FineFees"];
+                                IsReleased = (bool)reader["IsReleased"];
+                                ReleaseDate = (reader["ReleaseDate"] != DBNull.Value) ? (DateTime)reader["ReleaseDate"] : DateTime.MinValue;
+                                ReleaseApplicationID = (reader["ReleaseApplicationID"] != DBNull.Value) ? (int)reader["ReleaseApplicationID"] : -1;
+                                ReleasedByUserID = (reader["ReleasedByUserID"] != DBNull.Value) ? (int)reader["ReleasedByUserID"] : -1;
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
+        public static bool GetDetainedLicenseByDetainID(int DetainID, ref int LicenseID, ref DateTime DetainDate, ref decimal FineFees, ref bool IsReleased, ref DateTime ReleaseDate, ref int ReleasedByUserID, ref int ReleaseApplicationID, ref int CreatedByUserID)
+        {
+            bool isExist = false;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT * FROM DetainedLicenses Where DetainID = @DetainID;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@DetainID", DetainID);
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                LicenseID = (int)reader["LicenseID"];
+                                DetainDate = (DateTime)reader["DetainDate"];
+                                FineFees = (decimal)reader["FineFees"];
+                                IsReleased = (bool)reader["IsReleased"];
+                                ReleaseDate = (reader["ReleaseDate"] != DBNull.Value) ? (DateTime)reader["ReleaseDate"] : DateTime.MinValue;
+                                ReleaseApplicationID = (reader["ReleaseApplicationID"] != DBNull.Value) ? (int)reader["ReleaseApplicationID"] : -1;
+                                ReleasedByUserID = (reader["ReleasedByUserID"] != DBNull.Value) ? (int)reader["ReleasedByUserID"] : -1;
+                                CreatedByUserID = (int)reader["CreatedByUserID"];
+                                isExist = true;
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return isExist;
+        }
 
     }
 }

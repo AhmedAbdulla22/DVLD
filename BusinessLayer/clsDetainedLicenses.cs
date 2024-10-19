@@ -82,5 +82,38 @@ namespace BusinessLayer
             }
             return false;
         }
+
+        public static clsDetainedLicenses GetDetainedLicenseByLicenseID(int LicenseID)
+        {
+            int DetainID = -1,CreatedByUserID = -1,  ReleasedByUserID = -1,  ReleaseApplicationID = -1;
+            DateTime DetainDate = DateTime.MinValue, ReleaseDate = DateTime.MinValue;
+            decimal FineFees = 0;
+            bool IsReleased = false;
+
+            if (clsDetainedLicensesDataAccess.GetDetainedLicenseByLicenseID(LicenseID,ref DetainID,ref DetainDate,ref FineFees,ref IsReleased,ref ReleaseDate,ref ReleasedByUserID,ref ReleaseApplicationID,ref CreatedByUserID))
+            {
+                return new clsDetainedLicenses(DetainID, LicenseID, DetainDate, FineFees, IsReleased, CreatedByUserID, ReleaseDate,ReleasedByUserID,ReleaseApplicationID);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static clsDetainedLicenses GetDetainedLicenseByDetainedID(int DetainID)
+        {
+            int LicenseID = -1, CreatedByUserID = -1, ReleasedByUserID = -1, ReleaseApplicationID = -1;
+            DateTime DetainDate = DateTime.MinValue, ReleaseDate = DateTime.MinValue;
+            decimal FineFees = 0;
+            bool IsReleased = false;
+
+            if (clsDetainedLicensesDataAccess.GetDetainedLicenseByDetainID(DetainID, ref LicenseID, ref DetainDate, ref FineFees, ref IsReleased, ref ReleaseDate, ref ReleasedByUserID, ref ReleaseApplicationID, ref CreatedByUserID))
+            {
+                return new clsDetainedLicenses(DetainID, LicenseID, DetainDate, FineFees, IsReleased, CreatedByUserID, ReleaseDate, ReleasedByUserID, ReleaseApplicationID);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

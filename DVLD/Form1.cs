@@ -3,6 +3,7 @@ using DVLD.ApplicationForms;
 using DVLD.Drivers;
 using DVLD.License.DetainLicense;
 using DVLD.License.InternationalDrivingLicense;
+using DVLD.License.ReleaseDetainedLicense;
 using DVLD.License.Renew_License;
 using DVLD.License.ReplaceLicenseForDamagedOrLost;
 using DVLD.TestType;
@@ -237,6 +238,14 @@ namespace DVLD
                         using (DetainLicenseApplication frmDetainLApp = new DetainLicenseApplication())
                         {
                             frmDetainLApp.ShowDialog();
+                        }
+                        break;
+                    }
+                case "Release Detained License":
+                    {
+                        using (ReleaseDLicenseApp frmReleaseDLicenseApp = new ReleaseDLicenseApp())
+                        {
+                            frmReleaseDLicenseApp.ShowDialog();
                         }
                         break;
                     }
