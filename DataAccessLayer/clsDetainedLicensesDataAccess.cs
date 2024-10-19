@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -263,6 +264,51 @@ SELECT Scope_Identity();";
 
             return isExist;
         }
+        public static DataTable getAllDetainedLicense()
+        {
 
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = @"SELECT    'D.ID' = DL.DetainID           
+                               ,'L.ID' = DL.LicenseID    
+                               ,'D.Date' = DL.DetainDate
+                               ,'Is Released' = DL.IsReleased          
+                               ,'Fine Fees' = DL.FineFees            
+                               ,'Release Date' = DL.ReleaseDate  
+                               ,'N.No' = People.NationalNo
+                               ,'Full Name' = People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName    
+                               ,'Release App ID' = ReleaseApplicationID
+                                  FROM DetainedLicenses DL
+								  INNER JOIN Licenses ON Licenses.LicenseID = DL.LicenseID
+								  INNER JOIN Drivers ON Drivers.DriverID = Licenses.DriverID
+								  INNER JOIN People ON People.PersonID = Drivers.PersonID;";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+
+
+            return dt;
+        }
     }
 }

@@ -86,17 +86,23 @@
     <Compile Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.Designer.cs">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\DetainLicense\DetainLicenseApplication.cs">
+    <Compile Include="License\DetainLicenseAndRelease\DetainLicenseApplication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="License\DetainLicense\DetainLicenseApplication.Designer.cs">
+    <Compile Include="License\DetainLicenseAndRelease\DetainLicenseApplication.Designer.cs">
       <DependentUpon>DetainLicenseApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\DetainLicense\uctrlDetainInfo.cs">
+    <Compile Include="License\DetainLicenseAndRelease\uctrlDetainInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="License\DetainLicense\uctrlDetainInfo.Designer.cs">
+    <Compile Include="License\DetainLicenseAndRelease\uctrlDetainInfo.Designer.cs">
       <DependentUpon>uctrlDetainInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\InternationalDrivingLicense\ManageDetainedLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\InternationalDrivingLicense\ManageDetainedLicenses.Designer.cs">
+      <DependentUpon>ManageDetainedLicenses.cs</DependentUpon>
     </Compile>
     <Compile Include="License\InternationalDrivingLicense\InternationalLicenseInfo.cs">
       <SubType>Form</SubType>
@@ -116,16 +122,16 @@
     <Compile Include="License\InternationalDrivingLicense\uctrlD_I_LicenseInfo.Designer.cs">
       <DependentUpon>uctrlD_I_LicenseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\ReleaseDetainedLicense\ReleaseDLicenseApp.cs">
+    <Compile Include="License\DetainLicenseAndRelease\ReleaseDetainedLicense\ReleaseDLicenseApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="License\ReleaseDetainedLicense\ReleaseDLicenseApp.Designer.cs">
+    <Compile Include="License\DetainLicenseAndRelease\ReleaseDetainedLicense\ReleaseDLicenseApp.Designer.cs">
       <DependentUpon>ReleaseDLicenseApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\ReleaseDetainedLicense\uctrlReleaseDLInfo.cs">
+    <Compile Include="License\DetainLicenseAndRelease\ReleaseDetainedLicense\uctrlReleaseDLInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="License\ReleaseDetainedLicense\uctrlReleaseDLInfo.Designer.cs">
+    <Compile Include="License\DetainLicenseAndRelease\ReleaseDetainedLicense\uctrlReleaseDLInfo.Designer.cs">
       <DependentUpon>uctrlReleaseDLInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="License\Renew License\RenewLicense.cs">
@@ -353,11 +359,14 @@
     <EmbeddedResource Include="ApplicationForms\LocalDrivingLicenseApp\ShowLocalDLAppInfo.resx">
       <DependentUpon>ShowLocalDLAppInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\DetainLicense\DetainLicenseApplication.resx">
+    <EmbeddedResource Include="License\DetainLicenseAndRelease\DetainLicenseApplication.resx">
       <DependentUpon>DetainLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\DetainLicense\uctrlDetainInfo.resx">
+    <EmbeddedResource Include="License\DetainLicenseAndRelease\uctrlDetainInfo.resx">
       <DependentUpon>uctrlDetainInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\InternationalDrivingLicense\ManageDetainedLicenses.resx">
+      <DependentUpon>ManageDetainedLicenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\InternationalDrivingLicense\InternationalLicenseInfo.resx">
       <DependentUpon>InternationalLicenseInfo.cs</DependentUpon>
@@ -368,10 +377,10 @@
     <EmbeddedResource Include="License\InternationalDrivingLicense\uctrlD_I_LicenseInfo.resx">
       <DependentUpon>uctrlD_I_LicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\ReleaseDetainedLicense\ReleaseDLicenseApp.resx">
+    <EmbeddedResource Include="License\DetainLicenseAndRelease\ReleaseDetainedLicense\ReleaseDLicenseApp.resx">
       <DependentUpon>ReleaseDLicenseApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\ReleaseDetainedLicense\uctrlReleaseDLInfo.resx">
+    <EmbeddedResource Include="License\DetainLicenseAndRelease\ReleaseDetainedLicense\uctrlReleaseDLInfo.resx">
       <DependentUpon>uctrlReleaseDLInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\Renew License\RenewLicense.resx">
