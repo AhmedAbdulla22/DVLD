@@ -61,7 +61,7 @@ namespace DataAccessLayer
                                 PaidFees = (decimal)reader["PaidFees"];
                                 CreatedByUserID = (int)reader["CreatedByUserID"];
                                 IsLocked = (bool)reader["IsLocked"];
-                                RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
+                                RetakeTestApplicationID = (reader["RetakeTestApplicationID"] == DBNull.Value)? -1:(int)reader["RetakeTestApplicationID"];
                                 isExist = true;
                             }
 
