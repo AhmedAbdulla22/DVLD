@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,6 @@ namespace DVLD
         {
             InitializeComponent();
 
-            
-            //Resize Background
-            this.BackgroundImage = Utilites.ResizeImage(Properties.Resources._87f519db_8efe_46d1_8881_9e7d58b3e705, 300, 300);
-
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -41,21 +38,25 @@ namespace DVLD
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            switch(e.ClickedItem.Text)
+            switch (e.ClickedItem.Text)
             {
                 case "People":
                     {
-                        using (frmPeople frmPeople = new frmPeople())
-                        {
-                            frmPeople.ShowDialog();
+                        //using (frmPeople frmPeople = new frmPeople())
+                        //{
+                        //    frmPeople.ShowDialog();
 
-                        }
+                        //}
+                        Control People = new frmPeople();
+                        addControlToPanel(ref People);
+                        People.Show();
+
                         break;
 
                     }
                 case "Drivers":
                     {
-                        using(DriversForm frmDrivers = new DriversForm())
+                        using (DriversForm frmDrivers = new DriversForm())
                         {
                             frmDrivers.ShowDialog();
                         }
@@ -72,7 +73,7 @@ namespace DVLD
                     }
                 case "Current User Info":
                     {
-                        using(frmUserDetails frmUDetails = new frmUserDetails(clsLog.User.PersonID))
+                        using (frmUserDetails frmUDetails = new frmUserDetails(clsLog.User.PersonID))
                         {
                             frmUDetails.ShowDialog();
                         }
@@ -93,9 +94,9 @@ namespace DVLD
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Owner.Visible = true;
-            
+
             this.Close();
-            
+
         }
 
 
@@ -170,11 +171,11 @@ namespace DVLD
                     }
                 case "International Driving License Application":
                     {
-                        using(InternationalDLA frmInternationalLicenses = new InternationalDLA())
+                        using (InternationalDLA frmInternationalLicenses = new InternationalDLA())
                         {
                             frmInternationalLicenses.ShowDialog();
                         }
-                    break;
+                        break;
                     }
 
             }
@@ -276,5 +277,32 @@ namespace DVLD
 
             }
         }
-    }
+
+        private void addControlToPanel(ref Control control)
+        {
+            if (control is Form frm)
+            {
+                frm.FormBorderStyle = FormBorderStyle.None;
+                pnlMain.Controls.Clear();
+                frm.TopLevel = false;
+                frm.Parent = pnlMain;
+                frm.Dock = DockStyle.Fill;
+                pnlMain.Controls.Add(frm);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control frmDash = new Dashboard();
+            addControlToPanel(ref frmDash);
+            frmDash.Show();
+        }
+
+
+    }    
 }
