@@ -6,6 +6,7 @@ using DVLD.License.InternationalDrivingLicense;
 using DVLD.License.ReleaseDetainedLicense;
 using DVLD.License.Renew_License;
 using DVLD.License.ReplaceLicenseForDamagedOrLost;
+using DVLD.Properties;
 using DVLD.TestType;
 using DVLD.UserForm;
 using System;
@@ -303,6 +304,28 @@ namespace DVLD
             frmDash.Show();
         }
 
+        private void btnMaxMin_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                //change btn Image_Back_g to minimize
+                btnMaxMin.BackgroundImage = Resources.minimizeSize;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                //change btn Image_Back_g to maximize
+                btnMaxMin.BackgroundImage = Resources.maximize;
+            }
+        }
 
+        private void btnMinimizeHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        
     }    
 }

@@ -727,5 +727,47 @@
   <ItemGroup>
     <None Include="Resources\hand detain.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wdashboards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wApplication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wpeople1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wdrivers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wdashboard50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wApp50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wPeople50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wdrivers50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wUsers50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wAccSetting50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wclose-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizeSize.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
