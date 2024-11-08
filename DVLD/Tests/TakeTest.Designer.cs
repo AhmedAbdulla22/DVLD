@@ -44,11 +44,10 @@
             // 
             // tbNotes
             // 
-            this.tbNotes.Location = new System.Drawing.Point(159, 603);
-            this.tbNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNotes.Location = new System.Drawing.Point(119, 490);
             this.tbNotes.Multiline = true;
             this.tbNotes.Name = "tbNotes";
-            this.tbNotes.Size = new System.Drawing.Size(360, 94);
+            this.tbNotes.Size = new System.Drawing.Size(271, 77);
             this.tbNotes.TabIndex = 88;
             // 
             // label1
@@ -56,9 +55,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(36, 606);
+            this.label1.Location = new System.Drawing.Point(27, 492);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 23);
+            this.label1.Size = new System.Drawing.Size(49, 19);
             this.label1.TabIndex = 87;
             this.label1.Text = "Notes:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -67,10 +67,9 @@
             // 
             this.rbFail.AutoSize = true;
             this.rbFail.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.rbFail.Location = new System.Drawing.Point(241, 565);
-            this.rbFail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbFail.Location = new System.Drawing.Point(181, 459);
             this.rbFail.Name = "rbFail";
-            this.rbFail.Size = new System.Drawing.Size(53, 24);
+            this.rbFail.Size = new System.Drawing.Size(43, 19);
             this.rbFail.TabIndex = 86;
             this.rbFail.Text = "Fail";
             this.rbFail.UseVisualStyleBackColor = true;
@@ -80,10 +79,9 @@
             this.rbPass.AutoSize = true;
             this.rbPass.Checked = true;
             this.rbPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.rbPass.Location = new System.Drawing.Point(163, 565);
-            this.rbPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbPass.Location = new System.Drawing.Point(122, 459);
             this.rbPass.Name = "rbPass";
-            this.rbPass.Size = new System.Drawing.Size(59, 24);
+            this.rbPass.Size = new System.Drawing.Size(48, 19);
             this.rbPass.TabIndex = 85;
             this.rbPass.TabStop = true;
             this.rbPass.Text = "Pass";
@@ -94,9 +92,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(33, 564);
+            this.label4.Location = new System.Drawing.Point(25, 458);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 23);
+            this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 83;
             this.label4.Text = "Result:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,10 +109,10 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(288, 704);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(216, 572);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 39);
+            this.btnClose.Size = new System.Drawing.Size(81, 32);
             this.btnClose.TabIndex = 89;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -123,20 +122,19 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::DVLD.Properties.Resources.Display;
-            this.pictureBox7.Location = new System.Drawing.Point(115, 562);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(86, 457);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(33, 26);
+            this.pictureBox7.Size = new System.Drawing.Size(25, 21);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 84;
             this.pictureBox7.TabStop = false;
             // 
             // uctrTestInfo1
             // 
-            this.uctrTestInfo1.Location = new System.Drawing.Point(4, 4);
-            this.uctrTestInfo1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uctrTestInfo1.Location = new System.Drawing.Point(3, 3);
+            this.uctrTestInfo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uctrTestInfo1.Name = "uctrTestInfo1";
-            this.uctrTestInfo1.Size = new System.Drawing.Size(543, 549);
+            this.uctrTestInfo1.Size = new System.Drawing.Size(407, 446);
             this.uctrTestInfo1.TabIndex = 90;
             this.uctrTestInfo1.TestAppointmentID = -1;
             // 
@@ -149,10 +147,10 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(411, 704);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Location = new System.Drawing.Point(308, 572);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 39);
+            this.btnSave.Size = new System.Drawing.Size(81, 32);
             this.btnSave.TabIndex = 82;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -162,19 +160,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD.Properties.Resources.writing;
-            this.pictureBox1.Location = new System.Drawing.Point(115, 606);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(86, 492);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 91;
             this.pictureBox1.TabStop = false;
             // 
             // TakeTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 753);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(414, 612);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.uctrTestInfo1);
             this.Controls.Add(this.btnClose);
@@ -186,7 +184,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TakeTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TakeTest";

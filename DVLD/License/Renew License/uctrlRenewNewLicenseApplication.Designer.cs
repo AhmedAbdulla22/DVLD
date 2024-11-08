@@ -80,6 +80,7 @@
             // gbAppNewLicenseInfo
             // 
             this.gbAppNewLicenseInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbAppNewLicenseInfo.BackColor = System.Drawing.Color.White;
             this.gbAppNewLicenseInfo.Controls.Add(this.pictureBox10);
             this.gbAppNewLicenseInfo.Controls.Add(this.tbNotes);
             this.gbAppNewLicenseInfo.Controls.Add(this.label1);

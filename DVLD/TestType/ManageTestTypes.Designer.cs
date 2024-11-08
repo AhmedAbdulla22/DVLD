@@ -48,9 +48,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFormLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblFormLabel.Location = new System.Drawing.Point(311, 203);
+            this.lblFormLabel.Location = new System.Drawing.Point(233, 165);
+            this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFormLabel.Name = "lblFormLabel";
-            this.lblFormLabel.Size = new System.Drawing.Size(395, 42);
+            this.lblFormLabel.Size = new System.Drawing.Size(296, 34);
             this.lblFormLabel.TabIndex = 26;
             this.lblFormLabel.Text = "Manage Test Type";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,9 +61,10 @@
             this.lblRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(14, 561);
+            this.lblRecords.Location = new System.Drawing.Point(10, 456);
+            this.lblRecords.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(81, 23);
+            this.lblRecords.Size = new System.Drawing.Size(67, 19);
             this.lblRecords.TabIndex = 24;
             this.lblRecords.Text = "#Records";
             // 
@@ -76,7 +78,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTestType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTestType.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvTestType.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvTestType.BackgroundColor = System.Drawing.Color.White;
             this.dgvTestType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -86,13 +88,13 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTestType.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTestType.Location = new System.Drawing.Point(14, 311);
-            this.dgvTestType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvTestType.Location = new System.Drawing.Point(10, 253);
+            this.dgvTestType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvTestType.Name = "dgvTestType";
             this.dgvTestType.ReadOnly = true;
             this.dgvTestType.RowHeadersWidth = 62;
             this.dgvTestType.RowTemplate.Height = 28;
-            this.dgvTestType.Size = new System.Drawing.Size(996, 245);
+            this.dgvTestType.Size = new System.Drawing.Size(747, 199);
             this.dgvTestType.TabIndex = 23;
             this.dgvTestType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvTestType_MouseDown);
             // 
@@ -102,13 +104,13 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(202, 34);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 34);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.project;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(201, 30);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(173, 30);
             this.toolStripMenuItem3.Text = "Change Test Type";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -121,10 +123,10 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(902, 561);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(676, 456);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 41);
+            this.btnClose.Size = new System.Drawing.Size(81, 33);
             this.btnClose.TabIndex = 25;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,24 +138,26 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DVLD.Properties.Resources.testing;
-            this.pictureBox1.Location = new System.Drawing.Point(422, 38);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(316, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 162);
+            this.pictureBox1.Size = new System.Drawing.Size(131, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
             // ManageTestTypes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 619);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(769, 503);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvTestType);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ManageTestTypes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ManageTestTypes";

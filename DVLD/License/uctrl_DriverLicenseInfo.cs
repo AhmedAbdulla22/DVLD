@@ -111,7 +111,7 @@ namespace DVLD.License
                 }
                 else
                 {
-                    pbPersonPFP.Image = (Person.Gender == 0) ? Resources.User_Male : Resources.Female_User;
+                    pbPersonPFP.Image = (Person.Gender == 0) ? Resources.gif_male : Resources.gif_female;
                 }
 
 

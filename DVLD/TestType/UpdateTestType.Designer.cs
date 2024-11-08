@@ -60,7 +60,7 @@
             // tbFees
             // 
             this.tbFees.Location = new System.Drawing.Point(158, 260);
-            this.tbFees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbFees.Margin = new System.Windows.Forms.Padding(2);
             this.tbFees.MaxLength = 32;
             this.tbFees.Name = "tbFees";
             this.tbFees.Size = new System.Drawing.Size(220, 20);
@@ -71,7 +71,7 @@
             // tbTitle
             // 
             this.tbTitle.Location = new System.Drawing.Point(158, 130);
-            this.tbTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tbTitle.MaxLength = 128;
             this.tbTitle.Name = "tbTitle";
             this.tbTitle.Size = new System.Drawing.Size(220, 20);
@@ -108,7 +108,7 @@
             // tbDescription
             // 
             this.tbDescription.Location = new System.Drawing.Point(158, 162);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescription.MaxLength = 512;
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
@@ -140,7 +140,7 @@
             this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(234, 309);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 32);
             this.btnSave.TabIndex = 43;
@@ -159,7 +159,7 @@
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(148, 309);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(81, 32);
             this.btnClose.TabIndex = 42;
@@ -205,6 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(413, 359);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.tbDescription);
@@ -218,7 +219,7 @@
             this.Controls.Add(this.lblID1);
             this.Controls.Add(this.lblFormLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateTestType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UpdateTestType";

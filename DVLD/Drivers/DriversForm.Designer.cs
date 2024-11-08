@@ -46,9 +46,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFormLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblFormLabel.Location = new System.Drawing.Point(400, 225);
+            this.lblFormLabel.Location = new System.Drawing.Point(300, 183);
+            this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFormLabel.Name = "lblFormLabel";
-            this.lblFormLabel.Size = new System.Drawing.Size(227, 42);
+            this.lblFormLabel.Size = new System.Drawing.Size(170, 34);
             this.lblFormLabel.TabIndex = 29;
             this.lblFormLabel.Text = "Manage Drivers";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,10 +57,10 @@
             // tbFilter
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFilter.Location = new System.Drawing.Point(265, 278);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbFilter.Location = new System.Drawing.Point(199, 226);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Size = new System.Drawing.Size(197, 22);
+            this.tbFilter.Size = new System.Drawing.Size(148, 20);
             this.tbFilter.TabIndex = 28;
             this.tbFilter.Visible = false;
             this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
@@ -75,10 +76,10 @@
             "PersonID",
             "National No.",
             "FullName"});
-            this.cbFilter.Location = new System.Drawing.Point(104, 278);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilter.Location = new System.Drawing.Point(78, 226);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(156, 24);
+            this.cbFilter.Size = new System.Drawing.Size(118, 21);
             this.cbFilter.TabIndex = 27;
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
@@ -86,9 +87,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 280);
+            this.label1.Location = new System.Drawing.Point(16, 228);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 23);
+            this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.TabIndex = 26;
             this.label1.Text = "Filter By:";
             // 
@@ -101,10 +103,10 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::DVLD.Properties.Resources.Close;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(894, 609);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(670, 495);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 32);
+            this.button2.Size = new System.Drawing.Size(81, 26);
             this.button2.TabIndex = 25;
             this.button2.Text = "Close";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -116,9 +118,10 @@
             this.lblRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(17, 609);
+            this.lblRecords.Location = new System.Drawing.Point(13, 495);
+            this.lblRecords.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(81, 23);
+            this.lblRecords.Size = new System.Drawing.Size(67, 19);
             this.lblRecords.TabIndex = 23;
             this.lblRecords.Text = "#Records";
             // 
@@ -131,15 +134,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDrivers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDrivers.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDrivers.BackgroundColor = System.Drawing.Color.White;
             this.dgvDrivers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDrivers.Location = new System.Drawing.Point(22, 312);
-            this.dgvDrivers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDrivers.Location = new System.Drawing.Point(16, 254);
+            this.dgvDrivers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDrivers.Name = "dgvDrivers";
             this.dgvDrivers.ReadOnly = true;
             this.dgvDrivers.RowHeadersWidth = 62;
             this.dgvDrivers.RowTemplate.Height = 28;
-            this.dgvDrivers.Size = new System.Drawing.Size(979, 292);
+            this.dgvDrivers.Size = new System.Drawing.Size(734, 237);
             this.dgvDrivers.TabIndex = 22;
             // 
             // pictureBox1
@@ -147,19 +150,20 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DVLD.Properties.Resources.Drivers;
-            this.pictureBox1.Location = new System.Drawing.Point(440, 60);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(330, 49);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 162);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
             // DriversForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 655);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(764, 532);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.tbFilter);
             this.Controls.Add(this.cbFilter);
@@ -168,6 +172,7 @@
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvDrivers);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DriversForm";
             this.Text = "Drivers";
             this.Load += new System.EventHandler(this.Drivers_Load);

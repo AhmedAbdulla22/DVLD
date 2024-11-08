@@ -42,9 +42,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 33);
+            this.label1.Location = new System.Drawing.Point(61, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 23);
+            this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 10;
             this.label1.Text = "License ID:";
             // 
@@ -53,10 +54,10 @@
             this.btnFindLicense.BackgroundImage = global::DVLD.Properties.Resources.Driver_License;
             this.btnFindLicense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFindLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindLicense.Location = new System.Drawing.Point(541, 17);
-            this.btnFindLicense.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFindLicense.Location = new System.Drawing.Point(406, 14);
+            this.btnFindLicense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFindLicense.Name = "btnFindLicense";
-            this.btnFindLicense.Size = new System.Drawing.Size(56, 55);
+            this.btnFindLicense.Size = new System.Drawing.Size(42, 45);
             this.btnFindLicense.TabIndex = 14;
             this.btnFindLicense.UseVisualStyleBackColor = true;
             this.btnFindLicense.Click += new System.EventHandler(this.btnFindLicense_Click);
@@ -64,10 +65,10 @@
             // tbFilter
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFilter.Location = new System.Drawing.Point(188, 32);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbFilter.Location = new System.Drawing.Point(141, 26);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Size = new System.Drawing.Size(314, 27);
+            this.tbFilter.Size = new System.Drawing.Size(236, 23);
             this.tbFilter.TabIndex = 12;
             this.tbFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbFilter_KeyDown);
             // 
@@ -80,11 +81,9 @@
             this.groupBox1.Controls.Add(this.btnFindLicense);
             this.groupBox1.Controls.Add(this.tbFilter);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(675, 86);
+            this.groupBox1.Size = new System.Drawing.Size(506, 70);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
@@ -95,12 +94,12 @@
             // 
             // uctrlFindLDLicense
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "uctrlFindLDLicense";
-            this.Size = new System.Drawing.Size(683, 94);
+            this.Size = new System.Drawing.Size(512, 76);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

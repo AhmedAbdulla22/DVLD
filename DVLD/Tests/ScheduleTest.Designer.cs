@@ -34,9 +34,12 @@
             // 
             // uctrlScheduleTest1
             // 
+            this.uctrlScheduleTest1.BackColor = System.Drawing.Color.White;
+            this.uctrlScheduleTest1.DLAppID = -1;
             this.uctrlScheduleTest1.Location = new System.Drawing.Point(1, 1);
+            this.uctrlScheduleTest1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uctrlScheduleTest1.Name = "uctrlScheduleTest1";
-            this.uctrlScheduleTest1.Size = new System.Drawing.Size(544, 669);
+            this.uctrlScheduleTest1.Size = new System.Drawing.Size(408, 544);
             this.uctrlScheduleTest1.TabIndex = 0;
             // 
             // btnClose
@@ -48,10 +51,10 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(219, 673);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(164, 547);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 41);
+            this.btnClose.Size = new System.Drawing.Size(81, 33);
             this.btnClose.TabIndex = 25;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -60,13 +63,13 @@
             // 
             // ScheduleTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 723);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(408, 587);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.uctrlScheduleTest1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ScheduleTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ScheduleTest";

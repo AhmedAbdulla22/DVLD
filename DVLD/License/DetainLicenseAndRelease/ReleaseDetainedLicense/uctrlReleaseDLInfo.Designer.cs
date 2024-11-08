@@ -30,31 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctrlReleaseDLInfo));
             this.gbAppNewLicenseInfo = new System.Windows.Forms.GroupBox();
-            this.lbl_TotalFees2 = new System.Windows.Forms.Label();
-            this.lbl_TotalFees1 = new System.Windows.Forms.Label();
-            this.lbl_FineFees2 = new System.Windows.Forms.Label();
-            this.lbl_AppFees2 = new System.Windows.Forms.Label();
-            this.lbl_AppFees1 = new System.Windows.Forms.Label();
-            this.lbl_DetainDate2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblCreatedBy2 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbl_FineFees1 = new System.Windows.Forms.Label();
-            this.lbl_DetainID2 = new System.Windows.Forms.Label();
-            this.lbl_ID1 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pb_ID = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lbl_ReleaseAppID2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbl_TotalFees2 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lbl_TotalFees1 = new System.Windows.Forms.Label();
+            this.lbl_FineFees2 = new System.Windows.Forms.Label();
+            this.lbl_AppFees2 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lbl_AppFees1 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.lbl_DetainDate2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCreatedBy2 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_icenseID2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lbl_FineFees1 = new System.Windows.Forms.Label();
+            this.pb_ID = new System.Windows.Forms.PictureBox();
+            this.lbl_DetainID2 = new System.Windows.Forms.Label();
+            this.lbl_ID1 = new System.Windows.Forms.Label();
             this.gbAppNewLicenseInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -62,13 +63,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // gbAppNewLicenseInfo
             // 
             this.gbAppNewLicenseInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbAppNewLicenseInfo.BackColor = System.Drawing.Color.White;
             this.gbAppNewLicenseInfo.Controls.Add(this.pictureBox6);
             this.gbAppNewLicenseInfo.Controls.Add(this.lbl_ReleaseAppID2);
             this.gbAppNewLicenseInfo.Controls.Add(this.label5);
@@ -100,6 +101,46 @@
             this.gbAppNewLicenseInfo.TabStop = false;
             this.gbAppNewLicenseInfo.Text = "Detain Info";
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::DVLD.Properties.Resources.Display;
+            this.pictureBox6.Location = new System.Drawing.Point(455, 98);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 72;
+            this.pictureBox6.TabStop = false;
+            // 
+            // lbl_ReleaseAppID2
+            // 
+            this.lbl_ReleaseAppID2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_ReleaseAppID2.AutoSize = true;
+            this.lbl_ReleaseAppID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ReleaseAppID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_ReleaseAppID2.Location = new System.Drawing.Point(483, 100);
+            this.lbl_ReleaseAppID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_ReleaseAppID2.Name = "lbl_ReleaseAppID2";
+            this.lbl_ReleaseAppID2.Size = new System.Drawing.Size(37, 19);
+            this.lbl_ReleaseAppID2.TabIndex = 71;
+            this.lbl_ReleaseAppID2.Text = "[???]";
+            this.lbl_ReleaseAppID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label5.Location = new System.Drawing.Point(299, 98);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 19);
+            this.label5.TabIndex = 70;
+            this.label5.Text = "Release Application ID:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lbl_TotalFees2
             // 
             this.lbl_TotalFees2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -114,6 +155,16 @@
             this.lbl_TotalFees2.TabIndex = 69;
             this.lbl_TotalFees2.Text = "[???]";
             this.lbl_TotalFees2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::DVLD.Properties.Resources.Fees1;
+            this.pictureBox5.Location = new System.Drawing.Point(129, 98);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 68;
+            this.pictureBox5.TabStop = false;
             // 
             // lbl_TotalFees1
             // 
@@ -160,6 +211,16 @@
             this.lbl_AppFees2.Text = "[???]";
             this.lbl_AppFees2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::DVLD.Properties.Resources.Fees1;
+            this.pictureBox4.Location = new System.Drawing.Point(129, 71);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 64;
+            this.pictureBox4.TabStop = false;
+            // 
             // lbl_AppFees1
             // 
             this.lbl_AppFees1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -174,6 +235,16 @@
             this.lbl_AppFees1.TabIndex = 63;
             this.lbl_AppFees1.Text = "Application Fees:";
             this.lbl_AppFees1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(129, 44);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 61;
+            this.pictureBox7.TabStop = false;
             // 
             // lbl_DetainDate2
             // 
@@ -205,6 +276,17 @@
             this.label3.Text = "Detain Date:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.Admin_Settings_Male;
+            this.pictureBox1.Location = new System.Drawing.Point(456, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblCreatedBy2
             // 
             this.lblCreatedBy2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -235,6 +317,32 @@
             this.label2.Text = "Created By:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.Driver_License1;
+            this.pictureBox2.Location = new System.Drawing.Point(456, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 55;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lbl_icenseID2
+            // 
+            this.lbl_icenseID2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_icenseID2.AutoSize = true;
+            this.lbl_icenseID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_icenseID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_icenseID2.Location = new System.Drawing.Point(483, 19);
+            this.lbl_icenseID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_icenseID2.Name = "lbl_icenseID2";
+            this.lbl_icenseID2.Size = new System.Drawing.Size(37, 19);
+            this.lbl_icenseID2.TabIndex = 54;
+            this.lbl_icenseID2.Text = "[???]";
+            this.lbl_icenseID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -250,6 +358,16 @@
             this.label4.Text = "License ID:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::DVLD.Properties.Resources.Fees1;
+            this.pictureBox3.Location = new System.Drawing.Point(455, 71);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 43;
+            this.pictureBox3.TabStop = false;
+            // 
             // lbl_FineFees1
             // 
             this.lbl_FineFees1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -264,6 +382,16 @@
             this.lbl_FineFees1.TabIndex = 41;
             this.lbl_FineFees1.Text = "Fine Fees:";
             this.lbl_FineFees1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pb_ID
+            // 
+            this.pb_ID.Image = global::DVLD.Properties.Resources.Display;
+            this.pb_ID.Location = new System.Drawing.Point(129, 19);
+            this.pb_ID.Name = "pb_ID";
+            this.pb_ID.Size = new System.Drawing.Size(25, 21);
+            this.pb_ID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_ID.TabIndex = 37;
+            this.pb_ID.TabStop = false;
             // 
             // lbl_DetainID2
             // 
@@ -295,133 +423,6 @@
             this.lbl_ID1.Text = "Detain ID:";
             this.lbl_ID1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::DVLD.Properties.Resources.Fees1;
-            this.pictureBox5.Location = new System.Drawing.Point(129, 98);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 68;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::DVLD.Properties.Resources.Fees1;
-            this.pictureBox4.Location = new System.Drawing.Point(129, 71);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 64;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(129, 44);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 61;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.Admin_Settings_Male;
-            this.pictureBox1.Location = new System.Drawing.Point(456, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.Driver_License1;
-            this.pictureBox2.Location = new System.Drawing.Point(456, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 55;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DVLD.Properties.Resources.Fees1;
-            this.pictureBox3.Location = new System.Drawing.Point(455, 71);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 43;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pb_ID
-            // 
-            this.pb_ID.Image = global::DVLD.Properties.Resources.Display;
-            this.pb_ID.Location = new System.Drawing.Point(129, 19);
-            this.pb_ID.Name = "pb_ID";
-            this.pb_ID.Size = new System.Drawing.Size(25, 21);
-            this.pb_ID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb_ID.TabIndex = 37;
-            this.pb_ID.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::DVLD.Properties.Resources.Display;
-            this.pictureBox6.Location = new System.Drawing.Point(455, 98);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 72;
-            this.pictureBox6.TabStop = false;
-            // 
-            // lbl_ReleaseAppID2
-            // 
-            this.lbl_ReleaseAppID2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_ReleaseAppID2.AutoSize = true;
-            this.lbl_ReleaseAppID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ReleaseAppID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_ReleaseAppID2.Location = new System.Drawing.Point(483, 100);
-            this.lbl_ReleaseAppID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_ReleaseAppID2.Name = "lbl_ReleaseAppID2";
-            this.lbl_ReleaseAppID2.Size = new System.Drawing.Size(37, 19);
-            this.lbl_ReleaseAppID2.TabIndex = 71;
-            this.lbl_ReleaseAppID2.Text = "[???]";
-            this.lbl_ReleaseAppID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(299, 98);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 19);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "Release Application ID:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_icenseID2
-            // 
-            this.lbl_icenseID2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_icenseID2.AutoSize = true;
-            this.lbl_icenseID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_icenseID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_icenseID2.Location = new System.Drawing.Point(483, 19);
-            this.lbl_icenseID2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_icenseID2.Name = "lbl_icenseID2";
-            this.lbl_icenseID2.Size = new System.Drawing.Size(37, 19);
-            this.lbl_icenseID2.TabIndex = 54;
-            this.lbl_icenseID2.Text = "[???]";
-            this.lbl_icenseID2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // uctrlReleaseDLInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +432,7 @@
             this.Size = new System.Drawing.Size(629, 138);
             this.gbAppNewLicenseInfo.ResumeLayout(false);
             this.gbAppNewLicenseInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -438,7 +440,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }

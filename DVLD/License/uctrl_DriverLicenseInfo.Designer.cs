@@ -89,6 +89,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.pbPersonPFP);
             this.groupBox1.Controls.Add(this.pictureBox11);
             this.groupBox1.Controls.Add(this.lbl_DriverID2);
@@ -140,7 +141,7 @@
             // 
             // pbPersonPFP
             // 
-            this.pbPersonPFP.Image = global::DVLD.Properties.Resources.User_Male;
+            this.pbPersonPFP.Image = global::DVLD.Properties.Resources.gif_male;
             this.pbPersonPFP.Location = new System.Drawing.Point(503, 69);
             this.pbPersonPFP.Margin = new System.Windows.Forms.Padding(2);
             this.pbPersonPFP.Name = "pbPersonPFP";

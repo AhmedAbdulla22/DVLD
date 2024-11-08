@@ -48,22 +48,22 @@
             this.lnklblSetImage = new System.Windows.Forms.LinkLabel();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.lblRemove = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbProfilePic = new System.Windows.Forms.PictureBox();
             this.radbtnMale = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pbProfilePic = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.radbtnFemale = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblNationalNumber = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radbtnFemale = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -252,169 +252,6 @@
             this.lblRemove.Visible = false;
             this.lblRemove.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRemove_LinkClicked);
             // 
-            // radbtnMale
-            // 
-            this.radbtnMale.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radbtnMale.Checked = true;
-            this.radbtnMale.Image = global::DVLD.Properties.Resources.user_3_;
-            this.radbtnMale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radbtnMale.Location = new System.Drawing.Point(89, 89);
-            this.radbtnMale.Name = "radbtnMale";
-            this.radbtnMale.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.radbtnMale.Size = new System.Drawing.Size(67, 30);
-            this.radbtnMale.TabIndex = 16;
-            this.radbtnMale.TabStop = true;
-            this.radbtnMale.Text = "Male";
-            this.radbtnMale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radbtnMale.UseVisualStyleBackColor = true;
-            this.radbtnMale.CheckedChanged += new System.EventHandler(this.radbtnMale_CheckedChanged);
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(328, 245);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(67, 23);
-            this.btnClose.TabIndex = 30;
-            this.btnClose.Text = "Close";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(399, 245);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(67, 23);
-            this.btnSave.TabIndex = 29;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // pbProfilePic
-            // 
-            this.pbProfilePic.Image = global::DVLD.Properties.Resources.User_Male;
-            this.pbProfilePic.Location = new System.Drawing.Point(485, 58);
-            this.pbProfilePic.Name = "pbProfilePic";
-            this.pbProfilePic.Size = new System.Drawing.Size(104, 109);
-            this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfilePic.TabIndex = 26;
-            this.pbProfilePic.TabStop = false;
-            // 
-            // lblNationalNumber
-            // 
-            this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNationalNumber.Image = global::DVLD.Properties.Resources.Display1;
-            this.lblNationalNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblNationalNumber.Location = new System.Drawing.Point(8, 61);
-            this.lblNationalNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNationalNumber.Name = "lblNationalNumber";
-            this.lblNationalNumber.Size = new System.Drawing.Size(105, 22);
-            this.lblNationalNumber.TabIndex = 10;
-            this.lblNationalNumber.Text = "National .No:";
-            this.lblNationalNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Image = global::DVLD.Properties.Resources.arroba;
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(8, 145);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 26);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Email:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Image = global::DVLD.Properties.Resources.phone_call_1_;
-            this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPhone.Location = new System.Drawing.Point(284, 89);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(77, 26);
-            this.lblPhone.TabIndex = 18;
-            this.lblPhone.Text = "Phone:";
-            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Image = global::DVLD.Properties.Resources.user_1_;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(8, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 30);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Name:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // radbtnFemale
-            // 
-            this.radbtnFemale.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radbtnFemale.Image = global::DVLD.Properties.Resources.user_2_;
-            this.radbtnFemale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radbtnFemale.Location = new System.Drawing.Point(162, 89);
-            this.radbtnFemale.Name = "radbtnFemale";
-            this.radbtnFemale.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.radbtnFemale.Size = new System.Drawing.Size(82, 31);
-            this.radbtnFemale.TabIndex = 17;
-            this.radbtnFemale.Text = "Female";
-            this.radbtnFemale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radbtnFemale.UseVisualStyleBackColor = true;
-            this.radbtnFemale.CheckedChanged += new System.EventHandler(this.radbtnFemale_CheckedChanged);
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Image = global::DVLD.Properties.Resources.home;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(8, 171);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 26);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Address:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Image = global::DVLD.Properties.Resources.maps;
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Location = new System.Drawing.Point(284, 145);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 26);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Country:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar;
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(240, 57);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 26);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Date Of Birth:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -457,6 +294,169 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // pbProfilePic
+            // 
+            this.pbProfilePic.Image = global::DVLD.Properties.Resources.gif_male;
+            this.pbProfilePic.Location = new System.Drawing.Point(485, 58);
+            this.pbProfilePic.Name = "pbProfilePic";
+            this.pbProfilePic.Size = new System.Drawing.Size(104, 109);
+            this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfilePic.TabIndex = 26;
+            this.pbProfilePic.TabStop = false;
+            // 
+            // radbtnMale
+            // 
+            this.radbtnMale.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radbtnMale.Checked = true;
+            this.radbtnMale.Image = global::DVLD.Properties.Resources.user_3_;
+            this.radbtnMale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radbtnMale.Location = new System.Drawing.Point(89, 89);
+            this.radbtnMale.Name = "radbtnMale";
+            this.radbtnMale.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.radbtnMale.Size = new System.Drawing.Size(67, 30);
+            this.radbtnMale.TabIndex = 16;
+            this.radbtnMale.TabStop = true;
+            this.radbtnMale.Text = "Male";
+            this.radbtnMale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radbtnMale.UseVisualStyleBackColor = true;
+            this.radbtnMale.CheckedChanged += new System.EventHandler(this.radbtnMale_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar;
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Location = new System.Drawing.Point(240, 57);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 26);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Date Of Birth:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(328, 245);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(67, 23);
+            this.btnClose.TabIndex = 30;
+            this.btnClose.Text = "Close";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(399, 245);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(67, 23);
+            this.btnSave.TabIndex = 29;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Image = global::DVLD.Properties.Resources.maps;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Location = new System.Drawing.Point(284, 145);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 26);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Country:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Image = global::DVLD.Properties.Resources.home;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Location = new System.Drawing.Point(8, 171);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 26);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Address:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radbtnFemale
+            // 
+            this.radbtnFemale.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radbtnFemale.Image = global::DVLD.Properties.Resources.user_2_;
+            this.radbtnFemale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radbtnFemale.Location = new System.Drawing.Point(162, 89);
+            this.radbtnFemale.Name = "radbtnFemale";
+            this.radbtnFemale.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.radbtnFemale.Size = new System.Drawing.Size(82, 31);
+            this.radbtnFemale.TabIndex = 17;
+            this.radbtnFemale.Text = "Female";
+            this.radbtnFemale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radbtnFemale.UseVisualStyleBackColor = true;
+            this.radbtnFemale.CheckedChanged += new System.EventHandler(this.radbtnFemale_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = global::DVLD.Properties.Resources.user_1_;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(8, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 30);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Name:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblNationalNumber
+            // 
+            this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationalNumber.Image = global::DVLD.Properties.Resources.Display1;
+            this.lblNationalNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNationalNumber.Location = new System.Drawing.Point(8, 61);
+            this.lblNationalNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNationalNumber.Name = "lblNationalNumber";
+            this.lblNationalNumber.Size = new System.Drawing.Size(105, 22);
+            this.lblNationalNumber.TabIndex = 10;
+            this.lblNationalNumber.Text = "National .No:";
+            this.lblNationalNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Image = global::DVLD.Properties.Resources.arroba;
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label8.Location = new System.Drawing.Point(8, 145);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 26);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Email:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Image = global::DVLD.Properties.Resources.phone_call_1_;
+            this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPhone.Location = new System.Drawing.Point(284, 89);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(77, 26);
+            this.lblPhone.TabIndex = 18;
+            this.lblPhone.Text = "Phone:";
+            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // uctrlAddPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,9 +470,9 @@
             this.Load += new System.EventHandler(this.uctrlAddPerson_Load);
             this.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateBoxes);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -39,20 +39,20 @@
             // 
             // uctrlDrivingLicenseApplicationInfo1
             // 
+            this.uctrlDrivingLicenseApplicationInfo1.BackColor = System.Drawing.Color.White;
             this.uctrlDrivingLicenseApplicationInfo1.DLAppID = -1;
             this.uctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(0, 0);
-            this.uctrlDrivingLicenseApplicationInfo1.Margin = new System.Windows.Forms.Padding(5);
+            this.uctrlDrivingLicenseApplicationInfo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uctrlDrivingLicenseApplicationInfo1.Name = "uctrlDrivingLicenseApplicationInfo1";
-            this.uctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(853, 345);
+            this.uctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(640, 280);
             this.uctrlDrivingLicenseApplicationInfo1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD.Properties.Resources.writing;
-            this.pictureBox1.Location = new System.Drawing.Point(88, 354);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(66, 288);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
@@ -66,10 +66,10 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(611, 464);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(458, 377);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 39);
+            this.btnClose.Size = new System.Drawing.Size(81, 32);
             this.btnClose.TabIndex = 95;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -78,11 +78,10 @@
             // 
             // tbNotes
             // 
-            this.tbNotes.Location = new System.Drawing.Point(132, 352);
-            this.tbNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNotes.Location = new System.Drawing.Point(99, 286);
             this.tbNotes.Multiline = true;
             this.tbNotes.Name = "tbNotes";
-            this.tbNotes.Size = new System.Drawing.Size(708, 101);
+            this.tbNotes.Size = new System.Drawing.Size(532, 83);
             this.tbNotes.TabIndex = 94;
             // 
             // label1
@@ -90,9 +89,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(9, 354);
+            this.label1.Location = new System.Drawing.Point(7, 288);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 23);
+            this.label1.Size = new System.Drawing.Size(49, 19);
             this.label1.TabIndex = 93;
             this.label1.Text = "Notes:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,10 +106,10 @@
             this.btnIssue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssue.Image = global::DVLD.Properties.Resources.Driver_License__Custom_;
             this.btnIssue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIssue.Location = new System.Drawing.Point(733, 464);
-            this.btnIssue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIssue.Location = new System.Drawing.Point(550, 377);
+            this.btnIssue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIssue.Name = "btnIssue";
-            this.btnIssue.Size = new System.Drawing.Size(108, 39);
+            this.btnIssue.Size = new System.Drawing.Size(81, 32);
             this.btnIssue.TabIndex = 92;
             this.btnIssue.Text = "Issue";
             this.btnIssue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,9 +118,10 @@
             // 
             // IssueDrivingLicenseFirstTime
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 517);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(642, 420);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbNotes);
@@ -128,7 +129,6 @@
             this.Controls.Add(this.btnIssue);
             this.Controls.Add(this.uctrlDrivingLicenseApplicationInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "IssueDrivingLicenseFirstTime";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Issue Driving License (First Time)";

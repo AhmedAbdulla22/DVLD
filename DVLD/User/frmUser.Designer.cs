@@ -57,10 +57,10 @@
             // tbFilter
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFilter.Location = new System.Drawing.Point(269, 295);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbFilter.Location = new System.Drawing.Point(202, 240);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Size = new System.Drawing.Size(197, 22);
+            this.tbFilter.Size = new System.Drawing.Size(148, 20);
             this.tbFilter.TabIndex = 17;
             this.tbFilter.Visible = false;
             this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
@@ -77,10 +77,10 @@
             "Full Name",
             "User Name",
             "IsActive"});
-            this.cbFilter.Location = new System.Drawing.Point(109, 294);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFilter.Location = new System.Drawing.Point(82, 239);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(156, 24);
+            this.cbFilter.Size = new System.Drawing.Size(118, 21);
             this.cbFilter.TabIndex = 16;
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
@@ -88,9 +88,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 292);
+            this.label1.Location = new System.Drawing.Point(20, 237);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 23);
+            this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.TabIndex = 15;
             this.label1.Text = "Filter By:";
             // 
@@ -99,9 +100,10 @@
             this.lblRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(21, 574);
+            this.lblRecords.Location = new System.Drawing.Point(16, 466);
+            this.lblRecords.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(81, 23);
+            this.lblRecords.Size = new System.Drawing.Size(67, 19);
             this.lblRecords.TabIndex = 12;
             this.lblRecords.Text = "#Records";
             // 
@@ -114,15 +116,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUsers.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(28, 321);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvUsers.Location = new System.Drawing.Point(21, 261);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersWidth = 62;
             this.dgvUsers.RowTemplate.Height = 28;
-            this.dgvUsers.Size = new System.Drawing.Size(979, 249);
+            this.dgvUsers.Size = new System.Drawing.Size(734, 202);
             this.dgvUsers.TabIndex = 11;
             this.dgvUsers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvPeople_MouseDown);
             // 
@@ -135,10 +137,10 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::DVLD.Properties.Resources.Close;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(899, 574);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(674, 466);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 41);
+            this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 14;
             this.button2.Text = "Close";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -152,10 +154,10 @@
             this.btnAddUser.BackgroundImage = global::DVLD.Properties.Resources.Add_User_Male;
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Location = new System.Drawing.Point(955, 268);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddUser.Location = new System.Drawing.Point(716, 218);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(53, 49);
+            this.btnAddUser.Size = new System.Drawing.Size(40, 40);
             this.btnAddUser.TabIndex = 13;
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
@@ -165,10 +167,10 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DVLD.Properties.Resources.Admin_Settings_Male100x;
-            this.pictureBox1.Location = new System.Drawing.Point(445, 50);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(334, 41);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 162);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -180,10 +182,10 @@
             "All",
             "Active",
             "InActive"});
-            this.cbActiveFilter.Location = new System.Drawing.Point(269, 294);
-            this.cbActiveFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbActiveFilter.Location = new System.Drawing.Point(202, 239);
+            this.cbActiveFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbActiveFilter.Name = "cbActiveFilter";
-            this.cbActiveFilter.Size = new System.Drawing.Size(121, 24);
+            this.cbActiveFilter.Size = new System.Drawing.Size(92, 21);
             this.cbActiveFilter.TabIndex = 18;
             this.cbActiveFilter.Visible = false;
             this.cbActiveFilter.SelectedIndexChanged += new System.EventHandler(this.cbActiveFilter_SelectedIndexChanged);
@@ -202,66 +204,66 @@
             this.callToolStripMenuItem,
             this.sendEmailToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 254);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 226);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(173, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.Add_Male_User_Group;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.addNewPersonToolStripMenuItem.Text = "Add New User";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.compose;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.Remove;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.Password;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(218, 30);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 30);
             this.toolStripMenuItem3.Text = "Change Password";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(173, 6);
             // 
             // callToolStripMenuItem
             // 
             this.callToolStripMenuItem.Image = global::DVLD.Properties.Resources.phone_call_1_;
             this.callToolStripMenuItem.Name = "callToolStripMenuItem";
-            this.callToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.callToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.callToolStripMenuItem.Text = "Phone Call";
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.arroba;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // lblFormLabel
@@ -270,18 +272,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFormLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblFormLabel.Location = new System.Drawing.Point(405, 215);
+            this.lblFormLabel.Location = new System.Drawing.Point(304, 175);
+            this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFormLabel.Name = "lblFormLabel";
-            this.lblFormLabel.Size = new System.Drawing.Size(227, 42);
+            this.lblFormLabel.Size = new System.Drawing.Size(170, 34);
             this.lblFormLabel.TabIndex = 19;
             this.lblFormLabel.Text = "Manage Users";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 619);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(769, 503);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.tbFilter);
             this.Controls.Add(this.cbFilter);
@@ -292,7 +296,7 @@
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbActiveFilter);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUser";

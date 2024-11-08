@@ -33,6 +33,7 @@
             // 
             // uctrlDrivingLicenseApplicationInfo1
             // 
+            this.uctrlDrivingLicenseApplicationInfo1.BackColor = System.Drawing.Color.White;
             this.uctrlDrivingLicenseApplicationInfo1.DLAppID = -1;
             this.uctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(0, 0);
             this.uctrlDrivingLicenseApplicationInfo1.Name = "uctrlDrivingLicenseApplicationInfo1";

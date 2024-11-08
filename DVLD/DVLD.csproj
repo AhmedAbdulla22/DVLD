@@ -775,5 +775,14 @@
   <ItemGroup>
     <None Include="Resources\wmenuBar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gFemale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif_female.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif_male.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

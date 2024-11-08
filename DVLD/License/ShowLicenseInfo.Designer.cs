@@ -40,7 +40,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uctrlDriverLicenseInfo1.LicenseID = -1;
             this.uctrlDriverLicenseInfo1.Location = new System.Drawing.Point(1, 167);
-            this.uctrlDriverLicenseInfo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uctrlDriverLicenseInfo1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrlDriverLicenseInfo1.Name = "uctrlDriverLicenseInfo1";
             this.uctrlDriverLicenseInfo1.Size = new System.Drawing.Size(629, 318);
             this.uctrlDriverLicenseInfo1.TabIndex = 0;
@@ -76,6 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(632, 486);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.pictureBox1);

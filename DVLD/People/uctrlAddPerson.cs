@@ -110,10 +110,12 @@ namespace DVLD
                 lblRemove.Visible = true;
             }
 
-            
+        }
 
-
-
+        public void ResetFocus()
+        {
+            //focus
+            btnClose.Focus();
         }
 
         private void ValidateDateTimePicker()
@@ -309,7 +311,7 @@ namespace DVLD
         {
             if (radbtnMale.Checked)
             {
-                pbProfilePic.Image = Resources.User_Male;
+                pbProfilePic.Image = Resources.gif_male;
             }
         }
 
@@ -317,7 +319,7 @@ namespace DVLD
         {
             if (radbtnFemale.Checked)
             {
-                pbProfilePic.Image = Resources.Female_User;
+                pbProfilePic.Image = Resources.gif_female;
             }
         }
 
@@ -326,7 +328,7 @@ namespace DVLD
         {
             lblRemove.Visible = false;
 
-            pbProfilePic.Image = (radbtnMale.Checked) ? Resources.User_Male: Resources.Female_User;
+            pbProfilePic.Image = (radbtnMale.Checked) ? Resources.gif_male: Resources.gif_female;
 
             pbProfilePic.ImageLocation = null;
         }

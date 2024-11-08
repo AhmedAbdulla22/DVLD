@@ -35,7 +35,7 @@ namespace DVLD.PeopleForm
             }
 
             
-            
+            uctrlAddPerson1.ResetFocus();
 
         }
 

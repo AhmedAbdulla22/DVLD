@@ -32,8 +32,8 @@
             this.uctrlFindLDLicense1 = new DVLD.License.InternationalDrivingLicense.uctrlFindLDLicense();
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.gbReplacementReason = new System.Windows.Forms.GroupBox();
-            this.rbLost = new System.Windows.Forms.RadioButton();
             this.rbDamaged = new System.Windows.Forms.RadioButton();
+            this.rbLost = new System.Windows.Forms.RadioButton();
             this.lnklblShowLicensesInfo = new System.Windows.Forms.LinkLabel();
             this.lnklblShowLicensesHistory = new System.Windows.Forms.LinkLabel();
             this.btnIssue = new System.Windows.Forms.Button();
@@ -84,18 +84,6 @@
             this.gbReplacementReason.TabStop = false;
             this.gbReplacementReason.Text = "Replacement For";
             // 
-            // rbLost
-            // 
-            this.rbLost.AutoSize = true;
-            this.rbLost.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.rbLost.Location = new System.Drawing.Point(7, 42);
-            this.rbLost.Name = "rbLost";
-            this.rbLost.Size = new System.Drawing.Size(85, 17);
-            this.rbLost.TabIndex = 0;
-            this.rbLost.Text = "Lost License";
-            this.rbLost.UseVisualStyleBackColor = true;
-            this.rbLost.CheckedChanged += new System.EventHandler(this.ReplacementReasonChanged);
-            // 
             // rbDamaged
             // 
             this.rbDamaged.AutoSize = true;
@@ -109,6 +97,18 @@
             this.rbDamaged.Text = "Damaged License";
             this.rbDamaged.UseVisualStyleBackColor = true;
             this.rbDamaged.CheckedChanged += new System.EventHandler(this.ReplacementReasonChanged);
+            // 
+            // rbLost
+            // 
+            this.rbLost.AutoSize = true;
+            this.rbLost.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.rbLost.Location = new System.Drawing.Point(7, 42);
+            this.rbLost.Name = "rbLost";
+            this.rbLost.Size = new System.Drawing.Size(85, 17);
+            this.rbLost.TabIndex = 0;
+            this.rbLost.Text = "Lost License";
+            this.rbLost.UseVisualStyleBackColor = true;
+            this.rbLost.CheckedChanged += new System.EventHandler(this.ReplacementReasonChanged);
             // 
             // lnklblShowLicensesInfo
             // 
@@ -193,6 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(633, 605);
             this.Controls.Add(this.uctrlAppInfoLicenseReplacement1);
             this.Controls.Add(this.lnklblShowLicensesInfo);

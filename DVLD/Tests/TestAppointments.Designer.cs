@@ -51,9 +51,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFormLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblFormLabel.Location = new System.Drawing.Point(116, 158);
+            this.lblFormLabel.Location = new System.Drawing.Point(87, 128);
+            this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFormLabel.Name = "lblFormLabel";
-            this.lblFormLabel.Size = new System.Drawing.Size(620, 42);
+            this.lblFormLabel.Size = new System.Drawing.Size(465, 34);
             this.lblFormLabel.TabIndex = 30;
             this.lblFormLabel.Text = "Visuon Test Appointments";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,9 +64,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 555);
+            this.label1.Location = new System.Drawing.Point(3, 451);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 23);
+            this.label1.Size = new System.Drawing.Size(94, 19);
             this.label1.TabIndex = 34;
             this.label1.Text = "Appointment:";
             // 
@@ -77,15 +79,15 @@
             this.dgvAppointments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAppointments.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvAppointments.BackgroundColor = System.Drawing.Color.White;
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointments.Location = new System.Drawing.Point(4, 591);
-            this.dgvAppointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvAppointments.Location = new System.Drawing.Point(3, 480);
+            this.dgvAppointments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.RowHeadersWidth = 62;
             this.dgvAppointments.RowTemplate.Height = 28;
-            this.dgvAppointments.Size = new System.Drawing.Size(844, 188);
+            this.dgvAppointments.Size = new System.Drawing.Size(633, 153);
             this.dgvAppointments.TabIndex = 33;
             this.dgvAppointments.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvAppointments_MouseDown);
             // 
@@ -94,9 +96,10 @@
             this.lblRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(4, 784);
+            this.lblRecords.Location = new System.Drawing.Point(3, 637);
+            this.lblRecords.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(81, 23);
+            this.lblRecords.Size = new System.Drawing.Size(67, 19);
             this.lblRecords.TabIndex = 35;
             this.lblRecords.Text = "#Records";
             // 
@@ -109,10 +112,10 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(740, 782);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(555, 635);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 38);
+            this.btnClose.Size = new System.Drawing.Size(81, 31);
             this.btnClose.TabIndex = 36;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,10 +129,10 @@
             this.btnAddTestAppointment.BackgroundImage = global::DVLD.Properties.Resources.add_event;
             this.btnAddTestAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddTestAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTestAppointment.Location = new System.Drawing.Point(808, 546);
-            this.btnAddTestAppointment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddTestAppointment.Location = new System.Drawing.Point(606, 444);
+            this.btnAddTestAppointment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddTestAppointment.Name = "btnAddTestAppointment";
-            this.btnAddTestAppointment.Size = new System.Drawing.Size(40, 39);
+            this.btnAddTestAppointment.Size = new System.Drawing.Size(30, 32);
             this.btnAddTestAppointment.TabIndex = 32;
             this.btnAddTestAppointment.UseVisualStyleBackColor = false;
             this.btnAddTestAppointment.Click += new System.EventHandler(this.btnAddTestAppointment_Click);
@@ -139,10 +142,10 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DVLD.Properties.Resources.eye;
-            this.pictureBox1.Location = new System.Drawing.Point(343, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(257, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 153);
+            this.pictureBox1.Size = new System.Drawing.Size(125, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
@@ -151,10 +154,10 @@
             // 
             this.uctrlDrivingLicenseApplicationInfo1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uctrlDrivingLicenseApplicationInfo1.DLAppID = -1;
-            this.uctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(-1, 203);
-            this.uctrlDrivingLicenseApplicationInfo1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(-1, 165);
+            this.uctrlDrivingLicenseApplicationInfo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uctrlDrivingLicenseApplicationInfo1.Name = "uctrlDrivingLicenseApplicationInfo1";
-            this.uctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(853, 345);
+            this.uctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(640, 280);
             this.uctrlDrivingLicenseApplicationInfo1.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -164,28 +167,29 @@
             this.toolStripMenuItem3,
             this.takeTestToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(146, 64);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 64);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.compose;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(145, 30);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(128, 30);
             this.toolStripMenuItem3.Text = "Edit";
             // 
             // takeTestToolStripMenuItem
             // 
             this.takeTestToolStripMenuItem.Image = global::DVLD.Properties.Resources.Test_Passed;
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(145, 30);
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(128, 30);
             this.takeTestToolStripMenuItem.Text = "Take Test";
             // 
             // TestAppointments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 823);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(642, 669);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.label1);
@@ -194,7 +198,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.uctrlDrivingLicenseApplicationInfo1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TestAppointments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VisionTest";

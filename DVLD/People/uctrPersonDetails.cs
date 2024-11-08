@@ -72,11 +72,11 @@ namespace DVLD
                 {
                     if (_Person.Gender == 0)
                     {
-                        pictureBox1.Image = Resources.User_Male;
+                        pictureBox1.Image = Resources.gif_male;
                     }
                     else
                     {
-                        pictureBox1.Image = Resources.Female_User;
+                        pictureBox1.Image = Resources.gif_female;
                     }
                 }
                 else

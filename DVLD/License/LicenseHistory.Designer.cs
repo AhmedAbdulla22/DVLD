@@ -33,22 +33,22 @@
             this.gbDriverLicenses = new System.Windows.Forms.GroupBox();
             this.tabDriverLicenses = new System.Windows.Forms.TabControl();
             this.tabLocal = new System.Windows.Forms.TabPage();
-            this.tabInternational = new System.Windows.Forms.TabPage();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.lbl_DGV_Title_Local = new System.Windows.Forms.Label();
             this.lblRecordsLocal = new System.Windows.Forms.Label();
             this.dgvLocalLicensesHistory = new System.Windows.Forms.DataGridView();
-            this.lbl_DGV_Title_Local = new System.Windows.Forms.Label();
+            this.tabInternational = new System.Windows.Forms.TabPage();
             this.lbl_DGV_Title_International = new System.Windows.Forms.Label();
             this.lblRecordsInternational = new System.Windows.Forms.Label();
             this.dgvInternationalLicensesHistory = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
             this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDriverLicenses.SuspendLayout();
             this.tabDriverLicenses.SuspendLayout();
             this.tabLocal.SuspendLayout();
-            this.tabInternational.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicensesHistory)).BeginInit();
+            this.tabInternational.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicensesHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +102,7 @@
             // 
             // tabLocal
             // 
+            this.tabLocal.BackColor = System.Drawing.Color.White;
             this.tabLocal.Controls.Add(this.lbl_DGV_Title_Local);
             this.tabLocal.Controls.Add(this.lblRecordsLocal);
             this.tabLocal.Controls.Add(this.dgvLocalLicensesHistory);
@@ -111,39 +112,18 @@
             this.tabLocal.Size = new System.Drawing.Size(778, 190);
             this.tabLocal.TabIndex = 1;
             this.tabLocal.Text = "Local";
-            this.tabLocal.UseVisualStyleBackColor = true;
             // 
-            // tabInternational
+            // lbl_DGV_Title_Local
             // 
-            this.tabInternational.Controls.Add(this.lbl_DGV_Title_International);
-            this.tabInternational.Controls.Add(this.lblRecordsInternational);
-            this.tabInternational.Controls.Add(this.dgvInternationalLicensesHistory);
-            this.tabInternational.Location = new System.Drawing.Point(4, 22);
-            this.tabInternational.Name = "tabInternational";
-            this.tabInternational.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInternational.Size = new System.Drawing.Size(778, 190);
-            this.tabInternational.TabIndex = 2;
-            this.tabInternational.Text = "International";
-            this.tabInternational.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(735, 591);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(81, 33);
-            this.btnClose.TabIndex = 25;
-            this.btnClose.Text = "Close";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.button2_Click);
+            this.lbl_DGV_Title_Local.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_DGV_Title_Local.AutoSize = true;
+            this.lbl_DGV_Title_Local.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DGV_Title_Local.Location = new System.Drawing.Point(14, 9);
+            this.lbl_DGV_Title_Local.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_DGV_Title_Local.Name = "lbl_DGV_Title_Local";
+            this.lbl_DGV_Title_Local.Size = new System.Drawing.Size(143, 17);
+            this.lbl_DGV_Title_Local.TabIndex = 19;
+            this.lbl_DGV_Title_Local.Text = "Local Licenses History:";
             // 
             // lblRecordsLocal
             // 
@@ -166,7 +146,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLocalLicensesHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLocalLicensesHistory.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvLocalLicensesHistory.BackgroundColor = System.Drawing.Color.White;
             this.dgvLocalLicensesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLocalLicensesHistory.Location = new System.Drawing.Point(17, 28);
             this.dgvLocalLicensesHistory.Margin = new System.Windows.Forms.Padding(2);
@@ -177,17 +157,18 @@
             this.dgvLocalLicensesHistory.Size = new System.Drawing.Size(747, 133);
             this.dgvLocalLicensesHistory.TabIndex = 17;
             // 
-            // lbl_DGV_Title_Local
+            // tabInternational
             // 
-            this.lbl_DGV_Title_Local.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_DGV_Title_Local.AutoSize = true;
-            this.lbl_DGV_Title_Local.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DGV_Title_Local.Location = new System.Drawing.Point(14, 9);
-            this.lbl_DGV_Title_Local.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_DGV_Title_Local.Name = "lbl_DGV_Title_Local";
-            this.lbl_DGV_Title_Local.Size = new System.Drawing.Size(143, 17);
-            this.lbl_DGV_Title_Local.TabIndex = 19;
-            this.lbl_DGV_Title_Local.Text = "Local Licenses History:";
+            this.tabInternational.BackColor = System.Drawing.Color.White;
+            this.tabInternational.Controls.Add(this.lbl_DGV_Title_International);
+            this.tabInternational.Controls.Add(this.lblRecordsInternational);
+            this.tabInternational.Controls.Add(this.dgvInternationalLicensesHistory);
+            this.tabInternational.Location = new System.Drawing.Point(4, 22);
+            this.tabInternational.Name = "tabInternational";
+            this.tabInternational.Padding = new System.Windows.Forms.Padding(3);
+            this.tabInternational.Size = new System.Drawing.Size(778, 190);
+            this.tabInternational.TabIndex = 2;
+            this.tabInternational.Text = "International";
             // 
             // lbl_DGV_Title_International
             // 
@@ -222,7 +203,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInternationalLicensesHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvInternationalLicensesHistory.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvInternationalLicensesHistory.BackgroundColor = System.Drawing.Color.White;
             this.dgvInternationalLicensesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInternationalLicensesHistory.Location = new System.Drawing.Point(17, 27);
             this.dgvInternationalLicensesHistory.Margin = new System.Windows.Forms.Padding(2);
@@ -232,6 +213,25 @@
             this.dgvInternationalLicensesHistory.RowTemplate.Height = 28;
             this.dgvInternationalLicensesHistory.Size = new System.Drawing.Size(747, 133);
             this.dgvInternationalLicensesHistory.TabIndex = 20;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(735, 591);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(81, 33);
+            this.btnClose.TabIndex = 25;
+            this.btnClose.Text = "Close";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
             // uctrlFilterBy1
             // 
@@ -255,6 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(829, 628);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbDriverLicenses);
@@ -271,9 +272,9 @@
             this.tabDriverLicenses.ResumeLayout(false);
             this.tabLocal.ResumeLayout(false);
             this.tabLocal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicensesHistory)).EndInit();
             this.tabInternational.ResumeLayout(false);
             this.tabInternational.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicensesHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicensesHistory)).EndInit();
             this.ResumeLayout(false);
 

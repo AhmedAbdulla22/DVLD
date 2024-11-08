@@ -82,6 +82,7 @@
             // 
             // tabPersonalInfo
             // 
+            this.tabPersonalInfo.BackColor = System.Drawing.Color.White;
             this.tabPersonalInfo.Controls.Add(this.uctrlFilterBy1);
             this.tabPersonalInfo.Controls.Add(this.uctrPersonDetails1);
             this.tabPersonalInfo.Controls.Add(this.btnNext);
@@ -92,7 +93,6 @@
             this.tabPersonalInfo.Size = new System.Drawing.Size(639, 387);
             this.tabPersonalInfo.TabIndex = 0;
             this.tabPersonalInfo.Text = "Personal Info";
-            this.tabPersonalInfo.UseVisualStyleBackColor = true;
             // 
             // uctrlFilterBy1
             // 
@@ -133,6 +133,7 @@
             // 
             // tabLogin
             // 
+            this.tabLogin.BackColor = System.Drawing.Color.White;
             this.tabLogin.Controls.Add(this.chkIsActive);
             this.tabLogin.Controls.Add(this.tbCnfPassword);
             this.tabLogin.Controls.Add(this.tbUserName);
@@ -149,7 +150,6 @@
             this.tabLogin.Size = new System.Drawing.Size(639, 387);
             this.tabLogin.TabIndex = 1;
             this.tabLogin.Text = "Login Info";
-            this.tabLogin.UseVisualStyleBackColor = true;
             // 
             // chkIsActive
             // 
@@ -304,6 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(675, 513);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);

@@ -69,6 +69,7 @@
             // 
             // tabPersonalInfo
             // 
+            this.tabPersonalInfo.BackColor = System.Drawing.Color.White;
             this.tabPersonalInfo.Controls.Add(this.uctrPersonDetails1);
             this.tabPersonalInfo.Controls.Add(this.uctrlFilterBy1);
             this.tabPersonalInfo.Controls.Add(this.btnNext);
@@ -79,7 +80,6 @@
             this.tabPersonalInfo.Size = new System.Drawing.Size(727, 358);
             this.tabPersonalInfo.TabIndex = 0;
             this.tabPersonalInfo.Text = "Personal Info";
-            this.tabPersonalInfo.UseVisualStyleBackColor = true;
             // 
             // uctrPersonDetails1
             // 
@@ -123,6 +123,7 @@
             // 
             // tabApplication
             // 
+            this.tabApplication.BackColor = System.Drawing.Color.White;
             this.tabApplication.Controls.Add(this.cbLicenseClasses);
             this.tabApplication.Controls.Add(this.lblCreatedBy2);
             this.tabApplication.Controls.Add(this.lblApplicationFees2);
@@ -139,7 +140,6 @@
             this.tabApplication.Size = new System.Drawing.Size(727, 358);
             this.tabApplication.TabIndex = 1;
             this.tabApplication.Text = "Application Info";
-            this.tabApplication.UseVisualStyleBackColor = true;
             // 
             // cbLicenseClasses
             // 
@@ -350,6 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 504);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);

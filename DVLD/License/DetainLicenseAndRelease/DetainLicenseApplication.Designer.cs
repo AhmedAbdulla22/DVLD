@@ -147,10 +147,11 @@
             this.uctrlDetainInfo1.Size = new System.Drawing.Size(629, 104);
             this.uctrlDetainInfo1.TabIndex = 64;
             // 
-            // ReleaseDetainedLApp
+            // DetainLicenseApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(633, 592);
             this.Controls.Add(this.uctrlDetainInfo1);
             this.Controls.Add(this.lnklblShowLicensesInfo);
@@ -161,7 +162,7 @@
             this.Controls.Add(this.uctrlFindLDLicense1);
             this.Controls.Add(this.lblFormLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "ReleaseDetainedLApp";
+            this.Name = "DetainLicenseApplication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DetainLicenseApplication";
             this.ResumeLayout(false);

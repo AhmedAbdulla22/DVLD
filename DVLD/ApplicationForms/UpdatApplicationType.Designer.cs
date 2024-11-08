@@ -59,7 +59,7 @@
             // tbTitle
             // 
             this.tbTitle.Location = new System.Drawing.Point(119, 98);
-            this.tbTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tbTitle.MaxLength = 128;
             this.tbTitle.Name = "tbTitle";
             this.tbTitle.Size = new System.Drawing.Size(220, 20);
@@ -82,7 +82,7 @@
             // tbFees
             // 
             this.tbFees.Location = new System.Drawing.Point(119, 132);
-            this.tbFees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbFees.Margin = new System.Windows.Forms.Padding(2);
             this.tbFees.MaxLength = 32;
             this.tbFees.Name = "tbFees";
             this.tbFees.Size = new System.Drawing.Size(220, 20);
@@ -141,7 +141,7 @@
             this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(191, 183);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 32);
             this.btnSave.TabIndex = 34;
@@ -160,7 +160,7 @@
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(106, 183);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(81, 32);
             this.btnClose.TabIndex = 33;
@@ -178,6 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(372, 226);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
