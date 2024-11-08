@@ -769,5 +769,11 @@
   <ItemGroup>
     <None Include="Resources\minimizeSize.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmenuBar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

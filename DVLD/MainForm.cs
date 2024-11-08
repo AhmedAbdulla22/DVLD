@@ -18,6 +18,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinForm = System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace DVLD
@@ -27,7 +28,7 @@ namespace DVLD
         public frmMain()
         {
             InitializeComponent();
-
+            ChangeSideBarIconSize();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -326,6 +327,43 @@ namespace DVLD
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //folding and unfold side bar
+            Size ClosedSize = new System.Drawing.Size(50, 529), OpenedSize = new System.Drawing.Size(175, 529);
+            pnlSideBar.Size = (pnlSideBar.Size.Width == ClosedSize.Width) ?  OpenedSize:ClosedSize;
+
+            //change menustrip mode
+            ToolStripItemDisplayStyle toolStripItemDisplayStyle = menuStrip1.Items[0].DisplayStyle;
+            foreach (ToolStripItem item in menuStrip1.Items)
+            {
+                item.DisplayStyle = (toolStripItemDisplayStyle == ToolStripItemDisplayStyle.ImageAndText) ? ToolStripItemDisplayStyle.Image : ToolStripItemDisplayStyle.ImageAndText;
+            }
+            
+        }
+
+        private void ChangeSideBarIconSize()
+        {
+            int w = 33, h = 33;
+            foreach (ToolStripItem item in menuStrip1.Items)
+            {
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+
+        }
+        private Point MousePoint;
+        private void pnlTopBar_MouseDown(object sender, MouseEventArgs e)
+        {
+                MousePoint = e.Location;
+        }
+
+        private void pnlTopBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - MousePoint.X;
+                this.Top+= e.Y - MousePoint.Y;
+            }
+        }
     }    
 }

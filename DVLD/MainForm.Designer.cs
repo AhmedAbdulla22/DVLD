@@ -66,6 +66,7 @@
             this.pnlSideBar = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnMinimizeHide = new System.Windows.Forms.Button();
             this.btnMaxMin = new System.Windows.Forms.Button();
             this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
@@ -114,7 +115,7 @@
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(21)))), ((int)(((byte)(38)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -129,21 +130,21 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(215, 565);
+            this.menuStrip1.Size = new System.Drawing.Size(175, 529);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // dashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.dashboardToolStripMenuItem.Image = global::DVLD.Properties.Resources.wdashboard50;
             this.dashboardToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             this.dashboardToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 5, 0);
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(210, 59);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(170, 59);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
@@ -155,14 +156,14 @@
             this.toolStripMenuItem4,
             this.manageApplicationTypesToolStripMenuItem,
             this.manageTestTypesToolStripMenuItem});
-            this.applicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicationToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.applicationToolStripMenuItem.Image = global::DVLD.Properties.Resources.wApp50;
             this.applicationToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.applicationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
             this.applicationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 5, 0);
-            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(210, 59);
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(170, 59);
             this.applicationToolStripMenuItem.Text = "Application";
             this.applicationToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.applicationToolStripMenuItem_DropDownItemClicked);
             // 
@@ -178,7 +179,7 @@
             this.retakeTestToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::DVLD.Properties.Resources.Driver_License;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(258, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(262, 24);
             this.toolStripMenuItem2.Text = "Driving Licenses Services";
             this.toolStripMenuItem2.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenuItem2_DropDownItemClicked);
             // 
@@ -188,54 +189,54 @@
             this.localLicenseToolStripMenuItem,
             this.internationalLicenseToolStripMenuItem});
             this.newDrivingLicenseToolStripMenuItem.Name = "newDrivingLicenseToolStripMenuItem";
-            this.newDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(363, 24);
+            this.newDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(373, 24);
             this.newDrivingLicenseToolStripMenuItem.Text = "New Driving License";
             this.newDrivingLicenseToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.newDrivingLicenseToolStripMenuItem_DropDownItemClicked);
             // 
             // localLicenseToolStripMenuItem
             // 
             this.localLicenseToolStripMenuItem.Name = "localLicenseToolStripMenuItem";
-            this.localLicenseToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
+            this.localLicenseToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
             this.localLicenseToolStripMenuItem.Text = "Local License";
             // 
             // internationalLicenseToolStripMenuItem
             // 
             this.internationalLicenseToolStripMenuItem.Name = "internationalLicenseToolStripMenuItem";
-            this.internationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
+            this.internationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
             this.internationalLicenseToolStripMenuItem.Text = "International License";
             // 
             // renewDrivingLicenseToolStripMenuItem
             // 
             this.renewDrivingLicenseToolStripMenuItem.Name = "renewDrivingLicenseToolStripMenuItem";
-            this.renewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(363, 24);
+            this.renewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(373, 24);
             this.renewDrivingLicenseToolStripMenuItem.Text = "Renew Driving License";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(360, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
             // 
             // replacementForLostOrDamagedLicneseToolStripMenuItem
             // 
             this.replacementForLostOrDamagedLicneseToolStripMenuItem.Name = "replacementForLostOrDamagedLicneseToolStripMenuItem";
-            this.replacementForLostOrDamagedLicneseToolStripMenuItem.Size = new System.Drawing.Size(363, 24);
+            this.replacementForLostOrDamagedLicneseToolStripMenuItem.Size = new System.Drawing.Size(373, 24);
             this.replacementForLostOrDamagedLicneseToolStripMenuItem.Text = "Replacement for Lost or Damaged Licnese";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(360, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(370, 6);
             // 
             // releaseDetainedDrivingLicenseToolStripMenuItem
             // 
             this.releaseDetainedDrivingLicenseToolStripMenuItem.Name = "releaseDetainedDrivingLicenseToolStripMenuItem";
-            this.releaseDetainedDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(363, 24);
+            this.releaseDetainedDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(373, 24);
             this.releaseDetainedDrivingLicenseToolStripMenuItem.Text = "Release Detained Driving License";
             // 
             // retakeTestToolStripMenuItem
             // 
             this.retakeTestToolStripMenuItem.Name = "retakeTestToolStripMenuItem";
-            this.retakeTestToolStripMenuItem.Size = new System.Drawing.Size(363, 24);
+            this.retakeTestToolStripMenuItem.Size = new System.Drawing.Size(373, 24);
             this.retakeTestToolStripMenuItem.Text = "Retake Test";
             // 
             // toolStripMenuItem3
@@ -245,20 +246,20 @@
             this.internationalDrivingLicenseApplicationToolStripMenuItem});
             this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.LocalDLA;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(258, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(262, 24);
             this.toolStripMenuItem3.Text = "Manage Applications";
             this.toolStripMenuItem3.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenuItem3_DropDownItemClicked);
             // 
             // localDrivingLicenseApplicationToolStripMenuItem
             // 
             this.localDrivingLicenseApplicationToolStripMenuItem.Name = "localDrivingLicenseApplicationToolStripMenuItem";
-            this.localDrivingLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(356, 24);
+            this.localDrivingLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(363, 24);
             this.localDrivingLicenseApplicationToolStripMenuItem.Text = "Local Driving License Application";
             // 
             // internationalDrivingLicenseApplicationToolStripMenuItem
             // 
             this.internationalDrivingLicenseApplicationToolStripMenuItem.Name = "internationalDrivingLicenseApplicationToolStripMenuItem";
-            this.internationalDrivingLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(356, 24);
+            this.internationalDrivingLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(363, 24);
             this.internationalDrivingLicenseApplicationToolStripMenuItem.Text = "International Driving License Application";
             // 
             // toolStripMenuItem4
@@ -268,76 +269,76 @@
             this.detainLicenseToolStripMenuItem,
             this.releaseDetainedLicenseToolStripMenuItem});
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(258, 24);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(262, 24);
             this.toolStripMenuItem4.Text = "Detain Licenses";
             this.toolStripMenuItem4.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenuItem4_DropDownItemClicked);
             // 
             // manageDetainedLicensesToolStripMenuItem
             // 
             this.manageDetainedLicensesToolStripMenuItem.Name = "manageDetainedLicensesToolStripMenuItem";
-            this.manageDetainedLicensesToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
+            this.manageDetainedLicensesToolStripMenuItem.Size = new System.Drawing.Size(263, 24);
             this.manageDetainedLicensesToolStripMenuItem.Text = "Manage Detained Licenses";
             // 
             // detainLicenseToolStripMenuItem
             // 
             this.detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
-            this.detainLicenseToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
+            this.detainLicenseToolStripMenuItem.Size = new System.Drawing.Size(263, 24);
             this.detainLicenseToolStripMenuItem.Text = "Detain License";
             // 
             // releaseDetainedLicenseToolStripMenuItem
             // 
             this.releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
-            this.releaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(259, 24);
+            this.releaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(263, 24);
             this.releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
             // 
             // manageApplicationTypesToolStripMenuItem
             // 
             this.manageApplicationTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.project;
             this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
-            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(262, 24);
             this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
             // 
             // manageTestTypesToolStripMenuItem
             // 
             this.manageTestTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.testing;
             this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
-            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
+            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(262, 24);
             this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
             // 
             // peopleeToolStripMenuItem
             // 
-            this.peopleeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.peopleeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.peopleeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.peopleeToolStripMenuItem.Image = global::DVLD.Properties.Resources.wPeople50;
             this.peopleeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.peopleeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.peopleeToolStripMenuItem.Name = "peopleeToolStripMenuItem";
             this.peopleeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 5, 0);
-            this.peopleeToolStripMenuItem.Size = new System.Drawing.Size(210, 59);
+            this.peopleeToolStripMenuItem.Size = new System.Drawing.Size(170, 59);
             this.peopleeToolStripMenuItem.Text = "People";
             // 
             // driversToolStripMenuItem
             // 
-            this.driversToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.driversToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.driversToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.driversToolStripMenuItem.Image = global::DVLD.Properties.Resources.wdrivers50;
             this.driversToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.driversToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
             this.driversToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 5, 0);
-            this.driversToolStripMenuItem.Size = new System.Drawing.Size(210, 59);
+            this.driversToolStripMenuItem.Size = new System.Drawing.Size(170, 59);
             this.driversToolStripMenuItem.Text = "Drivers";
             // 
             // usersToolStripMenuItem
             // 
-            this.usersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usersToolStripMenuItem.Image = global::DVLD.Properties.Resources.wUsers50;
             this.usersToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.usersToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 5, 0);
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(210, 59);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(170, 59);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // accountSettingsToolStripMenuItem
@@ -346,14 +347,14 @@
             this.currentUserInfoToolStripMenuItem,
             this.changeUserInfoToolStripMenuItem,
             this.signOutToolStripMenuItem});
-            this.accountSettingsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accountSettingsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.accountSettingsToolStripMenuItem.Image = global::DVLD.Properties.Resources.wAccSetting50;
             this.accountSettingsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.accountSettingsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
             this.accountSettingsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 5, 0);
-            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(210, 59);
+            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(170, 59);
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
             this.accountSettingsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.accountSettingsToolStripMenuItem_DropDownItemClicked);
             // 
@@ -361,21 +362,21 @@
             // 
             this.currentUserInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.Document;
             this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.currentUserInfoToolStripMenuItem.Text = "Current User Info";
             // 
             // changeUserInfoToolStripMenuItem
             // 
             this.changeUserInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.Password_Window;
             this.changeUserInfoToolStripMenuItem.Name = "changeUserInfoToolStripMenuItem";
-            this.changeUserInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.changeUserInfoToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.changeUserInfoToolStripMenuItem.Text = "Change Password";
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Image = global::DVLD.Properties.Resources.Logout;
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
@@ -391,7 +392,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(789, 5);
+            this.btnClose.Location = new System.Drawing.Point(1004, 5);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(33, 26);
@@ -403,31 +404,55 @@
             // 
             this.pnlSideBar.Controls.Add(this.menuStrip1);
             this.pnlSideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSideBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSideBar.Location = new System.Drawing.Point(0, 36);
             this.pnlSideBar.Name = "pnlSideBar";
-            this.pnlSideBar.Size = new System.Drawing.Size(215, 565);
+            this.pnlSideBar.Size = new System.Drawing.Size(175, 529);
             this.pnlSideBar.TabIndex = 12;
             // 
             // pnlMain
             // 
-            this.pnlMain.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(215, 36);
+            this.pnlMain.Location = new System.Drawing.Point(175, 36);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(827, 529);
+            this.pnlMain.Size = new System.Drawing.Size(867, 529);
             this.pnlMain.TabIndex = 13;
             // 
             // pnlTopBar
             // 
-            this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(21)))), ((int)(((byte)(38)))));
+            this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlTopBar.Controls.Add(this.button1);
             this.pnlTopBar.Controls.Add(this.btnMinimizeHide);
             this.pnlTopBar.Controls.Add(this.btnMaxMin);
             this.pnlTopBar.Controls.Add(this.btnClose);
             this.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopBar.Location = new System.Drawing.Point(215, 0);
+            this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBar.Name = "pnlTopBar";
-            this.pnlTopBar.Size = new System.Drawing.Size(827, 36);
+            this.pnlTopBar.Size = new System.Drawing.Size(1042, 36);
             this.pnlTopBar.TabIndex = 11;
+            this.pnlTopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopBar_MouseDown);
+            this.pnlTopBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTopBar_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::DVLD.Properties.Resources.wmenuBar;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 31);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnMinimizeHide
             // 
@@ -441,7 +466,7 @@
             this.btnMinimizeHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeHide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeHide.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMinimizeHide.Location = new System.Drawing.Point(715, 5);
+            this.btnMinimizeHide.Location = new System.Drawing.Point(930, 5);
             this.btnMinimizeHide.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizeHide.Name = "btnMinimizeHide";
             this.btnMinimizeHide.Size = new System.Drawing.Size(33, 26);
@@ -461,7 +486,7 @@
             this.btnMaxMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaxMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaxMin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaxMin.Location = new System.Drawing.Point(752, 5);
+            this.btnMaxMin.Location = new System.Drawing.Point(967, 5);
             this.btnMaxMin.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaxMin.Name = "btnMaxMin";
             this.btnMaxMin.Size = new System.Drawing.Size(33, 26);
@@ -488,8 +513,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1042, 565);
             this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.pnlTopBar);
             this.Controls.Add(this.pnlSideBar);
+            this.Controls.Add(this.pnlTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -502,6 +527,7 @@
             this.menuStrip1.PerformLayout();
             this.pnlSideBar.ResumeLayout(false);
             this.pnlTopBar.ResumeLayout(false);
+            this.pnlTopBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -548,6 +574,7 @@
         private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Button btnMinimizeHide;
         private System.Windows.Forms.Button btnMaxMin;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -463,6 +463,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menuBar {
+            get {
+                object obj = ResourceManager.GetObject("menuBar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimize_hide {
             get {
                 object obj = ResourceManager.GetObject("minimize-hide", resourceCulture);
@@ -836,6 +846,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap wdrivers50 {
             get {
                 object obj = ResourceManager.GetObject("wdrivers50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wmenuBar {
+            get {
+                object obj = ResourceManager.GetObject("wmenuBar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
