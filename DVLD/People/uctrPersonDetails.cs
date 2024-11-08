@@ -90,7 +90,7 @@ namespace DVLD
             else
             {
                 lblPersonID2.Text = lblName2.Text = lblNationalNo2.Text = lblPhone2.Text = lblEmail2.Text = lblDateOfBirth2.Text = lblAddress2.Text = lblGender2.Text = lblCountry2.Text = "[????]";
-                pictureBox1.Image = Resources.User_Male;
+                pictureBox1.Image = Resources.gif_male;
                 lnklblEdit.Visible = false;
             }
 

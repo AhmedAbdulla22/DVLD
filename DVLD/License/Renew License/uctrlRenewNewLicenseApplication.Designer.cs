@@ -133,7 +133,7 @@
             // 
             // tbNotes
             // 
-            this.tbNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNotes.Location = new System.Drawing.Point(156, 145);
             this.tbNotes.Multiline = true;
             this.tbNotes.Name = "tbNotes";

@@ -89,6 +89,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.pbPersonPFP);
             this.groupBox1.Controls.Add(this.pictureBox11);
@@ -141,6 +142,7 @@
             // 
             // pbPersonPFP
             // 
+            this.pbPersonPFP.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pbPersonPFP.Image = global::DVLD.Properties.Resources.gif_male;
             this.pbPersonPFP.Location = new System.Drawing.Point(503, 69);
             this.pbPersonPFP.Margin = new System.Windows.Forms.Padding(2);
@@ -152,6 +154,7 @@
             // 
             // pictureBox11
             // 
+            this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox11.Image = global::DVLD.Properties.Resources.Display;
             this.pictureBox11.Location = new System.Drawing.Point(385, 163);
             this.pictureBox11.Name = "pictureBox11";
@@ -162,6 +165,7 @@
             // 
             // lbl_DriverID2
             // 
+            this.lbl_DriverID2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_DriverID2.AutoSize = true;
             this.lbl_DriverID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DriverID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -175,6 +179,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,6 +193,7 @@
             // 
             // pictureBox10
             // 
+            this.pictureBox10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(385, 129);
             this.pictureBox10.Name = "pictureBox10";
@@ -198,6 +204,7 @@
             // 
             // lbl_DateOfBirth2
             // 
+            this.lbl_DateOfBirth2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_DateOfBirth2.AutoSize = true;
             this.lbl_DateOfBirth2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DateOfBirth2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,6 +218,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -224,6 +232,7 @@
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox9.Image = global::DVLD.Properties.Resources.QuestionMark;
             this.pictureBox9.Location = new System.Drawing.Point(385, 231);
             this.pictureBox9.Name = "pictureBox9";
@@ -234,6 +243,7 @@
             // 
             // lbl_IsDetained2
             // 
+            this.lbl_IsDetained2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_IsDetained2.AutoSize = true;
             this.lbl_IsDetained2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IsDetained2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -247,6 +257,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -260,6 +271,7 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox8.Image = global::DVLD.Properties.Resources.QuestionMark;
             this.pictureBox8.Location = new System.Drawing.Point(385, 95);
             this.pictureBox8.Name = "pictureBox8";
@@ -270,6 +282,7 @@
             // 
             // lbl_IsActive2
             // 
+            this.lbl_IsActive2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_IsActive2.AutoSize = true;
             this.lbl_IsActive2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IsActive2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -283,6 +296,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -296,6 +310,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox7.Image = global::DVLD.Properties.Resources.writing;
             this.pictureBox7.Location = new System.Drawing.Point(101, 255);
             this.pictureBox7.Name = "pictureBox7";
@@ -306,6 +321,7 @@
             // 
             // lbl_Notes2
             // 
+            this.lbl_Notes2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_Notes2.AutoSize = true;
             this.lbl_Notes2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Notes2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -319,6 +335,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -332,6 +349,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox4.Image = global::DVLD.Properties.Resources.Tear_Off_Calendar1;
             this.pictureBox4.Location = new System.Drawing.Point(385, 197);
             this.pictureBox4.Name = "pictureBox4";
@@ -342,6 +360,7 @@
             // 
             // lbl_ExpDate2
             // 
+            this.lbl_ExpDate2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_ExpDate2.AutoSize = true;
             this.lbl_ExpDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ExpDate2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -355,6 +374,7 @@
             // 
             // lbl_ExpDate
             // 
+            this.lbl_ExpDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_ExpDate.AutoSize = true;
             this.lbl_ExpDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ExpDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -368,6 +388,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox3.Image = global::DVLD.Properties.Resources.Driver_License;
             this.pictureBox3.Location = new System.Drawing.Point(101, 223);
             this.pictureBox3.Name = "pictureBox3";
@@ -378,6 +399,7 @@
             // 
             // lbl_IssueReason2
             // 
+            this.lbl_IssueReason2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_IssueReason2.AutoSize = true;
             this.lbl_IssueReason2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IssueReason2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -391,6 +413,7 @@
             // 
             // lbl_IssueReason
             // 
+            this.lbl_IssueReason.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_IssueReason.AutoSize = true;
             this.lbl_IssueReason.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IssueReason.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -404,6 +427,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(101, 193);
             this.pictureBox6.Name = "pictureBox6";
@@ -414,6 +438,7 @@
             // 
             // lbl_IssueDate2
             // 
+            this.lbl_IssueDate2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_IssueDate2.AutoSize = true;
             this.lbl_IssueDate2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IssueDate2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -427,6 +452,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -440,6 +466,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox2.Image = global::DVLD.Properties.Resources.gender1;
             this.pictureBox2.Location = new System.Drawing.Point(101, 162);
             this.pictureBox2.Name = "pictureBox2";
@@ -450,6 +477,7 @@
             // 
             // lblGender2
             // 
+            this.lblGender2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender2.AutoSize = true;
             this.lblGender2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -463,6 +491,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -476,6 +505,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox1.Image = global::DVLD.Properties.Resources.Display;
             this.pictureBox1.Location = new System.Drawing.Point(101, 131);
             this.pictureBox1.Name = "pictureBox1";
@@ -486,6 +516,7 @@
             // 
             // lblNationalNo2
             // 
+            this.lblNationalNo2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNationalNo2.AutoSize = true;
             this.lblNationalNo2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNo2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -499,6 +530,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -512,6 +544,7 @@
             // 
             // pb_ID
             // 
+            this.pb_ID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pb_ID.Image = global::DVLD.Properties.Resources.Display;
             this.pb_ID.Location = new System.Drawing.Point(101, 100);
             this.pb_ID.Name = "pb_ID";
@@ -522,6 +555,7 @@
             // 
             // lbl_LicenseID2
             // 
+            this.lbl_LicenseID2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_LicenseID2.AutoSize = true;
             this.lbl_LicenseID2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LicenseID2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -535,6 +569,7 @@
             // 
             // lbl_ID1
             // 
+            this.lbl_ID1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_ID1.AutoSize = true;
             this.lbl_ID1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ID1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -548,6 +583,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox5.Image = global::DVLD.Properties.Resources.user_image_with_black_background;
             this.pictureBox5.Location = new System.Drawing.Point(101, 69);
             this.pictureBox5.Name = "pictureBox5";
@@ -558,6 +594,7 @@
             // 
             // lbl_Name2
             // 
+            this.lbl_Name2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_Name2.AutoSize = true;
             this.lbl_Name2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -571,6 +608,7 @@
             // 
             // lblApplicant1
             // 
+            this.lblApplicant1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblApplicant1.AutoSize = true;
             this.lblApplicant1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicant1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -584,6 +622,7 @@
             // 
             // pbAppliedForLicense
             // 
+            this.pbAppliedForLicense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pbAppliedForLicense.Image = global::DVLD.Properties.Resources.Driver_License;
             this.pbAppliedForLicense.Location = new System.Drawing.Point(101, 38);
             this.pbAppliedForLicense.Name = "pbAppliedForLicense";
@@ -594,6 +633,7 @@
             // 
             // lbl_Class2
             // 
+            this.lbl_Class2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_Class2.AutoSize = true;
             this.lbl_Class2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Class2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -607,6 +647,7 @@
             // 
             // lblClass
             // 
+            this.lblClass.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClass.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -784,5 +784,41 @@
   <ItemGroup>
     <None Include="Resources\gif_male.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif_people.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppType.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driver.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\global.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drivers-license.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-scan.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steering-wheel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

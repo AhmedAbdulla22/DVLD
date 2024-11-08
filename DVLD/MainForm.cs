@@ -44,11 +44,6 @@ namespace DVLD
             {
                 case "People":
                     {
-                        //using (frmPeople frmPeople = new frmPeople())
-                        //{
-                        //    frmPeople.ShowDialog();
-
-                        //}
                         Control People = new frmPeople();
                         addControlToPanel(ref People);
                         People.Show();
@@ -58,35 +53,16 @@ namespace DVLD
                     }
                 case "Drivers":
                     {
-                        using (DriversForm frmDrivers = new DriversForm())
-                        {
-                            frmDrivers.ShowDialog();
-                        }
+                        Control frmDrivers = new DriversForm();
+                        addControlToPanel(ref frmDrivers);
+                        frmDrivers.Show();
                         break;
                     }
                 case "Users":
                     {
-                        using (frmUser frmUser = new frmUser())
-                        {
-
-                            frmUser.ShowDialog();
-                        }
-                        break;
-                    }
-                case "Current User Info":
-                    {
-                        using (frmUserDetails frmUDetails = new frmUserDetails(clsLog.User.PersonID))
-                        {
-                            frmUDetails.ShowDialog();
-                        }
-                        break;
-                    }
-                case "Change Password":
-                    {
-                        using (frmChangePassword frmChgPass = new frmChangePassword(clsLog.User.PersonID))
-                        {
-                            frmChgPass.ShowDialog();
-                        }
+                        Control frmUser = new frmUser();
+                        addControlToPanel(ref frmUser);
+                        frmUser.Show();
                         break;
                     }
             }
@@ -108,18 +84,16 @@ namespace DVLD
             {
                 case "Current User Info":
                     {
-                        using (frmUserDetails frmUDetails = new frmUserDetails(clsLog.User.PersonID))
-                        {
-                            frmUDetails.ShowDialog();
-                        }
+                        Control frmUDetails = new frmUserDetails(clsLog.User.PersonID);
+                        addControlToPanel(ref frmUDetails);
+                        frmUDetails.Show();
                         break;
                     }
                 case "Change Password":
                     {
-                        using (frmChangePassword frmChgPass = new frmChangePassword(clsLog.User.PersonID))
-                        {
-                            frmChgPass.ShowDialog();
-                        }
+                        Control frmChgPass = new frmChangePassword(clsLog.User.PersonID);
+                        addControlToPanel(ref frmChgPass);
+                        frmChgPass.Show();
                         break;
                     }
             }
@@ -129,29 +103,20 @@ namespace DVLD
         {
             switch (e.ClickedItem.Text)
             {
-                //case "Local Driving License Application":
-                //    {
-                //        using (LocalDLA frmLocalDLA = new LocalDLA())
-                //        {
-                //            frmLocalDLA.ShowDialog();
-                //        }
-                //        break;
-                //    }
+
                 case "Manage Application Types":
                     {
-                        using (ManageApplicationType frmManageApplicationType = new ManageApplicationType())
-                        {
-                            frmManageApplicationType.ShowDialog();
-                        }
+                        Control frmManageApplicationType = new ManageApplicationType();
+                        addControlToPanel(ref frmManageApplicationType);
+                        frmManageApplicationType.Show();
                         break;
 
                     }
                 case "Manage Test Types":
                     {
-                        using (ManageTestTypes frmManageTestType = new ManageTestTypes())
-                        {
-                            frmManageTestType.ShowDialog();
-                        }
+                        Control frmManageTestType = new ManageTestTypes();
+                        addControlToPanel(ref frmManageTestType);
+                        frmManageTestType.Show();
                         break;
                     }
 
@@ -165,18 +130,16 @@ namespace DVLD
             {
                 case "Local Driving License Application":
                     {
-                        using (LocalDLA frmLocalDLA = new LocalDLA())
-                        {
-                            frmLocalDLA.ShowDialog();
-                        }
+                        Control frmLocalDLA = new LocalDLA();
+                        addControlToPanel(ref frmLocalDLA);
+                        frmLocalDLA.Show();
                         break;
                     }
                 case "International Driving License Application":
                     {
-                        using (InternationalDLA frmInternationalLicenses = new InternationalDLA())
-                        {
-                            frmInternationalLicenses.ShowDialog();
-                        }
+                        Control frmInternationalLicenses = new InternationalDLA();
+                        addControlToPanel(ref frmInternationalLicenses);
+                        frmInternationalLicenses.Show();
                         break;
                     }
 
@@ -189,7 +152,7 @@ namespace DVLD
             {
                 case "Local License":
                     {
-                        using (AddLocalDLA frmAddLocalDLA = new AddLocalDLA())
+                        using(AddLocalDLA frmAddLocalDLA = new AddLocalDLA())
                         {
                             frmAddLocalDLA.ShowDialog();
                         }
@@ -238,10 +201,9 @@ namespace DVLD
                     }
                 case "Retake Test":
                     {
-                        using (LocalDLA frmLocalDLA = new LocalDLA())
-                        {
-                            frmLocalDLA.ShowDialog();
-                        }
+                        Control frmLocalDLA = new LocalDLA();
+                        addControlToPanel(ref frmLocalDLA);
+                        frmLocalDLA.Show();
                         break;
                     }
 
@@ -254,10 +216,9 @@ namespace DVLD
             {
                 case "Manage Detained Licenses":
                     {
-                        using (ManageDetainedLicenses frmManageDetainLicense = new ManageDetainedLicenses())
-                        {
-                            frmManageDetainLicense.ShowDialog();
-                        }
+                        Control frmManageDetainLicense = new ManageDetainedLicenses();
+                        addControlToPanel(ref frmManageDetainLicense);
+                        frmManageDetainLicense.Show();
                         break;
                     }
                 case "Detain License":
@@ -274,6 +235,7 @@ namespace DVLD
                         {
                             frmReleaseDLicenseApp.ShowDialog();
                         }
+   
                         break;
                     }
 
@@ -327,18 +289,18 @@ namespace DVLD
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void FoldSidebar_Click_1(object sender, EventArgs e)
         {
-            //folding and unfold side bar
-            Size ClosedSize = new System.Drawing.Size(50, 529), OpenedSize = new System.Drawing.Size(175, 529);
-            pnlSideBar.Size = (pnlSideBar.Size.Width == ClosedSize.Width) ?  OpenedSize:ClosedSize;
-
             //change menustrip mode
             ToolStripItemDisplayStyle toolStripItemDisplayStyle = menuStrip1.Items[0].DisplayStyle;
             foreach (ToolStripItem item in menuStrip1.Items)
             {
                 item.DisplayStyle = (toolStripItemDisplayStyle == ToolStripItemDisplayStyle.ImageAndText) ? ToolStripItemDisplayStyle.Image : ToolStripItemDisplayStyle.ImageAndText;
             }
+
+            //folding and unfold side bar
+            Size ClosedSize = new System.Drawing.Size(50, 529), OpenedSize = new System.Drawing.Size(175, 529);
+            pnlSideBar.Size = (pnlSideBar.Size.Width == ClosedSize.Width) ?  OpenedSize:ClosedSize;
             
         }
 

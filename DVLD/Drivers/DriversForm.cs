@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DVLD.License;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -134,6 +135,36 @@ namespace DVLD.Drivers
                         break;
                     }
                 
+            }
+        }
+        private void ShowLicenseHistory(string NationalNo)
+        {
+            using (LicenseHistory frmLicenseHistory = new LicenseHistory(NationalNo))
+            {
+                frmLicenseHistory.ShowDialog();
+            }
+        }
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var NationalNo = Convert.ToString(dgvDrivers.SelectedRows[0].Cells["National No."].Value);
+
+            ShowLicenseHistory(NationalNo);
+        }
+
+        private void dgvDrivers_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //row that you clicked on location
+                var hitTestInfo = dgvDrivers.HitTest(e.X, e.Y);
+
+                if (hitTestInfo.RowIndex >= 0)
+                {
+                    dgvDrivers.ClearSelection();
+                    dgvDrivers.Rows[hitTestInfo.RowIndex].Selected = true;
+
+                    contextMenuStrip1.Show(dgvDrivers, new Point(e.X, e.Y));
+                }
             }
         }
     }

@@ -96,6 +96,7 @@
             // uctrlFilterBy1
             // 
             this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlFilterBy1.BackColor = System.Drawing.Color.White;
             this.uctrlFilterBy1.Location = new System.Drawing.Point(55, 21);
             this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
             this.uctrlFilterBy1.Name = "uctrlFilterBy1";
@@ -356,6 +357,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddLocalDLA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

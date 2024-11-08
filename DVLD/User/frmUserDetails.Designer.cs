@@ -34,6 +34,7 @@
             // 
             // uctrPersonDetails1
             // 
+            this.uctrPersonDetails1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uctrPersonDetails1.Location = new System.Drawing.Point(11, 11);
             this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrPersonDetails1.Name = "uctrPersonDetails1";
@@ -43,6 +44,8 @@
             // 
             // uctrlLoginInformation1
             // 
+            this.uctrlLoginInformation1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uctrlLoginInformation1.BackColor = System.Drawing.Color.White;
             this.uctrlLoginInformation1.Location = new System.Drawing.Point(11, 206);
             this.uctrlLoginInformation1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrlLoginInformation1.Name = "uctrlLoginInformation1";

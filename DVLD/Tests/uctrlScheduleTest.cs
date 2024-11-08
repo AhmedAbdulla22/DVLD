@@ -74,17 +74,17 @@ namespace DVLD.Tests
             {
                 case clsTestAppointments.TestType.VisionTest:
                     {
-                        pictureBox1.Image = Resources.eye;
+                        pictureBox1.Image = Resources.eye_scan;
                         break;
                     }
                 case clsTestAppointments.TestType.WrittenTest:
                     {
-                        pictureBox1.Image = Resources.writing;
+                        pictureBox1.Image = Resources.test;
                         break;
                     }
                 default:
                     {
-                        pictureBox1.Image = Resources.street;
+                        pictureBox1.Image = Resources.steering_wheel;
                         break;
                     }
             }
@@ -141,7 +141,6 @@ namespace DVLD.Tests
                 {
                     if (MessageBox.Show("Can't Find this Application with ID of " + DLAppID + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
                     {
-#warning close form 
                         return;
                     }
 

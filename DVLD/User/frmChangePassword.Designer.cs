@@ -46,7 +46,9 @@
             // 
             // uctrlLoginInformation1
             // 
-            this.uctrlLoginInformation1.Location = new System.Drawing.Point(11, 198);
+            this.uctrlLoginInformation1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlLoginInformation1.BackColor = System.Drawing.Color.White;
+            this.uctrlLoginInformation1.Location = new System.Drawing.Point(11, 199);
             this.uctrlLoginInformation1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrlLoginInformation1.Name = "uctrlLoginInformation1";
             this.uctrlLoginInformation1.Size = new System.Drawing.Size(608, 64);
@@ -54,11 +56,12 @@
             // 
             // uctrPersonDetails1
             // 
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(11, 12);
+            this.uctrPersonDetails1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(11, 0);
             this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
             this.uctrPersonDetails1.Name = "uctrPersonDetails1";
             this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(608, 182);
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(608, 202);
             this.uctrPersonDetails1.TabIndex = 0;
             // 
             // btnSave
@@ -101,7 +104,8 @@
             // 
             // tbCnfPassword
             // 
-            this.tbCnfPassword.Location = new System.Drawing.Point(319, 331);
+            this.tbCnfPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbCnfPassword.Location = new System.Drawing.Point(328, 331);
             this.tbCnfPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbCnfPassword.MaxLength = 32;
             this.tbCnfPassword.Name = "tbCnfPassword";
@@ -111,7 +115,8 @@
             // 
             // tbNewPassword
             // 
-            this.tbNewPassword.Location = new System.Drawing.Point(319, 307);
+            this.tbNewPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbNewPassword.Location = new System.Drawing.Point(328, 307);
             this.tbNewPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbNewPassword.MaxLength = 32;
             this.tbNewPassword.Name = "tbNewPassword";
@@ -121,11 +126,12 @@
             // 
             // lblConfirmPassword
             // 
+            this.lblConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.Image = ((System.Drawing.Image)(resources.GetObject("lblConfirmPassword.Image")));
             this.lblConfirmPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(154, 331);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(162, 331);
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(166, 19);
@@ -135,11 +141,12 @@
             // 
             // lblNewPassword
             // 
+            this.lblNewPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNewPassword.AutoSize = true;
             this.lblNewPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewPassword.Image = ((System.Drawing.Image)(resources.GetObject("lblNewPassword.Image")));
             this.lblNewPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblNewPassword.Location = new System.Drawing.Point(175, 307);
+            this.lblNewPassword.Location = new System.Drawing.Point(184, 307);
             this.lblNewPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewPassword.Name = "lblNewPassword";
             this.lblNewPassword.Size = new System.Drawing.Size(144, 19);
@@ -149,7 +156,8 @@
             // 
             // tbCurrentPassword
             // 
-            this.tbCurrentPassword.Location = new System.Drawing.Point(319, 284);
+            this.tbCurrentPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbCurrentPassword.Location = new System.Drawing.Point(328, 284);
             this.tbCurrentPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbCurrentPassword.MaxLength = 32;
             this.tbCurrentPassword.Name = "tbCurrentPassword";
@@ -160,11 +168,12 @@
             // 
             // lblCurrentPassword
             // 
+            this.lblCurrentPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurrentPassword.AutoSize = true;
             this.lblCurrentPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentPassword.Image = ((System.Drawing.Image)(resources.GetObject("lblCurrentPassword.Image")));
             this.lblCurrentPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCurrentPassword.Location = new System.Drawing.Point(157, 284);
+            this.lblCurrentPassword.Location = new System.Drawing.Point(166, 284);
             this.lblCurrentPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurrentPassword.Name = "lblCurrentPassword";
             this.lblCurrentPassword.Size = new System.Drawing.Size(162, 19);

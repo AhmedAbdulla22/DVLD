@@ -70,6 +70,7 @@
             // 
             // uctrl_DriverLicenseInfo1
             // 
+            this.uctrl_DriverLicenseInfo1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uctrl_DriverLicenseInfo1.LicenseID = -1;
             this.uctrl_DriverLicenseInfo1.Location = new System.Drawing.Point(3, 138);
             this.uctrl_DriverLicenseInfo1.Margin = new System.Windows.Forms.Padding(2);
@@ -79,6 +80,8 @@
             // 
             // uctrlFindLDLicense1
             // 
+            this.uctrlFindLDLicense1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uctrlFindLDLicense1.BackColor = System.Drawing.Color.White;
             this.uctrlFindLDLicense1.Location = new System.Drawing.Point(61, 59);
             this.uctrlFindLDLicense1.Margin = new System.Windows.Forms.Padding(4);
             this.uctrlFindLDLicense1.Name = "uctrlFindLDLicense1";
@@ -140,6 +143,7 @@
             // 
             // uctrlNewLicenseApplication1
             // 
+            this.uctrlNewLicenseApplication1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uctrlNewLicenseApplication1.LDLicenseID = -1;
             this.uctrlNewLicenseApplication1.Location = new System.Drawing.Point(3, 459);
             this.uctrlNewLicenseApplication1.Name = "uctrlNewLicenseApplication1";

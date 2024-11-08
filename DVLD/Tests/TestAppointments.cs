@@ -47,19 +47,19 @@ namespace DVLD.Tests.Vison_Test
             {
                 case clsTestAppointments.TestType.VisionTest:
                     {
-                        pictureBox1.Image = Resources.eye;
+                        pictureBox1.Image = Resources.eye_scan;
                         lblFormLabel.Text = "Vision Test Appointments";
                         break;
                     }
                 case clsTestAppointments.TestType.WrittenTest:
                     {
-                        pictureBox1.Image = Resources.writing;
+                        pictureBox1.Image = Resources.test;
                         lblFormLabel.Text = "Written Test Appointments";
                         break;
                     }
                 default:
                     {
-                        pictureBox1.Image = Resources.street;
+                        pictureBox1.Image = Resources.steering_wheel;
                         lblFormLabel.Text = "Street Test Appointments";
                         break;
                     }

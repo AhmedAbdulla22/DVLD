@@ -46,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 281);
             this.Controls.Add(this.uctrlDrivingLicenseApplicationInfo1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ShowLocalDLAppInfo";
             this.Text = "ShowLocalDLAppInfo";
             this.Load += new System.EventHandler(this.ShowLocalDLAppInfo_Load);

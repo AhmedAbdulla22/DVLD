@@ -40,6 +40,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(61, 27);
@@ -51,11 +52,12 @@
             // 
             // btnFindLicense
             // 
+            this.btnFindLicense.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFindLicense.BackgroundImage = global::DVLD.Properties.Resources.Driver_License;
             this.btnFindLicense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFindLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindLicense.Location = new System.Drawing.Point(406, 14);
-            this.btnFindLicense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFindLicense.Margin = new System.Windows.Forms.Padding(2);
             this.btnFindLicense.Name = "btnFindLicense";
             this.btnFindLicense.Size = new System.Drawing.Size(42, 45);
             this.btnFindLicense.TabIndex = 14;
@@ -64,9 +66,10 @@
             // 
             // tbFilter
             // 
+            this.tbFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFilter.Location = new System.Drawing.Point(141, 26);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(236, 23);
             this.tbFilter.TabIndex = 12;

@@ -287,7 +287,7 @@
             this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(145, 354);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(122, 21);
             this.dtpDate.TabIndex = 67;
@@ -308,9 +308,9 @@
             this.gbRetakeTestInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbRetakeTestInfo.ForeColor = System.Drawing.Color.Brown;
             this.gbRetakeTestInfo.Location = new System.Drawing.Point(11, 391);
-            this.gbRetakeTestInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbRetakeTestInfo.Margin = new System.Windows.Forms.Padding(2);
             this.gbRetakeTestInfo.Name = "gbRetakeTestInfo";
-            this.gbRetakeTestInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbRetakeTestInfo.Padding = new System.Windows.Forms.Padding(2);
             this.gbRetakeTestInfo.Size = new System.Drawing.Size(384, 92);
             this.gbRetakeTestInfo.TabIndex = 66;
             this.gbRetakeTestInfo.TabStop = false;
@@ -440,7 +440,7 @@
             this.btnSave.Image = global::DVLD.Properties.Resources.diskette_1_;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(315, 497);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 33);
             this.btnSave.TabIndex = 65;
@@ -513,9 +513,9 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.eye;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.eye_scan;
             this.pictureBox1.Location = new System.Drawing.Point(141, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(125, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -528,7 +528,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbTestInfo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "uctrlScheduleTest";
             this.Size = new System.Drawing.Size(411, 544);
             this.gbTestInfo.ResumeLayout(false);

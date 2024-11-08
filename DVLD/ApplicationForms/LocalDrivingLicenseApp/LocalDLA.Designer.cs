@@ -80,7 +80,7 @@
             // 
             this.tbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFilter.Location = new System.Drawing.Point(190, 249);
-            this.tbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(148, 20);
             this.tbFilter.TabIndex = 27;
@@ -99,7 +99,7 @@
             "Full Name",
             "Status"});
             this.cbFilter.Location = new System.Drawing.Point(70, 249);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(118, 21);
             this.cbFilter.TabIndex = 26;
@@ -140,9 +140,10 @@
             this.dgvLocalDLA.BackgroundColor = System.Drawing.Color.White;
             this.dgvLocalDLA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLocalDLA.Location = new System.Drawing.Point(9, 272);
-            this.dgvLocalDLA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLocalDLA.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLocalDLA.Name = "dgvLocalDLA";
             this.dgvLocalDLA.ReadOnly = true;
+            this.dgvLocalDLA.RowHeadersVisible = false;
             this.dgvLocalDLA.RowHeadersWidth = 62;
             this.dgvLocalDLA.RowTemplate.Height = 28;
             this.dgvLocalDLA.Size = new System.Drawing.Size(868, 246);
@@ -158,7 +159,7 @@
             "Canceled",
             "Completed"});
             this.cbStatusFilter.Location = new System.Drawing.Point(190, 249);
-            this.cbStatusFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbStatusFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbStatusFilter.Name = "cbStatusFilter";
             this.cbStatusFilter.Size = new System.Drawing.Size(92, 21);
             this.cbStatusFilter.TabIndex = 28;
@@ -307,7 +308,7 @@
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(796, 522);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(81, 33);
             this.btnClose.TabIndex = 24;
@@ -324,7 +325,7 @@
             this.btnAddLocalDLA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddLocalDLA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLocalDLA.Location = new System.Drawing.Point(837, 229);
-            this.btnAddLocalDLA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddLocalDLA.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddLocalDLA.Name = "btnAddLocalDLA";
             this.btnAddLocalDLA.Size = new System.Drawing.Size(40, 40);
             this.btnAddLocalDLA.TabIndex = 23;
@@ -335,9 +336,9 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.LocalDLA;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.Applications;
             this.pictureBox1.Location = new System.Drawing.Point(387, 52);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -360,7 +361,7 @@
             this.Controls.Add(this.dgvLocalDLA);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbStatusFilter);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LocalDLA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LocalDLA";

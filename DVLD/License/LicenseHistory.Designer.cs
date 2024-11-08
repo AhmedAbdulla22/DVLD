@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblFormLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbDriverLicenses = new System.Windows.Forms.GroupBox();
             this.tabDriverLicenses = new System.Windows.Forms.TabControl();
             this.tabLocal = new System.Windows.Forms.TabPage();
@@ -40,16 +39,17 @@
             this.lbl_DGV_Title_International = new System.Windows.Forms.Label();
             this.lblRecordsInternational = new System.Windows.Forms.Label();
             this.dgvInternationalLicensesHistory = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.Button();
             this.uctrlFilterBy1 = new DVLD.userControls.uctrlFilterBy();
             this.uctrPersonDetails1 = new DVLD.uctrPersonDetails();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbDriverLicenses.SuspendLayout();
             this.tabDriverLicenses.SuspendLayout();
             this.tabLocal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicensesHistory)).BeginInit();
             this.tabInternational.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicensesHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFormLabel
@@ -65,19 +65,6 @@
             this.lblFormLabel.TabIndex = 23;
             this.lblFormLabel.Text = "License History";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.Driver_License2;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 157);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
             // 
             // gbDriverLicenses
             // 
@@ -152,6 +139,7 @@
             this.dgvLocalLicensesHistory.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLocalLicensesHistory.Name = "dgvLocalLicensesHistory";
             this.dgvLocalLicensesHistory.ReadOnly = true;
+            this.dgvLocalLicensesHistory.RowHeadersVisible = false;
             this.dgvLocalLicensesHistory.RowHeadersWidth = 62;
             this.dgvLocalLicensesHistory.RowTemplate.Height = 28;
             this.dgvLocalLicensesHistory.Size = new System.Drawing.Size(747, 133);
@@ -209,10 +197,30 @@
             this.dgvInternationalLicensesHistory.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInternationalLicensesHistory.Name = "dgvInternationalLicensesHistory";
             this.dgvInternationalLicensesHistory.ReadOnly = true;
+            this.dgvInternationalLicensesHistory.RowHeadersVisible = false;
             this.dgvInternationalLicensesHistory.RowHeadersWidth = 62;
             this.dgvInternationalLicensesHistory.RowTemplate.Height = 28;
             this.dgvInternationalLicensesHistory.Size = new System.Drawing.Size(747, 133);
             this.dgvInternationalLicensesHistory.TabIndex = 20;
+            // 
+            // uctrlFilterBy1
+            // 
+            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uctrlFilterBy1.BackColor = System.Drawing.Color.White;
+            this.uctrlFilterBy1.Location = new System.Drawing.Point(212, 70);
+            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
+            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
+            this.uctrlFilterBy1.Size = new System.Drawing.Size(604, 67);
+            this.uctrlFilterBy1.TabIndex = 2;
+            // 
+            // uctrPersonDetails1
+            // 
+            this.uctrPersonDetails1.Location = new System.Drawing.Point(212, 133);
+            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
+            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
+            this.uctrPersonDetails1.PersonID = -1;
+            this.uctrPersonDetails1.Size = new System.Drawing.Size(604, 196);
+            this.uctrPersonDetails1.TabIndex = 3;
             // 
             // btnClose
             // 
@@ -233,23 +241,18 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // uctrlFilterBy1
+            // pictureBox1
             // 
-            this.uctrlFilterBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uctrlFilterBy1.Location = new System.Drawing.Point(212, 70);
-            this.uctrlFilterBy1.Margin = new System.Windows.Forms.Padding(4);
-            this.uctrlFilterBy1.Name = "uctrlFilterBy1";
-            this.uctrlFilterBy1.Size = new System.Drawing.Size(604, 67);
-            this.uctrlFilterBy1.TabIndex = 2;
-            // 
-            // uctrPersonDetails1
-            // 
-            this.uctrPersonDetails1.Location = new System.Drawing.Point(212, 133);
-            this.uctrPersonDetails1.Margin = new System.Windows.Forms.Padding(2);
-            this.uctrPersonDetails1.Name = "uctrPersonDetails1";
-            this.uctrPersonDetails1.PersonID = -1;
-            this.uctrPersonDetails1.Size = new System.Drawing.Size(604, 196);
-            this.uctrPersonDetails1.TabIndex = 3;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.file;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 119);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(188, 173);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
             // LicenseHistory
             // 
@@ -267,7 +270,6 @@
             this.Name = "LicenseHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LicenseHistory";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbDriverLicenses.ResumeLayout(false);
             this.tabDriverLicenses.ResumeLayout(false);
             this.tabLocal.ResumeLayout(false);
@@ -276,6 +278,7 @@
             this.tabInternational.ResumeLayout(false);
             this.tabInternational.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicensesHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

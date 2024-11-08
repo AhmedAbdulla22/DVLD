@@ -33,9 +33,9 @@
             this.dgvApplicationType = new System.Windows.Forms.DataGridView();
             this.lblFormLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationType)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,13 +61,14 @@
             this.dgvApplicationType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvApplicationType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvApplicationType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvApplicationType.BackgroundColor = System.Drawing.Color.White;
             this.dgvApplicationType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApplicationType.Location = new System.Drawing.Point(11, 257);
-            this.dgvApplicationType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvApplicationType.Margin = new System.Windows.Forms.Padding(2);
             this.dgvApplicationType.Name = "dgvApplicationType";
             this.dgvApplicationType.ReadOnly = true;
+            this.dgvApplicationType.RowHeadersVisible = false;
             this.dgvApplicationType.RowHeadersWidth = 62;
             this.dgvApplicationType.RowTemplate.Height = 28;
             this.dgvApplicationType.Size = new System.Drawing.Size(747, 199);
@@ -96,14 +97,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(215, 34);
             // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.project;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(214, 30);
-            this.toolStripMenuItem3.Text = "Change Application Type";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -114,7 +107,7 @@
             this.button2.Image = global::DVLD.Properties.Resources.Close;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(677, 460);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 17;
@@ -127,14 +120,22 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.project;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.AppType;
             this.pictureBox1.Location = new System.Drawing.Point(317, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.project;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(214, 30);
+            this.toolStripMenuItem3.Text = "Change Application Type";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // ManageApplicationType
             // 
@@ -147,7 +148,7 @@
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvApplicationType);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageApplicationType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ManageApplicationType";

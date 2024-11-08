@@ -51,7 +51,7 @@
             this.lblFormLabel.Location = new System.Drawing.Point(233, 165);
             this.lblFormLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFormLabel.Name = "lblFormLabel";
-            this.lblFormLabel.Size = new System.Drawing.Size(296, 34);
+            this.lblFormLabel.Size = new System.Drawing.Size(291, 34);
             this.lblFormLabel.TabIndex = 26;
             this.lblFormLabel.Text = "Manage Test Type";
             this.lblFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,12 +89,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTestType.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTestType.Location = new System.Drawing.Point(10, 253);
-            this.dgvTestType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTestType.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTestType.Name = "dgvTestType";
             this.dgvTestType.ReadOnly = true;
+            this.dgvTestType.RowHeadersVisible = false;
             this.dgvTestType.RowHeadersWidth = 62;
             this.dgvTestType.RowTemplate.Height = 28;
-            this.dgvTestType.Size = new System.Drawing.Size(747, 199);
+            this.dgvTestType.Size = new System.Drawing.Size(742, 199);
             this.dgvTestType.TabIndex = 23;
             this.dgvTestType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvTestType_MouseDown);
             // 
@@ -123,8 +124,8 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(676, 456);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Location = new System.Drawing.Point(671, 456);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(81, 33);
             this.btnClose.TabIndex = 25;
@@ -137,11 +138,11 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.testing;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.AppType;
             this.pictureBox1.Location = new System.Drawing.Point(316, 31);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 132);
+            this.pictureBox1.Size = new System.Drawing.Size(126, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -151,13 +152,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(769, 503);
+            this.ClientSize = new System.Drawing.Size(764, 503);
             this.Controls.Add(this.lblFormLabel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvTestType);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageTestTypes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ManageTestTypes";
