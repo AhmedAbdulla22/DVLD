@@ -131,14 +131,14 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(175, 724);
+            this.menuStrip1.Size = new System.Drawing.Size(175, 598);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // dashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.dashboardToolStripMenuItem.Image = global::DVLD.Properties.Resources.wdashboard50;
             this.dashboardToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -157,7 +157,7 @@
             this.DetainLicenses_toolStripMenuItem,
             this.manageApplicationTypesToolStripMenuItem,
             this.manageTestTypesToolStripMenuItem});
-            this.applicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applicationToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicationToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.applicationToolStripMenuItem.Image = global::DVLD.Properties.Resources.wApp50;
             this.applicationToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,7 +181,7 @@
             this.DrivingLicensesServicestoolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrivingLicensesServicestoolStripMenuItem.Image = global::DVLD.Properties.Resources.Driver_License;
             this.DrivingLicensesServicestoolStripMenuItem.Name = "DrivingLicensesServicestoolStripMenuItem";
-            this.DrivingLicensesServicestoolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.DrivingLicensesServicestoolStripMenuItem.Size = new System.Drawing.Size(248, 26);
             this.DrivingLicensesServicestoolStripMenuItem.Text = "Driving Licenses Services";
             this.DrivingLicensesServicestoolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenuItem2_DropDownItemClicked);
             // 
@@ -256,7 +256,7 @@
             this.ManageAppsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ManageAppsToolStripMenuItem.Image = global::DVLD.Properties.Resources.LocalDLA;
             this.ManageAppsToolStripMenuItem.Name = "ManageAppsToolStripMenuItem";
-            this.ManageAppsToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.ManageAppsToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
             this.ManageAppsToolStripMenuItem.Text = "Manage Applications";
             this.ManageAppsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenuItem3_DropDownItemClicked);
             // 
@@ -283,7 +283,7 @@
             this.DetainLicenses_toolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetainLicenses_toolStripMenuItem.Image = global::DVLD.Properties.Resources.hand_detain;
             this.DetainLicenses_toolStripMenuItem.Name = "DetainLicenses_toolStripMenuItem";
-            this.DetainLicenses_toolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.DetainLicenses_toolStripMenuItem.Size = new System.Drawing.Size(248, 26);
             this.DetainLicenses_toolStripMenuItem.Text = "Detain Licenses";
             this.DetainLicenses_toolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripMenuItem4_DropDownItemClicked);
             // 
@@ -313,7 +313,7 @@
             this.manageApplicationTypesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageApplicationTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.project;
             this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
-            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
             this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
             // 
             // manageTestTypesToolStripMenuItem
@@ -321,12 +321,12 @@
             this.manageTestTypesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageTestTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.testing;
             this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
-            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
             this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
             // 
             // peopleeToolStripMenuItem
             // 
-            this.peopleeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.peopleeToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.peopleeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.peopleeToolStripMenuItem.Image = global::DVLD.Properties.Resources.wPeople50;
             this.peopleeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -338,7 +338,7 @@
             // 
             // driversToolStripMenuItem
             // 
-            this.driversToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.driversToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.driversToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.driversToolStripMenuItem.Image = global::DVLD.Properties.Resources.wdrivers50;
             this.driversToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,7 +350,7 @@
             // 
             // usersToolStripMenuItem
             // 
-            this.usersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usersToolStripMenuItem.Image = global::DVLD.Properties.Resources.wUsers50;
             this.usersToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -413,7 +413,7 @@
             this.AccSettingtoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem29,
             this.toolStripMenuItem30});
-            this.AccSettingtoolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccSettingtoolStripMenuItem.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccSettingtoolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.AccSettingtoolStripMenuItem.Image = global::DVLD.Properties.Resources.wAccSetting50;
             this.AccSettingtoolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -429,7 +429,7 @@
             this.toolStripMenuItem29.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripMenuItem29.Image = global::DVLD.Properties.Resources.Document;
             this.toolStripMenuItem29.Name = "toolStripMenuItem29";
-            this.toolStripMenuItem29.Size = new System.Drawing.Size(188, 24);
+            this.toolStripMenuItem29.Size = new System.Drawing.Size(191, 26);
             this.toolStripMenuItem29.Text = "Current User Info";
             // 
             // toolStripMenuItem30
@@ -437,7 +437,7 @@
             this.toolStripMenuItem30.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.toolStripMenuItem30.Image = global::DVLD.Properties.Resources.Password_Window;
             this.toolStripMenuItem30.Name = "toolStripMenuItem30";
-            this.toolStripMenuItem30.Size = new System.Drawing.Size(188, 24);
+            this.toolStripMenuItem30.Size = new System.Drawing.Size(191, 26);
             this.toolStripMenuItem30.Text = "Change Password";
             // 
             // SignOuttoolStripMenuItem
