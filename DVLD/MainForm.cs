@@ -29,6 +29,9 @@ namespace DVLD
         {
             InitializeComponent();
             ChangeSideBarIconSize();
+            Control dashboard = new Dashboard();
+            addControlToPanel(ref dashboard);
+            dashboard.Show();
         }
 
         private void frmMain_Load(object sender, EventArgs e)

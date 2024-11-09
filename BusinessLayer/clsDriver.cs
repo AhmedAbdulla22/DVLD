@@ -97,5 +97,10 @@ namespace BusinessLayer
         {
             return clsDriver_DataAccess.GetDriverByFullName(FullName);
         }
+
+        public static int TotalDriverNum(bool OnlyMen = false)
+        {
+            return clsDriver_DataAccess.TotalDriverNumber(OnlyMen);
+        }
     }
 }

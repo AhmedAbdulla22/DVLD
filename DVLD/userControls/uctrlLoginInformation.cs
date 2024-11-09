@@ -35,5 +35,17 @@ namespace DVLD.userControls
                 lblisActive2.Text = (_User.isActive) ? "Yes" : "No";
             }
         }
+
+        public void changeControlBackColor(Color color)
+        {
+            groupBox1.BackColor = color;
+        }
+
+        public void changeTextColor(Color color)
+        {
+            lblUserID2.ForeColor = color;
+            lblUserName2.ForeColor = color;
+            lblisActive2.ForeColor = color;
+        }
     }
 }

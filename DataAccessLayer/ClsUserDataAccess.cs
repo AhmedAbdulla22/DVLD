@@ -531,5 +531,38 @@ SELECT Scope_Identity();";
 
             return dt;
         }
+        public static int TotalUserNumber(bool OnlyActive = false)
+        {
+            int total = 0;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = (OnlyActive) ? @"Select count(*) FROM Users Where Users.IsActive = 1;;" : @"Select count(*) FROM Users ;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            total = Convert.ToInt32(result);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return total;
+        }
     }
 }

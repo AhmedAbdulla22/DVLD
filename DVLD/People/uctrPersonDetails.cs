@@ -134,5 +134,15 @@ namespace DVLD
 
             UpdateControl();
         }
+        public void changeControlBackColor(Color color)
+        {
+            groupBox1.BackColor = color;
+        }
+
+        public void changeTextColor(Color color)
+        {
+            lblPersonID2.ForeColor = lblName2.ForeColor = lblNationalNo2.ForeColor = lblPhone2.ForeColor = lblEmail2.ForeColor = lblDateOfBirth2.ForeColor = lblAddress2.ForeColor = lblGender2.ForeColor = lblCountry2.ForeColor = color;
+
+        }
     }
 }

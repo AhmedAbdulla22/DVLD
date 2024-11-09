@@ -402,5 +402,38 @@ SELECT Scope_Identity();";
 
             return dt;
         }
+        public static int TotalDriverNumber(bool OnlyMale = false)
+        {
+            int total = 0;
+
+            using (var sqlConnection = new SqlConnection(DataAccessLayerSetting.connectionString))
+            {
+                var query = (OnlyMale) ? @"Select count(*) FROM Drivers INNER JOIN People ON Drivers.PersonID = People.PersonID Where People.Gendor = 0;": @"Select count(*) FROM Drivers;";
+
+                using (var sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        object result = sqlCommand.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            total = Convert.ToInt32(result);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+            }
+
+            return total;
+        }
     }
 }

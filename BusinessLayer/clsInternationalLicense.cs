@@ -182,6 +182,11 @@ namespace BusinessLayer
             return clsInternationalLicense_DataAccess.getAllInternationalLicense();
         }
 
+        public static int TotalLicenseNum(bool OnlyActive = false)
+        {
+            return clsLicense_DataAccess.TotalLicense(OnlyActive);
+        }
+
         
     }
 }

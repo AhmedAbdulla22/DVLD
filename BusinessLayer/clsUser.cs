@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -182,6 +183,10 @@ namespace BusinessLayer
         public static DataTable getUsersByIsActive(bool IsActive)
         {
             return ClsUserDataAccess.GetUsersByIsActive(IsActive);
+        }
+        public static int TotalUserNum(bool OnlyActive = false)
+        {
+            return ClsUserDataAccess.TotalUserNumber(OnlyActive);
         }
     }
 }

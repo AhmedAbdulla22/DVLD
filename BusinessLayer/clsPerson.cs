@@ -213,7 +213,10 @@ namespace BusinessLayer
                 return null;
             }
         }
-
+        public static int TotalPeopleNum(bool OnlyMen = false)
+        {
+            return clsLicense_DataAccess.TotalLicense(OnlyMen);
+        }
 
     }
 }
