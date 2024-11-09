@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace DVLD
 {
@@ -52,7 +53,8 @@ namespace DVLD
                         {
                             File.Create(_RememberMePath).Close();
                         }
-                        File.WriteAllText(_RememberMePath,tbUserName.Text +delim+tbPassword.Text);
+                        var encryptedPass = Utilites.EncryptString(tbPassword.Text);
+                        File.WriteAllText(_RememberMePath,tbUserName.Text +delim+ encryptedPass);
 
                     }
                     else
@@ -116,7 +118,7 @@ namespace DVLD
                 {
                     //fill tboxes
                     tbUserName.Text = SplitedStr[0];
-                    tbPassword.Text = SplitedStr[1];
+                    tbPassword.Text = Utilites.DecryptString(SplitedStr[1]);
 
                     //check checkbox of RemMe
                     chkRemember.Checked = true;

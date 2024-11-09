@@ -183,6 +183,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blank_steel_light_frame_black {
+            get {
+                object obj = ResourceManager.GetObject("blank-steel-light-frame-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel_Order {
             get {
                 object obj = ResourceManager.GetObject("Cancel Order", resourceCulture);
@@ -493,6 +503,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gradient_blue_abstract_background_smooth_dark_blue_with_black_vignette_studio {
+            get {
+                object obj = ResourceManager.GetObject("gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hand_detain {
             get {
                 object obj = ResourceManager.GetObject("hand detain", resourceCulture);
@@ -783,6 +803,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rounded_rectangle {
+            get {
+                object obj = ResourceManager.GetObject("rounded-rectangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap steering_wheel {
             get {
                 object obj = ResourceManager.GetObject("steering-wheel", resourceCulture);
@@ -1066,6 +1096,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap writing {
             get {
                 object obj = ResourceManager.GetObject("writing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wrounded_rectangle {
+            get {
+                object obj = ResourceManager.GetObject("wrounded-rectangle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

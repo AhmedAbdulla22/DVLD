@@ -33,5 +33,26 @@ namespace DVLD
 
             return destImage;
         }
+        public static string EncryptString(string str,int shift = 4)
+        {
+            var encrypted = string.Empty;
+            foreach(char C in str)
+            {
+                encrypted += (char)(C + shift);
+            }
+
+            return encrypted;
+        }
+
+        public static string DecryptString(string str, int shift = 4)
+        {
+            var Decrypted = string.Empty;
+            foreach (char C in str)
+            {
+                Decrypted += (char)(C - shift);
+            }
+
+            return Decrypted;
+        }
     }
 }

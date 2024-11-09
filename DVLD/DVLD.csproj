@@ -829,5 +829,17 @@
   <ItemGroup>
     <None Include="Resources\Rlog-out2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rounded-rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrounded-rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank-steel-light-frame-black.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
