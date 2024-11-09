@@ -68,37 +68,6 @@ namespace DVLD
             }
         }
 
-
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Owner.Visible = true;
-
-            this.Close();
-
-        }
-
-
-        private void accountSettingsToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            switch (e.ClickedItem.Text)
-            {
-                case "Current User Info":
-                    {
-                        Control frmUDetails = new frmUserDetails(clsLog.User.PersonID);
-                        addControlToPanel(ref frmUDetails);
-                        frmUDetails.Show();
-                        break;
-                    }
-                case "Change Password":
-                    {
-                        Control frmChgPass = new frmChangePassword(clsLog.User.PersonID);
-                        addControlToPanel(ref frmChgPass);
-                        frmChgPass.Show();
-                        break;
-                    }
-            }
-        }
-
         private void applicationToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             switch (e.ClickedItem.Text)
@@ -297,6 +266,10 @@ namespace DVLD
             {
                 item.DisplayStyle = (toolStripItemDisplayStyle == ToolStripItemDisplayStyle.ImageAndText) ? ToolStripItemDisplayStyle.Image : ToolStripItemDisplayStyle.ImageAndText;
             }
+            foreach (ToolStripItem item in menuStrip2.Items)
+            {
+                item.DisplayStyle = (toolStripItemDisplayStyle == ToolStripItemDisplayStyle.ImageAndText) ? ToolStripItemDisplayStyle.Image : ToolStripItemDisplayStyle.ImageAndText;
+            }
 
             //folding and unfold side bar
             Size ClosedSize = new System.Drawing.Size(50, 529), OpenedSize = new System.Drawing.Size(175, 529);
@@ -309,6 +282,63 @@ namespace DVLD
             int w = 33, h = 33;
             foreach (ToolStripItem item in menuStrip1.Items)
             {
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+
+            foreach (ToolStripItem item in menuStrip2.Items)
+            {
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+
+            //this dropdown items i both resizee and change scale mode too
+            foreach (ToolStripItem item in applicationToolStripMenuItem.DropDownItems)
+            {
+                item.ImageScaling = ToolStripItemImageScaling.None;
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+            foreach (ToolStripItem item in DrivingLicensesServicestoolStripMenuItem.DropDownItems)
+            {
+                if (item.Image == null)
+                {
+                    continue;
+                }
+                item.ImageScaling = ToolStripItemImageScaling.None;
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+            foreach (ToolStripItem item in newDrivingLicenseToolStripMenuItem.DropDownItems)
+            {
+                if (item.Image == null)
+                {
+                    continue;
+                }
+                item.ImageScaling = ToolStripItemImageScaling.None;
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+            foreach (ToolStripItem item in ManageAppsToolStripMenuItem.DropDownItems)
+            {
+                if (item.Image == null)
+                {
+                    continue;
+                }
+                item.ImageScaling = ToolStripItemImageScaling.None;
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+            foreach (ToolStripItem item in DetainLicenses_toolStripMenuItem.DropDownItems)
+            {
+                if (item.Image == null)
+                {
+                    continue;
+                }
+                item.ImageScaling = ToolStripItemImageScaling.None;
+                item.Image = Utilites.ResizeImage(item.Image, w, h);
+            }
+            foreach (ToolStripItem item in AccSettingtoolStripMenuItem.DropDownItems)
+            {
+                if (item.Image == null)
+                {
+                    continue;
+                }
+                item.ImageScaling = ToolStripItemImageScaling.None;
                 item.Image = Utilites.ResizeImage(item.Image, w, h);
             }
 
@@ -327,5 +357,36 @@ namespace DVLD
                 this.Top+= e.Y - MousePoint.Y;
             }
         }
+
+
+        private void AccSettingtoolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (e.ClickedItem.Text)
+            {
+                case "Current User Info":
+                    {
+                        Control frmUDetails = new frmUserDetails(clsLog.User.PersonID);
+                        addControlToPanel(ref frmUDetails);
+                        frmUDetails.Show();
+                        break;
+                    }
+                case "Change Password":
+                    {
+                        Control frmChgPass = new frmChangePassword(clsLog.User.PersonID);
+                        addControlToPanel(ref frmChgPass);
+                        frmChgPass.Show();
+                        break;
+                    }
+            }
+        }
+
+        private void SignOuttoolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Owner.Visible = true;
+
+            this.Close();
+
+        }
+
     }    
 }

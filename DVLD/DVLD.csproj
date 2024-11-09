@@ -820,5 +820,14 @@
   <ItemGroup>
     <None Include="Resources\user.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rlogout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lost-items.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rlog-out2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
