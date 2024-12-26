@@ -25,10 +25,11 @@ Driver License Project, Three Tier Architecture Including PresentationLayer,Busi
 ### **Application Management**
 
 1. **Local Driving License Applications**:
-      Process applications for local driving licenses.
+Process applications for local driving licenses.
+   
 <img src="https://github.com/user-attachments/assets/3ac760d7-ae70-4eb6-80a1-5613e17058b0" alt="image" width="300"/><br>
   
-2. **International Driving License Applications**:
+3. **International Driving License Applications**:
     
     - Manage applications for licenses valid internationally.
 
